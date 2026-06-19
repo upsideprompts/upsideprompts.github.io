@@ -188,10 +188,11 @@ Top 10 small-cap robotics & processor stocks discussed on Reddit:
 - **Updated June 17, 2026**: Added Tesla Cybercab, eVTOL article, sorted articles by date (newest first)
 
 ## OCStack Steps Updated (June 17, 2026)
-- Modified `/root/.openclaw/workspace/ocstack/index.html`
+- Modified `/root/.openclaw/workspace/ocstacks/index.html`
 - Changed Step 3 from "Configure Authentication and Launch" to "Complete the Droplet creation and login to the 'Web Console"
 - Removed Step 4 "SSH and Update OS"
 - Total steps reduced from 14 to 13
+- Fixed malformed HTML img tag on line 74
 
 ## NY Stroll Stuff Update (June 18, 2026)
 - Updated baseball schedule for June 18, 2026
