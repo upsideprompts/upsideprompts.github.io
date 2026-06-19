@@ -1,0 +1,27 @@
+{
+  "lastChecks": {
+    "courseProgress": 1748606415000,
+    "timestamp": "2026-05-31T13:20:15Z"
+  },
+  "courses": {
+    "sophia-computer-applications": {
+      "progress": 30,
+      "lastUpdate": 1748606415000,
+      "units": [
+        "Efficiency and Productivity",
+        "Hardware, Software, and Applications",
+        "Enterprise Systems",
+        "Learning New Technologies",
+        "Digital Hygiene",
+        "Computer Ethics",
+        "Communication and Collaboration",
+        "Finding and Vetting Information Online",
+        "Email Etiquette",
+        "Chats and Chat Tools",
+        "Virtual Meetings",
+        "Collaboration and the Cloud"
+      ]
+    }
+  },
+  "notes": "30% milestone achieved on Sophia Computer Applications. 70% remaining. Next check in ~24 hours or on significant progress update."
+}

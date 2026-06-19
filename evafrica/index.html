@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Africa's Electric Vehicle Pioneers #rivian">
+    <title>Africa EV Pioneers</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #234066 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .hamburger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            background: #8bc34a;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hamburger:hover {
+            background: #7cb33a;
+        }
+        
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .hamburger.clicked::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 1rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .company-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .company-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .company-name a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+        
+        .company-name a:hover {
+            text-decoration: underline;
+        }
+        
+        .company-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .video-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        
+        .video-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .video-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+        
+        .youtube-link {
+            display: inline-block;
+            background: #8bc34a;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            width: fit-content;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .youtube-link:hover {
+            background: #7cb33a;
+            transform: scale(1.05);
+        }
+        
+        .youtube-link::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .youtube-link.clicked::after {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://en.wikipedia.org/wiki/Electric_car" class="hamburger">☰</a>
+    <div class="container">
+        <div class="hero-section">
+            <h1>Driving Evolution</h1>
+            <p class="subtitle">Africa's Electric Vehicle Pioneers</p>
+        </div>
+        
+        <h2 class="section-title">Our Models</h2>
+        
+        <div class="company-grid">
+            <!-- Kiira Motors -->
+            <div class="company-card">
+                <div class="company-name">
+                    <a href="https://www.kiiramotors.co.ug" target="_blank">Kiira EV Smack</a>
+                </div>
+                <div class="company-description">
+                    Uganda's first indigenous electric vehicle manufacturer, producing the Kiira EV Smack sedan and solar-powered Kayoola electric buses for public transportation.
+                </div>
+                <div class="video-options">
+                    <div class="video-item">
+                        <span class="video-desc">Inside Africa's biggest car factory tour.</span>
+                        <a href="https://www.youtube.com/watch?v=VivB8XSOnlc" target="_blank" class="youtube-link">Inside Factory</a>
+                    </div>
+                    <div class="video-item">
+                        <span class="video-desc">Showcasing innovations at the 2025 E-mobility Expo.</span>
+                        <a href="https://www.youtube.com/watch?v=-aP7cXna3Nc" target="_blank" class="youtube-link">E-mobility Expo</a>
+                    </div>
+                    <div class="video-item">
+                        <span class="video-desc">Insights into building Uganda's first electric vehicle.</span>
+                        <a href="https://www.youtube.com/watch?v=GwCvXJ3NUcE" target="_blank" class="youtube-link">Building Uganda's EV</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Roam Electric -->
+            <div class="company-card">
+                <div class="company-name">
+                    <a href="https://www.roam-electric.com" target="_blank">Roam Electric</a>
+                </div>
+                <div class="company-description">
+                    Kenyan electric mobility company designing and assembling electric motorcycles and buses locally for African markets.
+                </div>
+                <div class="video-options">
+                    <div class="video-item">
+                        <span class="video-desc">Rider completes 900km electric motorcycle journey across Kenya.</span>
+                        <a href="https://www.youtube.com/watch?v=YJc9sT2dL7Q" target="_blank" class="youtube-link">900km Trip</a>
+                    </div>
+                    <div class="video-item">
+                        <span class="video-desc">Unveiling Kenya's first universal fast-charging station for light EVs.</span>
+                        <a href="https://www.youtube.com/watch?v=U3r9hDvZx9M" target="_blank" class="youtube-link">Charging Station</a>
+                    </div>
+                    <div class="video-item">
+                        <span class="video-desc">Launching the locally-designed Generation 2 Roam Air motorcycle.</span>
+                        <a href="https://www.youtube.com/watch?v=PCxW-Mr1lmM" target="_blank" class="youtube-link">Gen 2 Motorcycle</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Solar Taxi -->
+            <div class="company-card">
+                <div class="company-name">
+                    <a href="https://www.solartaxi.com.gh" target="_blank">Solar Taxi</a>
+                </div>
+                <div class="company-description">
+                    Ghanaian startup manufacturing affordable electric cars, motorcycles, and bicycles tailored for African market conditions.
+                </div>
+                <div class="video-options">
+                    <div class="video-item">
+                        <span class="video-desc">Leading the green automobile revolution in Ghana.</span>
+                        <a href="https://www.youtube.com/watch?v=qD-g-wEFb_I" target="_blank" class="youtube-link">Green Revolution</a>
+                    </div>
+                    <div class="video-item">
+                        <span class="video-desc">Solving EV adoption challenges in Ghana.</span>
+                        <a href="https://www.youtube.com/watch?v=LLnLubSqnio" target="_blank" class="youtube-link">Adoption Challenges</a>
+                    </div>
+                    <div class="video-item">
+                        <span class="video-desc">How electric vehicles are produced in Ghana.</span>
+                        <a href="https://www.youtube.com/watch?v=A5qF-YdDusE" target="_blank" class="youtube-link">Production Process</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ripple effect for buttons
+        document.addEventListener('click', function(e) {
+            const target = e.target;
+            
+            // Apply ripple effect to all buttons and links
+            if (target.classList.contains('youtube-link') || target.classList.contains('hamburger')) {
+                target.classList.add('clicked');
+                
+                // Remove the ripple effect after animation completes
+                setTimeout(() => {
+                    target.classList.remove('clicked');
+                }, 600);
+            }
+        });
+    </script>
+</body>
+</html>

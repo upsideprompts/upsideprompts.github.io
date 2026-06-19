@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>PackGit</title>
+    <!-- Bootstrap & Snippet plugin core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="stickup.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- START THE COVER -->
+    <center>
+      <div id="home" class="carousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>PackGit</h1>
+                <h3></h3>
+                <p>A compilation of Git tips, from basic methods to in-depth
+                  tutorials. Provided to get you past hurdles while debugging
+                  and getting your app to run. Includes some product tools to
+                  ramp up during development on Git.</p>
+                <br>
+                <img src="../../../../Desktop/DeskPic1.png" alt="" height="100"
+                  width="100"
+                  align="right">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
+    <!-- END COVER -->
+    <!-- START THE NAVBAR -->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navwrapper">
+          <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+              <div class="navbar-header"> <button type="button" class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse">
+                  <span class="icon-bar"></span> <span class="icon-bar"></span>
+                  <span class="icon-bar"></span> </button> <a class="navbar-brand"
+                  href="#">PackGit</a>
+              </div>
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li class="menuItem active"><a href="#home">Home</a></li>
+                  <li class="menuItem"><a href="#gittips">Git Tips</a></li>
+                  <li class="menuItem"><a href="#gitvlogs">Git Vlogs</a></li>
+                  <li class="menuItem"><a href="#gitscripts">Scripts in Git</a></li>
+                  <li class="menuItem"><a href="#slack">Git Slacks and Discs</a></li>
+                  <li class="menuItem"><a href="#bhub">NSBE Hub and additional
+                      Blogs</a></li>
+                  <!-- <li class="menuItem"><a href="#samples">Android Samples</a></li> -->
+                  <!--            <li class="menuItem"><a href="#agilehub">Scrum Hub</a></li>    -->
+                  <!--             <li class="menuItem"><a href="#contact">Footer</a></li>   -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Navbar --> </div>
+    </div>
+    <!-- END NAVBAR -->
+    <!-- START THE CONTENT -->
+    <div id="contents">
+      <!-- START THE FEATURES -->
+      <div id="features" class="row featurette container marketing"> </div>
+      <!-- Three columns of text -->
+      <!--        </div> <!-- END FEATURES -->
+      <!-- START THE GITTIPS -->
+      <div id="gittips" class="row featurette">
+        <div class="col-lg-offset-1 col-lg-12">
+          <h2 class="featurette-heading">Git Tips</h2>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://tutorialzine.com/2017/11/10-useful-git-tips"
+              target="_blank"><b>10
+                Git Tips on Tutorialzone.com</b></a> : 10 Useful Git Tips</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://www.hostinger.com/tutorials/basic-git-commands"
+              target="_blank"><b>Overivew
+                of Git Commands on Hostinger.com</b> </a> : Basic Git Commands</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://learngitbranching.js.org/" target="_blank"><b>Git
+                Branching on Learngitbranching.js.org</b></a> : Learn Git
+            Branching</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://www.infoworld.com/article/3205884/27-essential-tips-for-git-and-github-users.html"
+              target="_blank"><b>Essential
+                Git Tips at Infoworld.com</b></a> : 27 essential tips for Git
+            and GitHub users</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://gcapes.github.io/git-course/12-hints-and-tips/"
+              target="_blank"><b>Git
+                Hints at Gscapes.github.io</b></a> : Git Hints and Tips </p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://rogerdudler.github.io/git-guide" target="_blank"><b>Git
+                Guide at Rogerdudler.github.io</b></a> : Git - the simple guide</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91"
+              target="_blank"><b>Some
+                Git Basics from Freecodecamp.org</b></a> : Learn the Basics of
+            Git in Under 10 Minutes</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://www.toptal.com/git/tips-and-practices"
+              target="_blank"><b>Git
+                Best Practices on Toptal.com</b></a> : Git Best Practices and
+            Tips</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="http://alanpryorjr.com/2019-03-09-git_tips/%0A"
+              target="_blank"><b>Advanced
+                Git Tips on Alanpryorjr.com</b></a> : 10 Advanced Git Tips to
+            Improve Your Developer Workflow</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://dzone.com/articles/top-20-git-commands-with-examples%0A"
+              target="_blank"><b>Top
+                Git Commands on Dzone.com</b></a> : Top 20 Git Commands With
+            Examples</p>
+        </div>
+        <div class="col-lg-offset-2 col-lg-10">
+          <p class="lead"><a href="https://www.git-tower.com/learn/git/commands/"
+              target="_blank"><b>Important
+                Commands at Git-tower.com</b> </a> : An Overview of the Most
+            Important Git Commands</p>
+        </div>
+      </div>
+      <!-- END GITTIPS -->
+      <!-- START GITVLOGS -->
+      <div id="gitvlogs" class="row featurette">
+        <div "col-lg-offset-1="" col-lg-10"="">
+          <h2 class="featurette-heading">Git Vlogs<span class="text-muted"><br>
+              In-depth approaches.</span></h2>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=kP-rEaamgHM%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20"
+              target="_blank"><b>Digital
+                Ocean</b></a> : Tips for Contributing to Open Source on Github.
+          </p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=6KoBsJfYBPM%0A"
+              target="_blank"><b>Dave
+                Gray Vlogs</b></a> : Learn Git and GitHub Basics for Beginners.</p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=Lr7sYCrhxE0%0A"
+              target="_blank"><b>Kode
+                Kloud</b></a> : Git Basics for DevOps Beginners.</p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=KXmVakqnFC8"
+              target="_blank"><b>Maya
+                Bello Vlogs</b></a> : Github Basics for Beginners.</p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=8JJ101D3knE%0A"
+              target="_blank"><b>Programming
+                with Mosh</b></a> : Git Tutorial for Beginners : Learn Git in 1
+            Hour.</p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=AQ9ksXoBAOg%0A"
+              target="_blank"><b>Simplelearn</b></a>
+            : What is Git? Git Explained.</p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=Y6zELNR7lio%0A"
+              target="_blank"><b>Eddie
+                Jaoude Vlogs</b></a> : Git's Most Useful Commands .</p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10"> </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=R8_veQiYBjI%0A"
+              target="_blank"><b>Techworld
+                with Nana </b></a> : Github Actions Tutorial. </p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10"> </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=-9Tb76tBoFU%0A"
+              target="_blank"><b>Faraday
+                Academy</b></a> : Intro to Git - Learn Version Control from the
+            Web and Command Line.</p>
+        </div>
+        <div class="col-lg-offset-1 col-lg-10"> </div>
+        <div class="col-lg-offset-1 col-lg-10">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=56jga91Nff8%0A"
+              target="_blank"><b>Fullstack
+                Academy</b></a> : Learn Git Tips &amp; Tricks.</p>
+        </div>
+      </div>
+      <!-- END GITVLOGS -->
+      <!-- START THE GITSCRIPTS -->
+      <div id="gitscripts" class="row featurette">
+        <div class="col-md-5"> </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Git Scripts<br>
+            <span class="text-muted"></span></h2>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=KvmlP3ReZcA"
+              target="_blank"><b>Devoxx</b></a>
+            : Kotlin for Java Programmers .</p>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=aSv5rwHxmrA"
+              target="_blank"><b>Edvin
+                Syse Android Vlog</b></a> : Converting a JavaFX app to
+            Kotlin/TornadoFX one class at a time.</p>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="https://www.youtube.com/watch?v=9xaQPfb3Atc"
+              target="_blank"><b>Andy
+                Balaam Android Vlog</b></a> : How to convert an android project
+            to Kotlin.</p>
+        </div>
+      </div>
+      <!-- END GITSCRIPTS -->
+      <!-- START GIT ON SLACK AND DISCS -->
+      <div id="slack" class="row featurette">
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <h2 class="featurette-heading">Git on Slack<span class="text-muted"><br>
+              Discover more resources.</span></h2>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="http://android-united.community/" target="_blank"><b>Android
+                United</b></a> : Friendly Slack community of Android developers
+            with thousands of people from all over the world.</p>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="https://adg-berlin.herokuapp.com/" target="_blank"><b>ADG
+                Berlin</b></a> : Group of Berlindroid, where Android developers
+            created a community for all interested.</p>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="http://slack.androiddevbr.org/" target="_blank"><b>Android
+                Dev BR</b></a> : Android developer community in Brazil.</p>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="https://www.javaspecialists.eu/slack/" target="_blank"><b>Java
+                Specialists</b></a> : Over 7000 developers already learning new
+            tips on Java and Android topics.</p>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="https://codenewbie.typeform.com/to/uwsWlZ" target="_blank"><b>CodeNewbie</b></a>
+            : Supportive community of programmers and people learning to code in
+            several languages including Java.</p>
+        </div>
+        <div class="col-md-5"> </div>
+        <div class="col-md-5">
+          <p class="lead"><a href="https://devchat.devolio.net/" target="_blank"><b>DevChat</b></a>
+            : Community of developers, asking and answering Android dev
+            questions, solving challenges.</p>
+          	<br>
+          	<br>
+                  <img src="../../../../Desktop/DeskPic2.png" alt="" height="100"
+          width="100"
+          align="left">
+        </div>
+
+      </div>
+    <!-- END GIT ON SLACK AND DISCS -->
+    <!-- START OF AGILEHUB -->
+    <div id="bhub" class="row featurette">
+      <div "col-lg-offset-1="" col-lg-10"="">
+        <h2 class="featurette-heading">Agile Hub</h2>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="https://www.leadingagile.com/the-company/resources/"
+            target="_blank"><b>Leading
+              Agile</b></a> : Posts on the fundamentals of taking Agile Theory
+          into practical implementation.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="https://www.101ways.com/blog/" target="_blank"><b>101
+              Ways</b></a> : All about Agile and improved collaboration.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="https://agileforall.com/agile-blog/" target="_blank"><b>Agile
+              for All</b></a> : Tips for developing an Agile team space.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="https://www.andrewcbancroft.com/" target="_blank"><b>Leading
+              Agile</b></a> : Free Agile resources and learn more about specific
+          Agile topics.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="https://www.solutionsiq.com/resource/" target="_blank"><b>Solutions
+              IQ</b></a> : Resource library which shares Agile learning and
+          experiences.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="http://www.funretrospectives.com/" target="_blank"><b>Fun
+              Retrospectives</b></a> : Activities and ideas for making agile
+          retrospectives more engaging.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="https://dzone.com/agile-methodology-training-tools-news"
+            target="_blank"><b>DZone
+              Agile Zone</b></a> : Agile resource spotlight.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="https://www.mountaingoatsoftware.com/blog" target="_blank"><b>Mike
+              Cohn’s Agile Blog</b></a> : Practical and actionable Agile advice,
+          tips and guidance for creating high-performing teams..</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="http://www.marcusoft.net/" target="_blank"><b>Marcusoft</b></a>
+          : Effective Agile for teams.</p>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <p class="lead"><a href="http://agilitrix.com/blog/" target="_blank"><b>Agilitrix
+              Blog</b></a>: Practices for the Agile Mindset.</p>
+      </div>
+    </div>
+    <!-- END AGILEHUB -->
+    <div id="bottomhub" class="row featurette"> <br>
+      <br>
+      <center> <a href="mailto:codingkit@gmail.com" target="_blank"><img src="screens/IconEmail1.png"
+            height="60"
+            width="60"></a>
+        <a href="http://github.com/CodingApps" target="_blank"><img src="screens/IconGit1.png"
+            height="60"
+            width="60"></a>
+      </center>
+    </div>
+    <!-- START THE FOOTER -->
+    <footer id="contact" class="row featurette">
+      <div class="row"> <br>
+        <div class="text-center col-sm-12 col-lg-12">
+          <h2 class="featurette-heading"><span class="text-muted"></span></h2>
+          <br>
+          <br>
+        </div>
+        <div class="row">
+          <!--        <p>© </p>--> </div>
+      </div>
+    </footer>
+    <!-- END FOOTER -->
+    <!-- END CONTENT -->
+    <!-- Bootstrap & Plugins core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ### IMPORTANT ### stickUp javascript file -->
+    <!-- ######################################### -->
+    <script src="js/stickUp.min.js"></script>
+    <!-- ######################################### -->
+    <!-- ### IMPORTANT ### stickUp options in use -->
+    <!-- ######################################## -->
+    <script type="text/javascript">
+      jQuery(function($) {
+        $(document).ready( function() {
+          $('.navbar-wrapper').stickUp({
+                        parts: {
+                          0:'home',
+                          1: 'gittips',
+                          2: 'gitvlogs',
+                          3: 'gitscripts',
+                          4: 'slack',
+                          5: 'bhub',     
+                        },
+                        itemClass: 'menuItem',
+                        itemHover: 'active',
+                        topMargin: 'auto'
+                      });
+        });
+      });
+    </script>
+    <!-- ######################################## -->
+    <!--                       1:'features',
+ 7: 'contact'-->
+  </body>
+</html>

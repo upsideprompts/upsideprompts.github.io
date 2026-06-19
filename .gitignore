@@ -1,0 +1,14 @@
+# Flutter build artifacts
+ebikehub2/.dart_tool/
+ebikehub2/build/
+ebikehub2/pubspec.lock
+ebikehub2/pubspec.yaml
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

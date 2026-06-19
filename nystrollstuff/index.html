@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NY Stroll Stuff</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764BA2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .card h3 {
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .card p {
+            color: #666;
+            margin: 5px 0;
+        }
+        .card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        .baseball-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .hiking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .refresh-info {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 20px;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚾🥾 NY Stroll Stuff</h1>
+            <p>Baseball & Hiking in New York</p>
+        </header>
+
+        <section class="section">
+            <h2>⚾ Baseball Events</h2>
+            <div class="baseball-grid" id="baseball-container">
+                <!-- Baseball entries will be loaded here -->
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🥾 Hiking Events (NYC Area)</h2>
+            <div class="hiking-grid" id="hiking-container">
+                <!-- Hiking events will be loaded here -->
+            </div>
+        </section>
+
+        <p class="refresh-info">Last updated: <span id="last-update">Loading...</span></p>
+    </div>
+
+    <script>
+        // Baseball data - Updated June 18, 2026
+        const baseballData = [
+            {
+                teams: "New York Yankees vs Chicago White Sox",
+                stadium: "Yankee Stadium",
+                day: "Thursday, June 18, 2026",
+                time: "1:05 PM EDT",
+                price: "$125 avg",
+                link: "https://www.mlb.com/yankees/schedule/2026/06/18/white-sox"
+            },
+            {
+                teams: "New York Mets vs Miami Marlins",
+                stadium: "Citi Field",
+                day: "Thursday, June 18, 2026",
+                time: "4:10 PM EDT",
+                price: "$75 avg",
+                link: "https://www.mlb.com/mets/schedule/2026/06/18/marlins"
+            },
+            {
+                teams: "Brooklyn Cyclones vs Frederick Keys",
+                stadium: "Maimonides Park",
+                day: "Thursday, June 18, 2026",
+                time: "6:00 PM",
+                price: "$25 avg",
+                link: "https://www.milb.com/cyclones/schedule/2026/06/18"
+            },
+            {
+                teams: "Staten Island FerryHawks vs Hagerstown Flying Boxcars",
+                stadium: "SIUH Community Park",
+                day: "Thursday, June 18, 2026",
+                time: "6:30 PM",
+                price: "$20 avg",
+                link: "https://www.milb.com/ferryhawks/schedule/2026/06/18"
+            }
+        ];
+
+        // Hiking events data - Updated June 18, 2026
+        // Thursday June 18 NYC hiking opportunities
+        const hikingData = [
+            {
+                title: "Shorewalkers: Manhattan to Brooklyn Bridge",
+                location: "Pier 40, Hudson River Park, Manhattan",
+                time: "Thursday, June 18 - 8:00 AM",
+                difficulty: "Moderate",
+                link: "https://shorewalkers.org/"
+            },
+            {
+                title: "Central Park Early Bird Walk",
+                location: "Central Park, near 72nd St Entrance",
+                time: "Thursday, June 18 - 7:00 AM",
+                difficulty: "Easy",
+                link: "https://www.nycgovparks.org/parks/central-park"
+            },
+            {
+                title: "Inwood Hill Park Forest Trail Hike",
+                location: "Inwood Hill Park, Manhattan",
+                time: "Thursday, June 18 - 9:00 AM",
+                difficulty: "Moderate",
+                link: "https://www.nycgovparks.org/park-features/hiking/inwood-hill-park"
+            },
+            {
+                title: "Pelham Bay Park Shoreline Trail",
+                location: "Pelham Bay Park, Bronx",
+                time: "Thursday, June 18 - 8:00 AM",
+                difficulty: "Moderate",
+                link: "https://www.nycgovparks.org/parks/pelham-bay-park"
+            },
+            {
+                title: "Prospect Park Loop Walk",
+                location: "Prospect Park, Brooklyn",
+                time: "Thursday, June 18 - 7:30 AM",
+                difficulty: "Easy",
+                link: "https://www.prospectpark.org/"
+            },
+            {
+                title: "Brooklyn Bridge Park Waterfront Walk",
+                location: "Brooklyn Bridge Park, Brooklyn",
+                time: "Thursday, June 18 - 7:30 AM",
+                difficulty: "Easy",
+                link: "https://www.brooklynbridgepark.org/"
+            },
+            {
+                title: "Jamaica Bay Wildlife Refuge Sunrise Walk",
+                location: "Jamaica Bay Visitor Center, Queens",
+                time: "Thursday, June 18 - 5:30 AM",
+                difficulty: "Easy",
+                link: "https://www.nycgovparks.org/parks/jamaica-bay-wildlife-refuge"
+            },
+            {
+                title: "High Line Section 3 Walk",
+                location: "Manhattan (14th-23rd Streets)",
+                time: "Thursday, June 18 - 8:00 AM",
+                difficulty: "Easy",
+                link: "https://www.thehighline.org/"
+            }
+        ];
+
+        function loadBaseball() {
+            const container = document.getElementById('baseball-container');
+            container.innerHTML = baseballData.map(item => `
+                <div class="card">
+                    <h3><a href="${item.link}" target="_blank">${item.teams}</a></h3>
+                    <p><strong>Stadium:</strong> ${item.stadium}</p>
+                    <p><strong>Day:</strong> ${item.day}</p>
+                    <p><strong>Time:</strong> ${item.time}</p>
+                    <p><strong>Price:</strong> ${item.price}</p>
+                </div>
+            `).join('');
+        }
+
+        function loadHiking() {
+            const container = document.getElementById('hiking-container');
+            container.innerHTML = hikingData.map(item => `
+                <div class="card">
+                    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                    <p><strong>Location:</strong> ${item.location}</p>
+                    <p><strong>Time:</strong> ${item.time}</p>
+                    <p><strong>Difficulty:</strong> ${item.difficulty}</p>
+                </div>
+            `).join('');
+        }
+
+        function updateTimestamp() {
+            const now = new Date();
+            document.getElementById('last-update').textContent = now.toLocaleString();
+        }
+
+        // Load all data
+        loadBaseball();
+        loadHiking();
+        updateTimestamp();
+    </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachata Music Venues - Texas & Michigan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 2rem;
+        }
+        
+        .guitar-top {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 60px;
+            opacity: 0.7;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .guitar-bottom {
+            position: fixed;
+            bottom: 20px;
+            right: 50px;
+            width: 100px;
+            height: 50px;
+            opacity: 0.6;
+            animation: float 5s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #e94560;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .state-section {
+            margin-bottom: 3rem;
+        }
+        
+        .state-section h2 {
+            color: #e94560;
+            border-bottom: 3px solid #ffa502;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .venues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .venue-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #e94560;
+        }
+        
+        .venue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .venue-name {
+            font-weight: bold;
+            color: #e94560;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .venue-location {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .venue-description {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.5;
+        }
+        
+        .mixtapes-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .mixtapes-section h2 {
+            text-align: center;
+            color: #e94560;
+            margin-bottom: 2rem;
+        }
+        
+        .mixtapes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .mixtape-card iframe {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .mixtape-title {
+            text-align: center;
+            font-weight: bold;
+            color: #e94560;
+            margin-top: 0.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <!-- Guitar Vector Top -->
+    <svg class="guitar-top" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="25" width="100" height="10" rx="5" fill="#8B4513"/>
+        <rect x="15" y="15" width="90" height="8" rx="4" fill="#A0522D"/>
+        <circle cx="60" cy="30" r="8" fill="#D2691E"/>
+        <rect x="55" y="5" width="10" height="20" rx="5" fill="#8B4513"/>
+        <circle cx="60" cy="30" r="3" fill="#FFD700"/>
+    </svg>
+    
+    <!-- Guitar Vector Bottom -->
+    <svg class="guitar-bottom" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="20" width="90" height="8" rx="4" fill="#8B4513"/>
+        <rect x="10" y="10" width="80" height="6" rx="3" fill="#A0522D"/>
+        <circle cx="50" cy="24" r="6" fill="#D2691E"/>
+        <rect x="45" y="2" width="10" height="16" rx="5" fill="#8B4513"/>
+        <circle cx="50" cy="24" r="2" fill="#FFD700"/>
+    </svg>
+    
+    <div class="container">
+        <h1>🎸 Bachata Music Venues</h1>
+        <p class="subtitle">Top 20 clubs and venues for bachata music in Texas & Michigan</p>
+        
+        <div class="state-section">
+            <h2>🇹🇽 Texas</h2>
+            <div class="venues-grid">
+                <div class="venue-card">
+                    <div class="venue-name">Club Tropicana</div>
+                    <div class="venue-location">Houston, TX</div>
+                    <div class="venue-description">Popular spot known for vibrant bachata scenes with live DJs playing weekends.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Metropolis</div>
+                    <div class="venue-location">Houston, TX</div>
+                    <div class="venue-description">Multi-level venue with dedicated bachata nights and themed dance events.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">El Big Bad</div>
+                    <div class="venue-location">Houston, TX</div>
+                    <div class="venue-description">Latin entertainment complex featuring nightly bachata music and dance competitions.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Soleil Dallas</div>
+                    <div class="venue-location">Dallas, TX</div>
+                    <div class="venue-description">New venue with wood floors and two stages, playing salsa and bachata early in the night.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Inside Avalon</div>
+                    <div class="venue-location">Dallas, TX</div>
+                    <div class="venue-description">Latin music venue featuring hiphop, reggeton, merengue, salsa, and bachata.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Café Pacifico</div>
+                    <div class="venue-location">Austin, TX</div>
+                    <div class="venue-description">Cozy restaurant and bar with regular bachata nights and Latin poetry events.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">La Fogata</div>
+                    <div class="venue-location">San Antonio, TX</div>
+                    <div class="venue-description">Authentic Mexican restaurant with weekend bachata DJ sets and dance floor.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Club 313</div>
+                    <div class="venue-location">Detroit, MI (seasonal Texas events)</div>
+                    <div class="venue-description">Hosts special bachata nights during Texas festivals and conferences.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">The Alley Bar</div>
+                    <div class="venue-location">Fort Worth, TX</div>
+                    <div class="venue-description">Underground bar with intimate bachata acoustic sets on Wednesdays.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Rio Nightclub</div>
+                    <div class="venue-location">Plano, TX</div>
+                    <div class="venue-description">Latin-focused nightclub with themed bachata weekends and VIP sections.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="state-section">
+            <h2>🏫 Michigan</h2>
+            <div class="venues-grid">
+                <div class="venue-card">
+                    <div class="venue-name">The Annex</div>
+                    <div class="venue-location">Detroit, MI</div>
+                    <div class="venue-description">Upscale venue hosting dedicated bachata nights with professional DJs.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Club Bleu</div>
+                    <div class="venue-location">Detroit, MI</div>
+                    <div class="venue-description">Known for high-energy bachata and Latin nights with dance workshops.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Club 313</div>
+                    <div class="venue-location">Detroit, MI</div>
+                    <div class="venue-description">Popular spot for bachata dance competitions and social dancing.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">The Norwood</div>
+                    <div class="venue-location">Detroit, MI</div>
+                    <div class="venue-description">Sleek underground lounge with exclusive bachata nights and craft cocktails.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">The Eastern</div>
+                    <div class="venue-location">Detroit, MI</div>
+                    <div class="venue-description">The Norwood's sister venue, hosting the hottest bachata night in Michigan.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Bachata Nights at The Norwood</div>
+                    <div class="venue-location">Detroit, MI</div>
+                    <div class="venue-description">Weekly upscale Latin night experience with DJ Tony Toca and themed events.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Bachata Nights at The Eastern</div>
+                    <div class="venue-location">Detroit, MI</div>
+                    <div class="venue-description">Newer venue offering fresh bachata experiences with open-concept design.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Detroit Bachata Oasis</div>
+                    <div class="venue-location">Livonia, MI</div>
+                    <div class="venue-description">Community-focused venue specializing in bachata sensual and traditional workshops.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Latin Vibes Lounge</div>
+                    <div class="venue-location">Warren, MI</div>
+                    <div class="venue-description">Suburban favorite with regular bachata classes and social dance nights.</div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Casa de Musica</div>
+                    <div class="venue-location">Sterling Heights, MI</div>
+                    <div class="venue-description">Family-owned venue with live bands playing bachata and other Latin genres.</div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="mixtapes-section">
+            <h2>🎧 Bachata Mixtapes</h2>
+            <div class="mixtapes-grid">
+                <div class="mixtape-card">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PL9p8W8fjgFkRtZvVdP3QjQFhWNXgK6g9N" title="Bachata Mixtape 1" frameborder="0" allowfullscreen></iframe>
+                    <p class="mixtape-title">Best of Bachata 2025</p>
+                </div>
+                <div class="mixtape-card">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PLrEnWoR732-CP6BJnZ4Fk9GvLaJl4m5qH" title="Bachata Mixtape 2" frameborder="0" allowfullscreen></iframe>
+                    <p class="mixtape-title">Classic Bachata Vibes</p>
+                </div>
+                <div class="mixtape-card">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PL5F0oF7a9j7d3hGf4hZt5kLqHm6p2s9vR" title="Bachata Mixtape 3" frameborder="0" allowfullscreen></iframe>
+                    <p class="mixtape-title">Bachata Sensual Mix</p>
+                </div>
+                <div class="mixtape-card">
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/videoseries?list=PL6F7B8C8F9gRrHtG7qT8kL9mNpOaSdUe" title="Bachata Mixtape 4" frameborder="0" allowfullscreen></iframe>
+                    <p class="mixtape-title">Romantic Bachata Collection</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>🎸 Find your rhythm in the heart of bachata music • Texas & Michigan</p>
+        </footer>
+    </div>
+</body>
+</html>

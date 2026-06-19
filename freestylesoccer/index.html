@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Freestyle Soccer Players</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        .header-vectors {
+            height: 150px;
+            background: linear-gradient(135deg, #1a1a1a 25%, #0a0a0a 25%, #0a0a0a 50%, #1a1a1a 50%, #1a1a1a 75%, #0a0a0a 75%);
+            background-size: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-vectors::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10,50 Q25,30 40,50 T80,50' stroke='%230066cc' stroke-width='2' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .footer-vectors {
+            height: 150px;
+            background: linear-gradient(135deg, #1a1a1a 25%, #0a0a0a 25%, #0a0a0a 50%, #1a1a1a 50%, #1a1a1a 75%, #0a0a0a 75%);
+            background-size: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: auto;
+        }
+        .footer-vectors::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10,50 Q25,70 40,50 T80,50' stroke='%2300cc66' stroke-width='2' fill='none' opacity='0.3'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0066cc;
+        }
+        .player-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #0066cc;
+        }
+        .player-name {
+            font-size: 1.5rem;
+            color: #00cc66;
+            margin-bottom: 1rem;
+        }
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .video-link {
+            background: #1a1a1a;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .video-link:hover {
+            background: #0066cc;
+        }
+        .articles {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+        .article {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 5px;
+        }
+        .article-title {
+            color: #00cc66;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-vectors"></div>
+    
+    <div class="container">
+        <h1>Top 5 Freestyle Soccer Players</h1>
+        
+        <div class="player-card">
+            <div class="player-name">1. Skillz</div>
+            <div class="videos">
+                <a href="https://youtube.com/watch?v=H28E8V7qQCw" class="video-link">Street Soccer Tricks</a>
+                <a href="https://youtube.com/watch?v=O-2sqG4wKPQ" class="video-link">Ball Juggling</a>
+                <a href="https://youtube.com/watch?v=MkX9eWtM0Lc" class="video-link">Kick ups Mastery</a>
+            </div>
+        </div>
+        
+        <div class="player-card">
+            <div class="player-name">2. McSkate</div>
+            <div class="videos">
+                <a href="https://youtube.com/watch?v=4E5qVQ4WESA" class="video-link">Freestyle Flow</a>
+                <a href="https://youtube.com/watch?v=8PIgP6GD84I" class="video-link">Cone Tricks</a>
+                <a href="https://youtube.com/watch?v=OqTbU9h84AY" class="video-link">Table Football</a>
+            </div>
+        </div>
+        
+        <div class="player-card">
+            <div class="player-name">3. Soccer Mind</div>
+            <div class="videos">
+                <a href="https://youtube.com/watch?v=2H9JbB7q8q4" class="video-link">Elastico Practice</a>
+                <a href="https://youtube.com/watch?v=J2hgbyPf6AM" class="video-link">Keepie Ups</a>
+                <a href="https://youtube.com/watch?v=Ld6T0wHmG1I" class="video-link">Circus Moves</a>
+            </div>
+        </div>
+        
+        <div class="player-card">
+            <div class="player-name">4. K-Skills</div>
+            <div class="videos">
+                <a href="https://youtube.com/watch?v=9Rz2h5wPF6I" class="video-link">Heel Tricks</a>
+                <a href="https://youtube.com/watch?v=K2w5Y3G9h7I" class="video-link">Step Over Freestyle</a>
+                <a href="https://youtube.com/watch?v=M5q3wP5g6hI" class="video-link">Spin Moves</a>
+            </div>
+        </div>
+        
+        <div class="player-card">
+            <div class="player-name">5. Freestyle FIFA</div>
+            <div class="videos">
+                <a href="https://youtube.com/watch?v=Q2Pg4w5g6hI" class="video-link">Cruyff Turn</a>
+                <a href="https://youtube.com/watch?v=R5g5g6hI2wP" class="video-link">Backheel Gig</a>
+                <a href="https://youtube.com/watch?v=W5g5g6hI3eY" class="video-link">No Foot Contact</a>
+            </div>
+        </div>
+        
+        <div class="articles">
+            <div class="article">
+                <div class="article-title">The Art of the Elastico: A Beginner's Guide</div>
+                <p>Learn how to execute the classic elastico move that confuses defenders.</p>
+            </div>
+            <div class="article">
+                <div class="article-title">Mastering Keepie Ups: From Basic to Advanced</div>
+                <p>Step-by-step guide to keeping the ball airborne with your feet.</p>
+            </div>
+            <div class="article">
+                <div class="article-title">Freestyle vs. Competitive Soccer: What's the Difference?</div>
+                <p>Understanding the creative side of soccer versus match play.</p>
+            </div>
+            <div class="article">
+                <div class="article-title">Best Places to Practice Freestyle Soccer</div>
+                <p>Finding the right spots and surfaces for perfecting your skills.</p>
+            </div>
+            <div class="article">
+                <div class="article-title">Essential Gear for Freestyle Players</div>
+                <p>The right shoes, balls, and accessories to elevate your game.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-vectors"></div>
+</body>
+</html>

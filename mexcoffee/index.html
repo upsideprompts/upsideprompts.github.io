@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café México - Bebidas Tradicionales</title>
+    <style>
+        :root {
+            --rojo-mex: #C41E3A;
+            --verde-mex: #006847;
+            --amarillo-mex: #FFD700;
+            --naranja-mex: #FF6600;
+            --crema-mex: #F5DEB3;
+            --cafe-mex: #4B2E2B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--rojo-mex) 0%, var(--verde-mex) 50%, var(--rojo-mex) 100%);
+            color: var(--crema-mex);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="10" cy="10" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="30" cy="30" r="1.5" fill="rgba(255,215,0,0.1)"/><circle cx="50" cy="20" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="70" cy="40" r="1" fill="rgba(255,215,0,0.1)"/><circle cx="80" cy="10" r="1.5" fill="rgba(255,215,0,0.1)"/><circle cx="90" cy="30" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="20" cy="70" r="1" fill="rgba(255,215,0,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,215,0,0.1)"/><circle cx="60" cy="60" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="80" cy="80" r="1" fill="rgba(255,215,0,0.1)"/><circle cx="70" cy="90" r="1.5" fill="rgba(255,215,0,0.1)"/><circle cx="50" cy="90" r="2" fill="rgba(255,215,0,0.1)"/><circle cx="30" cy="70" r="1" fill="rgba(255,215,0,0.1)"/><circle cx="10" cy="50" r="1.5" fill="rgba(255,215,0,0.1)"/><circle cx="90" cy="70" r="2" fill="rgba(255,215,0,0.1)"/></svg>');
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 5px solid var(--amarillo-mex);
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            color: var(--amarillo-mex);
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            color: var(--crema-mex);
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        
+        .coffee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .coffee-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid var(--amarillo-mex);
+        }
+        
+        .coffee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .coffee-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--rojo-mex);
+        }
+        
+        .coffee-info {
+            padding: 1.5rem;
+            color: var(--cafe-mex);
+        }
+        
+        .coffee-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--rojo-mex);
+        }
+        
+        .coffee-info p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .coffee-link {
+            display: inline-block;
+            background: var(--rojo-mex);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: 2px solid var(--amarillo-mex);
+        }
+        
+        .coffee-link:hover {
+            background: var(--verde-mex);
+            border-color: var(--crema-mex);
+        }
+        
+        .facts-section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            backdrop-filter: blur(10px);
+            border: 2px dashed var(--amarillo-mex);
+        }
+        
+        .facts-section h2 {
+            color: var(--amarillo-mex);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .fact-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            color: var(--crema-mex);
+        }
+        
+        .fact-item::before {
+            content: "☕";
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid var(--amarillo-mex);
+            color: var(--crema-mex);
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            color: var(--amarillo-mex);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .coffee-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☕ Café México 🇲🇽</h1>
+            <p>Descubre las deliciosas bebidas cafeteras tradicionales de México</p>
+        </header>
+        
+        <div class="coffee-grid">
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/161117478152-86050c3c85c3?w=400" alt="Café de Olla">
+                <div class="coffee-info">
+                    <h3>Café de Olla</h3>
+                    <p>Café tradicional preparado con piloncillo y canela, originario del norte de México.</p>
+                    <a href="https://es.wikipedia.org/wiki/Caf%C3%A9_de_Olla" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/1600566752355-3579cbed9e9b?w=400" alt="Café de Chiapas">
+                <div class="coffee-info">
+                    <h3>Café de Chiapas</h3>
+                    <p>Café de alta calidad de la región cafetalera de Chiapas, con notas florales.</p>
+                    <a href="https://www.chiapas.com/cafe/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/1572119865084-5e40e63b0072?w=400" alt="Café de Veracruz">
+                <div class="coffee-info">
+                    <h3>Café de Veracruz</h3>
+                    <p>Conocido como el "Baristo del Sur", produce cafés con sabor dulce y aroma intenso.</p>
+                    <a href="https://veracruz.gob.mx/cultura/cafe-de-veracruz/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/1595141411341-8d8a6e9a3b8f?w=400" alt="Café de Oaxaca">
+                <div class="coffee-info">
+                    <h3>Café de Oaxaca</h3>
+                    <p>Café de origen certificado con perfil de sabor único y aroma característico.</p>
+                    <a href="https://oaxaca.gob.mx/cultura/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/161117478152-86050c3c85c3?w=400" alt="Café de Puebla">
+                <div class="coffee-info">
+                    <h3>Café de Puebla</h3>
+                    <p>Reconocido internacionalmente por su calidad y características especiales.</p>
+                    <a href="https://puebla.gob.mx/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/1620234457148-f1c5e2c7e6e1?w=400" alt="Café de Chiapas">
+                <div class="coffee-info">
+                    <h3>Café de Chiapas</h3>
+                    <p>Producido en las regiones altas de Chiapas, famoso por su sabor limpio.</p>
+                    <a href="https://chiapas.gob.mx/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/1600566752355-3579cbed9e9b?w=400" alt="Café de Veracruz">
+                <div class="coffee-info">
+                    <h3>Café de Veracruz</h3>
+                    <p>Con sabor único y aroma intenso, ideal para amantes del café.</p>
+                    <a href="https://veracruz.gob.mx/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/1572119865084-5e40e63b0072?w=400" alt="Café de Oaxaca">
+                <div class="coffee-info">
+                    <h3>Café de Oaxaca</h3>
+                    <p>Con notas cítricas y un perfil de sabor equilibrado.</p>
+                    <a href="https://oaxaca.gob.mx/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/161117478152-86050c3c85c3?w=400" alt="Café de Olla">
+                <div class="coffee-info">
+                    <h3>Café de Olla</h3>
+                    <p>La bebida más emblemática de las fiestas patrias y celebraciones.</p>
+                    <a href="https://es.wikipedia.org/wiki/Caf%C3%A9_de_Olla" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+            
+            <div class="coffee-card">
+                <img src="https://images.unsplash.com/photo/1620234457148-f1c5e2c7e6e1?w=400" alt="Café de Puebla">
+                <div class="coffee-info">
+                    <h3>Café de Puebla</h3>
+                    <p>Conocido por su sabor dulce y su proceso de selección artesanal.</p>
+                    <a href="https://puebla.gob.mx/" class="coffee-link" target="_blank">Ver más</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="facts-section">
+            <h2>¡Curiosidades sobre el Café en México! 🇲🇽</h2>
+            <div class="fact-item">México es el segundo productor de café más grande del mundo, después de Brasil</div>
+            <div class="fact-item">El café llegó a México en el siglo XVI con los conquistadores españoles</div>
+            <div class="fact-item">Chiapas es la principal región productora de café en México</div>
+            <div class="fact-item">El café de Olla se prepara tradicionalmente en una olla de barro</div>
+            <div class="fact-item">Veracruz produce el 40% del café del país</div>
+            <div class="fact-item">El café es parte del patrimonio cultural de México</div>
+        </div>
+        
+        <footer>
+            <div class="footer-logo">Café México 🇲🇽</div>
+            <p>Disfrutando de las tradiciones cafeteras de nuestro querido México</p>
+        </footer>
+    </div>
+</body>
+</html>

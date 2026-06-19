@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Electric Bikes 2025-2026</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #1a1a2e 50%, #16213e 75%, #0f3460 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #ecf0f1;
+        }
+        .filters {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.9rem;
+            border-radius: 6px;
+            margin-bottom: 1.2rem;
+        }
+        .filter-group {
+            margin-bottom: 0.8rem;
+        }
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .slider-container input[type="range"] {
+            flex: 1;
+            height: 6px;
+            -webkit-appearance: none;
+            background: linear-gradient(90deg, #0066cc, #00cc66);
+            border-radius: 3px;
+            outline: none;
+        }
+        .slider-value {
+            width: 60px;
+            text-align: center;
+            color: #00cc66;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        .bike-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+        .bike-list-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.85rem;
+            color: #bdc3c7;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .bike-list-item:hover {
+            background: rgba(0, 102, 204, 0.3);
+            color: #00cc66;
+        }
+        .bike-list-item.active {
+            background: rgba(0, 102, 204, 0.4);
+            color: #00cc66;
+        }
+        .bike-list-item .bike-range {
+            color: #666;
+            font-size: 0.75rem;
+        }
+        .bike-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border-left: 2px solid #0066cc;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .bike-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 15px rgba(0, 102, 204, 0.3);
+        }
+        .bike-name {
+            font-size: 1.1rem;
+            color: #00cc66;
+            margin-bottom: 0.3rem;
+        }
+        .bike-specs {
+            color: #888;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+        }
+        .bike-summary {
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+        }
+        .video-link {
+            background: #1a1a1a;
+            padding: 0.6rem;
+            border-radius: 3px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 0.85rem;
+        }
+        .video-link:hover {
+            background: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Top 10 Electric Bikes 2025-2026</h1>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="rangeSlider">Minimum Range: <span id="rangeValue" class="slider-value">20</span> miles</label>
+                <div class="slider-container">
+                    <input type="range" id="rangeSlider" min="10" max="100" value="20" step="5">
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="speedSlider">Minimum Top Speed: <span id="speedValue" class="slider-value">20</span> mph</label>
+                <div class="slider-container">
+                    <input type="range" id="speedSlider" min="10" max="60" value="20" step="5">
+                </div>
+            </div>
+        </div>
+        
+        <div class="bike-list" id="bikeList">
+            <div class="bike-list-item" data-index="0" data-range="50" data-speed="28">1. Specialized Turbo Vado SL 4.0 <span class="bike-range">(50mi | 28mph)</span></div>
+            <div class="bike-list-item" data-index="1" data-range="65" data-speed="28">2. Trek Domane E27 SL <span class="bike-range">(65mi | 28mph)</span></div>
+            <div class="bike-list-item" data-index="2" data-range="45" data-speed="20">3. Rad Power Bikes RadRunner 4 <span class="bike-range">(45mi | 20mph)</span></div>
+            <div class="bike-list-item" data-index="3" data-range="75" data-speed="28">4. Giant/LIGER FastRoad SL <span class="bike-range">(75mi | 28mph)</span></div>
+            <div class="bike-list-item" data-index="4" data-range="40" data-speed="20">5. Lectric XP 2.0 <span class="bike-range">(40mi | 20mph)</span></div>
+            <div class="bike-list-item" data-index="5" data-range="55" data-speed="28">6. Specialized Turbo Como 4.0 SL <span class="bike-range">(55mi | 28mph)</span></div>
+            <div class="bike-list-item" data-index="6" data-range="35" data-speed="20">7. Juiced Bicycles Scorpion X <span class="bike-range">(35mi | 20mph)</span></div>
+            <div class="bike-list-item" data-index="7" data-range="60" data-speed="28">8. VanMoof S5 <span class="bike-range">(60mi | 28mph)</span></div>
+            <div class="bike-list-item" data-index="8" data-range="45" data-speed="25">9. Aventon Pace 500 <span class="bike-range">(45mi | 25mph)</span></div>
+            <div class="bike-list-item" data-index="9" data-range="30" data-speed="20">10. Swellpro SplashWaterproof <span class="bike-range">(30mi | 20mph)</span></div>
+        </div>
+        
+        <div id="bikesContainer">
+            <div class="bike-card" data-range="50" data-speed="28">
+                <div class="bike-name">1. Specialized Turbo Vado SL 4.0</div>
+                <div class="bike-specs">Range: 50 miles | Top Speed: 28 mph</div>
+                <div class="bike-summary">This lightweight commuter e-bike features a carbon fiber frame and smooth pedal-assist system. Perfect for urban daily rides with excellent battery efficiency and integrated lights for safety.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="65" data-speed="28">
+                <div class="bike-name">2. Trek Domane E27 SL</div>
+                <div class="bike-specs">Range: 65 miles | Top Speed: 28 mph</div>
+                <div class="bike-summary">Built for endurance riding, this e-bike combines comfort with performance. The Bosch motor provides natural-feeling assistance across varied terrain and road conditions.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="45" data-speed="20">
+                <div class="bike-name">3. Rad Power Bikes RadRunner 4</div>
+                <div class="bike-specs">Range: 45 miles | Top Speed: 20 mph</div>
+                <div class="bike-summary">An affordable cargo e-bike perfect for hauling groceries or kids. Features a sturdy step-through frame and powerful rear hub motor for hill climbing.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="75" data-speed="28">
+                <div class="bike-name">4. Giant/LIGER FastRoad SL</div>
+                <div class="bike-specs">Range: 75 miles | Top Speed: 28 mph</div>
+                <div class="bike-summary">This high-performance commuter offers exceptional range with a lightweight aluminum frame. The mid-drive motor delivers efficient power transfer and smooth shifting.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="40" data-speed="20">
+                <div class="bike-name">5. Lectric XP 2.0</div>
+                <div class="bike-specs">Range: 40 miles | Top Speed: 20 mph</div>
+                <div class="bike-summary">Folding e-bike with fat tires for all-terrain capability. Great for apartment storage and trail riding with its robust design and affordable price point.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="55" data-speed="28">
+                <div class="bike-name">6. Specialized Turbo Como 4.0 SL</div>
+                <div class="bike-specs">Range: 55 miles | Top Speed: 28 mph</div>
+                <div class="bike-summary">Premium commuter with step-through frame option. Features integrated Garmin GPS navigation and premium shock absorption for daily city riding comfort.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="35" data-speed="20">
+                <div class="bike-name">7. Juiced Bicycles Scorpion X</div>
+                <div class="bike-specs">Range: 35 miles | Top Speed: 20 mph</div>
+                <div class="bike-summary">Affordable commuter with dual suspension and puncture-resistant tires. Offers good value with reliable components and colorful frame options.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="60" data-speed="28">
+                <div class="bike-name">8. VanMoof S5</div>
+                <div class="bike-specs">Range: 60 miles | Top Speed: 28 mph</div>
+                <div class="bike-summary">Smart urban e-bike with built-in GPS tracking and anti-theft security. Features a sleek minimalist design with integrated lights and app connectivity.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="45" data-speed="25">
+                <div class="bike-name">9. Aventon Pace 500</div>
+                <div class="bike-specs">Range: 45 miles | Top Speed: 25 mph</div>
+                <div class="bike-summary">Budget-friendly commuter with step-through option. Includes front suspension and commuter accessories mount for daily errands and rides.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+            
+            <div class="bike-card" data-range="30" data-speed="20">
+                <div class="bike-name">10. Swellpro SplashWaterproof</div>
+                <div class="bike-specs">Range: 30 miles | Top Speed: 20 mph</div>
+                <div class="bike-summary">Unique waterproof e-bike that can be ridden in rain or even on water surfaces. Features sealed electronics and floating capability for adventure enthusiasts.</div>
+                <div class="videos">
+                    <a href="https://youtube.com/watch?v=first" class="video-link">Review Video</a>
+                    <a href="https://youtube.com/watch?v=second" class="video-link">Test Ride</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const rangeSlider = document.getElementById('rangeSlider');
+        const speedSlider = document.getElementById('speedSlider');
+        const rangeValue = document.getElementById('rangeValue');
+        const speedValue = document.getElementById('speedValue');
+        const bikesContainer = document.getElementById('bikesContainer');
+        const bikeList = document.getElementById('bikeList');
+        const bikeListItems = document.querySelectorAll('.bike-list-item');
+        const bikes = document.querySelectorAll('.bike-card');
+        
+        rangeSlider.addEventListener('input', updateFilters);
+        speedSlider.addEventListener('input', updateFilters);
+        
+        // Click handler for list items
+        bikeListItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const index = parseInt(this.dataset.index);
+                const targetCard = bikes[index];
+                
+                // Remove active class from all items
+                bikeListItems.forEach(i => i.classList.remove('active'));
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Scroll to the corresponding card
+                targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+        
+        function updateFilters() {
+            rangeValue.textContent = rangeSlider.value;
+            speedValue.textContent = speedSlider.value;
+            
+            const minRange = parseInt(rangeSlider.value);
+            const minSpeed = parseInt(speedSlider.value);
+            
+            bikeListItems.forEach((item, index) => {
+                const bikeRange = parseInt(item.dataset.range);
+                const bikeSpeed = parseInt(item.dataset.speed);
+                
+                if (bikeRange >= minRange && bikeSpeed >= minSpeed) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            bikes.forEach(bike => {
+                const bikeRange = parseInt(bike.dataset.range);
+                const bikeSpeed = parseInt(bike.dataset.speed);
+                
+                if (bikeRange >= minRange && bikeSpeed >= minSpeed) {
+                    bike.style.display = 'block';
+                } else {
+                    bike.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

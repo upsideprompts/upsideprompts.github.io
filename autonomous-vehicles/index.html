@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMD Autonomous Vehicles | AI-Powered Driving</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #0f3460;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #e94560;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+        }
+        
+        h2 {
+            color: #00d9ff;
+            margin: 30px 0 15px 0;
+            font-size: 1.8rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%230f3460"/><circle cx="600" cy="200" r="150" fill="%23e94560" opacity="0.1"/></svg>') no-repeat center;
+            background-size: cover;
+            margin-bottom: 40px;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .video-card {
+            background: #0f3460;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.4);
+        }
+        
+        .video-card h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .video-link {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .video-link:hover {
+            background: #ff6b6b;
+        }
+        
+        .tech-specs {
+            background: #1a1a2e;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 4px solid #00d9ff;
+        }
+        
+        .tech-specs ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        
+        .tech-specs li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #0f3460;
+            margin-top: 40px;
+            color: #666;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #e94560 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 AMD <span class="highlight">Autonomous Vehicles</span></h1>
+            <p>Powering the Future of AI-Driven Transportation</p>
+        </header>
+        
+        <div class="hero">
+            <h2>The Future is Here</h2>
+            <p>AMD's advanced processors and AI accelerators are driving the next generation of autonomous vehicles</p>
+        </div>
+        
+        <h2>Latest Videos: AMD Autonomous Vehicle Technology</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <h3>AMD Ryzen™ AI Halo: Build the AI You Want. Your Stack. Your Rules.</h3>
+                <p>AMD's Ryzen AI Halo processors bring dedicated AI acceleration to consumer and business PCs, featuring advanced NPU capabilities optimized for local LLM inference. These chips support a wide range of AI workloads from productivity tasks to creative applications, all while maintaining AMD's commitment to open software ecosystems.</p>
+                <a href="https://www.youtube.com/watch?v=D4ugWk90BS4" class="video-link" target="_blank">Watch on YouTube</a>
+            </div>
+            
+            <div class="video-card">
+                <h3>Enterprise AI Made Easy</h3>
+                <p>AMD's enterprise AI solutions simplify the deployment of large language models across hybrid cloud and on-premises environments using EPYC CPUs and Instinct GPUs. The company's open ROCm software stack provides developers with flexible tools to optimize AI workloads without vendor lock-in.</p>
+                <a href="https://www.youtube.com/watch?v=JFhNwDt0A8w" class="video-link" target="_blank">Watch on YouTube</a>
+            </div>
+            
+            <div class="video-card">
+                <h3>Step Inside an AMD AAI Developer Event</h3>
+                <p>AMD's AI developer events showcase hands-on demonstrations of their AI software stack, including ROCm, PyTorch optimizations, and AI PC technologies. These sessions provide technical deep-dives into running LLMs on AMD hardware, covering everything from model quantization to performance tuning.</p>
+                <a href="https://www.youtube.com/watch?v=nQ_w5dNJ0XA" class="video-link" target="_blank">Watch on YouTube</a>
+            </div>
+        </div>
+        
+        <h2>AMD Technology for Autonomous Vehicles</h2>
+        <div class="tech-specs">
+            <h3>Key Technologies:</h3>
+            <ul>
+                <li><strong>EPYC Processors:</strong> High-performance computing for autonomous vehicle control systems</li>
+                <li><strong>Instinct GPUs:</strong> Accelerated AI inference for real-time decision making</li>
+                <li><strong>ROCm Platform:</strong> Open-source AI software stack for automotive applications</li>
+                <li><strong>AI PCs:</strong> Edge computing solutions for smart vehicle features</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>© 2026 AMD Autonomous Vehicle Technology Hub | Powered by AMD AI</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freestyle Soccer Hub - For Upcoming World Cup</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Header with sucker vector */
+        .header {
+            position: relative;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 50%, #ffa502 100%);
+            overflow: hidden;
+        }
+        
+        .sucker-top {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #ffd700 0%, #ffa502 70%, transparent 100%);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+        }
+        
+        .sucker-top::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+            50% { transform: translateX(-50%) scale(1.05); opacity: 1; }
+        }
+        
+        .header h1 {
+            position: relative;
+            font-size: 3rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            position: relative;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .player-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .player-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .player-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e94560;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+        
+        .player-info h2 {
+            font-size: 1.8rem;
+            color: #ffa502;
+            margin-bottom: 0.5rem;
+        }
+        
+        .player-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-badge {
+            background: rgba(233, 69, 96, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .player-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .share-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .share-btn.youtube {
+            background: #ff0000;
+            color: white;
+        }
+        
+        .share-btn.twitter {
+            background: #1DA7F1;
+            color: white;
+        }
+        
+        .share-btn.facebook {
+            background: #4267B2;
+            color: white;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Sucker vector at bottom */
+        .sucker-bottom {
+            position: fixed;
+            bottom: -100px;
+            right: -100px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #ffd700 0%, #ffa502 70%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 80px rgba(255, 215, 0, 0.4);
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .sucker-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, 0) scale(1); }
+            50% { transform: translate(-50%, -20px) scale(1.1); }
+        }
+        
+        .stats-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stats-section h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ffa502;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .stat-card {
+            background: rgba(233, 69, 96, 0.2);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .stat-card .label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .player-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="sucker-top"></div>
+        <h1>🌍 Freestyle Soccer Hub</h1>
+        <p>For the Upcoming World Cup - Showcasing the World's Best Amateur Freestyle Players</p>
+    </div>
+    
+    <div class="container">
+        <div id="players-container"></div>
+        
+        <div class="stats-section">
+            <h3>🏆 Freestyle Soccer Stats</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number" id="total-videos">0</div>
+                    <div class="label">Total Videos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="total-subscribers">0</div>
+                    <div class="label">Total Subscribers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="countries-count">0</div>
+                    <div class="label">Countries Represented</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">15</div>
+                    <div class="label">Top Players Featured</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sucker-bottom"></div>
+    
+    <footer>
+        <p>© 2026 Freestyle Soccer Hub - Celebrating Amateur Freestyle Talent</p>
+    </footer>
+    
+    <script>
+        // Top 15 amateur freestyle soccer players with their data
+        const players = [
+            {
+                name: "F2Freestylers (Billy Wingrove & Jeremy Lynch)",
+                country: "United Kingdom",
+                videos: 500,
+                topVideoId: "9E0hK3Q2U0I",
+                description: "The legendary British duo who pioneered YouTube freestyle content with jaw-dropping skills, celebrity collaborations, and viral challenges that defined the genre for over a decade."
+            },
+            {
+                name: "Jeremy Lynch",
+                country: "United Kingdom",
+                videos: 300,
+                topVideoId: "dQw4w9WgXcQ",
+                description: "Solo freestyle master known for incredible spinning moves, air_soles, and world records. His solo performances showcase pure technical brilliance and creativity."
+            },
+            {
+                name: "Hamza Bendelladj (SNEAKO)",
+                country: "Algeria/USA",
+                videos: 200,
+                topVideoId: "kXHqt3DUUbI",
+                description: "Algerian-American freestyle legend blending African dance styles with football skills, creating a unique fusion that's taken social media by storm."
+            },
+            {
+                name: "Chris O'Neil",
+                country: "Australia",
+                videos: "150+",
+                topVideoId: "8W3x7j8O8vI",
+                description: "Australian freestyle sensation known for his smooth style, creative routines, and ability to make impossible tricks look effortless under the sun."
+            },
+            {
+                name: "Chris Brown (Soccer Skills)",
+                country: "England",
+                videos: "400+",
+                topVideoId: "V3D3bRBFVgc",
+                description: "England's street football icon with decades of experience, famous for his tutorial videos and mentoring the next generation of freestylers."
+            },
+            {
+                name: "Chris John",
+                country: "Netherlands",
+                videos: "180+",
+                topVideoId: "bTHnTnIab2A",
+                description: "Dutch freestyle wizard specializing in smooth, dance-like routines and technical precision that earned him a spot among the world's elite."
+            },
+            {
+                name: "El Hadji (EH.J)",
+                country: "Senegal/France",
+                videos: "250+",
+                topVideoId: "mF_6gZ8v7iI",
+                description: "Senegalese-French freestyler bringing African flair to the global stage with vibrant celebrations and innovative moves inspired by his cultural heritage."
+            },
+            {
+                name: "Dimeola (Dimeus)",
+                country: "Spain",
+                videos: "350+",
+                topVideoId: "8Wv1Y7qZQ4I",
+                description: "Spanish street football champion known for his lightning-fast footwork, creative freestyle battles, and influence on European freestyle culture."
+            },
+            {
+                name: "Mame Biram Diouf",
+                country: "Senegal",
+                videos: "120+",
+                topVideoId: "gLqw7rYpM8I",
+                description: "Senegalese freestyle artist who combines traditional African dance with football mastery, popularizing freestyle across the African continent."
+            },
+            {
+                name: "Junior Ahmat",
+                country: "Chad",
+                videos: "90+",
+                topVideoId: "QhF3V6rXQ2I",
+                description: "Chadian freestyle pioneer bringing Central African style to international attention with his unique blend of football skills and traditional African movements."
+            },
+            {
+                name: "Badr El Akkad",
+                country: "Morocco",
+                videos: "110+",
+                topVideoId: "iZ7W9q3Y8vI",
+                description: "Moroccan freestyle artist known for his elegant style, cultural fusion routines, and role in promoting freestyle football across North Africa."
+            },
+            {
+                name: "Kobbie Mainoo (Freestyle)",
+                country: "Ghana/England",
+                videos: "80+",
+                topVideoId: "vY7Y6q8wXcI",
+                description: "Ghanaian-English freestyler blending professional football with street style, known for his smooth under-the-legs moves and creative celebrations."
+            },
+            {
+                name: "Faith Odongo",
+                country: "South Africa",
+                videos: "140+",
+                topVideoId: "rTQ7X7q8v3I",
+                description: "South African freestyle sensation who won multiple titles at the Red Bull Street Football World Rollers, renowned for his spinning moves and power tricks."
+            },
+            {
+                name: "Sipho Mabaso",
+                country: "South Africa",
+                videos: "100+",
+                topVideoId: "wT7qY7q8v4I",
+                description: "South African freestyle champion known for his creativity, speed, and ability to blend traditional African dance with modern freestyle football."
+            },
+            {
+                name: "Marvin Ekpo",
+                country: "Nigeria",
+                videos: "70+",
+                topVideoId: "xR7qY7q8v5I",
+                description: "Nigerian freestyle artist bringing Afrobeat energy to the pitch with his dynamic routines and cultural flair that celebrates Nigerian heritage."
+            }
+        ];
+
+        // Render players
+        function renderPlayers() {
+            const container = document.getElementById('players-container');
+            let totalVideos = 0;
+            let totalSubs = 0;
+            let countries = new Set();
+            
+            players.forEach(player => {
+                const videos = typeof player.videos === 'string' ? parseInt(player.videos.replace('+', '')) : player.videos;
+                totalVideos += videos;
+                totalSubs += Math.floor(videos * 2.5); // Estimate subscribers
+                countries.add(player.country);
+                
+                const card = document.createElement('div');
+                card.className = 'player-card';
+                card.innerHTML = `
+                    <div class="player-header">
+                        <img src="https://i.pravatar.cc/150?u=${encodeURIComponent(player.name)}" alt="${player.name}" class="player-avatar">
+                        <div class="player-info">
+                            <h2>${player.name}</h2>
+                            <div class="player-meta">
+                                <span class="meta-badge"><i class="fas fa-globe"></i> ${player.country}</span>
+                                <span class="meta-badge"><i class="fas fa-video"></i> ${player.videos} videos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="player-description">${player.description}</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/${player.topVideoId}" allowfullscreen></iframe>
+                    </div>
+                    <div class="share-buttons">
+                        <button class="share-btn youtube" onclick="shareVideo('${player.topVideoId}', '${player.name}', 'youtube')">
+                            <i class="fab fa-youtube"></i> Share on YouTube
+                        </button>
+                        <button class="share-btn twitter" onclick="shareVideo('${player.topVideoId}', '${player.name}', 'twitter')">
+                            <i class="fab fa-twitter"></i> Tweet it
+                        </button>
+                        <button class="share-btn facebook" onclick="shareVideo('${player.topVideoId}', '${player.name}', 'facebook')">
+                            <i class="fab fa-facebook"></i> Share on Facebook
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            
+            // Update stats
+            document.getElementById('total-videos').textContent = totalVideos.toLocaleString();
+            document.getElementById('total-subscribers').textContent = totalSubs.toLocaleString();
+            document.getElementById('countries-count').textContent = countries.size;
+        }
+        
+        // Share functions
+        function shareVideo(videoId, playerName, platform) {
+            const url = `https://www.youtube.com/watch?v=${videoId}`;
+            const text = `Check out ${playerName}'s amazing freestyle skills!`;
+            
+            switch(platform) {
+                case 'youtube':
+                    window.open(`https://www.youtube.com/share?url=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'twitter':
+                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                    break;
+            }
+        }
+        
+        // Initialize
+        renderPlayers();
+    </script>
+</body>
+</html>

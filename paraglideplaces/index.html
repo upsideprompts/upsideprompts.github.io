@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Paragliding Places in USA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #add8e6 0%, #87ceeb 50%, #98fbff 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        h1 {
+            color: #1a1a2e;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #4682b4;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .filters-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .filters-title {
+            color: #1a1a2e;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .filter-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .filter-item label {
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .slider-container {
+            margin: 1rem 0;
+        }
+        .slider-container label {
+            display: block;
+            font-size: 0.85rem;
+            color: #4682b4;
+            margin-bottom: 0.3rem;
+        }
+        .slider-container input[type="range"] {
+            width: 100%;
+            max-width: 300px;
+        }
+        .slider-value {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        .place-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .place-name {
+            color: #1a1a2e;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .place-location {
+            color: #4682b4;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        .place-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: #e6f3ff;
+            color: #1a1a2e;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        .place-details {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .place-details div {
+            margin: 0.2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://image.pollinations.ai/prompt/minimal%20paraglider%20flying%20in%20blue%20sky,%20simple%20line%20art%20style,%20clean%20design?width=150&height=150&nologo=true" alt="Paraglider">
+            <h1>Top Paragliding Places</h1>
+            <p class="subtitle">USA Adventure Locations for Paragliding Enthusiasts</p>
+        </div>
+
+        <div class="filters-section">
+            <div class="filters-title">
+                <span>🎯</span> Filter Locations
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-item">
+                    <input type="checkbox" id="mountain" checked>
+                    <label for="mountain">🏔️ Mountain</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="ocean" checked>
+                    <label for="ocean">🌊 Ocean</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="hill" checked>
+                    <label for="hill">🌄 Hill</label>
+                </div>
+                <div class="filter-item">
+                    <input type="checkbox" id="valley" checked>
+                    <label for="valley">🌄 Valley</label>
+                </div>
+            </div>
+
+            <div class="slider-container">
+                <label for="height-slider">Minimum Height: <span id="height-value">500</span> ft</label>
+                <input type="range" id="height-slider" min="0" max="10000" value="500" step="100">
+            </div>
+
+            <div class="slider-container">
+                <label for="wind-slider">Minimum Wind Speed: <span id="wind-value">5</span> mph</label>
+                <input type="range" id="wind-slider" min="0" max="30" value="5" step="1">
+            </div>
+        </div>
+
+        <div class="places-grid" id="places-grid">
+            <!-- Place cards will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const places = [
+            { name: "Point of the Mountain", location: "Bureau Creek, Utah", tags: ["Mountain", "River"], height: 5500, wind: 8, difficulty: "Intermediate" },
+            { name: "Monarch Pass", location: "Colorado Rockies, CO", tags: ["Mountain"], height: 11000, wind: 12, difficulty: "Advanced" },
+            { name: "Crown Point", location: "Pacific Coast, OR", tags: ["Ocean"], height: 700, wind: 15, difficulty: "Beginner" },
+            { name: "Squaw Valley", location: "Lake Tahoe, CA", tags: ["Mountain"], height: 8600, wind: 10, difficulty: "Intermediate" },
+            { name: "Catalina Island", location: "California Channel Islands", tags: ["Ocean"], height: 900, wind: 18, difficulty: "Intermediate" },
+            { name: "Mount Washington", location: "New Hampshire", tags: ["Mountain"], height: 6200, wind: 25, difficulty: "Advanced" },
+            { name: "Prairie City", location: "California Central Valley", tags: ["Hill"], height: 1500, wind: 10, difficulty: "Beginner" },
+            { name: "Fort Ord", location: "Monterey Bay, CA", tags: ["Hill", "Ocean"], height: 1200, wind: 14, difficulty: "Beginner" },
+            { name: "Table Mountain", location: "South Lake Tahoe, CA", tags: ["Mountain"], height: 3000, wind: 8, difficulty: "Intermediate" },
+            { name: "Eagle Point", location: "Park City, UT", tags: ["Mountain"], height: 7200, wind: 11, difficulty: "Intermediate" },
+            { name: "Chamonix", location: "French Alps, Europe", tags: ["Mountain"], height: 10000, wind: 20, difficulty: "Advanced" },
+            { name: "Hood River", location: "Oregon Columbia River Gorge", tags: ["River"], height: 200, wind: 16, difficulty: "Intermediate" },
+            { name: "Bishop", location: "California Eastern Sierra", tags: ["Mountain"], height: 4000, wind: 13, difficulty: "Intermediate" },
+            { name: "Breckenridge", location: "Colorado Rockies", tags: ["Mountain"], height: 9600, wind: 9, difficulty: "Intermediate" },
+            { name: "Santa Barbara", location: "California Coast", tags: ["Ocean"], height: 300, wind: 12, difficulty: "Beginner" },
+            { name: "Mammoth Lakes", location: "California Eastern Sierra", tags: ["Mountain", "Valley"], height: 7000, wind: 14, difficulty: "Advanced" },
+            { name: "Crested Butte", location: "Colorado Rockies", tags: ["Mountain"], height: 8500, wind: 10, difficulty: "Intermediate" },
+            { name: "Cape Cod", location: "Massachusetts Coast", tags: ["Ocean"], height: 100, wind: 15, difficulty: "Beginner" },
+            { name: "Kirkwood", location: "Sierra Nevada, CA", tags: ["Mountain"], height: 9800, wind: 16, difficulty: "Advanced" },
+            { name: "McKinley Pass", location: "Oregon Cascade Range", tags: ["Mountain", "Hill"], height: 4500, wind: 11, difficulty: "Intermediate" }
+        ];
+
+        function renderPlaces() {
+            const grid = document.getElementById('places-grid');
+            const mountain = document.getElementById('mountain').checked;
+            const ocean = document.getElementById('ocean').checked;
+            const hill = document.getElementById('hill').checked;
+            const valley = document.getElementById('valley').checked;
+            const minHeight = parseInt(document.getElementById('height-slider').value);
+            const minWind = parseInt(document.getElementById('wind-slider').value);
+
+            let filtered = places.filter(place => {
+                const hasTag = (mountain && place.tags.includes("Mountain")) ||
+                                (ocean && place.tags.includes("Ocean")) ||
+                                (hill && place.tags.includes("Hill")) ||
+                                (valley && place.tags.includes("Valley"));
+                return hasTag && place.height >= minHeight && place.wind >= minWind;
+            });
+
+            grid.innerHTML = filtered.map(place => `
+                <div class="place-card">
+                    <div class="place-name">${place.name}</div>
+                    <div class="place-location">${place.location}</div>
+                    <div class="place-tags">
+                        ${place.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="place-details">
+                        <div>🏔️ Height: ${place.height.toLocaleString()} ft</div>
+                        <div>💨 Wind: ${place.wind} mph</div>
+                        <div>🎯 Difficulty: ${place.difficulty}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Event listeners
+        document.getElementById('mountain').addEventListener('change', renderPlaces);
+        document.getElementById('ocean').addEventListener('change', renderPlaces);
+        document.getElementById('hill').addEventListener('change', renderPlaces);
+        document.getElementById('valley').addEventListener('change', renderPlaces);
+        document.getElementById('height-slider').addEventListener('input', function() {
+            document.getElementById('height-value').textContent = this.value;
+            renderPlaces();
+        });
+        document.getElementById('wind-slider').addEventListener('input', function() {
+            document.getElementById('wind-value').textContent = this.value;
+            renderPlaces();
+        });
+
+        // Initial render
+        renderPlaces();
+    </script>
+</body>
+</html>

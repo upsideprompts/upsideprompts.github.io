@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramping to Projects</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0a0a0a;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #0066cc, #00cc66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite alternate;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+        @keyframes gradientShift {
+            0% {
+                background: linear-gradient(90deg, #0066cc, #00cc66);
+            }
+            100% {
+                background: linear-gradient(90deg, #00cc66, #0066cc);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ramping to Projects</h1>
+        <p class="subtitle">Ramp up of Projects</p>
+    </div>
+    <script>
+        // Dynamic gradient animation
+        const colors = ['#0066cc', '#00cc66', '#009999', '#00cc99'];
+        let index = 0;
+        
+        function animateGradient() {
+            const h1 = document.querySelector('h1');
+            const nextColor = colors[(index + 1) % colors.length];
+            h1.style.background = `linear-gradient(90deg, ${colors[index]}, ${nextColor})`;
+            index = (index + 1) % colors.length;
+        }
+        
+        setInterval(animateGradient, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chevy EV Concepts</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .metallic-container {
+            background: linear-gradient(145deg, #2d343f, #1a1a2e);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.5),
+                inset 0 2px 4px rgba(255, 255, 255, 0.1),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 20px;
+        }
+        
+        .image-card {
+            background: linear-gradient(145deg, #2d343f, #1e2328);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 
+                0 10px 25px rgba(0, 0, 0, 0.4),
+                inset 0 1px 2px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-card h3 {
+            color: #dfe6e9;
+            text-align: center;
+            margin: 15px 0 10px;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title {
+            text-align: center;
+            color: #dfe6e9;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #74b9ff, #0984e3, #74b9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #b2bec3;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="metallic-container">
+        <h1 class="title">Chevy EV Concepts</h1>
+        <p class="subtitle">Future Electric Vehicle Prototypes</p>
+        
+        <div class="gallery">
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-bolt-urban-concept---cdbe81fa-b5a1-4b9a-a349-3cc1b4408bd8.jpg" alt="Chevy Bolt Urban Concept">
+                <h3>Chevy Bolt - Urban Concept</h3>
+            </div>
+            
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-corvette-sports-final---5e232bb2-4bf6-4e42-8abe-09bde5245920.png" alt="Chevy Corvette Sports">
+                <h3>Chevy Corvette - Luxury Sports</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-tahoe-offroad---f6a9efb2-b4a2-4c17-b9ae-93b0f09e0c04.jpg" alt="Chevy Tahoe Off-road">
+                <h3>Chevy Tahoe - Rugged Off-road</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-silverado-truck---503743a5-6066-4b7d-930b-d2e11b1b0a61.jpg" alt="Chevy Silverado Truck">
+                <h3>Chevy Silverado - Electric Pickup</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-malibu-sedan---f069e5f8-d0e4-42fd-9e47-b8879cfdf68f.jpg" alt="Chevy Malibu Sedan">
+                <h3>Chevy Malibu - Luxury Sedan</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-traverse-family---6f75503d-4c23-4ac7-96e9-23f2c56f10e6.png" alt="Chevy Traverse Family">
+                <h3>Chevy Traverse - Family SUV</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-colorado-compact---54c1efb4-c405-40f3-8393-1cabdd332591.png" alt="Chevy Colorado Compact">
+                <h3>Chevy Colorado - Compact Pickup</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-camaro-concept---5863b336-ad19-4091-9a91-8b58a77ed6e2.jpg" alt="Chevy Camaro Concept">
+                <h3>Chevy Camaro - Sports Concept</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-blazer-adventure---bef052be-5dee-4f14-b73a-a2803aa80271.png" alt="Chevy Blazer Adventure">
+                <h3>Chevy Blazer - Adventure SUV</h3>
+            </div>
+
+            <div class="image-card">
+                <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/main/chevy/chevy-express-van---9ff7d1f7-4fb4-4854-b39f-0b303b3eb16c.png" alt="Chevy Express Van">
+                <h3>Chevy Express - Electric Van</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
