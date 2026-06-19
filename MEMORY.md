@@ -187,12 +187,15 @@ Top 10 small-cap robotics & processor stocks discussed on Reddit:
 - **Cron job**: Daily article updates at 5am UTC (job ID: 0af9d9f6-d7db-4c77-b05c-9e90c0682a97)
 - **Updated June 17, 2026**: Added Tesla Cybercab, eVTOL article, sorted articles by date (newest first)
 
-## OCStack Steps Updated (June 17, 2026)
+## OCStack Steps ✅ DEPLOYED
 - Modified `/root/.openclaw/workspace/ocstacks/index.html`
 - Changed Step 3 from "Configure Authentication and Launch" to "Complete the Droplet creation and login to the 'Web Console"
 - Removed Step 4 "SSH and Update OS"
 - Total steps reduced from 14 to 13
 - Fixed malformed HTML img tag on line 74
+- Fixed image path from `screens/DeskPic6.png` to `screens/deskpic1.png`
+- Added GitHub Pages workflow for proper deployment
+- **Live at**: `https://upsideprompts.github.io/ocstacks/` ✅
 
 ## NY Stroll Stuff Update (June 18, 2026)
 - Updated baseball schedule for June 18, 2026
