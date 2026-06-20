@@ -166,12 +166,6 @@ Top 10 small-cap robotics & processor stocks discussed on Reddit:
 - Updated hiking events with National Trails Day events (June 7) and upcoming weekend hikes
 - Added 15 hiking events total including Central Park, Prospect Park, Governors Island, Bear Mountain, and Harriman State Park
 - Pushed to GitHub: commit 54188e2
-## Bachatabeam2 ✅ DEPLOYED
-- Created `/root/.openclaw/workspace/bachatabeam2/` as Flutter web project
-- Converted to static HTML with 20 bachata venues (Texas & Michigan)
-- Features: responsive venue cards, 4 YouTube mixtape embeds
-- **Live at**: `https://upsideprompts.github.io/bachatabeam2/` ✅
-- **GitHub repo**: `upsideprompts/bachatabeam2`
 
 ### NY Stroll Stuff Update (June 11, 2026)
 - Updated baseball schedule for June 11-15, 2026
@@ -199,6 +193,19 @@ Top 10 small-cap robotics & processor stocks discussed on Reddit:
 - Updated hiking events with NYC parks events: Central Park 40 in Focus exhibition, Jamaica Bay, Inwood Hill Park, Pelham Bay Park, Prospect Park, High Line, Brooklyn Bridge Park
 - Committed and pushed to gh-pages branch
 
+### NY Stroll Stuff Update (June 18, 2026)
+- Updated baseball schedule for June 18, 2026
+- Games: Yankees vs White Sox (1:05 PM EDT), Mets vs Marlins (4:10 PM EDT), Brooklyn Cyclones vs Frederick Keys (6:00 PM), Staten Island FerryHawks vs Hagerstown Flying Boxcars (6:30 PM)
+- Updated hiking events with 8 NYC area opportunities: Shorewalkers, Central Park Early Bird, Inwood Hill Park, Pelham Bay Park, Prospect Park, Brooklyn Bridge Park, Jamaica Bay, High Line
+- Committed and pushed to gh-pages branch (commit 0c9a35e)
+
+### NY Stroll Stuff Update (June 20, 2026)
+- Updated baseball schedule for Saturday, June 20, 2026
+- Games: Yankees vs White Sox (1:05 PM EDT), Mets vs Cubs (1:10 PM EDT), Brooklyn Cyclones vs Connecticut Tigers (6:30 PM), Staten Island FerryHawks vs West Virginia Power (6:30 PM)
+- Updated hiking events with 8 NYC area opportunities for Saturday morning/evening
+- Locations: Shorewalkers, Central Park, Inwood Hill Park, Pelham Bay Park, Prospect Park, Brooklyn Bridge Park, Jamaica Bay, High Line
+- Committed and pushed to gh-pages branch
+
 ## AV Innovate ✅ CREATED & DEPLOYED & AUTOMATED
 - Created `/root/.openclaw/workspace/innovateav/` directory
 - Mobile site with articles listed on right, dark blue text on light blue background
@@ -218,11 +225,13 @@ Top 10 small-cap robotics & processor stocks discussed on Reddit:
 - Added GitHub Pages workflow for proper deployment
 - **Live at**: `https://upsideprompts.github.io/ocstacks/` ✅
 
-## NY Stroll Stuff Update (June 18, 2026)
-- Updated baseball schedule for June 18, 2026
-- Games: Yankees vs White Sox (1:05 PM EDT), Mets vs Marlins (4:10 PM EDT), Brooklyn Cyclones vs Frederick Keys (6:00 PM), Staten Island FerryHawks vs Hagerstown Flying Boxcars (6:30 PM)
-- Updated hiking events with 8 NYC area opportunities: Shorewalkers, Central Park Early Bird, Inwood Hill Park, Pelham Bay Park, Prospect Park, Brooklyn Bridge Park, Jamaica Bay, High Line
-- Committed and pushed to gh-pages branch (commit 0c9a35e)
+## Bachatabeam2 ✅ DEPLOYED
+- Created `/root/.openclaw/workspace/bachatabeam2/` as Flutter web project
+- Converted to static HTML with 20 bachata venues (Texas & Michigan)
+- Features: responsive venue cards, 4 YouTube mixtape embeds
+- **Live at**: `https://upsideprompts.github.io/bachatabeam2/` ✅
+- **GitHub repo**: `upsideprompts/bachatabeam2`
+
 ## Favarthub ✅ CREATED & DEPLOYED
 - Created `/root/.openclaw/workspace/favarthub/index.html`
 - Four vertically stacked card categories with pastel colors:
