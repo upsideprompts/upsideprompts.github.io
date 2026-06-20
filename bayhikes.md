@@ -1,6 +1,6 @@
 # Bay Area Hikes
 
-Upcoming hikes (as of June 18, 2026):
+Upcoming hikes (as of June 19, 2026):
 
 ## June 2026
 - **Joaquin Miller hike and ramble (5.7 mi + 800 ft, Dogs OK)** – Wed, Jun 17 @ 10:15 AM PDT – [Let's Hike](https://www.meetup.com/letshike/events/315228898/) (4.93 attendees, 1 seat left)
@@ -14,7 +14,7 @@ Upcoming hikes (as of June 18, 2026):
 - **Sunset Hike (Mt. Tamalpais)** – Sun, Jun 21 @ 6:00 PM PDT – [Official Mt. Tamalpais State Park Docent Led Hiking Group](https://www.meetup.com/mt-tamalpais-state-park-hiking-group/events/315272561/) (4.91 attendees, Waitlist)
 - **Russian Hill Stairways** – Tue, Jun 23 @ 11:30 AM PDT – [Boomer Women w/ Time & Sense of Humor](https://www.meetup.com/boomer-women-with-time-sense-of-humor-pandemic-style/events/314957390/) (4.81 attendees, Waitlist)
 - **Miwok, Middle Green Gulch, Dias Ridge loop; lunch on Muir Beach (~9.5 mi/1400')** – Fri, Jun 19 @ 9:00 AM PDT – [Sonoma County Wanderers](https://www.meetup.com/sonoma-county-wanderers/events/315222276/) (4.91 attendees, 1 seat left)
-- **5 mile hike at Tilden Regional Park 🌳🌁** – Sun, Jun 28 @ 2:00 PM PDT – [30s-40s Make New Friends - East Bay](https://www.meetup.com/30s-40s-make-new-friends-east-bay/events/315265064/) (4.91 attendees)
+- **5 mile hike at Tilden Regional Park 🌳🌑** – Sun, Jun 28 @ 2:00 PM PDT – [30s-40s Make New Friends - East Bay](https://www.meetup.com/30s-40s-make-new-friends-east-bay/events/315265064/) (4.91 attendees)
 - **Hike: George Bush Park Hike and Bike Trail** – Sun, Jun 28 @ 9:00 AM PDT – [komoot hiking](https://www.meetup.com/komoot-hiking/events/314791072/) (1 attendee)
 - **Mini Vacation: Ferry to Angel Island Ocean Hike (8 mi)** – Sun, Jun 28 @ 10:30 AM PDT – [Bay Area Hiking, Walking, Wellness Club](https://www.meetup.com/bay-area-hiking-walking-wellness-club/events/314555978/) (4.87 attendees, Waitlist)
 - **Hike: Aliso Creek Riding and Hiking Trail** – Sat, Jun 27 @ 10:00 AM PDT – [komoot hiking](https://www.meetup.com/komoot-hiking/events/314792182/) (1 attendee)

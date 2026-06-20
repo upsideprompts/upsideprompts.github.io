@@ -26,6 +26,7 @@
 - Tapping cards expands to show artist lists with name, title, and links
 - Each artist has name, title, and up to 3 links (website, Instagram, etc.)
 - Smooth animations on card tap/expand
+- Updated: Added Raymond Sebastien to Realistic category (Instagram: @raymondsebastien)
 - **Live at**: `https://upsideprompts.github.io/favarthub/` ✅
 
 ## AMDFlow Project ✅ COMPLETED & DEPLOYED
