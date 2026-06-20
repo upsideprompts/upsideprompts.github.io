@@ -15,12 +15,22 @@
     .header {
         text-align: center;
         padding: 2rem;
+        position: relative;
     }
     .header img {
         max-width: 100%;
         height: auto;
         border-radius: 10px;
         margin-bottom: 1rem;
+    }
+    .side-image {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: auto;
+        border-radius: 5px;
+        z-index: 100;
     }
     .container {
         max-width: 1200px;
@@ -54,12 +64,21 @@
         line-height: 1.6;
         font-size: 40pt;
     }
+    .footer-image {
+        width: 50%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+        margin: 2rem auto;
+        display: block;
+    }
 </style>
 </head>
 <body>
     <div class="header">
         <img src="https://s.wsj.net/public/resources/images/RV-AP028_WORKPR_M_20141205152651.jpg" alt="River Rafting Adventure">
         <h1>New Foundational Generative Models (2025-2026) 🌟</h1>
+        <img src="https://github.com/upsideprompts/upsideprompts.github.io/blob/gh-pages/ocstacks/screens/deskpic1.png" alt="Desk Pic" class="side-image">
     </div>
     
     <div class="container">
@@ -135,6 +154,8 @@
             <div class="article-summary">H2O-3 offers a powerful, open-source platform for automated machine learning with extensive algorithm support.</div>
         </div>
     </div>
+    
+    <img src="https://s.wsj.net/public/resources/images/RV-AP028_WORKPR_M_20141205152651.jpg" alt="River Rafting Adventure" class="footer-image">
 <!-- Redeployed: 2026-06-07T04:35:00Z -->
 </body>
 </html>
