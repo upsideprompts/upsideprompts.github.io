@@ -173,13 +173,21 @@
         .popup-close:hover {
             opacity: 1;
         }
+        .popup-free-badge {
+            background: linear-gradient(90deg, #00cc66, #009933);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
         .popup-icon {
             font-size: 48px;
             text-align: center;
-            margin-bottom: 1rem;
-        }
-        .popup-title {
-            display: none;
+            margin-bottom: 0.5rem;
         }
         .popup-text {
             font-size: 0.95rem;
@@ -379,6 +387,7 @@
         <div class="popup-container">
             <button id="closePopup" class="popup-close">&times;</button>
             <div class="popup-content">
+                <span class="popup-free-badge">FREE</span>
                 <div class="popup-icon">🚴‍♂️</div>
                 <p class="popup-text">Join our e-bike newsletter for free updates, expert tips, and exclusive deals delivered to your inbox.</p>
                 <form id="popupForm" class="popup-form">
