@@ -134,6 +134,107 @@
         .video-link:hover {
             background: #0066cc;
         }
+        
+        /* Pop-up Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup-container {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 420px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 102, 204, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .popup-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .popup-close:hover {
+            opacity: 1;
+        }
+        .popup-icon {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .popup-title {
+            font-size: 1.4rem;
+            text-align: center;
+            color: #00cc66;
+            margin: 0 0 1rem 0;
+        }
+        .popup-text {
+            font-size: 0.95rem;
+            color: #bdc3c7;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .popup-form input {
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1rem;
+        }
+        .popup-form input::placeholder {
+            color: #888;
+        }
+        .popup-form input:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+        .popup-button {
+            padding: 0.9rem;
+            background: linear-gradient(90deg, #0066cc, #00cc66);
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .popup-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 204, 0.4);
+        }
+        .popup-footer {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .popup-footer input {
+            margin-right: 0.3rem;
+        }
     </style>
 </head>
 <body>
@@ -271,6 +372,25 @@
         </div>
     </div>
     
+    <!-- Pop-up Modal -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-container">
+            <button id="closePopup" class="popup-close">&times;</button>
+            <div class="popup-content">
+                <div class="popup-icon">🚴‍♂️</div>
+                <h2 class="popup-title">Get 10% Off Your First E-Bike Order!</h2>
+                <p class="popup-text">Subscribe to our newsletter and receive exclusive deals on premium e-bikes, plus expert riding tips delivered to your inbox.</p>
+                <form id="popupForm" class="popup-form">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required>
+                    <button type="submit" class="popup-button">Get My Discount</button>
+                </form>
+                <div class="popup-footer">
+                    <label><input type="checkbox" id="dontShowAgain"> Don't show this again</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const rangeSlider = document.getElementById('rangeSlider');
         const speedSlider = document.getElementById('speedSlider');
@@ -329,6 +449,40 @@
                 }
             });
         }
+        
+        // Pop-up functionality
+        const popupOverlay = document.getElementById('popupOverlay');
+        const closePopup = document.getElementById('closePopup');
+        const popupForm = document.getElementById('popupForm');
+        const dontShowAgain = document.getElementById('dontShowAgain');
+        
+        // Show popup after 3 seconds
+        setTimeout(() => {
+            const popupDisabled = localStorage.getItem('popupDisabled');
+            if (!popupDisabled) {
+                popupOverlay.style.display = 'flex';
+            }
+        }, 3000);
+        
+        // Close popup
+        closePopup.addEventListener('click', () => {
+            popupOverlay.style.display = 'none';
+        });
+        
+        // Handle form submission
+        popupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            alert('Thank you! Your 10% discount code is: EBIKE10');
+            popupOverlay.style.display = 'none';
+        });
+        
+        // Don't show again option
+        dontShowAgain.addEventListener('change', () => {
+            if (dontShowAgain.checked) {
+                localStorage.setItem('popupDisabled', 'true');
+            }
+        });
     </script>
 </body>
 </html>
