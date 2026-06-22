@@ -1,5 +1,30 @@
 [
   {
+    "title": "Autoware: The World's Leading Open-Source Autonomous Driving Platform",
+    "link": "https://autoware.org/",
+    "date": "2026-06-22"
+  },
+  {
+    "title": "Open-Source Autonomous Driving Software Platforms: Comparison of Autoware and Apollo",
+    "link": "https://ave-lab.com/open-source-autonomous-driving-software-platforms-comparison-of-autoware-and-apollo/",
+    "date": "2026-06-22"
+  },
+  {
+    "title": "How the Self-Driving Tech Stack Works: OpenPilot vs Autoware Technical Analysis",
+    "link": "https://cardog.app/blog/autonomous-driving-stack-technical-guide",
+    "date": "2026-06-22"
+  },
+  {
+    "title": "ROS 2-Based Architecture for Autonomous Driving Systems with Sensor Fusion",
+    "link": "https://github.com/manankharwar/FusionCore",
+    "date": "2026-06-21"
+  },
+  {
+    "title": "Community-Driven Development: Accelerating Level 4/5 Autonomous Deployment Through Open Source",
+    "link": "https://arxiv.org/html/2501.18942",
+    "date": "2026-06-20"
+  },
+  {
     "title": "Tesla Cybercab Enters Mass Production for Dedicated Robotaxi Fleet",
     "link": "https://www.tesla.com/cybercab",
     "date": "2026-06-17"
