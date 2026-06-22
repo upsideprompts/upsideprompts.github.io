@@ -72,3 +72,4 @@
   - ROS 2-Based Architecture for Autonomous Driving Systems with Sensor Fusion
   - Community-Driven Development: Accelerating Level 4/5 Autonomous Deployment Through Open Source
 - Updated column widths: left panel 25%, right panel 75%
+- Made articles scrollable on right side panel
