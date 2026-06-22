@@ -181,8 +181,15 @@
             padding: 0.4rem 1rem;
             border-radius: 20px;
             text-align: center;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             display: inline-block;
+        }
+        .popup-top-text {
+            font-size: 0.95rem;
+            color: #bdc3c7;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 1rem;
         }
         .popup-icon {
             font-size: 48px;
@@ -388,11 +395,12 @@
             <button id="closePopup" class="popup-close">&times;</button>
             <div class="popup-content">
                 <span class="popup-free-badge">FREE</span>
+                <p class="popup-top-text">Free updates by signing up for our e-bike newsletter.</p>
                 <div class="popup-icon">🚴‍♂️</div>
-                <p class="popup-text">Join our e-bike newsletter for free updates, expert tips, and exclusive deals delivered to your inbox.</p>
+                <p class="popup-text">Join our e-bike newsletter for expert tips and exclusive deals delivered to your inbox.</p>
                 <form id="popupForm" class="popup-form">
                     <input type="email" id="emailInput" placeholder="Enter your email" required>
-                    <button type="submit" class="popup-button">Free updates by signing up for our e-bike newsletter.</button>
+                    <button type="submit" class="popup-button">Subscribe</button>
                 </form>
                 <div class="popup-footer">
                     <a href="#" id="noThanksLink">No, thanks</a>
