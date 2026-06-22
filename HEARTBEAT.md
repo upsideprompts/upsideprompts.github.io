@@ -1,6 +1,6 @@
-# Heartbeat check - 2026-06-21 03:32 UTC
-# ✓ philamhub deployed (GitHub Pages cache clearing - raw URL works)
+# Heartbeat check - 2026-06-22 01:15 UTC
 # ✓ HEARTBEAT_OK - all systems nominal
-# ✓ Increased top right image by 80% (125px to 225px)
-# ✓ All updates committed and pushed to GitHub
-# ✓ Verified deployed version at upsideprompts.github.io
+# ✓ E-bike site popup finalized: FREE badge + text at top, Subscribe button
+# ✓ AV Innovate: Removed Tesla from leading AV companies list
+# ✓ AV Innovate: Added 5 new open-source AV articles (Autoware, Apollo, ROS 2, sensor fusion, community development)
+# ✓ Updated innovateav column widths: left 25%, right 75%

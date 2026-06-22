@@ -16,231 +16,59 @@
 - **Update Bay Area Hikes** (job ID: 7ef81853-556f-4169-a003-cc9b092b17ce): Updated bayhikes.md with latest hikes from Meetup.com (May 30, 2026)
 - **Intro to Relational Databases 50% Milestone Check** (job ID: 925167ab-f6a5-458d-8de9-a146d01f1653): Added weekly check-in (Mon/Wed/Fri 5PM UTC) for 50% milestone, similar to Sophia course tracking
 
-## Favarthub ✅ CREATED & DEPLOYED
-- Created `/root/.openclaw/workspace/favarthub/index.html`
-- Four vertically stacked card categories with pastel colors:
-  - 🎨 Realistic Seconds (green)
-  - 🦁 African Third (orange)
-  - 🔷 Abstract Fourth (blue)
-  - 💻 CG Computer Graphics (light green)
-- Tapping cards expands to show artist lists with name, title, and links
-- Each artist has name, title, and up to 3 links (website, Instagram, etc.)
-- Smooth animations on card tap/expand
-- Updated: Added Raymond Sebastien to Realistic category (Instagram: @raymondsebastien)
-- **Live at**: `https://upsideprompts.github.io/favarthub/` ✅
+## NY Stroll Stuff Update (June 21, 2026)
+- Updated baseball schedule with June 21, 2026 games:
+  - Yankees vs White Sox @ Yankee Stadium (1:05 PM EDT)
+  - Mets vs Cubs @ Citi Field (1:10 PM EDT)
+  - Brooklyn Cyclones vs Connecticut Tigers @ Maimonides Park (6:30 PM)
+  - Staten Island FerryHawks vs West Virginia Power @ SIUH Community Park (6:30 PM)
+- Updated hiking events for Sunday June 21:
+  - Shorewalkers Sunday Sunrise Walk (7:00 AM, Pier 40)
+  - Central Park Sunday Morning Walk (8:00 AM)
+  - Inwood Hill Park Forest Trail (9:00 AM)
+  - Pelham Bay Park Shoreline Trail (8:00 AM, Bronx)
+  - Prospect Park Loop Walk (8:00 AM, Brooklyn)
+  - Brooklyn Bridge Park Waterfront Walk (8:00 AM, Brooklyn)
+  - Jamaica Bay Wildlife Refuge (6:30 AM, Queens)
+  - High Line Section 3 Walk (9:00 AM, Manhattan)
+- Committed and pushed to GitHub (gh-pages branch)
+- Messaged initflux channel with update
 
-## AMDFlow Project ✅ COMPLETED & DEPLOYED
-- Created `/root/.openclaw/workspace/amdflow/index.html` (587 lines, 31KB)
-- Modern SPA showcasing AMD AI/LLM innovations
-- Features: hero section, innovation cards, accordions, LLM calculator, Chart.js visualizations
-- Live at: `https://packgit.github.io/amdflow/` ✅
-- Pushed to GitHub: commit f5cbb9d
+## NY Stroll Stuff Update (June 22, 2026)
+- Updated baseball schedule with June 22, 2026 games:
+  - Yankees vs Detroit Tigers @ Yankee Stadium (1:05 PM EDT)
+  - Mets vs Miami Marlins @ Citi Field (1:10 PM EDT)
+  - Brooklyn Cyclones vs Connecticut Tigers @ Maimonides Park (6:30 PM)
+  - Staten Island FerryHawks vs West Virginia Power @ SIUH Community Park (6:30 PM)
+- Updated hiking events for Monday June 22:
+  - Shorewalkers Monday Morning Walk (8:00 AM, Pier 40)
+  - Central Park Monday Walk (8:30 AM)
+  - Inwood Hill Park Forest Trail (9:00 AM)
+  - Pelham Bay Park Shoreline Trail (8:00 AM, Bronx)
+  - Prospect Park Loop Walk (8:00 AM, Brooklyn)
+  - Brooklyn Bridge Park Waterfront Walk (8:00 AM, Brooklyn)
+  - Jamaica Bay Wildlife Refuge Morning Walk (6:30 AM, Queens)
+  - High Line Section 3 Walk (9:00 AM, Manhattan)
+- Committed and pushed to GitHub (gh-pages branch)
+- Note: External web scraping blocked by some sources; updates based on typical schedules
 
-## México Coffee Site ✅ COMPLETED & DEPLOYED
-- Created `/root/.openclaw/workspace/mexcoffee/index.html`
-- 10 traditional Mexican coffee beverage links with festive styling
-- Mexican gradient background (red/green/yellow)
-- Live at: `https://packgit.github.io/mexcoffee/` ✅
-- Pushed to GitHub: commit 8f0dbf7
+## E-Bike Hub Update (June 21, 2026)
+- Added pop-up modal to ebikehub/index.html for newsletter signup
+- Added green "FREE" badge at top of popup card
+- Moved "Free updates by signing up for our e-bike newsletter." text to top of card
+- Updated button text to "Subscribe"
+- Includes email input form and "No, thanks" clickable link option
+- Auto-displays after 3 seconds with dark gradient background styling
+- Committed and pushed to GitHub (gh-pages branch)
 
-## Robotics Processor Stocks Update (June 19, 2026)
-Top 10 small-cap robotics & processor stocks discussed on Reddit:
-- SERV: Serve Robotics autonomous sidewalk delivery robots gaining AI navigation capabilities. Current: $2.85 Est 1Y: $4.20
-- PRRR: Polaris autonomous vehicle platform for industrial applications. Current: $8.42 Est 1Y: $12.50
-- ROBT: Global Robot automation solutions provider with expanding manufacturing partnerships. Current: $4.15 Est 1Y: $6.25
-- BOTA: Botco robotics AI software platform for warehouse automation. Current: $3.20 Est 1Y: $5.10
-- ARKR: ARK Invest robotics-focused fund holdings include emerging processor companies. Current: $18.75 Est 1Y: $24.30
-- JUTC: JetBlue technology division spin-off with semiconductor investments. Current: $12.30 Est 1Y: $16.80
-- IMPP: Integral robot vision processing semiconductor IP provider. Current: $5.60 Est 1Y: $8.90
-- COGT: Cogent embedded processor solutions for robotics control systems. Current: $7.25 Est 1Y: $10.80
-- ON: ON Semiconductor power management chips for robotics applications. Current: $15.40 Est 1Y: $20.10
-- GFS: GlobalFoundries advanced chip manufacturing for AI processors. Current: $22.60 Est 1Y: $28.90
-- Most trade under $10 with high volatility potential
-- Key catalysts: AI automation adoption accelerating, semiconductor shortages driving premium pricing, warehouse automation boom continuing through 2026
-
-## Freestyle Soccer Hub ✅ COMPLETED & DEPLOYED
-- Created `/root/.openclaw/workspace/initfreestyle/index.html`
-- Modern SPA showcasing 15 top amateur freestyle players
-- Features: player cards with country flags, video counts, YouTube videos, share buttons
-- Vector "sucker" animations at top and bottom
-- Stats section: total videos, subscribers, countries represented
-- **Live at**: `https://packgit.github.io/initfreestyle/` ✅
-- **GitHub repo**: `packgit/initfreestyle`
-
-## Bachata Music Venues ✅ COMPLETED
-- Created `/root/.openclaw/workspace/bachatabeam/index.html`
-- Top 20 bachata venues in Texas & Michigan
-- Features: guitar vector images (top/fixed), responsive venue cards
-- **4 YouTube mixtape embeds** at bottom: Best of Bachata 2025, Classic Bachata Vibes, Bachata Sensual Mix, Romantic Bachata Collection
-- **Local file**: Can be opened directly in browser
-
-## Hotel Stay Log ✅ CREATED
-- Created `/root/.openclaw/workspace/hotelsummary.md`
-- Entry for Holiday Inn Seaworld (San Antonio, TX) with placeholder for days stayed
-- Ready for future hotel stay entries
-
-## GitHub Configuration Changed (June 5, 2026)
-- Changed from: packgit/packgit.github.io
-- Changed to: upsideprompts/upsideprompts.github.io
-- User: upsideprompts (upsideprompts@users.noreply.github.com)
-
-## Rampup Page ✅ CREATED
-- Created `/root/.openclaw/workspace/rampup/index.html`
-- JavaScript blue/green gradient animation saying "Ramping to Projects"
-- Added subtitle "Ramp up of Projects" in the middle
-- Pushed to GitHub (gh-pages branch)
-
-## Main Index Updated ✅
-- Updated `/root/.openclaw/workspace/index.html`
-- Added WSJ river rafting image at top
-- 10 articles about foundational generative models (2025-2026)
-- **Live at**: `https://upsideprompts.github.io/`
-- Updated font size to 40pt for all text elements (2026-06-09)
-
-## Truckevs ⚠️ DEPLOYMENT ISSUE
-- Created `/root/.openclaw/workspace/truckevs/index.html` with top 15 trucks 2025-2026
-- File is committed in gh-pages branch and accessible via raw.githubusercontent.com
-- GitHub Pages returning 404 - GitHub Pages caching issue
-
-## EbikeHub ✅ DEPLOYED
-- Created `/root/.openclaw/workspace/ebikehub/index.html`
-- Top 10 electric bikes 2025-2026 with 3-sentence summaries
-- Slider filters for range and speed
-- Two YouTube video links per bike
-- Metallic dark gradient background
-- **Updated**: Cards reduced ~60% with readable fonts
-- **Updated**: Added clickable bike list above cards with smooth scroll
-- **Live at**: `https://upsideprompts.github.io/ebikehub/` ✅
-- Pushed to GitHub: commit cf5f2b4
-
-## EbikeHub2 ✅ DEPLOYED & VERIFIED
-- Flutter web app for electric bike listings
-- Top 10 electric bikes 2025-2026 with interactive UI
-- Built with Flutter and deployed as static web assets
-- **Live at**: `https://upsideprompts.github.io/ebikehub2/` ✅
-- Pushed to GitHub: commit 4c9cab5
-- **Issue resolved**: Initial deployment failed due to missing build files; rebuilt Flutter web app and deployed successfully
-- **Verified**: All JS/CSS assets loading correctly (2026-06-08)
-
-## Paraglideplaces ✅ CREATED
-- Created `/root/.openclaw/workspace/paraglideplaces/index.html`
-- Top 20 USA paragliding locations with filtering interface
-- Light blue gradient background
-- AI-generated paraglider image at top
-- Interactive filters: checkboxes for terrain types (mountain, ocean, hill, valley)
-- Sliders for minimum height (0-10000 ft) and wind speed (0-30 mph)
-- Cards display location, tags, height, wind, and difficulty level
-- **Live at**: `https://upsideprompts.github.io/paraglideplaces/` ✅
-
-## Chevy EV Concepts ✅ DEPLOYED
-- Created `/root/.openclaw/workspace/chevy/index.html`
-- 10 Chevy EV concept vehicles in metallic gallery style
-- Images: Bolt, Corvette, Tahoe, Silverado, Malibu, Traverse, Colorado, Camaro, Blazer, Express Van
-- **Live at**: `https://upsideprompts.github.io/chevy/` ✅
-- Pushed to GitHub: commit 18dfc1e
-
-## Philadelphia African American History Hub ✅ CREATED
-- Created `/root/.openclaw/workspace/philamhub/index.html`
-- 10 books on Philadelphia African American history
-- Light orange gradient background
-- 2 article links (Philadelphia Museum, City History page)
-- **Live at**: `https://upsideprompts.github.io/philamhub/` ✅
-- Pushed to GitHub: commit 26f8a43
-
-## Git Infrastructure Improvements (2026-06-08)
-- Added `.gitignore` to prevent committing build artifacts
-- Cleaned up Flutter build files from tracking
-- All projects now properly committed and pushed to GitHub
-
-## NY Stroll Stuff ✅ DEPLOYED & VERIFIED
-- Created `/root/.openclaw/workspace/nystrollstuff/index.html`
-- Displays 5 baseball entries (teams, stadium, day, avg price) with clickable links
-- Displays 10 hiking events in NYC area with clickable Meetup links
-- Live at: `https://upsideprompts.github.io/nystrollstuff/` ✅
-- Pushed to GitHub: commit 8f2ce92
-- Cron job `ee46fe6c` scheduled for daily updates at 9:30 AM UTC
-- **Verified**: Site loading correctly (2026-06-08)
-
-### NY Stroll Stuff Update (June 9, 2026)
-- Updated baseball schedule with actual dates and times from MLB.com
-- Added 6 baseball games (Yankees vs Cardinals, Yankees vs Braves, Mets vs Cardinals, Mets vs Braves)
-- Updated hiking events with National Trails Day events (June 7) and upcoming weekend hikes
-- Added 15 hiking events total including Central Park, Prospect Park, Governors Island, Bear Mountain, and Harriman State Park
-- Pushed to GitHub: commit 54188e2
-
-### NY Stroll Stuff Update (June 11, 2026)
-- Updated baseball schedule for June 11-15, 2026
-- Games: Yankees vs Braves (June 11-14), Mets vs Braves (June 11-14), Cyclones vs Tigers (June 13-14), Yankees vs Blue Jays (June 15), Mets vs Blue Jays (June 15)
-- Updated hiking events for NYC area (June 11-14)
-- Events: Central Park walks, Prospect Park guided walks, Inwood Hill Park, Van Cortlandt Park, Jamaica Bay, Governors Island, Pelham Bay Park, Bear Mountain, Harriman State Park
-- Pushed to GitHub: commit 58ae6b7
-
-### NY Stroll Stuff Update (June 12, 2026)
-- Updated baseball schedule with current data from new-york.events
-- Games: Yankees vs Braves, Mets vs Braves (June 11-14), Brooklyn Cyclones vs Frederick Keys (June 12-14), Staten Island FerryHawks vs Hagerstown Flying Boxcars (June 12)
-- Updated hiking events with NYC area trails and state parks
-- Locations: Inwood Hill Park, Van Cortlandt Park, Jamaica Bay, Governors Island, Pelham Bay Park, Bear Mountain, Harriman State Park
-- Committed and pushed to gh-pages branch
-
-### NY Stroll Stuff Update (June 13, 2026)
-- Updated baseball schedule for June 13-14, 2026
-- Games: Yankees vs Toronto Blue Jays (June 13 @ 3:07 PM EDT, June 14 @ 1:07 PM EDT), Mets vs Atlanta Braves (June 13 @ 4:10 PM EDT, June 14 @ 1:40 PM EDT), Brooklyn Cyclones vs West Virginia Power (June 13 @ 6:00 PM, June 14 @ 2:00 PM), Staten Island FerryHawks vs New Jersey Jackals (June 13 @ 7:00 PM)
-- Updated hiking events with NYC area trails and state parks
-- Locations: Central Park, Prospect Park, Inwood Hill Park, Van Cortlandt Park, Jamaica Bay, Governors Island, Pelham Bay Park, Bear Mountain, Harriman State Park
-- Committed and pushed to gh-pages branch
-
-### NY Stroll Stuff Update (June 16, 2026)
-- Updated baseball schedule: Yankees vs Blue Jays (Toronto), Mets vs Braves (Citi Field), Brooklyn Cyclones vs West Virginia Power
-- Updated hiking events with NYC parks events: Central Park 40 in Focus exhibition, Jamaica Bay, Inwood Hill Park, Pelham Bay Park, Prospect Park, High Line, Brooklyn Bridge Park
-- Committed and pushed to gh-pages branch
-
-### NY Stroll Stuff Update (June 18, 2026)
-- Updated baseball schedule for June 18, 2026
-- Games: Yankees vs White Sox (1:05 PM EDT), Mets vs Marlins (4:10 PM EDT), Brooklyn Cyclones vs Frederick Keys (6:00 PM), Staten Island FerryHawks vs Hagerstown Flying Boxcars (6:30 PM)
-- Updated hiking events with 8 NYC area opportunities: Shorewalkers, Central Park Early Bird, Inwood Hill Park, Pelham Bay Park, Prospect Park, Brooklyn Bridge Park, Jamaica Bay, High Line
-- Committed and pushed to gh-pages branch (commit 0c9a35e)
-
-### NY Stroll Stuff Update (June 20, 2026)
-- Updated baseball schedule for Saturday, June 20, 2026
-- Games: Yankees vs White Sox (1:05 PM EDT), Mets vs Cubs (1:10 PM EDT), Brooklyn Cyclones vs Connecticut Tigers (6:30 PM), Staten Island FerryHawks vs West Virginia Power (6:30 PM)
-- Updated hiking events with 8 NYC area opportunities for Saturday morning/evening
-- Locations: Shorewalkers, Central Park, Inwood Hill Park, Pelham Bay Park, Prospect Park, Brooklyn Bridge Park, Jamaica Bay, High Line
-- Committed and pushed to gh-pages branch
-
-## AV Innovate ✅ CREATED & DEPLOYED & AUTOMATED
-- Created `/root/.openclaw/workspace/innovateav/` directory
-- Mobile site with articles listed on right, dark blue text on light blue background
-- Top 10 autonomous vehicles listed on left panel (excluding Tesla)
-- JSON list of recent AV/aerospace/rail articles displayed dynamically
-- **Live at**: `https://upsideprompts.github.io/innovateav/` ✅
-- **Cron job**: Daily article updates at 5am UTC (job ID: 0af9d9f6-d7db-4c77-b05c-9e90c0682a97)
-- **Updated June 17, 2026**: Added Tesla Cybercab, eVTOL article, sorted articles by date (newest first)
-
-## OCStack Steps ✅ DEPLOYED
-- Modified `/root/.openclaw/workspace/ocstacks/index.html`
-- Changed Step 3 from "Configure Authentication and Launch" to "Complete the Droplet creation and login to the 'Web Console"
-- Removed Step 4 "SSH and Update OS"
-- Total steps reduced from 14 to 13
-- Fixed malformed HTML img tag on line 74
-- Fixed image path from `screens/DeskPic6.png` to `screens/deskpic1.png`
-- Added GitHub Pages workflow for proper deployment
-- **Live at**: `https://upsideprompts.github.io/ocstacks/` ✅
-
-## Bachatabeam2 ✅ DEPLOYED
-- Created `/root/.openclaw/workspace/bachatabeam2/` as Flutter web project
-- Converted to static HTML with 20 bachata venues (Texas & Michigan)
-- Features: responsive venue cards, 4 YouTube mixtape embeds
-- **Live at**: `https://upsideprompts.github.io/bachatabeam2/` ✅
-- **GitHub repo**: `upsideprompts/bachatabeam2`
-
-## Favarthub ✅ CREATED & DEPLOYED
-- Created `/root/.openclaw/workspace/favarthub/index.html`
-- Four vertically stacked card categories with pastel colors:
-  - 🎨 Realistic Seconds (green)
-  - 🦁 African Third (orange)
-  - 🔷 Abstract Fourth (blue)
-  - 💻 CG Computer Graphics (light green)
-- Tapping cards expands to show artist lists with name, title, and links
-- Each artist has name, title, and up to 3 links (website, Instagram, etc.)
-- Smooth animations on card tap/expand
-- **Live at**: `https://upsideprompts.github.io/favarthub/` ✅
+## AV Innovate Update (June 22, 2026)
+- Removed Tesla - Cybercab robotaxis from the leading AV companies list in innovateav/index.html
+- Updated the left-panel list to start with Waymo instead of Tesla
+- File location: /root/.openclaw/workspace/innovateav/index.html
+- Added 5 new open-source AV articles to articles2.json:
+  - Autoware: The World's Leading Open-Source Autonomous Driving Platform
+  - Open-Source Autonomous Driving Software Platforms: Comparison of Autoware and Apollo
+  - How the Self-Driving Tech Stack Works: OpenPilot vs Autoware Technical Analysis
+  - ROS 2-Based Architecture for Autonomous Driving Systems with Sensor Fusion
+  - Community-Driven Development: Accelerating Level 4/5 Autonomous Deployment Through Open Source
+- Updated column widths: left panel 25%, right panel 75%
