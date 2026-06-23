@@ -35,8 +35,15 @@ Things like:
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: June 21, 2026 - Updated with June 21 baseball and hiking events
-- Note: Scrape Meetup.com for hiking events and update baseball schedule daily
+- Last updated: June 23, 2026 - Updated with June 23 baseball and hiking events
+
+### E-Bike Hub
+
+- Website: ebikehub/index.html (relative to workspace root)
+- Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
+- Content: Top 10 Electric Bikes 2025-2026 with filtering by range and speed
+- Last updated: June 21, 2026 - Moved newsletter text to top of popup card
+- Features: Range/speed filters, bike cards with specs, review video links, popup with FREE badge, email signup, and "No, thanks" link
 
 ## Why Separate?
 
