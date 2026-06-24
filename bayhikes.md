@@ -1,29 +1,122 @@
-# Bay Area Hikes
+# Bay Area Hikes Update (June 2026)
 
-Upcoming hikes (as of June 19, 2026):
+*Updated: June 24, 2026 - 3:00 PM UTC*
 
-## June 2026
-- **Joaquin Miller hike and ramble (5.7 mi + 800 ft, Dogs OK)** – Wed, Jun 17 @ 10:15 AM PDT – [Let's Hike](https://www.meetup.com/letshike/events/315228898/) (4.93 attendees, 1 seat left)
-- **Solstice Weekend in Desolation Wilderness ($12)** – Fri, Jun 19 @ 9:00 AM PDT – [Last-Minute Backpackers](https://www.meetup.com/last-minute-backpackers/events/314692933/) (4.84 attendees)
-- **Easy Point 2 Point walk/hike @ Land's End** – Thu, Jun 18 @ 6:00 PM PDT – [Sleep Late and Hike](https://www.meetup.com/sleeplateandhike/events/315208883/) (4.86 attendees, 9 seats left)
-- **Reinhardt Redwood Regional, West Side/French (10.6 mi, Moderate++, Dogs OK)** – Fri, Jun 19 @ 9:30 AM PDT – [Bay Area - Hike On!](https://www.meetup.com/bay-area-hike-on/events/315262295/) (4.92 attendees, Waitlist)
-- **China Camp "Boots & Bites" Hike** – Sat, Jun 20 @ 10:30 AM PDT – [San Francisco Bay Area Outings](https://www.meetup.com/san-francisco-bay-area-outings/events/315098372/) (4.94 attendees)
-- **Oakland Rose Garden & Lakeshore Neighborhood Walk** – Sat, Jun 20 @ 11:00 AM PDT – [Walking in San Francisco](https://www.meetup.com/walking-in-sf/events/315032302/) (4.86 attendees, 7 seats left)
-- **Urban Hikers' Scavenger Hunt** – Sat, Jun 20 @ 4:00 PM PDT – [Urban Hiking & Happy Hour](https://www.meetup.com/urban-hiking-happy-hour/events/314917536/) (4.83 attendees, Waitlist)
-- **Golden Gate Park, Around Lake Hike, Band Concert & Lunch** – Sun, Jun 21 @ 10:30 AM PDT – [Walking with a Guide](https://www.meetup.com/hikes-and-tours-of-wonderful-places-in-the-sf-bay-area/events/315049977/) (4.98 attendees, 8 seats left)
-- **Sunset Hike (Mt. Tamalpais)** – Sun, Jun 21 @ 6:00 PM PDT – [Official Mt. Tamalpais State Park Docent Led Hiking Group](https://www.meetup.com/mt-tamalpais-state-park-hiking-group/events/315272561/) (4.91 attendees, Waitlist)
-- **Russian Hill Stairways** – Tue, Jun 23 @ 11:30 AM PDT – [Boomer Women w/ Time & Sense of Humor](https://www.meetup.com/boomer-women-with-time-sense-of-humor-pandemic-style/events/314957390/) (4.81 attendees, Waitlist)
-- **Miwok, Middle Green Gulch, Dias Ridge loop; lunch on Muir Beach (~9.5 mi/1400')** – Fri, Jun 19 @ 9:00 AM PDT – [Sonoma County Wanderers](https://www.meetup.com/sonoma-county-wanderers/events/315222276/) (4.91 attendees, 1 seat left)
-- **5 mile hike at Tilden Regional Park 🌳🌑** – Sun, Jun 28 @ 2:00 PM PDT – [30s-40s Make New Friends - East Bay](https://www.meetup.com/30s-40s-make-new-friends-east-bay/events/315265064/) (4.91 attendees)
-- **Hike: George Bush Park Hike and Bike Trail** – Sun, Jun 28 @ 9:00 AM PDT – [komoot hiking](https://www.meetup.com/komoot-hiking/events/314791072/) (1 attendee)
-- **Mini Vacation: Ferry to Angel Island Ocean Hike (8 mi)** – Sun, Jun 28 @ 10:30 AM PDT – [Bay Area Hiking, Walking, Wellness Club](https://www.meetup.com/bay-area-hiking-walking-wellness-club/events/314555978/) (4.87 attendees, Waitlist)
-- **Hike: Aliso Creek Riding and Hiking Trail** – Sat, Jun 27 @ 10:00 AM PDT – [komoot hiking](https://www.meetup.com/komoot-hiking/events/314792182/) (1 attendee)
+## Upcoming Hikes from Meetup.com
 
-## July 2026
-- **Sunset Walk Through Golden Gate Park 🌅** – Wed, Jul 29 @ 6:15 PM PDT – [Have Fun Make Friends SF](https://www.meetup.com/have-fun-make-friends-sf/events/314972703/) (4.94 attendees)
-- **Easy 5 Miles – Golden Gate Park** – Sat, Jul 18 @ 1:30 PM PDT – [Bay Area Hiking, Walking, Wellness Club](https://www.meetup.com/bay-area-hiking-walking-wellness-club/events/314934380/) (4.84 attendees, 3 seats left)
-- **Exploring Patagonia: An Introductory Guide to Traveling in Torres del Paine** – Sun, Jul 19 @ 11:00 AM PDT – [Have Fun Make Friends SF](https://www.meetup.com/have-fun-make-friends-sf/events/314972563/) (4.98 attendees, 7 seats left)
+### Thursday, June 25
+- **Urban History Hike: Jackson Square & Barbary Coast** - 5:30 PM PDT
+  - Host: Urban Hiking & Happy Hour
+  - Rating: 4.86 • 6 attendees
 
-## August 2026
-- **💚Green Exercise 🌊Ocean Hike 🥾Lands End San Francisco** – Sat, Aug 1 @ 1:30 PM PDT – [Bay Area Hiking, Walking, Wellness Club](https://www.meetup.com/bay-area-hiking-walking-wellness-club/events/315059599/) (4.83 attendees, 7 seats left)
-- **Hike: Trillium Trail** – Sun, Aug 9 @ 9:00 AM PDT – [komoot hiking](https://www.meetup.com/komoot-hiking/events/314796989/) (1 attendee)
+- **Sunset Hike: Dunn Graham Loop** - 6:00 PM PDT (~5 miles, ~700 FT, Moderate)
+  - Host: Bay Area Women's Hiking Group
+  - Rating: 4.9 • 19 attendees
+  - Status: Waitlist
+
+### Friday, June 26
+- **Yoga & hike at Redwood Regional Park** - 4:30 PM PDT
+  - Host: Weekly Hikes at Redwood Regional Park and more
+  - Rating: 4.9 • 18 attendees
+  - Status: 2 seats left
+
+### Saturday, June 27
+- **Quad 4 Hike from Bootjack / Bolinas Ridge** - 9:00 AM PDT
+  - Host: Official Mt. Tamalpais State Park Docent Led Hiking Group
+  - Rating: 4.9 • 19 attendees
+  - Status: 1 seat left
+
+- **Different Spokes Pride Ride** - 10:45 AM PDT
+  - Host: Rainbow Sierrans - A Queer Outdoor Group
+  - Rating: 4.9 • 14 attendees
+
+- **New Route in Wildcat Canyon** - 9:30 AM PDT (6.2 miles + 1150 elevation gain, Dogs welcome)
+  - Host: Let's Hike
+  - Rating: 4.9 • 34 attendees
+  - Status: 1 seat left
+
+- **Redwood Creek, Heather Cutoff, Coastal View and Dipsea trails** - 9:01 AM PDT (8.6 miles, 1400 ft elevation)
+  - Host: Hiking in Marin: Mountains, Meadows, Meadows and Mist
+  - Rating: 4.9 • 8 attendees
+  - Status: Waitlist
+
+- **Hike: Aliso Creek Riding and Hiking Trail** - 10:00 AM PDT
+  - Host: komoot hiking
+  - Rating: 4.9 • 14 attendees
+
+- **Trip #10 Mammoth, CA** - 9:00 AM PDT (June 27 – July 4: Devil's Postpile NM, Mammoth Crest)
+  - Host: Adventure Hikes
+  - Rating: 5.0 • 16 attendees
+  - Status: Waitlist
+
+### Sunday, June 28
+- **5 mile hike at Tilden Regional Park** - 2:00 PM PDT
+  - Host: 30s-40s Make New Friends - East Bay
+  - Rating: 4.9 • 39 attendees
+
+- **Weekly Hikes at Reinhardt Redwood Regional Park** - 3:00 PM PDT
+  - Host: Weekly Hikes at Redwood Regional Park and more
+  - Rating: 4.9 • 12 attendees
+  - Status: Waitlist
+
+- **Fit for Royalty: Trekking King's Canyon** - 9:30 AM PDT (6.7 miles, 935 ft, 60% shaded, dog ok)
+  - Host: Let's Hike
+  - Rating: 4.9 • 30 attendees
+  - Status: Waitlist
+
+- **Mini Vacation: Ferry to Angel Island** - 10:30 AM PDT (8 miles)
+  - Host: Bay Area Hiking, Walking, Wellness Club
+  - Rating: 4.8 • 84 attendees
+  - Status: Waitlist
+
+- **Hike: George Bush Park Hike and Bike Trail** - 9:00 AM PDT
+  - Host: komoot hiking
+  - Rating: 4.9 • 14 attendees
+
+### Tuesday, June 30
+- **Double Cross Trail section 2** - 11:30 AM PDT
+  - Host: Boomer Women w/ Time & Sense of Humor
+  - Rating: 4.8 • 18 attendees
+  - Status: Waitlist
+
+### Saturday, July 11
+- **The Oakland Rose Garden & Lakeshore Neighborhood's Pathways/Stairs Walk** - 11:00 AM PDT
+  - Host: Walking in San Francisco for Health and History
+  - Rating: 4.8 • 36 attendees
+
+- **Angel Island Hike** - 9:27 AM PDT (6 miles, Leave on Tiburon Ferry at 10:00)
+  - Host: Mindfull Hikes
+  - Rating: 4.9 • 7 attendees
+  - Status: Waitlist
+
+### Sunday, July 12
+- **Green Exercise Easy 5 Miles Hike SF Golden Gate Park** - 1:30 PM PDT
+  - Host: Bay Area Hiking, Walking, Wellness Club
+  - Rating: 4.8 • 56 attendees
+  - Status: Waitlist
+
+### Sunday, July 19
+- **Exploring Patagonia: An Introductory Guide to Traveling in Torres del Paine** - 11:00 AM PDT
+  - Host: Have Fun Make Friends SF
+  - Rating: 4.9 • 11 attendees
+
+### Thursday, July 23
+- **Sunset Walk Through Golden Gate Park** - 6:15 PM PDT
+  - Host: Have Fun Make Friends SF
+  - Rating: 4.9 • 49 attendees
+  - Status: Waitlist
+
+### Saturday, August 1
+- **Green Exercise Ocean Hike Lands End San Francisco** - 1:30 PM PDT
+  - Host: Bay Area Hiking, Walking, Wellness Club
+  - Rating: 4.8 • 37 attendees
+  - Status: 5 seats left
+
+### Saturday, August 8
+- **Group Picnic with Pre-Hikes** - 11:00 AM PDT
+  - Host: Bay Area Women's Hiking Group
+  - Rating: 4.9 • 20 attendees
+
+---
+
+*Note: Check individual Meetup event pages for current availability, exact locations, and RSVP requirements. Events marked "Waitlist" are full but you can join the waitlist for potential openings.*
