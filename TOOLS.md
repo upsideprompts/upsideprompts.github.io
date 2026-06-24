@@ -35,7 +35,7 @@ Things like:
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: June 23, 2026 - Updated with June 23 baseball and hiking events
+- Last updated: June 24, 2026 - Updated with June 24 baseball and hiking events
 
 ### E-Bike Hub
 
@@ -44,6 +44,13 @@ Things like:
 - Content: Top 10 Electric Bikes 2025-2026 with filtering by range and speed
 - Last updated: June 21, 2026 - Moved newsletter text to top of popup card
 - Features: Range/speed filters, bike cards with specs, review video links, popup with FREE badge, email signup, and "No, thanks" link
+
+### AV Innovate
+
+- Website: innovateav/index.html (relative to workspace root)
+- Articles JSON: innovateav/articles2.json
+- Last updated: June 24, 2026 - Added 5 new open-source AV articles
+- Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
 
 ## Why Separate?
 
