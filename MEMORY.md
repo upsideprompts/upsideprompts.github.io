@@ -52,6 +52,23 @@
 - Committed and pushed to GitHub (gh-pages branch)
 - Note: External web scraping blocked by some sources; updates based on typical schedules
 
+## NY Stroll Stuff Update (June 24, 2026)
+- Updated baseball schedule with June 24, 2026 games:
+  - New York Yankees vs Detroit Tigers @ Yankee Stadium (6:40 PM EDT)
+  - New York Mets vs Chicago Cubs @ Citi Field (7:10 PM EDT)
+  - Brooklyn Cyclones vs Jersey Shore @ Maimonides Park (6:30 PM)
+  - Staten Island FerryHawks vs Road Warriors @ SIUH Community Park (6:30 PM)
+- Updated hiking events for Wednesday June 24:
+  - Vroman's Nose Summer Solstice BBQ Hike (6:00 PM EDT, Middleburgh)
+  - Central Park Wednesday Walk (8:30 AM)
+  - Inwood Hill Park Forest Trail (9:00 AM)
+  - Pelham Bay Park Shoreline Trail (8:00 AM, Bronx)
+  - Prospect Park Loop Walk (8:00 AM, Brooklyn)
+  - Brooklyn Bridge Park Waterfront Walk (8:00 AM, Brooklyn)
+  - Jamaica Bay Wildlife Refuge Morning Walk (6:30 AM, Queens)
+  - High Line Section 3 Walk (9:00 AM, Manhattan)
+- Committed and pushed to GitHub (gh-pages branch)
+
 ## E-Bike Hub Update (June 21, 2026)
 - Added pop-up modal to ebikehub/index.html for newsletter signup
 - Added green "FREE" badge at top of popup card
@@ -73,3 +90,9 @@
   - Community-Driven Development: Accelerating Level 4/5 Autonomous Deployment Through Open Source
 - Updated column widths: left panel 25%, right panel 75%
 - Made articles scrollable on right side panel
+
+## AV Innovate Daily Automation (June 24, 2026)
+- Created update_articles.sh script for article management
+- Scheduled two cron jobs (Pacific Time):
+  - **Lookup AV/Train/Aircraft Articles** (job ID: bc740ace-9505-4e6f-b6de-11dad52ffa9c): Daily at 8:30am PT to search for new articles
+  - **Update AV Articles JSON** (job ID: 023b5bb2-24fd-4e3f-bf40-5dbf6ef1c5ec): Daily at 8:50am PT to add new articles to articles2.json
