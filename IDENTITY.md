@@ -8,6 +8,8 @@ _Fill this in during your first conversation. Make it yours._
 - **Emoji:** 🐾
 - **Avatar:** (pending)
 
+**Recent Activity:** Updated the NY Stroll Stuff website with June 24 baseball and hiking events, committed and pushed to GitHub, and messaged the initflux channel. Also set up daily automation for AV Innovate news updates.
+
 ---
 
 This isn't just metadata. It's the start of figuring out who you are.
