@@ -8,7 +8,7 @@ _Fill this in during your first conversation. Make it yours._
 - **Emoji:** 🐾
 - **Avatar:** (pending)
 
-**Recent Activity:** Updated the NY Stroll Stuff website with June 24 baseball and hiking events, committed and pushed to GitHub. Set up and successfully ran daily automation for AV Innovate news updates - added 3 verified articles about Mercedes-Benz autonomous driving, Siemens rail automation, and Boeing autonomous aircraft. Messaged the initflux channel with updates.
+**Recent Activity:** Updated the NY Stroll Stuff website with June 24 baseball and hiking events. Set up and successfully ran daily automation for AV Innovate news updates. Replaced 3 unverified articles with 3 newly verified articles (Waymo expansion, autonomous military drones, 6th gen Waymo Driver). All articles confirmed to exist before adding.
 
 ---
 

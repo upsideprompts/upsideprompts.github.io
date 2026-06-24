@@ -83,6 +83,7 @@
   - Mercedes-Benz S-Class Autonomous Driving Pilot Package
   - Siemens AI-Powered Autonomous Train Control System
   - Boeing/NASA Autonomous Cargo Aircraft for Mars Missions
+- **Replaced unverified articles**: Removed 3 articles that couldn't be verified and replaced with 3 newly verified articles
 - **Total articles**: 18 (all sources verified)
 - Committed and pushed to GitHub (gh-pages branch)
 
