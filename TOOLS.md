@@ -35,7 +35,8 @@ Things like:
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: June 24, 2026 - Updated with June 24 baseball and hiking events
+- Last updated: June 25, 2026 - Updated with June 25 baseball and hiking events
+- Automation: Daily cron job (ee46fe6c) runs at 9:30 AM UTC
 
 ### E-Bike Hub
 
@@ -49,9 +50,9 @@ Things like:
 
 - Website: innovateav/index.html (relative to workspace root)
 - Articles JSON: innovateav/articles2.json
-- Last updated: June 24, 2026 - Added 3 newly verified articles
+- Last updated: June 25, 2026 - Added 3 newly verified articles
 - Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
-- Current total: 18 verified articles
+- Current total: 21 verified articles
 - Verification rule: All articles must be confirmed to exist before adding
 
 ## Why Separate?
