@@ -52,7 +52,7 @@ Things like:
 - Articles JSON: innovateav/articles2.json
 - Last updated: June 26, 2026 - Added 3 newly verified articles (3 on June 26)
 - Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
-- Current total: 24 verified articles
+- Current total: 23 verified articles
 - Verification rule: All articles must be confirmed to exist before adding
 
 ## Why Separate?
