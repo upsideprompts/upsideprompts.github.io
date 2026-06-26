@@ -21,12 +21,14 @@ _Learn about the person you're helping. Update this as you go._
 
 **Channel access:** Successfully sent update to initflux channel (C0AS1FCPQHG)
 
-**Recent task completion:** Successfully verified and added 3 articles to innovateav/articles2.json:
+**Recent task completion:** Successfully verified and added 6 articles to innovateav/articles2.json:
+
+**June 25, 2026:**
 1. Acodyne Lands Funding for Electric Cargo Drone Family (Aircraft)
 2. M-346 Leads Baykar UCAV in Autonomous Formation Flight Trial (AV)
 3. Modernising the EU's Rail Ticketing Regulation for Seamless Cross-Border Passenger Travel (Train)
 
-**Latest update (June 26, 2026):** Added 3 more verified articles:
+**June 26, 2026:**
 1. TPE331 Engine Will Power Swarm Aero's Large Military Drone (Aircraft)
 2. China Unveils 600 km/h Maglev Train, Now the World's Fastest (Train)
 3. How the Self-Driving Tech Stack Works: OpenPilot vs Autoware Technical Analysis (AV)
