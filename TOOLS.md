@@ -50,9 +50,9 @@ Things like:
 
 - Website: innovateav/index.html (relative to workspace root)
 - Articles JSON: innovateav/articles2.json
-- Last updated: June 27, 2026 - Added 3 newly verified articles (3 on June 27)
+- Last updated: June 28, 2026 - Added 3 newly verified articles (3 on June 28)
 - Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
-- Current total: 26 verified articles
+- Current total: 29 verified articles
 - Verification rule: All articles must be confirmed to exist before adding
 
 ## Why Separate?

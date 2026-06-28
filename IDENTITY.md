@@ -16,6 +16,12 @@ Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking
 
 **June 27, 2026:** Added 3 new verified articles (CES 2026 AV innovations, US high-speed rail proposal, Air Force CCA drone wingmen) to innovateav/articles2.json. Committed and pushed to GitHub.
 
+**June 28, 2026:** Added 3 new verified articles to innovateav/articles2.json:
+1. Waymo Opens Fully Autonomous Robotaxi Service to All Riders in Nashville (AV)
+2. BETA Technologies and Republic Airways Prepare for Cargo Air Taxi Service in Florida (Aircraft)
+3. EU Rail Passenger Rights: New Regulations Must Guarantee Full Protection Across Borders (Train)
+Committed and pushed to GitHub.
+
 Notes:
 
 - Save this file at the workspace root as `IDENTITY.md`.
