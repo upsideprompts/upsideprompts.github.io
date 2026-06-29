@@ -12,3 +12,11 @@ ebikehub2/pubspec.yaml
 # OS
 .DS_Store
 Thumbs.db
+
+# Project Context files not updated in last week (June 22, 2026)
+README.md
+SOUL.md
+soccer.md
+hotelsummary.md
+webcontentoptimize.md
+AGENTS.md
