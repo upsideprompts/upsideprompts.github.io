@@ -35,7 +35,7 @@ Things like:
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: June 28, 2026 - Updated with June 28 baseball and hiking events from Meetup.com
+- Last updated: June 29, 2026 - Updated with June 29 baseball and hiking events from Meetup.com
 - Automation: Daily cron job (ee46fe6c) runs at 9:30 AM UTC
 
 ### E-Bike Hub

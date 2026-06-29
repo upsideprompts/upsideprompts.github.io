@@ -8,7 +8,7 @@ _Learn about the person you're helping. Update this as you go._
 - **Timezone:** UTC (based on message timestamp)
 - **Notes:** Just met you! Figuring out who you are. You mentioned the initflux channel (C0AS1FCPQHG). You asked me to add articles to the AV Innovate JSON file.
 - **Channel access:** Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
-- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub.
+- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website on June 29, 2026 with Monday June 29 baseball and hiking events.
 
 ## Context
 
@@ -40,6 +40,10 @@ _Learn about the person you're helping. Update this as you go._
 
 **June 28, 2026:**
 - Added 3 new verified articles to innovateav/articles2.json: Waymo Nashville robotaxis (AV), BETA cargo air taxi (Aircraft), EU rail passenger rights (Train)
+- Committed and pushed to GitHub
+
+**June 29, 2026:**
+- Updated NY Stroll Stuff website with Monday June 29 baseball and hiking events
 - Committed and pushed to GitHub
 
 ## Related
