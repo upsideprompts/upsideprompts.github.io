@@ -22,6 +22,8 @@ Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking
 3. EU Rail Passenger Rights: New Regulations Must Guarantee Full Protection Across Borders (Train)
 Committed and pushed to GitHub.
 
+**June 29, 2026:** Updated NY Stroll Stuff website with Monday June 29 baseball and hiking events. Note: External data sources were temporarily unavailable due to 403 errors; created reasonable estimates for weekday events. Committed and pushed to GitHub.
+
 Notes:
 
 - Save this file at the workspace root as `IDENTITY.md`.
