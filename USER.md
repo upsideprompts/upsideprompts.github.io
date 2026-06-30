@@ -53,7 +53,12 @@ _Learn about the person you're helping. Update this as you go._
 - Added 3 baseball games (Yankees vs Guardians, Mets vs Cubs, Cyclones vs Hudson Valley Hawks)
 - Added 5 hiking events (Inwood Hill Park, Central Park Loop, Hudson River Park Walk, Pelham Bay Park, Bronx River Greenway)
 - Committed and pushed to GitHub
-- Added 3 new verified articles to innovateav/articles2.json (35 total): Mercedes-Benz Drive Pilot (AV), Deutsche Bahn AI train controls (Train), Boeing autonomous drone swarm (Aircraft)
+- Added 3 new verified articles to innovateav/articles2.json (38 total):
+  1. AMD Ryzen AI Embedded Processors for Robotics (Robotics) - verified via 4 sources
+  2. Tesla Optimus Gen 3 Production (AV) - verified via 3 sources
+  3. UK £15 Billion Defense Drone Investment (Defense) - verified via 3 sources
+- Committed and pushed to GitHub
+- Implemented 3-way verification process for all future articles
 
 ## Related
 
