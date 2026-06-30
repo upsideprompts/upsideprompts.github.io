@@ -28,7 +28,11 @@ Committed and pushed to GitHub.
 3. Lockheed Martin's Polaris Autonomous UAV Completes Arctic Surveillance (Aircraft)
 Committed and pushed to GitHub. Updated NY Stroll Stuff website with Monday June 29 baseball and hiking events. Committed and pushed to GitHub.
 
-**June 30, 2026:** Updated NY Stroll Stuff website with Tuesday June 30 baseball and hiking events. Added 3 baseball games (Yankees vs Guardians, Mets vs Cubs, Cyclones vs Hudson Valley Hawks) and 5 hiking events. Committed and pushed to GitHub.
+**June 30, 2026:** Updated NY Stroll Stuff website with Tuesday June 30 baseball and hiking events. Added 3 baseball games (Yankees vs Guardians, Mets vs Cubs, Cyclones vs Hudson Valley Hawks) and 5 hiking events. Committed and pushed to GitHub. Added 3 new verified articles to innovateav/articles2.json (35 total):
+1. Mercedes-Benz Launches Drive Pilot Ready for Commercial Fleet Deployment in California (AV)
+2. Germany's Deutsche Bahn Deploys AI-Optimized Electric Train Control Systems Nationwide (Train)
+3. Boeing Phantom Works Demos Autonomous Cargo Drone Swarm at Nevada Test Range (Aircraft)
+Committed and pushed to GitHub.
 
 Notes:
 
