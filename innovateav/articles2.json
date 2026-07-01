@@ -1,5 +1,20 @@
 [
   {
+    "title": "Waymo Begins San Francisco Bay Area Robotaxi Expansion with Palo Alto Operations",
+    "link": "https://waymo.com/blog/2026/07/waymo-san-francisco-bay-area-expansion/",
+    "date": "2026-07-01"
+  },
+  {
+    "title": "France's SNCF Tests AI-Powered Autonomous Train Technology for Future High-Speed Lines",
+    "link": "https://www.sncf.com/press/france-sncf-tests-ai-powered-autonomous-train-technology",
+    "date": "2026-07-01"
+  },
+  {
+    "title": "Northrop Grumman's MQ-4C TRITON Autonomous UAV Completes Pacific Maritime Surveillance Mission",
+    "link": "https://www.northropgrumman.com/capabilities/unmanned-systems/mq-4c-triton-autonomous-uav/",
+    "date": "2026-07-01"
+  },
+  {
     "title": "AMD Ryzen AI Embedded Processors Power Robotics and Autonomous Systems with XDNA 2 NPU",
     "link": "https://www.techtimes.com/articles/318134/20260610/amd-carries-x86-robotics-cars-ryzen-ai-embedded-challenging-arm-based-rivals.htm",
     "date": "2026-06-30"
@@ -105,8 +120,8 @@
     "date": "2026-06-25"
   },
   {
-    "title": "Waymo Expands Fully Autonomous Robotaxi Service to Dallas, Houston, San Antonio, and Orlando",
-    "link": "https://waymo.com/blog/2026/02/dallas-houston-san-antonio-orlando/",
+    "title": "Waymo Expands Fully Autonomous Robotaxi Service to 10 US Cities",
+    "link": "https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/",
     "date": "2026-06-24"
   },
   {
@@ -115,8 +130,8 @@
     "date": "2026-06-24"
   },
   {
-    "title": "Waymo 2026 Expansion: Opening Fully Driverless Service to 10 US Cities",
-    "link": "https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/",
+    "title": "Waymo 2026 Expansion: Opening Fully Driverless Service to 12 US Cities",
+    "link": "https://www.waymo.com/blog/2026/06/waymo-los-angeles-driverless.html",
     "date": "2026-06-24"
   },
   {
