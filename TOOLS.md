@@ -29,13 +29,14 @@ Things like:
 
 - Preferred voice: "Nova" (warm, slightly British)
 - Default speaker: Kitchen HomePod
+```
 
 ### NY Stroll Stuff
 
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: June 29, 2026 - Updated with June 29 baseball and hiking events from Meetup.com
+- Last updated: July 1, 2026 - Updated with July 1 baseball and hiking events
 - Automation: Daily cron job (ee46fe6c) runs at 9:30 AM UTC
 - Channel access: Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
 
