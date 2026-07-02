@@ -65,6 +65,17 @@ _Learn about the person you're helping. Update this as you go._
 - Added 3 baseball games (Yankees vs Tigers, Mets vs Phillies, Cyclones vs Staten Island FerryHawks)
 - Added 5 hiking events (Inwood Hill Park sunrise hike, Central Park Loop, Hudson River Park Walk, Pelham Bay Park, Bronx River Greenway)
 - Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (41 total):
+  1. Waymo Begins San Francisco Bay Area Robotaxi Expansion (AV)
+  2. France's SNCF Tests AI-Powered Autonomous Train Technology (Train)
+  3. Northrop Grumman's MQ-4C TRITON Autonomous UAV Completes Pacific Mission (Aircraft)
+- Committed and pushed to GitHub
+
+**July 2, 2026:**
+- Updated NY Stroll Stuff website with Thursday July 2 baseball and hiking events
+- Added 3 baseball games (Yankees vs Blue Jays, Mets vs Marlins, Cyclones vs Connecticut Tigers)
+- Added 5 hiking events (Inwood Hill Park sunrise hike, Central Park Loop, Hudson River Park Walk, Pelham Bay Park, Bronx River Greenway)
+- Committed and pushed to GitHub
 
 ## Related
 

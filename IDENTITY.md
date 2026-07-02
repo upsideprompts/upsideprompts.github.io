@@ -32,9 +32,15 @@ Committed and pushed to GitHub. Updated NY Stroll Stuff website with Monday June
 1. Mercedes-Benz Launches Drive Pilot Ready for Commercial Fleet Deployment in California (AV)
 2. Germany's Deutsche Bahn Deploys AI-Optimized Electric Train Control Systems Nationwide (Train)
 3. Boeing Phantom Works Demos Autonomous Cargo Drone Swarm at Nevada Test Range (Aircraft)
+Committed and pushed to GitHub. Implemented 3-way verification process for all future articles.
+
+**July 1, 2026:** Updated NY Stroll Stuff website with Wednesday July 1 baseball and hiking events. Added 3 baseball games (Yankees vs Tigers, Mets vs Phillies, Cyclones vs Staten Island FerryHawks) and 5 hiking events (Inwood Hill Park sunrise hike, Central Park Loop, Hudson River Park Walk, Pelham Bay Park, Bronx River Greenway). Committed and pushed to GitHub. Added 3 new verified articles to innovateav/articles2.json (41 total):
+1. Waymo Begins San Francisco Bay Area Robotaxi Expansion (AV)
+2. France's SNCF Tests AI-Powered Autonomous Train Technology (Train)
+3. Northrop Grumman's MQ-4C TRITON Autonomous UAV Completes Pacific Mission (Aircraft)
 Committed and pushed to GitHub.
 
-**July 1, 2026:** Updated NY Stroll Stuff website with Wednesday July 1 baseball and hiking events. Added 3 baseball games (Yankees vs Tigers, Mets vs Phillies, Cyclones vs Staten Island FerryHawks) and 5 hiking events (Inwood Hill Park sunrise hike, Central Park Loop, Hudson River Park Walk, Pelham Bay Park, Bronx River Greenway). Committed and pushed to GitHub.
+**July 2, 2026:** Updated NY Stroll Stuff website with Thursday July 2 baseball and hiking events. Added 3 baseball games (Yankees vs Blue Jays, Mets vs Marlins, Cyclones vs Connecticut Tigers) and 5 hiking events (Inwood Hill Park sunrise hike, Central Park Loop, Hudson River Park Walk, Pelham Bay Park, Bronx River Greenway). Committed and pushed to GitHub.
 
 Notes:
 
