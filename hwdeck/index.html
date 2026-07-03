@@ -141,6 +141,7 @@
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid var(--secondary);
+            font-size: 60%;
         }
 
         th {
@@ -152,6 +153,16 @@
         }
 
         th:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        th.sortable-month {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th.sortable-month:hover {
             background: var(--primary);
             color: white;
         }
@@ -356,7 +367,7 @@
                                     <tr>
                                         <th>Ticker</th>
                                         <th>Company</th>
-                                        <th>Monthly Return</th>
+                                        <th class="sortable-month" onclick="toggleMonthSort(this);">Monthly Return ▼</th>
                                         <th>3-Month Change</th>
                                     </tr>
                                 </thead>
@@ -405,6 +416,17 @@
             category.classList.toggle('open');
         }
 
+        function toggleMonthSort(el) {
+            const currentText = el.textContent;
+            if (currentText.includes('▼')) {
+                el.textContent = 'Monthly Return ▲';
+                sortStocks('month-asc');
+            } else {
+                el.textContent = 'Monthly Return ▼';
+                sortStocks('month-desc');
+            }
+        }
+
         function sortStocks(criteria) {
             // Remove active class from all buttons
             document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
@@ -423,9 +445,14 @@
                     
                     switch(criteria) {
                         case 'month':
+                        case 'month-asc':
                             aVal = parseFloat(a.cells[2].textContent);
                             bVal = parseFloat(b.cells[2].textContent);
-                            break;
+                            return aVal - bVal;
+                        case 'month-desc':
+                            aVal = parseFloat(a.cells[2].textContent);
+                            bVal = parseFloat(b.cells[2].textContent);
+                            return bVal - aVal;
                         case 'change':
                             aVal = parseFloat(a.cells[3].textContent);
                             bVal = parseFloat(b.cells[3].textContent);
