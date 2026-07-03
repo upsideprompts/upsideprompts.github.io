@@ -418,11 +418,11 @@
 
         function toggleMonthSort(el) {
             const currentText = el.textContent;
-            if (currentText.includes('▼')) {
-                el.textContent = 'Monthly Return ▲';
+            if (currentText.includes('▲')) {
+                // Arrow pointing up = sort ascending
                 sortStocks('month-asc');
             } else {
-                el.textContent = 'Monthly Return ▼';
+                // Arrow pointing down = sort descending
                 sortStocks('month-desc');
             }
         }
