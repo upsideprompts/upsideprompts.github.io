@@ -57,6 +57,12 @@ Things like:
 - Current total: 41 verified articles
 - Verification rule: All articles must be confirmed to exist via 3 different loading methods before adding
 
+### AMD LLM Processor YouTube Summaries
+- Task: Find top 3 YouTube videos about AMD processors for LLM models
+- Format: 3-sentence summary per video
+- Last run: July 3, 2026 - 3:30 PM UTC
+- Status: Completed via cron task (4b8aa269-7f47-4c2e-bdee-ded21fca878b)
+
 ## Why Separate?
 
 Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
