@@ -52,9 +52,9 @@ Things like:
 
 - Website: innovateav/index.html (relative to workspace root)
 - Articles JSON: innovateav/articles2.json
-- Last updated: July 1, 2026 - Added 3 new verified articles (41 total)
+- Last updated: July 3, 2026 - Added 3 new verified articles (44 total)
 - Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
-- Current total: 41 verified articles
+- Current total: 44 verified articles
 - Verification rule: All articles must be confirmed to exist via 3 different loading methods before adding
 
 ### AMD LLM Processor YouTube Summaries
