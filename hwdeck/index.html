@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hardware Ecosystem Stock Dashboard</title>
+    <style>
+        :root {
+            --primary: #87ceeb;
+            --primary-dark: #5f9ea0;
+            --secondary: #b0e0e6;
+            --accent: #4682b4;
+            --light: #f0f8ff;
+            --dark: #191970;
+            --success: #2e8b57;
+            --danger: #dc143c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(135, 206, 235, 0.3);
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--primary-dark);
+            font-size: 1.1em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .sort-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.4);
+        }
+
+        .sort-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .dashboard {
+            display: grid;
+            gap: 20px;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(135, 206, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .category-header {
+            padding: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .category-header:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--accent));
+            color: white;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .category.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .category.open .category-content {
+            max-height: 2000px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        th {
+            background: var(--light);
+            color: var(--dark);
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        tr:hover {
+            background: rgba(135, 206, 235, 0.1);
+        }
+
+        .ticker {
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .ticker:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .month-return.positive, .change-positive {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .month-return.negative, .change-negative {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .selected {
+            animation: selectAnim 0.5s ease;
+            background: rgba(135, 206, 235, 0.2);
+        }
+
+        @keyframes selectAnim {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background: rgba(135, 206, 235, 0.4); }
+            100% { transform: scale(1); }
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .chip-design { background: var(--accent); }
+        .manufacturing { background: var(--primary-dark); }
+        .equipment { background: var(--primary); }
+        .infrastructure { background: var(--secondary); }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Hardware Stock Dashboard</h1>
+            <p class="subtitle">Chip Design • Manufacturing • Equipment & Tools • Infrastructure</p>
+        </header>
+
+        <div class="controls">
+            <button class="sort-btn active" onclick="sortStocks('month')">Sort by Monthly Return</button>
+            <button class="sort-btn" onclick="sortStocks('change')">Sort by 3-Month Change</button>
+            <button class="sort-btn" onclick="sortStocks('asc')">Sort Ascending</button>
+            <button class="sort-btn" onclick="sortStocks('desc')">Sort Descending</button>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color chip-design"></div>
+                <span>Chip Design</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color manufacturing"></div>
+                <span>Manufacturing</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color equipment"></div>
+                <span>Equipment & Tools</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color infrastructure"></div>
+                <span>Infrastructure</span>
+            </div>
+        </div>
+
+        <div class="dashboard" id="dashboard">
+            <!-- Categories will be generated by JavaScript -->
+        </div>
+
+        <footer>
+            <p>Data refreshed daily • Click category headers to expand/collapse • Sort by performance metrics</p>
+        </footer>
+    </div>
+
+    <script>
+        const stockData = {
+            "Chip Design": {
+                "legacy": [
+                    { ticker: "AVGO", name: "Broadcom Inc", monthReturn: 8.2, change3mo: 12.5 },
+                    { ticker: "NVDA", name: "NVIDIA Corp", monthReturn: 12.8, change3mo: 18.3 },
+                    { ticker: "AMD", name: "Advanced Micro Devices", monthReturn: 5.4, change3mo: 7.8 }
+                ],
+                "news": [
+                    { ticker: "AMBA", name: "Ambarella Inc", monthReturn: 6.1, change3mo: 9.2 },
+                    { ticker: "CEVA", name: "CEVA Inc", monthReturn: 4.8, change3mo: 6.5 }
+                ]
+            },
+            "Manufacturing": {
+                "legacy": [
+                    { ticker: "TSM", name: "Taiwan Semiconductor Mfg", monthReturn: 3.7, change3mo: 5.1 },
+                    { ticker: "GFG", name: "GlobalFoundries", monthReturn: -2.1, change3mo: 1.2 }
+                ],
+                "news": [
+                    { ticker: "TOELY", name: "Tokyo Electron Ltd", monthReturn: 5.9, change3mo: 8.7 }
+                ]
+            },
+            "Equipment & Tools": {
+                "legacy": [
+                    { ticker: "ASML", name: "ASML Holding", monthReturn: 7.3, change3mo: 10.2 },
+                    { ticker: "LRCX", name: "Lam Research Corp", monthReturn: 6.5, change3mo: 9.1 }
+                ],
+                "news": [
+                    { ticker: "MEPE", name: "Maxelect Tech", monthReturn: 3.2, change3mo: 4.8 }
+                ]
+            },
+            "Infrastructure": {
+                "legacy": [
+                    { ticker: "INTC", name: "Intel Corp", monthReturn: -1.5, change3mo: 2.3 }
+                ],
+                "news": [
+                    { ticker: "AMAT", name: "Applied Materials", monthReturn: 4.2, change3mo: 6.8 }
+                ]
+            }
+        };
+
+        function initDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            let html = '';
+
+            for (const [category, data] of Object.entries(stockData)) {
+                html += `
+                    <div class="category" id="cat-${category.replace(/\s+/g, '')}">
+                        <div class="category-header" onclick="toggleCategory('${category.replace(/\s+/g, '')}')">
+                            <span>${category}</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Ticker</th>
+                                        <th>Company</th>
+                                        <th>Monthly Return</th>
+                                        <th>3-Month Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-${category.replace(/\s+/g, '')}">
+                                    ${createStockRows(category, data)}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }
+
+            dashboard.innerHTML = html;
+            
+            // Open first category by default
+            toggleCategory('ChipDesign');
+        }
+
+        function createStockRows(category, data) {
+            let rows = '';
+            const allStocks = [...data.legacy, ...data.news];
+            
+            allStocks.forEach(stock => {
+                const monthClass = stock.monthReturn >= 0 ? 'positive' : 'negative';
+                const changeClass = stock.change3mo >= 0 ? 'positive' : 'negative';
+                const ticker = stock.ticker === 'AVGO' ? 'https://www.cnbc.com/quotes/AVGO' :
+                               stock.ticker === 'GFG' ? 'https://www.cnbc.com/quotes/GFG' :
+                               stock.ticker === 'TOELY' ? 'https://www.cnbc.com/quotes/TOELY' :
+                               `https://www.cnbc.com/quotes/${stock.ticker}`;
+                
+                rows += `
+                    <tr onclick="selectRow(this)">
+                        <td><a href="${ticker}" class="ticker" target="_blank">${stock.ticker}</a></td>
+                        <td>${stock.name}</td>
+                        <td class="month-return ${monthClass}">${stock.monthReturn >= 0 ? '+' : ''}${stock.monthReturn}%</td>
+                        <td class="change-${changeClass}">${stock.change3mo >= 0 ? '+' : ''}${stock.change3mo}%</td>
+                    </tr>
+                `;
+            });
+            
+            return rows;
+        }
+
+        function toggleCategory(categoryId) {
+            const category = document.getElementById(`cat-${categoryId}`);
+            category.classList.toggle('open');
+        }
+
+        function sortStocks(criteria) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            document.event.target.classList.add('active');
+
+            const dashboard = document.getElementById('dashboard');
+            const categories = Object.keys(stockData);
+
+            categories.forEach(category => {
+                const tbody = document.getElementById(`tbody-${category.replace(/\s+/g, '')}`);
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+
+                rows.sort((a, b) => {
+                    let aVal, bVal;
+                    
+                    switch(criteria) {
+                        case 'month':
+                            aVal = parseFloat(a.cells[2].textContent);
+                            bVal = parseFloat(b.cells[2].textContent);
+                            break;
+                        case 'change':
+                            aVal = parseFloat(a.cells[3].textContent);
+                            bVal = parseFloat(b.cells[3].textContent);
+                            break;
+                        case 'asc':
+                            aVal = a.cells[1].textContent;
+                            bVal = b.cells[1].textContent;
+                            return aVal.localeCompare(bVal);
+                        case 'desc':
+                            aVal = a.cells[1].textContent;
+                            bVal = b.cells[1].textContent;
+                            return bVal.localeCompare(aVal);
+                        default:
+                            return 0;
+                    }
+                    
+                    return criteria === 'asc' || criteria === 'desc' ? 0 : (bVal - aVal);
+                });
+
+                rows.forEach(row => tbody.appendChild(row));
+            });
+        }
+
+        function selectRow(row) {
+            // Remove previous selection
+            document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+            // Add selection to clicked row
+            row.classList.add('selected');
+        }
+
+        // Initialize dashboard on load
+        initDashboard();
+    </script>
+</body>
+</html>
