@@ -385,6 +385,9 @@
             }
         };
 
+        // Track current sort state
+        let currentMonthSort = 'desc'; // 'asc' or 'desc'
+
         function initDashboard() {
             const dashboard = document.getElementById('dashboard');
             let html = '';
@@ -402,7 +405,7 @@
                                     <tr>
                                         <th>Ticker</th>
                                         <th>Company</th>
-                                        <th class="sortable-month" onclick="toggleMonthSort(this);">Monthly Return ▼</th>
+                                        <th class="sortable-month" id="month-sort-header" onclick="toggleMonthSort(this);">Monthly Return ▼</th>
                                         <th>3-Month Change</th>
                                     </tr>
                                 </thead>
@@ -452,12 +455,17 @@
         }
 
         function toggleMonthSort(el) {
-            const currentText = el.textContent;
-            if (currentText.includes('▲')) {
-                // Arrow pointing up = sort ascending
+            const header = document.getElementById('month-sort-header');
+            
+            if (currentMonthSort === 'desc') {
+                // Currently descending, switch to ascending
+                currentMonthSort = 'asc';
+                header.textContent = 'Monthly Return ▲';
                 sortStocks('month-asc', el);
             } else {
-                // Arrow pointing down = sort descending
+                // Currently ascending, switch to descending
+                currentMonthSort = 'desc';
+                header.textContent = 'Monthly Return ▼';
                 sortStocks('month-desc', el);
             }
         }
