@@ -244,10 +244,10 @@
         </header>
 
         <div class="controls">
-            <button class="sort-btn active" onclick="sortStocks('month')">Sort by Monthly Return</button>
-            <button class="sort-btn" onclick="sortStocks('change')">Sort by 3-Month Change</button>
-            <button class="sort-btn" onclick="sortStocks('asc')">Sort Ascending</button>
-            <button class="sort-btn" onclick="sortStocks('desc')">Sort Descending</button>
+            <button class="sort-btn active" onclick="sortStocks('month-desc', this)">Sort by Monthly Return</button>
+            <button class="sort-btn" onclick="sortStocks('change-desc', this)">Sort by 3-Month Change</button>
+            <button class="sort-btn" onclick="sortStocks('asc', this)">Sort Ascending</button>
+            <button class="sort-btn" onclick="sortStocks('desc', this)">Sort Descending</button>
         </div>
 
         <div class="legend">
@@ -455,18 +455,20 @@
             const currentText = el.textContent;
             if (currentText.includes('▲')) {
                 // Arrow pointing up = sort ascending
-                sortStocks('month-asc');
+                sortStocks('month-asc', el);
             } else {
                 // Arrow pointing down = sort descending
-                sortStocks('month-desc');
+                sortStocks('month-desc', el);
             }
         }
 
-        function sortStocks(criteria) {
+        function sortStocks(criteria, buttonElement) {
             // Remove active class from all buttons
             document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
             // Add active class to clicked button
-            document.querySelector(event.target).classList.add('active');
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            }
 
             const dashboard = document.getElementById('dashboard');
             const categories = Object.keys(stockData);
@@ -489,9 +491,14 @@
                             bVal = parseFloat(b.cells[2].textContent);
                             return bVal - aVal;
                         case 'change':
+                        case 'change-desc':
                             aVal = parseFloat(a.cells[3].textContent);
                             bVal = parseFloat(b.cells[3].textContent);
-                            break;
+                            return bVal - aVal;
+                        case 'change-asc':
+                            aVal = parseFloat(a.cells[3].textContent);
+                            bVal = parseFloat(b.cells[3].textContent);
+                            return aVal - bVal;
                         case 'asc':
                             aVal = a.cells[1].textContent;
                             bVal = b.cells[1].textContent;
@@ -503,8 +510,6 @@
                         default:
                             return 0;
                     }
-                    
-                    return criteria === 'asc' || criteria === 'desc' ? 0 : (bVal - aVal);
                 });
 
                 rows.forEach(row => tbody.appendChild(row));
