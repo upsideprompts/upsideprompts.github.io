@@ -99,6 +99,7 @@ _Learn about the person you're helping. Update this as you go._
   3. Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron (Aircraft)
 - Committed and pushed to GitHub
 - Fixed JavaScript sorting bugs in hwdeck/index.html (AI Hardware Stock Dashboard). The Monthly Return and 3-Month Change columns now sort correctly in both ascending and descending order. The button active state highlighting also works properly now.
+- Improved Monthly Return column toggle: clicking the header now toggles between ▼ (descending) and ▲ (ascending) visual indicators. Committed and pushed to GitHub.
 
 ## Related
 

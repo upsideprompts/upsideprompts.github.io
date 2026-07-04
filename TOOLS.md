@@ -65,12 +65,13 @@ Things like:
 
 ### AI Hardware Stock Dashboard (hwdeck)
 - Website: hwdeck/index.html
-- Last fixed: July 4, 2026 - Fixed sorting bugs in JavaScript
+- Last updated: July 4, 2026 - Improved Monthly Return column toggle
 - Issues resolved:
   - Monthly Return column now sorts correctly (descending/ascending)
   - 3-Month Change column now sorts correctly
   - Button active state now highlights properly
   - Removed broken `event.target` reference, now uses passed button element
+  - Added toggle functionality: click Monthly Return header to switch between ▼ (descending) and ▲ (ascending) visual indicators
 
 ## Why Separate?
 
