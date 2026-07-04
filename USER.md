@@ -88,6 +88,18 @@ _Learn about the person you're helping. Update this as you go._
 - Found top 3 YouTube videos about AMD processors for LLM models
 - Committed and pushed to GitHub
 
+**July 4, 2026:**
+- Updated NY Stroll Stuff website with Saturday July 4 baseball and hiking events
+- Added 3 baseball games (Yankees vs Blue Jays, Mets vs Marlins, Cyclones vs Hudson Valley Renegades)
+- Added 5 hiking events (Inwood Hill Park sunrise, Central Park Loop, Brooklyn Bridge twilight, Hudson River Park Walk, Pelham Bay Park)
+- Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (47 total):
+  1. Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions (AV)
+  2. France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille (Train)
+  3. Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron (Aircraft)
+- Committed and pushed to GitHub
+- Fixed JavaScript sorting bugs in hwdeck/index.html (AI Hardware Stock Dashboard). The Monthly Return and 3-Month Change columns now sort correctly in both ascending and descending order. The button active state highlighting also works properly now.
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
