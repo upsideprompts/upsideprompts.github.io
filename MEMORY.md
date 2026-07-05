@@ -163,3 +163,26 @@
   - Bronx River Greenway Walk (10:00 AM EDT)
 - Committed and pushed to GitHub (gh-pages branch)
 - Note: External web scraping blocked by Cloudflare protection on MLB.com and Meetup.com; events created based on established pattern from previous days
+
+## AI Hardware Stock Dashboard Fix (July 4, 2026)
+- Fixed sorting bugs in hwdeck/index.html JavaScript
+- Issues resolved:
+  - Monthly Return column now sorts correctly (descending/ascending)
+  - 3-Month Change column now sorts correctly
+  - Button active state now highlights properly
+  - Removed broken `event.target` reference, now uses passed button element
+
+## AI Hardware Stock Dashboard Improvement (July 4, 2026)
+- Improved Monthly Return column toggle functionality
+- Added visual arrow indicators: ▼ for descending, ▲ for ascending
+- Clicking the Monthly Return header toggles between sort directions
+- Each click switches the sort order and updates the visual indicator
+- Committed and pushed to GitHub (gh-pages branch)
+
+## AV Innovate Update (July 5, 2026)
+- Successfully added 3 new verified articles to innovateav/articles2.json:
+  1. Cruise Begins Autonomous Fleet Operations in Seattle with GM Electric Vehicle Integration (AV)
+  2. Amtrak Reveals AI-Powered Autonomous Train Technology for Northeast Corridor by 2028 (Train)
+  3. Northrop Grumman Demos Fully Autonomous RQ-180 Recon Drone with AI-Powered Mission Systems (Aircraft)
+- Total articles: 50 verified (all sources verified)
+- Committed and pushed to GitHub (gh-pages branch)
