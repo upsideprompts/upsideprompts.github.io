@@ -101,6 +101,12 @@ _Learn about the person you're helping. Update this as you go._
 - Fixed JavaScript sorting bugs in hwdeck/index.html (AI Hardware Stock Dashboard). The Monthly Return and 3-Month Change columns now sort correctly in both ascending and descending order. The button active state highlighting also works properly now.
 - Improved Monthly Return column toggle: clicking the header now toggles between ▼ (descending) and ▲ (ascending) visual indicators. Committed and pushed to GitHub.
 
+**July 5, 2026:**
+- Updated NY Stroll Stuff website with Sunday July 5 baseball and hiking events
+- Added 3 baseball games (Yankees vs Blue Jays, Mets vs Marlins, Cyclones vs Connecticut Tigers)
+- Added 5 hiking events (Inwood Hill Park sunrise, Central Park Loop, Brooklyn Bridge twilight, Hudson River Park Walk, Pelham Bay Park)
+- Committed and pushed to GitHub
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
