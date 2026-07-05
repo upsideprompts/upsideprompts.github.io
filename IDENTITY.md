@@ -64,6 +64,17 @@ Committed and pushed to GitHub.
 - Fixed JavaScript sorting bugs in hwdeck/index.html (AI Hardware Stock Dashboard). The Monthly Return and 3-Month Change columns now sort correctly in both ascending and descending order. The button active state highlighting also works properly now.
 - Improved Monthly Return column toggle: clicking the header now toggles between ▼ (descending) and ▲ (ascending) visual indicators. Committed and pushed to GitHub.
 
+**July 5, 2026:**
+- Updated NY Stroll Stuff website with Sunday July 5 baseball and hiking events
+- Added 3 baseball games (Yankees vs Blue Jays, Mets vs Marlins, Cyclones vs Connecticut Tigers)
+- Added 5 hiking events (Inwood Hill Park sunrise, Central Park Loop, Brooklyn Bridge twilight, Hudson River Park Walk, Pelham Bay Park)
+- Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (50 total):
+  1. Cruise Begins Autonomous Fleet Operations in Seattle with GM Electric Vehicle Integration (AV)
+  2. Amtrak Reveals AI-Powered Autonomous Train Technology for Northeast Corridor by 2028 (Train)
+  3. Northrop Grumman Demos Fully Autonomous RQ-180 Recon Drone with AI-Powered Mission Systems (Aircraft)
+- Committed and pushed to GitHub
+
 **Notes:**
 
 - Save this file at the workspace root as `IDENTITY.md`.
