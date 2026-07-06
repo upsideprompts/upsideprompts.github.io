@@ -65,13 +65,15 @@ Things like:
 
 ### AI Hardware Stock Dashboard (hwdeck)
 - Website: hwdeck/index.html
-- Last updated: July 4, 2026 - Improved Monthly Return column toggle
+- Last updated: July 6, 2026 - Added Current Price column
+- Columns: Ticker, Company, Current Price, Monthly Return, 3-Month Change
 - Issues resolved:
   - Monthly Return column now sorts correctly (descending/ascending)
   - 3-Month Change column now sorts correctly
   - Button active state now highlights properly
   - Removed broken `event.target` reference, now uses passed button element
   - Added toggle functionality: click Monthly Return header to switch between ▼ (descending) and ▲ (ascending) visual indicators
+  - Added Current Price column with all stock prices populated
 
 ## Why Separate?
 
