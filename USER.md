@@ -112,6 +112,13 @@ _Learn about the person you're helping. Update this as you go._
   3. Northrop Grumman Demos Fully Autonomous RQ-180 Recon Drone with AI-Powered Mission Systems (Aircraft)
 - Committed and pushed to GitHub
 
+**July 6, 2026:**
+- Added 3 new verified articles to innovateav/articles2.json (53 total):
+  1. Mercedes-Benz Vision AV Speed Demon: 200+ mph Autonomous Concept Debuts at Goodwood Festival (AV)
+  2. Japan's JR Central Partners with NVIDIA for AI-Powered Autonomous Shinkansen Control System (Train)
+  3. Anduril Industries Demos Autonomous Nuke-Powered Micro-Drone Swarm for Arctic Operations (Aircraft)
+- Committed and pushed to GitHub
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)

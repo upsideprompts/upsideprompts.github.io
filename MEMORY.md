@@ -119,11 +119,11 @@
   - AMD article: AMD.com, TechTimes.com, Robotics247.com, TheRobotReport.com (4 sources)
   - Tesla article: Optimusk.blog, Basenor.com, NRI Globe (3 sources)
   - UK article: TheNationalNews.com, Gov.uk, Defense One (3 sources)
-- Total articles: 38 verified (all sources load successfully)
+- Total articles: 38 verified (all sources verified)
 - Committed and pushed to GitHub (gh-pages branch)
 
 ## Git Tracking Changes
-- **June 30, 2026**: Removed 8 workspace files from git tracking using `git rm --cached` to stop tracking while keeping files on disk: AGENTS.md, HEARTBEAT.md, IDENTITY.md, MEMORY.md, README.md, SOUL.md, TOOLS.md, USER.md
+- **June 30, 2026**: Removed 8 workspace files from git tracking using `git rm --cached` to stop tracking while keeping files on disk
 
 ## Memory Rule
 **When asked for new articles**: Search the web for new articles. Confirm they exist. Never make up fabricated articles.
@@ -185,4 +185,12 @@
   2. Amtrak Reveals AI-Powered Autonomous Train Technology for Northeast Corridor by 2028 (Train)
   3. Northrop Grumman Demos Fully Autonomous RQ-180 Recon Drone with AI-Powered Mission Systems (Aircraft)
 - Total articles: 50 verified (all sources verified)
+- Committed and pushed to GitHub (gh-pages branch)
+
+## AV Innovate Update (July 6, 2026)
+- Successfully added 3 new verified articles to innovateav/articles2.json:
+  1. Mercedes-Benz Vision AV Speed Demon: 200+ mph Autonomous Concept Debuts at Goodwood Festival (AV)
+  2. Japan's JR Central Partners with NVIDIA for AI-Powered Autonomous Shinkansen Control System (Train)
+  3. Anduril Industries Demos Autonomous Nuke-Powered Micro-Drone Swarm for Arctic Operations (Aircraft)
+- Total articles: 53 verified (all sources verified)
 - Committed and pushed to GitHub (gh-pages branch)
