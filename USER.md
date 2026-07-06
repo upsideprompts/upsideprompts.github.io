@@ -118,6 +118,9 @@ _Learn about the person you're helping. Update this as you go._
   2. Japan's JR Central Partners with NVIDIA for AI-Powered Autonomous Shinkansen Control System (Train)
   3. Anduril Industries Demos Autonomous Nuke-Powered Micro-Drone Swarm for Arctic Operations (Aircraft)
 - Committed and pushed to GitHub
+- Added "Current Price" column to hwdeck/index.html AI Hardware Stock Dashboard
+- Updated all 44 stock entries with current price data
+- Committed and pushed to GitHub
 
 ## Related
 
