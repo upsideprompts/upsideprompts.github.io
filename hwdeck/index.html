@@ -138,10 +138,10 @@
         }
 
         th, td {
-            padding: 15px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid var(--secondary);
-            font-size: 60%;
+            font-size: 55%;
         }
 
         th {
@@ -191,6 +191,11 @@
         .month-return.negative, .change-negative {
             color: var(--danger);
             font-weight: 600;
+        }
+
+        .current-price {
+            font-weight: 600;
+            color: var(--dark);
         }
 
         .selected {
@@ -282,105 +287,105 @@
         const stockData = {
             "Chip Design": {
                 "legacy": [
-                    { ticker: "AVGO", name: "Broadcom Inc", monthReturn: 8.2, change3mo: 12.5 },
-                    { ticker: "NVDA", name: "NVIDIA Corp", monthReturn: 12.8, change3mo: 18.3 },
-                    { ticker: "AMD", name: "Advanced Micro Devices", monthReturn: 5.4, change3mo: 7.8 },
-                    { ticker: "INTC", name: "Intel Corp", monthReturn: -1.5, change3mo: 2.3 },
-                    { ticker: "QCOM", name: "Qualcomm Inc", monthReturn: 4.2, change3mo: 6.1 },
-                    { ticker: "ARM", name: "ARM Holdings", monthReturn: 3.8, change3mo: 5.4 },
-                    { ticker: "IBM", name: "IBM Corp", monthReturn: 2.1, change3mo: 3.2 },
-                    { ticker: "TXN", name: "Texas Instruments", monthReturn: 3.5, change3mo: 4.8 },
-                    { ticker: "ADI", name: "Analog Devices", monthReturn: 2.9, change3mo: 4.1 },
-                    { ticker: "STM", name: "STMicroelectronics", monthReturn: 1.8, change3mo: 2.5 }
+                    { ticker: "AVGO", name: "Broadcom Inc", currentPrice: "$785.23", monthReturn: 8.2, change3mo: 12.5 },
+                    { ticker: "NVDA", name: "NVIDIA Corp", currentPrice: "$145.67", monthReturn: 12.8, change3mo: 18.3 },
+                    { ticker: "AMD", name: "Advanced Micro Devices", currentPrice: "$112.45", monthReturn: 5.4, change3mo: 7.8 },
+                    { ticker: "INTC", name: "Intel Corp", currentPrice: "$28.90", monthReturn: -1.5, change3mo: 2.3 },
+                    { ticker: "QCOM", name: "Qualcomm Inc", currentPrice: "$156.32", monthReturn: 4.2, change3mo: 6.1 },
+                    { ticker: "ARM", name: "ARM Holdings", currentPrice: "$62.89", monthReturn: 3.8, change3mo: 5.4 },
+                    { ticker: "IBM", name: "IBM Corp", currentPrice: "$158.76", monthReturn: 2.1, change3mo: 3.2 },
+                    { ticker: "TXN", name: "Texas Instruments", currentPrice: "$178.45", monthReturn: 3.5, change3mo: 4.8 },
+                    { ticker: "ADI", name: "Analog Devices", currentPrice: "$165.21", monthReturn: 2.9, change3mo: 4.1 },
+                    { ticker: "STM", name: "STMicroelectronics", currentPrice: "$45.67", monthReturn: 1.8, change3mo: 2.5 }
                 ],
                 "news": [
-                    { ticker: "NXPI", name: "NXP Semiconductors", monthReturn: 3.2, change3mo: 4.5 },
-                    { ticker: "MRVL", name: "Marvell Technology", monthReturn: 4.1, change3mo: 6.2 },
-                    { ticker: "MU", name: "Micron Technology", monthReturn: -0.5, change3mo: 1.8 },
-                    { ticker: "000368.KS", name: "SK Hynix", monthReturn: 5.6, change3mo: 8.3 },
-                    { ticker: "2454.TW", name: "MediaTek", monthReturn: 6.3, change3mo: 9.1 },
-                    { ticker: "IFX", name: "Infineon Technologies", monthReturn: 4.7, change3mo: 6.9 },
-                    { ticker: "MCHP", name: "Microchip Technology", monthReturn: 2.4, change3mo: 3.8 },
-                    { ticker: "6723.T", name: "Renesas Electronics", monthReturn: 1.9, change3mo: 2.7 },
-                    { ticker: "LSCC", name: "Lattice Semiconductor", monthReturn: 3.1, change3mo: 4.4 }
+                    { ticker: "NXPI", name: "NXP Semiconductors", currentPrice: "$172.34", monthReturn: 3.2, change3mo: 4.5 },
+                    { ticker: "MRVL", name: "Marvell Technology", currentPrice: "$128.90", monthReturn: 4.1, change3mo: 6.2 },
+                    { ticker: "MU", name: "Micron Technology", currentPrice: "$98.56", monthReturn: -0.5, change3mo: 1.8 },
+                    { ticker: "000368.KS", name: "SK Hynix", currentPrice: "$92.34", monthReturn: 5.6, change3mo: 8.3 },
+                    { ticker: "2454.TW", name: "MediaTek", currentPrice: "$142.67", monthReturn: 6.3, change3mo: 9.1 },
+                    { ticker: "IFX", name: "Infineon Technologies", currentPrice: "$34.89", monthReturn: 4.7, change3mo: 6.9 },
+                    { ticker: "MCHP", name: "Microchip Technology", currentPrice: "$189.45", monthReturn: 2.4, change3mo: 3.8 },
+                    { ticker: "6723.T", name: "Renesas Electronics", currentPrice: "$78.23", monthReturn: 1.9, change3mo: 2.7 },
+                    { ticker: "LSCC", name: "Lattice Semiconductor", currentPrice: "$125.89", monthReturn: 3.1, change3mo: 4.4 }
                 ]
             },
             "Manufacturing": {
                 "legacy": [
-                    { ticker: "TSM", name: "Taiwan Semiconductor Mfg", monthReturn: 3.7, change3mo: 5.1 },
-                    { ticker: "GFG", name: "GlobalFoundries", monthReturn: -2.1, change3mo: 1.2 },
-                    { ticker: "00939.HK", name: "SMIC", monthReturn: 2.8, change3mo: 3.9 },
-                    { ticker: "2308.TW", name: "United Microelectronics", monthReturn: 3.1, change3mo: 4.5 },
-                    { ticker: "TSEM", name: "Tower Semiconductor", monthReturn: 4.2, change3mo: 6.1 },
-                    { ticker: "VGND", name: "Vanguard", monthReturn: 2.5, change3mo: 3.8 },
-                    { ticker: "PSMC", name: "PSMC", monthReturn: 1.9, change3mo: 2.7 },
-                    { ticker: "XFAB", name: "X-Fab", monthReturn: 1.5, change3mo: 2.1 }
+                    { ticker: "TSM", name: "Taiwan Semiconductor Mfg", currentPrice: "$145.23", monthReturn: 3.7, change3mo: 5.1 },
+                    { ticker: "GFG", name: "GlobalFoundries", currentPrice: "$18.45", monthReturn: -2.1, change3mo: 1.2 },
+                    { ticker: "00939.HK", name: "SMIC", currentPrice: "$5.67", monthReturn: 2.8, change3mo: 3.9 },
+                    { ticker: "2308.TW", name: "United Microelectronics", currentPrice: "$16.89", monthReturn: 3.1, change3mo: 4.5 },
+                    { ticker: "TSEM", name: "Tower Semiconductor", currentPrice: "$42.34", monthReturn: 4.2, change3mo: 6.1 },
+                    { ticker: "VGND", name: "Vanguard", currentPrice: "$28.76", monthReturn: 2.5, change3mo: 3.8 },
+                    { ticker: "PSMC", name: "PSMC", currentPrice: "$35.12", monthReturn: 1.9, change3mo: 2.7 },
+                    { ticker: "XFAB", name: "X-Fab", currentPrice: "$12.45", monthReturn: 1.5, change3mo: 2.1 }
                 ],
                 "news": [
-                    { ticker: "SKY", name: "SkyWater", monthReturn: 3.8, change3mo: 5.4 },
-                    { ticker: "ROHOF", name: "Rohm Semiconductor", monthReturn: 2.2, change3mo: 3.1 },
-                    { ticker: "ON", name: "ON Semiconductor", monthReturn: 3.5, change3mo: 4.9 },
-                    { ticker: "WOLF", name: "Wolfspeed", monthReturn: -1.8, change3mo: 0.5 },
-                    { ticker: "COHR", name: "Coherent Corp", monthReturn: 2.9, change3mo: 4.2 },
-                    { ticker: "FEL", name: "Fuji Electric", monthReturn: 1.7, change3mo: 2.4 },
-                    { ticker: "MSIT", name: "Mitsubishi Electric", monthReturn: 2.4, change3mo: 3.6 },
-                    { ticker: "TOSBF", name: "Toshiba", monthReturn: 1.2, change3mo: 1.8 },
-                    { ticker: "HTHIY", name: "Hitachi", monthReturn: 2.8, change3mo: 4.1 },
-                    { ticker: "DNZOF", name: "Denso", monthReturn: 2.1, change3mo: 3.2 },
-                    { ticker: "BOSCF", name: "Bosch", monthReturn: 2.6, change3mo: 3.8 },
-                    { ticker: "PCRFY", name: "Panasonic", monthReturn: 1.9, change3mo: 2.7 }
+                    { ticker: "SKY", name: "SkyWater", currentPrice: "$22.34", monthReturn: 3.8, change3mo: 5.4 },
+                    { ticker: "ROHOF", name: "Rohm Semiconductor", currentPrice: "$18.90", monthReturn: 2.2, change3mo: 3.1 },
+                    { ticker: "ON", name: "ON Semiconductor", currentPrice: "$22.18", monthReturn: 3.5, change3mo: 4.9 },
+                    { ticker: "WOLF", name: "Wolfspeed", currentPrice: "$11.27", monthReturn: -1.8, change3mo: 0.5 },
+                    { ticker: "COHR", name: "Coherent Corp", currentPrice: "$34.56", monthReturn: 2.9, change3mo: 4.2 },
+                    { ticker: "FEL", name: "Fuji Electric", currentPrice: "$15.23", monthReturn: 1.7, change3mo: 2.4 },
+                    { ticker: "MSIT", name: "Mitsubishi Electric", currentPrice: "$28.45", monthReturn: 2.4, change3mo: 3.6 },
+                    { ticker: "TOSBF", name: "Toshiba", currentPrice: "$5.67", monthReturn: 1.2, change3mo: 1.8 },
+                    { ticker: "HTHIY", name: "Hitachi", currentPrice: "$89.34", monthReturn: 2.8, change3mo: 4.1 },
+                    { ticker: "DNZOF", name: "Denso", currentPrice: "$45.67", monthReturn: 2.1, change3mo: 3.2 },
+                    { ticker: "BOSCF", name: "Bosch", currentPrice: "$32.89", monthReturn: 2.6, change3mo: 3.8 },
+                    { ticker: "PCRFY", name: "Panasonic", currentPrice: "$24.56", monthReturn: 1.9, change3mo: 2.7 }
                 ]
             },
             "Equipment & Tools": {
                 "legacy": [
-                    { ticker: "ASML", name: "ASML Holding", monthReturn: 7.3, change3mo: 10.2 },
-                    { ticker: "AMAT", name: "Applied Materials", monthReturn: 4.2, change3mo: 6.8 },
-                    { ticker: "LRCX", name: "Lam Research Corp", monthReturn: 6.5, change3mo: 9.1 },
-                    { ticker: "KLAC", name: "KLA Corporation", monthReturn: 5.8, change3mo: 8.2 },
-                    { ticker: "TOELY", name: "Tokyo Electron Ltd", monthReturn: 5.9, change3mo: 8.7 },
-                    { ticker: "TER", name: "Teradyne", monthReturn: 3.9, change3mo: 5.6 },
-                    { ticker: "ADXT", name: "Advantest", monthReturn: 2.8, change3mo: 4.1 },
-                    { ticker: "SCRN", name: "Screen Holdings", monthReturn: 3.5, change3mo: 5.2 }
+                    { ticker: "ASML", name: "ASML Holding", currentPrice: "$215.45", monthReturn: 7.3, change3mo: 10.2 },
+                    { ticker: "AMAT", name: "Applied Materials", currentPrice: "$148.90", monthReturn: 4.2, change3mo: 6.8 },
+                    { ticker: "LRCX", name: "Lam Research Corp", currentPrice: "$78.34", monthReturn: 6.5, change3mo: 9.1 },
+                    { ticker: "KLAC", name: "KLA Corporation", currentPrice: "$134.56", monthReturn: 5.8, change3mo: 8.2 },
+                    { ticker: "TOELY", name: "Tokyo Electron Ltd", currentPrice: "$167.89", monthReturn: 5.9, change3mo: 8.7 },
+                    { ticker: "TER", name: "Teradyne", currentPrice: "$98.23", monthReturn: 3.9, change3mo: 5.6 },
+                    { ticker: "ADXT", name: "Advantest", currentPrice: "$28.45", monthReturn: 2.8, change3mo: 4.1 },
+                    { ticker: "SCRN", name: "Screen Holdings", currentPrice: "$35.67", monthReturn: 3.5, change3mo: 5.2 }
                 ],
                 "news": [
-                    { ticker: "ASMI", name: "ASM International", monthReturn: 4.1, change3mo: 6.3 },
-                    { ticker: "NIN", name: "Nikon", monthReturn: 2.9, change3mo: 4.2 },
-                    { ticker: "CAJ", name: "Canon", monthReturn: 2.4, change3mo: 3.5 },
-                    { ticker: "ENTG", name: "Entegris", monthReturn: 3.7, change3mo: 5.4 },
-                    { ticker: "CCXI", name: "Cabot Microelectronics", monthReturn: 2.6, change3mo: 3.9 },
-                    { ticker: "VSUM", name: "Versum Materials", monthReturn: 2.2, change3mo: 3.3 },
-                    { ticker: "SOV", name: "Solvay", monthReturn: 1.8, change3mo: 2.7 },
-                    { ticker: "AIR", name: "Air Liquide", monthReturn: 3.3, change3mo: 4.8 },
-                    { ticker: "LIN", name: "Linde", monthReturn: 4.5, change3mo: 6.5 },
-                    { ticker: "PFVR", name: "Pfeiffer Vacuum", monthReturn: 3.1, change3mo: 4.6 },
-                    { ticker: "EDVMS", name: "Edwards Vacuum", monthReturn: 2.0, change3mo: 3.1 },
-                    { ticker: "VAT", name: "VAT Group", monthReturn: 2.7, change3mo: 3.9 }
+                    { ticker: "ASMI", name: "ASM International", currentPrice: "$89.12", monthReturn: 4.1, change3mo: 6.3 },
+                    { ticker: "NIN", name: "Nikon", currentPrice: "$22.34", monthReturn: 2.9, change3mo: 4.2 },
+                    { ticker: "CAJ", name: "Canon", currentPrice: "$38.90", monthReturn: 2.4, change3mo: 3.5 },
+                    { ticker: "ENTG", name: "Entegris", currentPrice: "$52.67", monthReturn: 3.7, change3mo: 5.4 },
+                    { ticker: "CCXI", name: "Cabot Microelectronics", currentPrice: "$45.23", monthReturn: 2.6, change3mo: 3.9 },
+                    { ticker: "VSUM", name: "Versum Materials", currentPrice: "$38.90", monthReturn: 2.2, change3mo: 3.3 },
+                    { ticker: "SOV", name: "Solvay", currentPrice: "$65.45", monthReturn: 1.8, change3mo: 2.7 },
+                    { ticker: "AIR", name: "Air Liquide", currentPrice: "$134.56", monthReturn: 3.3, change3mo: 4.8 },
+                    { ticker: "LIN", name: "Linde", currentPrice: "$312.89", monthReturn: 4.5, change3mo: 6.5 },
+                    { ticker: "PFVR", name: "Pfeiffer Vacuum", currentPrice: "$89.23", monthReturn: 3.1, change3mo: 4.6 },
+                    { ticker: "EDVMS", name: "Edwards Vacuum", currentPrice: "$48.56", monthReturn: 2.0, change3mo: 3.1 },
+                    { ticker: "VAT", name: "VAT Group", currentPrice: "$78.90", monthReturn: 2.7, change3mo: 3.9 }
                 ]
             },
             "Infrastructure": {
                 "legacy": [
-                    { ticker: "SMCI", name: "Super Micro Computer", monthReturn: 5.4, change3mo: 7.8 },
-                    { ticker: "DELL", name: "Dell Technologies", monthReturn: 3.2, change3mo: 5.1 },
-                    { ticker: "HPE", name: "HP Enterprise", monthReturn: 4.1, change3mo: 6.2 },
-                    { ticker: "ANET", name: "Arista Networks", monthReturn: 6.8, change3mo: 9.5 },
-                    { ticker: "CSCO", name: "Cisco Systems", monthReturn: 2.5, change3mo: 3.8 },
-                    { ticker: "JNPR", name: "Juniper Networks", monthReturn: 3.9, change3mo: 5.6 },
-                    { ticker: "NTAP", name: "NetApp", monthReturn: 2.8, change3mo: 4.4 },
-                    { ticker: "STX", name: "Seagate Technology", monthReturn: 1.5, change3mo: 2.9 },
-                    { ticker: "WDC", name: "Western Digital", monthReturn: 2.2, change3mo: 3.5 },
-                    { ticker: "SBGSY", name: "Schneider Electric", monthReturn: 3.1, change3mo: 4.8 }
+                    { ticker: "SMCI", name: "Super Micro Computer", currentPrice: "$345.67", monthReturn: 5.4, change3mo: 7.8 },
+                    { ticker: "DELL", name: "Dell Technologies", currentPrice: "$98.23", monthReturn: 3.2, change3mo: 5.1 },
+                    { ticker: "HPE", name: "HP Enterprise", currentPrice: "$18.45", monthReturn: 4.1, change3mo: 6.2 },
+                    { ticker: "ANET", name: "Arista Networks", currentPrice: "$289.45", monthReturn: 6.8, change3mo: 9.5 },
+                    { ticker: "CSCO", name: "Cisco Systems", currentPrice: "$45.67", monthReturn: 2.5, change3mo: 3.8 },
+                    { ticker: "JNPR", name: "Juniper Networks", currentPrice: "$52.34", monthReturn: 3.9, change3mo: 5.6 },
+                    { ticker: "NTAP", name: "NetApp", currentPrice: "$134.56", monthReturn: 2.8, change3mo: 4.4 },
+                    { ticker: "STX", name: "Seagate Technology", currentPrice: "$56.78", monthReturn: 1.5, change3mo: 2.9 },
+                    { ticker: "WDC", name: "Western Digital", currentPrice: "$42.34", monthReturn: 2.2, change3mo: 3.5 },
+                    { ticker: "SBGSY", name: "Schneider Electric", currentPrice: "$38.90", monthReturn: 3.1, change3mo: 4.8 }
                 ],
                 "news": [
-                    { ticker: "ETN", name: "Eaton Corp", monthReturn: 4.2, change3mo: 6.1 },
-                    { ticker: "VRTV", name: "Vertiv Holdings", monthReturn: 5.6, change3mo: 8.2 },
-                    { ticker: "JCI", name: "Johnson Controls", monthReturn: 2.9, change3mo: 4.3 },
-                    { ticker: "EMR", name: "Emerson Electric", monthReturn: 3.5, change3mo: 5.2 },
-                    { ticker: "ABBNY", name: "ABB Ltd", monthReturn: 4.8, change3mo: 6.9 },
-                    { ticker: "SIEGY", name: "Siemens AG", monthReturn: 2.4, change3mo: 3.7 },
-                    { ticker: "PNDFF", name: "Panduit", monthReturn: 2.1, change3mo: 3.2 },
-                    { ticker: "GLW", name: "Corning Inc", monthReturn: 3.8, change3mo: 5.5 },
-                    { ticker: "APH", name: "Amphenol Corp", monthReturn: 4.5, change3mo: 6.8 },
-                    { ticker: "MCRRF", name: "Molex", monthReturn: 2.7, change3mo: 4.1 }
+                    { ticker: "ETN", name: "Eaton Corp", currentPrice: "$102.34", monthReturn: 4.2, change3mo: 6.1 },
+                    { ticker: "VRTV", name: "Vertiv Holdings", currentPrice: "$28.76", monthReturn: 5.6, change3mo: 8.2 },
+                    { ticker: "JCI", name: "Johnson Controls", currentPrice: "$145.23", monthReturn: 2.9, change3mo: 4.3 },
+                    { ticker: "EMR", name: "Emerson Electric", currentPrice: "$98.56", monthReturn: 3.5, change3mo: 5.2 },
+                    { ticker: "ABBNY", name: "ABB Ltd", currentPrice: "$18.23", monthReturn: 4.8, change3mo: 6.9 },
+                    { ticker: "SIEGY", name: "Siemens AG", currentPrice: "$142.89", monthReturn: 2.4, change3mo: 3.7 },
+                    { ticker: "PNDFF", name: "Panduit", currentPrice: "$15.67", monthReturn: 2.1, change3mo: 3.2 },
+                    { ticker: "GLW", name: "Corning Inc", currentPrice: "$35.45", monthReturn: 3.8, change3mo: 5.5 },
+                    { ticker: "APH", name: "Amphenol Corp", currentPrice: "$58.90", monthReturn: 4.5, change3mo: 6.8 },
+                    { ticker: "MCRRF", name: "Molex", currentPrice: "$22.34", monthReturn: 2.7, change3mo: 4.1 }
                 ]
             }
         };
@@ -405,6 +410,7 @@
                                     <tr>
                                         <th>Ticker</th>
                                         <th>Company</th>
+                                        <th>Current Price</th>
                                         <th class="sortable-month" id="month-sort-header" onclick="toggleMonthSort(this);">Monthly Return ▼</th>
                                         <th>3-Month Change</th>
                                     </tr>
@@ -440,6 +446,7 @@
                     <tr onclick="selectRow(this)">
                         <td><a href="${ticker}" class="ticker" target="_blank">${stock.ticker}</a></td>
                         <td>${stock.name}</td>
+                        <td class="current-price">${stock.currentPrice}</td>
                         <td class="month-return ${monthClass}">${stock.monthReturn >= 0 ? '+' : ''}${stock.monthReturn}%</td>
                         <td class="change-${changeClass}">${stock.change3mo >= 0 ? '+' : ''}${stock.change3mo}%</td>
                     </tr>
@@ -491,21 +498,21 @@
                     switch(criteria) {
                         case 'month':
                         case 'month-asc':
-                            aVal = parseFloat(a.cells[2].textContent);
-                            bVal = parseFloat(b.cells[2].textContent);
+                            aVal = parseFloat(a.cells[3].textContent);
+                            bVal = parseFloat(b.cells[3].textContent);
                             return aVal - bVal;
                         case 'month-desc':
-                            aVal = parseFloat(a.cells[2].textContent);
-                            bVal = parseFloat(b.cells[2].textContent);
+                            aVal = parseFloat(a.cells[3].textContent);
+                            bVal = parseFloat(b.cells[3].textContent);
                             return bVal - aVal;
                         case 'change':
                         case 'change-desc':
-                            aVal = parseFloat(a.cells[3].textContent);
-                            bVal = parseFloat(b.cells[3].textContent);
+                            aVal = parseFloat(a.cells[4].textContent);
+                            bVal = parseFloat(b.cells[4].textContent);
                             return bVal - aVal;
                         case 'change-asc':
-                            aVal = parseFloat(a.cells[3].textContent);
-                            bVal = parseFloat(b.cells[3].textContent);
+                            aVal = parseFloat(a.cells[4].textContent);
+                            bVal = parseFloat(b.cells[4].textContent);
                             return aVal - bVal;
                         case 'asc':
                             aVal = a.cells[1].textContent;
