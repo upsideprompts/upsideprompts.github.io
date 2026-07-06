@@ -5,7 +5,10 @@
   - Units covered: Efficiency/Productivity, Hardware, Software, Applications, Enterprise Systems, Learning New Technologies, Digital Hygiene, Computer Ethics, Communication/Collaboration, Finding and Vetting Information Online, Email Etiquette, Chats and Chat Tools, Virtual Meetings, Collaboration and "the Cloud"
   - 1 of 2 courses to complete
 - **Intro to Relational Databases** - 8% complete (2026-06-09)
-  - Early stage course progress
+  - Current progress: 8% (next target: 50%)
+  - Milestone check: 50% completion target pending
+  - Weekly check-ins: Mon/Wed/Fri 5PM UTC
+  - Last milestone reminder sent: 2026-07-06 (via Slack)
 - **Next milestone reminder**: 50% completion target
 - **Follow-up**: Weekly check-ins scheduled (Mon/Wed/Fri 5PM UTC) via Slack
 
@@ -194,3 +197,10 @@
   3. Anduril Industries Demos Autonomous Nuke-Powered Micro-Drone Swarm for Arctic Operations (Aircraft)
 - Total articles: 53 verified (all sources verified)
 - Committed and pushed to GitHub (gh-pages branch)
+## AI Hardware Stock Dashboard Update (July 6, 2026)
+- Added new "Current Price" column to hwdeck/index.html dashboard
+- Updated all stock entries in Chip Design, Manufacturing, Equipment & Tools, and Infrastructure categories with current price data
+- Adjusted table padding and font size for better readability with 5 columns
+- Added CSS styling for current price column with bold formatting
+- Updated sort functions to account for new column index (current price is now column 2, monthly return is column 3)
+- Committed and pushed to GitHub gh-pages branch
