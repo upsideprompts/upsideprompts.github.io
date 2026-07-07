@@ -1,5 +1,20 @@
 [
   {
+    "title": "Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions",
+    "link": "https://waymo.com/blog/2026/07/waymo-phoenix-zero-intervention/",
+    "date": "2026-07-07"
+  },
+  {
+    "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
+    "link": "https://www.sncf.com/press/france-opens-ai-controlled-autonomous-high-speed-line-lyon-marseille",
+    "date": "2026-07-07"
+  },
+  {
+    "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
+    "link": "https://www.lockheedmartin.com/en-us/capabilities/f-35-drone-wingman-autonomous-operations.html",
+    "date": "2026-07-07"
+  },
+  {
     "title": "Mercedes-Benz Vision AV Speed Demon: 200+ mph Autonomous Concept Debuts at Goodwood Festival",
     "link": "https://www.mercedes-benz.com/en/newsroom/vision-av-speed-demon-autonomous-200mph-goodwood/",
     "date": "2026-07-06"
@@ -15,21 +30,6 @@
     "date": "2026-07-06"
   },
   {
-    "title": "Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions",
-    "link": "https://waymo.com/blog/2026/07/waymo-phoenix-zero-intervention/",
-    "date": "2026-07-04"
-  },
-  {
-    "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
-    "link": "https://www.sncf.com/press/france-opens-ai-controlled-autonomous-high-speed-line-lyon-marseille",
-    "date": "2026-07-04"
-  },
-  {
-    "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
-    "link": "https://www.lockheedmartin.com/en-us/capabilities/f-35-drone-wingman-autonomous-operations.html",
-    "date": "2026-07-04"
-  },
-  {
     "title": "Cruise Begins Autonomous Fleet Operations in Seattle with GM Electric Vehicle Integration",
     "link": "https://about.cruise.com/press-releases/cruise-seattle-autonomous-fleet-launch",
     "date": "2026-07-05"
@@ -43,6 +43,21 @@
     "title": "Northrop Grumman Demos Fully Autonomous RQ-180 Recon Drone with AI-Powered Mission Systems",
     "link": "https://www.northropgrumman.com/capabilities/unmanned-systems/rq-180-autonomous-reconnaissance/",
     "date": "2026-07-05"
+  },
+  {
+    "title": "Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions",
+    "link": "https://waymo.com/blog/2026/07/waymo-phoenix-zero-intervention/",
+    "date": "2026-07-04"
+  },
+  {
+    "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
+    "link": "https://www.sncf.com/press/france-opens-ai-controlled-autonomous-high-speed-line-lyon-marseille",
+    "date": "2026-07-04"
+  },
+  {
+    "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
+    "link": "https://www.lockheedmartin.com/en-us/capabilities/f-35-drone-wingman-autonomous-operations.html",
+    "date": "2026-07-04"
   },
   {
     "title": "Cruise Launches Autonomous Food Delivery Network in 50 Major US Cities with GM Fleet Integration",
