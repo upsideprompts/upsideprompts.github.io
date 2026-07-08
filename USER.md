@@ -8,7 +8,7 @@ _Learn about the person you're helping. Update this as you go._
 - **Timezone:** UTC (based on message timestamp)
 - **Notes:** Just met you! Figuring out who you are. You mentioned the initflux channel (C0AS1FCPQHG). You asked me to add articles to the AV Innovate JSON file.
 - **Channel access:** Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
-- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website on June 29, 2026 with Monday June 29 baseball and hiking events. Updated NY Stroll Stuff website on June 30, 2026 with Tuesday June 30 baseball and hiking events. Updated NY Stroll Stuff website on July 1, 2026 with Wednesday July 1 baseball and hiking events.
+- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website on June 29, 2026 with Monday June 29 baseball and hiking events. Updated NY Stroll Stuff website on June 30, 2026 with Tuesday June 30 baseball and hiking events. Updated NY Stroll Stuff website on July 1, 2026 with Wednesday July 1 baseball and hiking events. Updated NY Stroll Stuff website on July 7, 2026 with Tuesday July 7 baseball and hiking events. Updated NY Stroll Stuff website on July 8, 2026 with Wednesday July 8 baseball and hiking events.
 
 ## Context
 
@@ -120,6 +120,23 @@ _Learn about the person you're helping. Update this as you go._
 - Committed and pushed to GitHub
 - Added "Current Price" column to hwdeck/index.html AI Hardware Stock Dashboard
 - Updated all 44 stock entries with current price data
+- Committed and pushed to GitHub
+
+**July 7, 2026:**
+- Added 3 new verified articles to innovateav/articles2.json (56 total):
+  1. Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions (AV)
+  2. France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille (Train)
+  3. Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron (Aircraft)
+- Committed and pushed to GitHub
+- Updated NY Stroll Stuff website with Tuesday July 7 baseball and hiking events
+- Added 3 baseball games (Yankees vs Blue Jays at Yankee Stadium, Mets vs Marlins at Citi Field, Cyclones vs Connecticut Tigers at Maimonides Park)
+- Added 5 NYC hiking events (Inwood Hill Park sunset hike, Central Park evening loop, Hudson River Park waterfront walk, Pelham Bay Park coastal trail, Brooklyn Bridge Park path)
+- Committed and pushed to GitHub
+
+**July 8, 2026:**
+- Updated NY Stroll Stuff website with Wednesday July 8 baseball and hiking events
+- Added 3 baseball games (Yankees vs Rays at Tropicana Field, Mets vs Royals at Citi Field, Cyclones vs Hudson Valley Hawks at Maimonides Park)
+- Added 5 NYC hiking events (Inwood Hill Park Nature Exploration Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Brooklyn Bridge Park Path)
 - Committed and pushed to GitHub
 
 ## Related
