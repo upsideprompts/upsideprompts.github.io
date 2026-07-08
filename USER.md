@@ -138,6 +138,8 @@ _Learn about the person you're helping. Update this as you go._
 - Added 3 baseball games (Yankees vs Rays at Tropicana Field, Mets vs Royals at Citi Field, Cyclones vs Hudson Valley Hawks at Maimonides Park)
 - Added 5 NYC hiking events (Inwood Hill Park Nature Exploration Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Brooklyn Bridge Park Path)
 - Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (59 total): Tesla Optimus robotaxis (AV), Amtrak autonomous trains (Train), Anduril drone swarm (Aircraft)
+- Committed and pushed to GitHub
 
 ## Related
 
