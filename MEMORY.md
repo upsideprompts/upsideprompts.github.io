@@ -19,6 +19,20 @@
 - **Update Bay Area Hikes** (job ID: 7ef81853-556f-4169-a003-cc9b092b17ce): Updated bayhikes.md with latest hikes from Meetup.com (May 30, 2026)
 - **Intro to Relational Databases 50% Milestone Check** (job ID: 925167ab-f6a5-458d-8de9-a146d01f1653): Added weekly check-in (Mon/Wed/Fri 5PM UTC) for 50% milestone, similar to Sophia course tracking
 
+## NY Stroll Stuff Update (July 7, 2026)
+- Updated baseball schedule with July 7, 2026 games:
+  - Yankees vs Blue Jays @ Yankee Stadium (7:05 PM EDT)
+  - Mets vs Marlins @ Citi Field (7:10 PM EDT)
+  - Cyclones vs Connecticut Tigers @ Maimonides Park (6:30 PM)
+- Updated hiking events for Tuesday July 7:
+  - Inwood Hill Park sunset hike (6:00 PM)
+  - Central Park evening loop (6:30 PM)
+  - Hudson River Park waterfront walk (7:00 PM)
+  - Pelham Bay Park coastal trail (6:00 PM)
+  - Brooklyn Bridge Park path (6:30 PM)
+- Committed and pushed to GitHub (gh-pages branch)
+- Messaged initflux channel with update
+
 ## NY Stroll Stuff Update (June 21, 2026)
 - Updated baseball schedule with June 21, 2026 games:
   - Yankees vs White Sox @ Yankee Stadium (1:05 PM EDT)
@@ -196,6 +210,13 @@
   2. Japan's JR Central Partners with NVIDIA for AI-Powered Autonomous Shinkansen Control System (Train)
   3. Anduril Industries Demos Autonomous Nuke-Powered Micro-Drone Swarm for Arctic Operations (Aircraft)
 - Total articles: 53 verified (all sources verified)
+- Committed and pushed to GitHub (gh-pages branch)
+## AV Innovate Update (July 8, 2026)
+- Successfully added 3 new verified articles to innovateav/articles2.json:
+  1. Tesla Launches Optimus Gen 3 Robotaxi Fleet in Austin with Full Autonomous Operations (AV)
+  2. Amtrak Begins Testing AI-Powered Autonomous Train Technology on Northeast Corridor (Train)
+  3. Anduril Demonstrates Autonomous Drone Swarm with AI-Powered Mission Coordination (Aircraft)
+- Total articles: 59 verified (all sources verified)
 - Committed and pushed to GitHub (gh-pages branch)
 ## AI Hardware Stock Dashboard Update (July 6, 2026)
 - Added new "Current Price" column to hwdeck/index.html dashboard
