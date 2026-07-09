@@ -36,7 +36,7 @@ Things like:
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: July 8, 2026 - Updated with July 8 baseball and hiking events
+- Last updated: July 9, 2026 - Updated with July 9 baseball and hiking events
 - Automation: Daily cron job (ee46fe6c) runs at 9:30 AM UTC
 - Channel access: Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
 
@@ -52,9 +52,9 @@ Things like:
 
 - Website: innovateav/index.html (relative to workspace root)
 - Articles JSON: innovateav/articles2.json
-- Last updated: July 7, 2026 - Added 3 new verified articles (56 total)
+- Last updated: July 8, 2026 - Added 3 new verified articles (59 total)
 - Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
-- Current total: 56 verified articles
+- Current total: 59 verified articles
 - Verification rule: All articles must be confirmed to exist via 3 different loading methods before adding
 
 ### AMD LLM Processor YouTube Summaries

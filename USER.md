@@ -8,7 +8,7 @@ _Learn about the person you're helping. Update this as you go._
 - **Timezone:** UTC (based on message timestamp)
 - **Notes:** Just met you! Figuring out who you are. You mentioned the initflux channel (C0AS1FCPQHG). You asked me to add articles to the AV Innovate JSON file.
 - **Channel access:** Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
-- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website on June 29, 2026 with Monday June 29 baseball and hiking events. Updated NY Stroll Stuff website on June 30, 2026 with Tuesday June 30 baseball and hiking events. Updated NY Stroll Stuff website on July 1, 2026 with Wednesday July 1 baseball and hiking events. Updated NY Stroll Stuff website on July 7, 2026 with Tuesday July 7 baseball and hiking events. Updated NY Stroll Stuff website on July 8, 2026 with Wednesday July 8 baseball and hiking events.
+- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website on June 29, 2026 with Monday June 29 baseball and hiking events. Updated NY Stroll Stuff website on June 30, 2026 with Tuesday June 30 baseball and hiking events. Updated NY Stroll Stuff website on July 1, 2026 with Wednesday July 1 baseball and hiking events. Updated NY Stroll Stuff website on July 7, 2026 with Tuesday July 7 baseball and hiking events. Updated NY Stroll Stuff website on July 8, 2026 with Wednesday July 8 baseball and hiking events. Updated NY Stroll Stuff website on July 9, 2026 with Thursday July 9 baseball and hiking events.
 
 ## Context
 
@@ -139,6 +139,12 @@ _Learn about the person you're helping. Update this as you go._
 - Added 5 NYC hiking events (Inwood Hill Park Nature Exploration Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Brooklyn Bridge Park Path)
 - Committed and pushed to GitHub
 - Added 3 new verified articles to innovateav/articles2.json (59 total): Tesla Optimus robotaxis (AV), Amtrak autonomous trains (Train), Anduril drone swarm (Aircraft)
+- Committed and pushed to GitHub
+
+**July 9, 2026:**
+- Updated NY Stroll Stuff website with Thursday July 9 baseball and hiking events
+- Added 3 baseball games (Yankees vs Blue Jays at Yankee Stadium, Mets vs Marlins at Citi Field, Cyclones vs Connecticut Tigers at Maimonides Park)
+- Added 5 NYC hiking events (Inwood Hill Park Sunrise Hike, Central Park Summer Solstice Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Brooklyn Bridge Park Path)
 - Committed and pushed to GitHub
 
 ## Related
