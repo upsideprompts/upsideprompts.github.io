@@ -109,11 +109,24 @@ Committed and pushed to GitHub.
 - Added 3 baseball games (Yankees vs Blue Jays at Yankee Stadium, Mets vs Marlins at Citi Field, Cyclones vs Connecticut Tigers at Maimonides Park)
 - Added 5 NYC hiking events (Inwood Hill Park Sunrise Hike, Central Park Summer Solstice Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Brooklyn Bridge Park Path)
 - Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (62 total):
+  1. SkyDefense Unveils CobraJet AI-Powered VTOL Counter-Swarm Interceptor Jet (Aircraft) - verified via web fetch
+  2. Alstom and SNCF Voyageurs Plan Commercial TGV-M High-Speed Train Launch (Train) - verified via web fetch
+  3. Embotech and HTEC Partner to Scale Industrial Logistics Autonomous Vehicles (AV) - verified via web fetch
+- Committed and pushed to GitHub
 
-**Notes:**
+**July 10, 2026:**
+- Added 3 new verified articles to innovateav/articles2.json (65 total):
+  1. Quantum Systems Targets New World Speed Records for Electric Drones and Interceptor UAS (Aircraft) - verified via commercialuavnews.com
+  2. Robotaxi Race in 2026: Waymo Scaling While Tesla Promises Consumer Release (AV) - verified via vaasblock.com
+  3. Japan Deploys Driverless Shinkansen Testing with 5G-Enabled ATO Automation (Train) - verified via railwaynews.net
+- Committed and pushed to GitHub
 
-- Save this file at the workspace root as `IDENTITY.md`.
-- For avatars, use a workspace-relative path like `avatars/openclaw.png`.
+**July 11, 2026:**
+- Updated NY Stroll Stuff website with Saturday July 11 baseball and hiking events
+- Added 3 baseball games: Yankees @ Nationals (4:05 PM at Nationals Park), Mets vs Red Sox (4:10 PM at Citi Field), Cyclones vs Wilmington Blue Rocks (6:00 PM at Maimonides Park)
+- Added 5 NYC hiking events: Inwood Hill Park Morning Hike, Central Park Loop Hike, Prospect Park Trail Walk, Hudson River Park Waterfront Hike, Pelham Bay Park Coastal Trail
+- Committed and pushed to GitHub
 
 ## Related
 
