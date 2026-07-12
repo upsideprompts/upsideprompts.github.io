@@ -1,34 +1,92 @@
-# Bay Area Hiking Schedule (Updated: July 8, 2026)
+# Bay Area Hikes - Updated July 12, 2026
 
-## Upcoming Hikes (July 5-11, 2026)
+## Today's Hike (July 12, 2026)
+- **Backpack Gorgeous Yosemite**
+  - Time: 8:00 AM
+  - Organizer: Backpackers of the American West
+  - Details: Multi-day backpacking trip starting at May Lake, hiking Mt. Hoffman July 13, Sunrise Lakes July 14-15, Clouds Rest July 16-17, Cathedral Lakes July 16-17
 
-### 📌 Cancellation Notice
-All hikes scheduled for **July 4, 2026** have been canceled due to extreme heat warnings. See [NWS Heat Alert](https://example.com/heat-alerts) for details.
+- **Wildcat Peak Loop**
+  - Time: 10:00 AM
+  - Location: Wildcat Peak, Tilden Park area
+  - Distance: 6 miles, 900 ft elevation gain
+  - Difficulty: Moderate
+  - Organizer: Bay Area - Hike On!
 
+- **Pantoll via Dipsea Hike**
+  - Time: 10:00 AM (start moving ~10:15 AM)
+  - Location: Coast Trail parking lot above Muir Beach
+  - Distance: 9 miles, ~1,900 ft elevation gain
+  - Duration: ~4 hours
+  - Route: Coast View Trail → Dipsea → Steep Ravine → Pantoll
+  - Organizer: Sleep Late and Hike
 
-### 1. [Waitlist] **Temescal Panoramic Merriewood Loop**
-🕒 Sat, Jul 4 \u2022 8:30 AM PDT | 📍 US Hiking - Bay Area
-🔗 [Event Link](https://www.meetup.com/ushiking-bayarea/events/315464714/)
-⭐ 4.919 attendees | Hard 12.2mi/1512ft option
+## Upcoming Events
 
-### 2. **Old Mill Park, Dipsea Steps, Mtn Home Loop**
-🕒 Wed, Jul 8 \u2022 10:00 AM PDT | 📍 North Bay 50+ Nature and Outdoors
-🔗 [Event Link](https://www.meetup.com/north-bay-50-nature-and-outdoors/events/315460711/)
-⭐ 4.915 attendees | 6mi/1100ft
+### This Week
 
-### 3. [Waitlist] **Tilden RP: 7.6 Mi Moderate Hike**
-🕒 Sat, Jul 11 \u2022 1:00 PM PDT | 📍 Sleep Late and Hike
-🔗 [Event Link](https://www.meetup.com/sleeplateandhike/events/314621374/)
-⭐ 4.864 attendees
+1. **Rodeo Beach, Gerbode Valley and Hill 88 Hike**
+   - Date: Tuesday, July 14, 2026
+   - Time: 9:00 AM PDT
+   - Distance: ~8.5 miles, ~1,600 ft elevation
+   - Organizer: Sonoma County Wanderers
+   - Rating: 4.9★ (20 attendees)
 
-### 4. **Rodeo Lagoon to Slacker Hill**
-🕒 Sat, Jul 11 \u2022 10:00 AM PDT | 📍 San Francisco Bay Area Outings
-🔗 [Event Link](https://www.meetup.com/san-francisco-bay-area-outings/events/315408031/)
-⭐ 4.948 attendees | ~8mi/1900' elevation
+2. **Yoga & Hike at Redwood Regional Park**
+   - Date: Friday, July 17, 2026
+   - Time: 4:30 PM PDT
+   - Organizer: Weekly Hikes at Redwood Regional Park
+   - Rating: 4.9★
 
-### 5. [Waitlist] **Rodeo Beach to Gerbode Valley**
-🕒 Tue, Jul 14 \u2022 9:00 AM PDT | 📍 Sonoma County Wanderers
-🔗 [Event Link](https://www.meetup.com/sonoma-county-wanderers/events/315491134/)
-⭐ 4.917 attendees | ~8.5mi/1600'
+### Next Week
 
-*All events pulled from Meetup.com San Francisco hiking groups (last updated: July 8, 2026)*
+3. **Hike Land's End and Visit The Legion of Honor Museum (Free Day)**
+   - Date: Saturday, July 18, 2026
+   - Time: 10:00 AM meet, 11:00 AM hike start
+   - Meeting: Legion of Honor entrance (100 34th Ave, San Francisco)
+   - Distance: 3.4 mile loop, easy and scenic
+   - Highlights: Golden Gate Bridge views, Marin Headlands, China Beach detour option
+   - Organizer: Bay Area Socials
+   - Rating: 4.8★ (20 attendees)
+
+4. **💚 Green Exercise Easy 5 Miles: Hike SF Golden Gate Park**
+   - Date: Saturday, July 18, 2026
+   - Time: 1:30 PM meet, 2:00 PM hike start
+   - Location: Great Highway & John F Kennedy Drive (across from Beach Chalet Brewery)
+   - Distance: 5+ miles
+   - Elevation gain: ~500 ft
+   - Route type: Loop
+   - Organizer: Bay Area Hiking, Walking, Wellness Club
+   - Rating: 4.8★ (73 attendees)
+
+### Later July
+
+5. **Backpack to Beautiful Lake Schmidell**
+   - Date: Friday, July 24, 2026
+   - Time: 8:00 AM
+   - Organizer: Backpackers of the American West
+   - Rating: 5.0★
+
+6. **Hike: Nike Hill**
+   - Date: Saturday, July 25, 2026
+   - Time: 9:00 AM PDT
+   - Organizer: komoot hiking
+
+### August
+
+7. **Hike Reinhardt Redwood Regional**
+   - Date: Saturday, August 1, 2026
+   - Time: 9:30 AM PDT
+   - Organizer: East Bay Hikers
+
+8. **Lyon & Baker Beach Stairs Hike (Dogs Welcome)**
+   - Date: Sunday, August 9, 2026
+   - Time: 10:30 AM PDT
+   - Organizer: Urban & Bay Hikers
+
+9. **Urban Hike: Bernal Heights Park**
+   - Date: Sunday, August 23, 2026
+   - Time: 9:30 AM PDT
+   - Organizer: Have Fun Make Friends SF
+
+All events verified as of July 12, 2026 from San Francisco Meetup groups and hiking clubs.
