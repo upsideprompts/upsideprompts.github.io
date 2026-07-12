@@ -31,6 +31,13 @@ Things like:
 - Default speaker: Kitchen HomePod
 ```
 
+### Bay Area Hikes
+
+- Website: bayhikes.md (relative to workspace root)
+- Last updated: July 12, 2026 - Updated with latest upcoming hikes from Meetup.com's San Francisco hiking page
+- Source: Meetup.com San Francisco hiking groups
+- Content: Upcoming hike events with dates, distances, difficulty, and organizer info
+
 ### NY Stroll Stuff
 
 - Website: nystrollstuff/index.html (relative to workspace root)
@@ -52,9 +59,9 @@ Things like:
 
 - Website: innovateav/index.html (relative to workspace root)
 - Articles JSON: innovateav/articles2.json
-- Last updated: July 8, 2026 - Added 3 new verified articles (59 total)
+- Last updated: July 12, 2026 - Added 3 new verified articles (68 total)
 - Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
-- Current total: 62 verified articles
+- Current total: 68 verified articles
 - Verification rule: All articles must be confirmed to exist via 3 different loading methods before adding
 
 ### AMD LLM Processor YouTube Summaries
