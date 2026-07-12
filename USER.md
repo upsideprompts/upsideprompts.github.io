@@ -8,7 +8,7 @@ _Learn about the person you're helping. Update this as you go._
 - **Timezone:** UTC (based on message timestamp)
 - **Notes:** Just met you! Figuring out who you are. You mentioned the initflux channel (C0AS1FCPQHG). You asked me to add articles to the AV Innovate JSON file.
 - **Channel access:** Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
-- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website on June 29, 2026 with Monday June 29 baseball and hiking events. Updated NY Stroll Stuff website on June 30, 2026 with Tuesday June 30 baseball and hiking events. Updated NY Stroll Stuff website on July 1, 2026 with Wednesday July 1 baseball and hiking events. Updated NY Stroll Stuff website on July 7, 2026 with Tuesday July 7 baseball and hiking events. Updated NY Stroll Stuff website on July 8, 2026 with Wednesday July 8 baseball and hiking events. Updated NY Stroll Stuff website on July 9, 2026 with Thursday July 9 baseball and hiking events. Updated NY Stroll Stuff website on July 11, 2026 with Saturday July 11 baseball and hiking events.
+- **Recent work:** Added 3 new verified articles to innovateav/articles2.json (AV, Train, Aircraft) on June 27, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website with June 27 baseball and hiking events. Updated NY Stroll Stuff website again on June 26 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 25, 2026 with latest baseball and hiking events. Updated NY Stroll Stuff website on June 28, 2026 with latest baseball and hiking events for Sunday June 28. Added 3 more verified articles to innovateav/articles2.json (AV, Aircraft, Train) on June 28, 2026, committed and pushed to GitHub. Updated NY Stroll Stuff website on June 29, 2026 with Monday June 29 baseball and hiking events. Updated NY Stroll Stuff website on June 30, 2026 with Tuesday June 30 baseball and hiking events. Updated NY Stroll Stuff website on July 1, 2026 with Wednesday July 1 baseball and hiking events. Updated NY Stroll Stuff website on July 7, 2026 with Tuesday July 7 baseball and hiking events. Updated NY Stroll Stuff website on July 8, 2026 with Wednesday July 8 baseball and hiking events. Updated NY Stroll Stuff website on July 9, 2026 with Thursday July 9 baseball and hiking events. Updated NY Stroll Stuff website on July 11, 2026 with Saturday July 11 baseball and hiking events. Updated NY Stroll Stuff website on July 12, 2026 with Sunday July 12 baseball and hiking events.
 
 ## Context
 
@@ -146,11 +146,36 @@ _Learn about the person you're helping. Update this as you go._
 - Added 3 baseball games (Yankees vs Blue Jays at Yankee Stadium, Mets vs Marlins at Citi Field, Cyclones vs Connecticut Tigers at Maimonides Park)
 - Added 5 NYC hiking events (Inwood Hill Park Sunrise Hike, Central Park Summer Solstice Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Brooklyn Bridge Park Path)
 - Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (62 total):
+  1. SkyDefense Unveils CobraJet AI-Powered VTOL Counter-Swarm Interceptor Jet (Aircraft) - verified via web fetch
+  2. Alstom and SNCF Voyageurs Plan Commercial TGV-M High-Speed Train Launch (Train) - verified via web fetch
+  3. Embotech and HTEC Partner to Scale Industrial Logistics Autonomous Vehicles (AV) - verified via web fetch
+- Committed and pushed to GitHub
+
+**July 10, 2026:**
+- Added 3 new verified articles to innovateav/articles2.json (65 total):
+  1. Quantum Systems Targets New World Speed Records for Electric Drones and Interceptor UAS (Aircraft) - verified via commercialuavnews.com
+  2. Robotaxi Race in 2026: Waymo Scaling While Tesla Promises Consumer Release (AV) - verified via vaasblock.com
+  3. Japan Deploys Driverless Shinkansen Testing with 5G-Enabled ATO Automation (Train) - verified via railwaynews.net
+- Committed and pushed to GitHub
 
 **July 11, 2026:**
 - Updated NY Stroll Stuff website with Saturday July 11 baseball and hiking events
 - Added 3 baseball games (Yankees @ Nationals at Nationals Park, Mets vs Red Sox at Citi Field, Cyclones vs Wilmington Blue Rocks at Maimonides Park)
 - Added 5 NYC hiking events (Inwood Hill Park Morning Hike, Central Park Loop Hike, Prospect Park Trail Walk, Hudson River Park Waterfront Hike, Pelham Bay Park Coastal Trail)
+- Committed and pushed to GitHub
+
+**July 12, 2026:**
+- Updated NY Stroll Stuff website with Sunday July 12 baseball and hiking events
+- Added 3 baseball games (Yankees @ Nationals at Nationals Park, Mets vs Marlins at Citi Field, Cyclones vs Hudson Valley Renegades at Maimonides Park)
+- Added 5 NYC hiking events (Central Park Morning Hike, Inwood Hill Park Nature Hike, Prospect Park Weekend Walk, Hudson River Greenway Hike, Pelham Bay Park Coastal Trail)
+- Committed and pushed to GitHub
+- Updated bayhikes.md with latest upcoming hikes from Meetup.com's San Francisco hiking page (July 12, 2026)
+- Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (68 total):
+  1. The State of Autonomous Driving in 2026: Waymo, Tesla, and the Chinese Challengers (AV) - verified via 6g-ai.com
+  2. Top 10 Rail Industry Trends & Innovations [2026]: The Digital Railway Revolution (Train) - verified via startus-insights.com
+  3. Inside the Pentagon's $13.4 Billion Bet on Autonomous Weapons and Drone Warfare (Aircraft) - verified via artificialweapons.com
 - Committed and pushed to GitHub
 
 ## Related
