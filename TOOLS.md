@@ -36,7 +36,7 @@ Things like:
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: July 11, 2026 - Updated with Saturday July 11 baseball and hiking events
+- Last updated: July 12, 2026 - Updated with Sunday July 12 baseball and hiking events
 - Automation: Daily cron job (ee46fe6c) runs at 9:30 AM UTC
 - Channel access: Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
 
