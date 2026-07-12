@@ -128,6 +128,13 @@ Committed and pushed to GitHub.
 - Added 5 NYC hiking events: Inwood Hill Park Morning Hike, Central Park Loop Hike, Prospect Park Trail Walk, Hudson River Park Waterfront Hike, Pelham Bay Park Coastal Trail
 - Committed and pushed to GitHub
 
+**July 12, 2026:**
+- Added 3 new verified articles to innovateav/articles2.json (68 total):
+  1. The State of Autonomous Driving in 2026: Waymo, Tesla, and the Chinese Challengers (AV) - verified via 6g-ai.com
+  2. Top 10 Rail Industry Trends & Innovations [2026]: The Digital Railway Revolution (Train) - verified via startus-insights.com
+  3. Inside the Pentagon's $13.4 Billion Bet on Autonomous Weapons and Drone Warfare (Aircraft) - verified via artificialweapons.com
+- Committed and pushed to GitHub
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
