@@ -1,268 +1,8 @@
 [
   {
-    "title": "Waymo Launches Sixth-Generation Robotaxi System Targeting 20 New Cities in 2026",
-    "link": "https://insideautonomousvehicles.com/waymo-launches-sixth-generation-robotaxi-system/",
-    "date": "2026-07-14"
-  },
-  {
-    "title": "CRRC Unveils World's First Driverless High-Speed Train Capable of 200 km/h for Beijing-Xiong'an Line",
-    "link": "https://metrorailtoday.com/news/crrc-unveils-the-worlds-first-driverless-high-speed-train-capable-of-200-kmh/",
-    "date": "2026-07-14"
-  },
-  {
-    "title": "The Autonomous Warfare Revolution: How AI-Powered Military Drones Are Reshaping Defense in 2026",
-    "link": "https://toptechnews.net/articles/autonomous-military-drones-2026.html",
-    "date": "2026-07-14"
-  },
-  {
-    "title": "Waymo to start driverless rides in 4 more U.S. markets as expansion accelerates",
-    "link": "https://www.cnbc.com/2026/07/08/waymo-starts-driverless-rides-in-san-diego-las-vegas-tampa-denver.html",
-    "date": "2026-07-13"
-  },
-  {
-    "title": "AI in Rail Systems: Innovations Shaping Future Transportation",
-    "link": "https://railwaynews.net/ai-in-rail-systems-innovations-shaping-future-transportation.html",
-    "date": "2026-07-13"
-  },
-  {
-    "title": "Swarm Aero's Legion Command and Control Software Successfully Completes Manned-Unmanned Teaming Exercises at U.S. Navy Fleet Experimentation (FLEX) 2026",
-    "link": "https://www.swarm.aero/news-release/swarm-aeros-command-and-control-software-successfully-completes-manned-unmanned-teaming-exercises-at-u-s-navy-fleet-experimentation-flex-2026",
-    "date": "2026-07-13"
-  },
-  {
-    "title": "The State of Autonomous Driving in 2026: Waymo, Tesla, and the Chinese Challengers",
-    "link": "https://6g-ai.com/news/autonomous-driving-2026-waymo-tesla-china",
-    "date": "2026-07-12"
-  },
-  {
-    "title": "Top 10 Rail Industry Trends & Innovations [2026]: The Digital Railway Revolution",
-    "link": "https://www.startus-insights.com/innovators-guide/rail-industry-trends/",
-    "date": "2026-07-12"
-  },
-  {
-    "title": "Inside the Pentagon's $13.4 Billion Bet on Autonomous Weapons and Drone Warfare",
-    "link": "https://artificialweapons.com/articles/pentagon-13-billion-autonomous-budget-2026",
-    "date": "2026-07-12"
-  },
-  {
-    "title": "U.S. Explores Autonomous Containerized Drone Hubs to Enable Persistent Swarm Warfare From Dispersed Positions",
-    "link": "https://www.armyrecognition.com/news/army-news/2026/u-s-explores-autonomous-drone-containers-to-enable-persistent-swarm-warfare-from-dispersed-positions",
-    "date": "2026-07-11"
-  },
-  {
-    "title": "NATO Approves $40 Billion Counter-Drone Initiative to Defeat Low-Cost UAV Threats",
-    "link": "https://www.armyrecognition.com/news/aerospace-news/2026/nato-approves-40-billion-counter-drone-initiative-to-defeat-low-cost-uav-threats",
-    "date": "2026-07-11"
-  },
-  {
-    "title": "High-Speed Rail Future: Global Trends & Innovations in Autonomous Train Operation",
-    "link": "https://railwaynews.net/high-speed-rail-future-global-trends-innovations.html",
-    "date": "2026-07-11"
-  },
-  {
-    "title": "Quantum Systems Targets New World Speed Records for Electric Drones and Interceptor UAS",
-    "link": "https://www.commercialuavnews.com/quantum-systems-speed-records-electric-drones-interceptor-uas-2026/",
-    "date": "2026-07-10"
-  },
-  {
-    "title": "Robotaxi Race in 2026: Waymo Scaling While Tesla Promises Consumer Release",
-    "link": "https://www.vaasblock.com/news/tesla-waymo-robotaxi-autonomous-vehicles-2026/",
-    "date": "2026-07-10"
-  },
-  {
-    "title": "Japan Deploys Driverless Shinkansen Testing with 5G-Enabled ATO Automation",
-    "link": "https://railwaynews.net/japans-driverless-shinkansen-ato-5g-revolution.html",
-    "date": "2026-07-10"
-  },
-  {
-    "title": "SkyDefense Unveils CobraJet AI-Powered VTOL Counter-Swarm Interceptor Jet for 2026 Deployment",
-    "link": "https://www.uasvision.com/2026/07/09/cobrajet-vtol-multirole-jet-for-c-uas-with-low-cost-interceptors/",
-    "date": "2026-07-09"
-  },
-  {
-    "title": "Alstom and SNCF Voyageurs Plan Commercial TGV-M High-Speed Train Launch July 2026",
-    "link": "https://railmarket.com/news/rolling-stock/44480-alstom-and-sncf-voyageurs-plan-to-start-tgv-m-in-july-2026",
-    "date": "2026-07-09"
-  },
-  {
-    "title": "Embotech and HTEC Partner to Scale Industrial Logistics Autonomous Vehicles",
-    "link": "https://www.autonomousvehicleinternational.com/news/trucks/embotech-and-htec-partner-to-scale-deployment-of-industrial-logistics-autonomous-vehicles.html",
-    "date": "2026-07-09"
-  },
-  {
-    "title": "Tesla Launches Optimus Gen 3 Robotaxi Fleet in Austin with Full Autonomous Operations",
-    "link": "https://www.tesla.com/blog/2026/07/optimus-gen3-robotaxi-austin",
-    "date": "2026-07-08"
-  },
-  {
-    "title": "Amtrak Begins Testing AI-Powered Autonomous Train Technology on Northeast Corridor",
-    "link": "https://www.amtrak.com/news/releases/2026/07/amtrak-ai-autonomous-train-testing",
-    "date": "2026-07-08"
-  },
-  {
-    "title": "Anduril Demonstrates Autonomous Drone Swarm with AI-Powered Mission Coordination",
-    "link": "https://www.anduril.com/press/autonomous-drone-swarm-ai-mission-coordination/",
-    "date": "2026-07-08"
-  },
-  {
-    "title": "Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions",
-    "link": "https://waymo.com/blog/2026/07/waymo-phoenix-zero-intervention/",
-    "date": "2026-07-07"
-  },
-  {
-    "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
-    "link": "https://www.sncf.com/press/france-opens-ai-controlled-autonomous-high-speed-line-lyon-marseille",
-    "date": "2026-07-07"
-  },
-  {
-    "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
-    "link": "https://www.lockheedmartin.com/en-us/capabilities/f-35-drone-wingman-autonomous-operations.html",
-    "date": "2026-07-07"
-  },
-  {
-    "title": "Mercedes-Benz Vision AV Speed Demon: 200+ mph Autonomous Concept Debuts at Goodwood Festival",
-    "link": "https://www.mercedes-benz.com/en/newsroom/vision-av-speed-demon-autonomous-200mph-goodwood/",
-    "date": "2026-07-06"
-  },
-  {
-    "title": "Japan's JR Central Partners with NVIDIA for AI-Powered Autonomous Shinkansen Control System",
-    "link": "https://www.jr-central.co.jp/en/newsroom/press/2026/07/nvidia-partnership-ai-autonomous-shinkansen.html",
-    "date": "2026-07-06"
-  },
-  {
-    "title": "Anduril Industries Demos Autonomous Nuke-Powered Micro-Drone Swarm for Arctic Operations",
-    "link": "https://www.anduril.com/press/autonomous-nuke-powered-micro-drone-swarm-arctic/",
-    "date": "2026-07-06"
-  },
-  {
-    "title": "Cruise Begins Autonomous Fleet Operations in Seattle with GM Electric Vehicle Integration",
-    "link": "https://about.cruise.com/press-releases/cruise-seattle-autonomous-fleet-launch",
-    "date": "2026-07-05"
-  },
-  {
-    "title": "Amtrak Reveals AI-Powered Autonomous Train Technology for Northeast Corridor by 2028",
-    "link": "https://www.amtrak.com/news/releases/2026/ai-autonomous-train-technology-northeast-corridor.html",
-    "date": "2026-07-05"
-  },
-  {
-    "title": "Northrop Grumman Demos Fully Autonomous RQ-180 Recon Drone with AI-Powered Mission Systems",
-    "link": "https://www.northropgrumman.com/capabilities/unmanned-systems/rq-180-autonomous-reconnaissance/",
-    "date": "2026-07-05"
-  },
-  {
-    "title": "Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions",
-    "link": "https://waymo.com/blog/2026/07/waymo-phoenix-zero-intervention/",
-    "date": "2026-07-04"
-  },
-  {
-    "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
-    "link": "https://www.sncf.com/press/france-opens-ai-controlled-autonomous-high-speed-line-lyon-marseille",
-    "date": "2026-07-04"
-  },
-  {
-    "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
-    "link": "https://www.lockheedmartin.com/en-us/capabilities/f-35-drone-wingman-autonomous-operations.html",
-    "date": "2026-07-04"
-  },
-  {
-    "title": "Cruise Launches Autonomous Food Delivery Network in 50 Major US Cities with GM Fleet Integration",
-    "link": "https://about.cruise.com/press-releases/cruise-autonomous-food-delivery-network-2026",
-    "date": "2026-07-03"
-  },
-  {
-    "title": "Japan's JR East Deploys AI-Controlled Autonomous Shinkansen Trains on Tokyo-Osaka Line",
-    "link": "https://www.jr-east.co.jp/en/newsroom/press/2026/07/ai-autonomous-shinkansen-tokyo-osaka.html",
-    "date": "2026-07-03"
-  },
-  {
-    "title": "Lockheed Martin Sikorsky Raider X Autonomous Helicopter Completes First Operational Flight Test",
-    "link": "https://www.lockheedmartin.com/en-us/capabilities/unmanned-systems/sikorsky-raider-x-autonomous-helicopter.html",
-    "date": "2026-07-03"
-  },
-  {
-    "title": "Waymo Begins San Francisco Bay Area Robotaxi Expansion with Palo Alto Operations",
-    "link": "https://waymo.com/blog/2026/07/waymo-san-francisco-bay-area-expansion/",
-    "date": "2026-07-01"
-  },
-  {
-    "title": "France's SNCF Tests AI-Powered Autonomous Train Technology for Future High-Speed Lines",
-    "link": "https://www.sncf.com/press/france-sncf-tests-ai-powered-autonomous-train-technology",
-    "date": "2026-07-01"
-  },
-  {
-    "title": "Northrop Grumman's MQ-4C TRITON Autonomous UAV Completes Pacific Maritime Surveillance Mission",
-    "link": "https://www.northropgrumman.com/capabilities/unmanned-systems/mq-4c-triton-autonomous-uav/",
-    "date": "2026-07-01"
-  },
-  {
-    "title": "AMD Ryzen AI Embedded Processors Power Robotics and Autonomous Systems with XDNA 2 NPU",
-    "link": "https://www.techtimes.com/articles/318134/20260610/amd-carries-x86-robotics-cars-ryzen-ai-embedded-challenging-arm-based-rivals.htm",
-    "date": "2026-06-30"
-  },
-  {
-    "title": "Tesla Optimus Gen 3 Production Begins Summer 2026 with Mass Production in 2027",
-    "link": "https://www.basenor.com/blogs/news/tesla-optimus-v3-production-starts-this-summer-full-timeline",
-    "date": "2026-06-30"
-  },
-  {
-    "title": "UK £15 Billion Defense Investment Targets Robot Warfare and Drone Modernization",
-    "link": "https://www.thenationalnews.com/news/uk/2026/06/30/britains-15-billion-defence-reset-prepares-for-age-of-robot-warfare/",
-    "date": "2026-06-30"
-  },
-  {
-    "title": "Mercedes-Benz Launches Drive Pilot Ready for Commercial Fleet Deployment in California",
-    "link": "https://www.mercedes-benz.com/en/press/releases/drive-pilot-commercial-fleet-california/",
-    "date": "2026-06-30"
-  },
-  {
-    "title": "Germany's Deutsche Bahn Deploys AI-Optimized Electric Train Control Systems Nationwide",
-    "link": "https://www.db.com/press/deutsche-bahn-deploys-ai-optimized-electric-train-control-systems",
-    "date": "2026-06-30"
-  },
-  {
-    "title": "Boeing Phantom Works Demos Autonomous Cargo Drone Swarm at Nevada Test Range",
-    "link": "https://www.boeing.com/news/releases/2026-autonomous-drone-swarm-demonstration-nevada",
-    "date": "2026-06-30"
-  },
-  {
-    "title": "Cruise Origin Robotaxis Begin Commercial Operations in Detroit with GM Fleet Integration",
-    "link": "https://about.cruise.com/press-releases/cruise-origin-robotaxis-detroit-commercial-operations/",
-    "date": "2026-06-29"
-  },
-  {
-    "title": "Japan's Shinkansen Debuts AI-Powered Predictive Maintenance for Bullet Train Fleet",
-    "link": "https://www.jr-central.co.jp/en/newsroom/press/2026/06/ai-maintenance-shinkansen.html",
-    "date": "2026-06-29"
-  },
-  {
-    "title": "Lockheed Martin's Polaris Autonomous UAV Completes Arctic Surveillance Mission",
-    "link": "https://www.lockheedmartin.com/en-us/capabilities/unmanned-systems/polaris-uav-arctic-surveillance.html",
-    "date": "2026-06-29"
-  },
-  {
-    "title": "Waymo Opens Fully Autonomous Robotaxi Service to All Riders in Nashville",
-    "link": "https://waymo.com/blog/shorts/nashville-june2026/",
-    "date": "2026-06-28"
-  },
-  {
-    "title": "BETA Technologies and Republic Airways Prepare for Cargo Air Taxi Service in Florida",
-    "link": "https://aerospaceamerica.aiaa.org/beta-republic-airways-prepare-for-cargo-air-taxi-service-in-florida/",
-    "date": "2026-06-28"
-  },
-  {
-    "title": "EU Rail Passenger Rights: New Regulations Must Guarantee Full Protection Across Borders",
-    "link": "https://www.transportenvironment.org/articles/advancing-eu-rail-passenger-rights",
-    "date": "2026-06-28"
-  },
-  {
-    "title": "CES 2026 showcases robotaxi and autonomous vehicle innovations",
-    "link": "https://www.cbtnews.com/ces-2026-showcases-autonomous-vehicle-innovations/",
-    "date": "2026-06-27"
-  },
-  {
-    "title": "High-Speed Rail Proposal Aims to Transform U.S. Passenger Rail Investment",
-    "link": "https://www.metro-magazine.com/news/high-speed-rail-proposal-aims-to-transform-us-passenger-rail-investment",
-    "date": "2026-06-27"
+    "title": "2026 Autonomous Vehicles Industry Report: Robotaxis Go Mainstream",
+    "link": "https://www.jsheld.com/insights/articles/2026-autonomous-vehicles-industry-report",
+    "date": "2026-06-15"
   },
   {
     "title": "2026 will test U.S. Air Force's bet on drone wingmen",
@@ -270,104 +10,19 @@
     "date": "2026-06-27"
   },
   {
-    "title": "TPE331 Engine Will Power Swarm Aero's Large Military Drone",
-    "link": "https://www.ainonline.com/aviation-news/defense/2026-06-11/tpe331-engine-will-power-swarm-aeros-large-military-drone",
-    "date": "2026-06-26"
+    "title": "AI in Rail Systems: Innovations Shaping Future Transportation",
+    "link": "https://railwaynews.net/ai-in-rail-systems-innovations-shaping-future-transportation.html",
+    "date": "2026-07-13"
   },
   {
-    "title": "China Unveils 600 km/h Maglev Train, Now the World's Fastest",
-    "link": "https://www.l24news.com/2026/02/china-unveils-600-kmh-maglev-train-now.html",
-    "date": "2026-06-26"
-  },
-  {
-    "title": "How the Self-Driving Tech Stack Works: OpenPilot vs Autoware Technical Analysis",
-    "link": "https://cardog.app/blog/autonomous-driving-stack-technical-guide",
-    "date": "2026-06-26"
+    "title": "AMD Ryzen AI Embedded Processors Power Robotics and Autonomous Systems with XDNA 2 NPU",
+    "link": "https://www.techtimes.com/articles/318134/20260610/amd-carries-x86-robotics-cars-ryzen-ai-embedded-challenging-arm-based-rivals.htm",
+    "date": "2026-06-30"
   },
   {
     "title": "Acodyne Lands Funding for Electric Cargo Drone Family",
     "link": "https://www.ainonline.com/aviation-news/futureflight/2026-06-22/acodyne-lands-funding-electric-cargo-drone-family",
     "date": "2026-06-25"
-  },
-  {
-    "title": "M-346 Leads Baykar UCAV in Autonomous Formation Flight Trial",
-    "link": "https://www.ainonline.com/aviation-news/defense/2026-06-23/m-346-leads-baykar-ucav-autonomous-formation-flight",
-    "date": "2026-06-25"
-  },
-  {
-    "title": "Modernising the EU's Rail Ticketing Regulation for Seamless Cross-Border Passenger Travel",
-    "link": "https://www.transportenvironment.org/articles/modernising-the-eus-rail-ticketing-regulation",
-    "date": "2026-06-25"
-  },
-  {
-    "title": "Waymo Expands Fully Autonomous Robotaxi Service to 10 US Cities",
-    "link": "https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/",
-    "date": "2026-06-24"
-  },
-  {
-    "title": "The Autonomous Warfare Revolution: AI-Powered Military Drones Reshaping Defense in 2026",
-    "link": "https://toptechnews.net/articles/autonomous-military-drones-2026.html",
-    "date": "2026-06-24"
-  },
-  {
-    "title": "Waymo 2026 Expansion: Opening Fully Driverless Service to 12 US Cities",
-    "link": "https://www.waymo.com/blog/2026/06/waymo-los-angeles-driverless.html",
-    "date": "2026-06-24"
-  },
-  {
-    "title": "Autoware: The World's Leading Open-Source Autonomous Driving Platform",
-    "link": "https://autoware.org/",
-    "date": "2026-06-22"
-  },
-  {
-    "title": "Open-Source Autonomous Driving Software Platforms: Comparison of Autoware and Apollo",
-    "link": "https://ave-lab.com/open-source-autonomous-driving-software-platforms-comparison-of-autoware-and-apollo/",
-    "date": "2026-06-22"
-  },
-  {
-    "title": "ROS 2-Based Architecture for Autonomous Driving Systems with Sensor Fusion",
-    "link": "https://github.com/manankharwar/FusionCore",
-    "date": "2026-06-21"
-  },
-  {
-    "title": "Community-Driven Development: Accelerating Level 4/5 Autonomous Deployment Through Open Source",
-    "link": "https://arxiv.org/html/2501.18942",
-    "date": "2026-06-20"
-  },
-  {
-    "title": "Tesla Cybercab Enters Mass Production for Dedicated Robotaxi Fleet",
-    "link": "https://www.tesla.com/cybercab",
-    "date": "2026-06-17"
-  },
-  {
-    "title": "Waymo Expands to 12 Cities with New Los Angeles Full Driverless Service",
-    "link": "https://www.waymo.com/blog/2026/06/waymo-los-angeles-driverless.html",
-    "date": "2026-06-17"
-  },
-  {
-    "title": "Cruise GM Partnership Accelerates Autonomous Delivery Scaling",
-    "link": "https://about.cruise.com/press-releases/gm-partnership-autonomous-delivery-fleet-2026",
-    "date": "2026-06-16"
-  },
-  {
-    "title": "Waymo Phoenix Full Driverless Service Surpasses 500,000 Weekly Rides",
-    "link": "https://www.waymo.com/blog/2026/06/waymo-phoenix-full-driverless.html",
-    "date": "2026-06-16"
-  },
-  {
-    "title": "Indonesia Approves AutoFlight's Autonomous eVTOL Aircraft",
-    "link": "https://www.ainonline.com/aviation-news/futureflight/2026-06-12/indonesia-approves-autoflights-autonomous-evtol-aircraft",
-    "date": "2026-06-12"
-  },
-  {
-    "title": "2026 Autonomous Vehicles Industry Report: Robotaxis Go Mainstream",
-    "link": "https://www.jsheld.com/insights/articles/2026-autonomous-vehicles-industry-report",
-    "date": "2026-06-15"
-  },
-  {
-    "title": "Autonomous Vehicles 2026: Where Self-Driving Tech Stands Today",
-    "link": "https://techlorex.com/autonomous-vehicles-2026-where-self-driving-tech-stands-today",
-    "date": "2026-06-14"
   },
   {
     "title": "Airbus Unveils U760 Ravenstorm Stealth Combat Drone at ILA 2026",
@@ -380,8 +35,338 @@
     "date": "2026-06-13"
   },
   {
+    "title": "Alstom and SNCF Voyageurs Plan Commercial TGV-M High-Speed Train Launch July 2026",
+    "link": "https://railmarket.com/news/rolling-stock/44480-alstom-and-sncf-voyageurs-plan-to-start-tgv-m-in-july-2026",
+    "date": "2026-07-09"
+  },
+  {
+    "title": "Amtrak Begins Testing AI-Powered Autonomous Train Technology on Northeast Corridor",
+    "link": "https://www.amtrak.com/news/releases/2026/07/amtrak-ai-autonomous-train-testing",
+    "date": "2026-07-08"
+  },
+  {
+    "title": "Amtrak Reveals AI-Powered Autonomous Train Technology for Northeast Corridor by 2028",
+    "link": "https://www.amtrak.com/news/releases/2026/ai-autonomous-train-technology-northeast-corridor.html",
+    "date": "2026-07-05"
+  },
+  {
+    "title": "Anduril Demonstrates Autonomous Drone Swarm with AI-Powered Mission Coordination",
+    "link": "https://www.anduril.com/press/autonomous-drone-swarm-ai-mission-coordination/",
+    "date": "2026-07-08"
+  },
+  {
+    "title": "Anduril Industries Demos Autonomous Nuke-Powered Micro-Drone Swarm for Arctic Operations",
+    "link": "https://www.anduril.com/press/autonomous-nuke-powered-micro-drone-swarm-arctic/",
+    "date": "2026-07-06"
+  },
+  {
     "title": "Autonomous Aircraft Are Accelerating in 2026",
     "link": "https://pilotheadquarters.com/autonomous-aircraft-accelerating-2026/",
     "date": "2026-06-11"
+  },
+  {
+    "title": "Autonomous Vehicles 2026: Where Self-Driving Tech Stands Today",
+    "link": "https://techlorex.com/autonomous-vehicles-2026-where-self-driving-tech-stands-today",
+    "date": "2026-06-14"
+  },
+  {
+    "title": "Autoware: The World's Leading Open-Source Autonomous Driving Platform",
+    "link": "https://autoware.org/",
+    "date": "2026-06-22"
+  },
+  {
+    "title": "BETA Technologies and Republic Airways Prepare for Cargo Air Taxi Service in Florida",
+    "link": "https://aerospaceamerica.aiaa.org/beta-republic-airways-prepare-for-cargo-air-taxi-service-in-florida/",
+    "date": "2026-06-28"
+  },
+  {
+    "title": "Boeing Phantom Works Demos Autonomous Cargo Drone Swarm at Nevada Test Range",
+    "link": "https://www.boeing.com/news/releases/2026-autonomous-drone-swarm-demonstration-nevada",
+    "date": "2026-06-30"
+  },
+  {
+    "title": "CES 2026 showcases robotaxi and autonomous vehicle innovations",
+    "link": "https://www.cbtnews.com/ces-2026-showcases-autonomous-vehicle-innovations/",
+    "date": "2026-06-27"
+  },
+  {
+    "title": "CRRC Unveils World's First Driverless High-Speed Train Capable of 200 km/h for Beijing-Xiong'an Line",
+    "link": "https://metrorailtoday.com/news/crrc-unveils-the-worlds-first-driverless-high-speed-train-capable-of-200-kmh/",
+    "date": "2026-07-14"
+  },
+  {
+    "title": "China Unveils 600 km/h Maglev Train, Now the World's Fastest",
+    "link": "https://www.l24news.com/2026/02/china-unveils-600-kmh-maglev-train-now.html",
+    "date": "2026-06-26"
+  },
+  {
+    "title": "Community-Driven Development: Accelerating Level 4/5 Autonomous Deployment Through Open Source",
+    "link": "https://arxiv.org/html/2501.18942",
+    "date": "2026-06-20"
+  },
+  {
+    "title": "Cruise Begins Autonomous Fleet Operations in Seattle with GM Electric Vehicle Integration",
+    "link": "https://about.cruise.com/press-releases/cruise-seattle-autonomous-fleet-launch",
+    "date": "2026-07-05"
+  },
+  {
+    "title": "Cruise GM Partnership Accelerates Autonomous Delivery Scaling",
+    "link": "https://about.cruise.com/press-releases/gm-partnership-autonomous-delivery-fleet-2026",
+    "date": "2026-06-16"
+  },
+  {
+    "title": "Cruise Launches Autonomous Food Delivery Network in 50 Major US Cities with GM Fleet Integration",
+    "link": "https://about.cruise.com/press-releases/cruise-autonomous-food-delivery-network-2026",
+    "date": "2026-07-03"
+  },
+  {
+    "title": "Cruise Origin Robotaxis Begin Commercial Operations in Detroit with GM Fleet Integration",
+    "link": "https://about.cruise.com/press-releases/cruise-origin-robotaxis-detroit-commercial-operations/",
+    "date": "2026-06-29"
+  },
+  {
+    "title": "EU Rail Passenger Rights: New Regulations Must Guarantee Full Protection Across Borders",
+    "link": "https://www.transportenvironment.org/articles/advancing-eu-rail-passenger-rights",
+    "date": "2026-06-28"
+  },
+  {
+    "title": "Embotech and HTEC Partner to Scale Industrial Logistics Autonomous Vehicles",
+    "link": "https://www.autonomousvehicleinternational.com/news/trucks/embotech-and-htec-partner-to-scale-deployment-of-industrial-logistics-autonomous-vehicles.html",
+    "date": "2026-07-09"
+  },
+  {
+    "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
+    "link": "https://www.sncf.com/press/france-opens-ai-controlled-autonomous-high-speed-line-lyon-marseille",
+    "date": "2026-07-07"
+  },
+  {
+    "title": "France's SNCF Tests AI-Powered Autonomous Train Technology for Future High-Speed Lines",
+    "link": "https://www.sncf.com/press/france-sncf-tests-ai-powered-autonomous-train-technology",
+    "date": "2026-07-01"
+  },
+  {
+    "title": "Germany's Deutsche Bahn Deploys AI-Optimized Electric Train Control Systems Nationwide",
+    "link": "https://www.db.com/press/deutsche-bahn-deploys-ai-optimized-electric-train-control-systems",
+    "date": "2026-06-30"
+  },
+  {
+    "title": "High-Speed Rail Future: Global Trends & Innovations in Autonomous Train Operation",
+    "link": "https://railwaynews.net/high-speed-rail-future-global-trends-innovations.html",
+    "date": "2026-07-11"
+  },
+  {
+    "title": "High-Speed Rail Proposal Aims to Transform U.S. Passenger Rail Investment",
+    "link": "https://www.metro-magazine.com/news/high-speed-rail-proposal-aims-to-transform-us-passenger-rail-investment",
+    "date": "2026-06-27"
+  },
+  {
+    "title": "How the Self-Driving Tech Stack Works: OpenPilot vs Autoware Technical Analysis",
+    "link": "https://cardog.app/blog/autonomous-driving-stack-technical-guide",
+    "date": "2026-06-26"
+  },
+  {
+    "title": "Indonesia Approves AutoFlight's Autonomous eVTOL Aircraft",
+    "link": "https://www.ainonline.com/aviation-news/futureflight/2026-06-12/indonesia-approves-autoflights-autonomous-evtol-aircraft",
+    "date": "2026-06-12"
+  },
+  {
+    "title": "Inside the Pentagon's $13.4 Billion Bet on Autonomous Weapons and Drone Warfare",
+    "link": "https://artificialweapons.com/articles/pentagon-13-billion-autonomous-budget-2026",
+    "date": "2026-07-12"
+  },
+  {
+    "title": "Japan Deploys Driverless Shinkansen Testing with 5G-Enabled ATO Automation",
+    "link": "https://railwaynews.net/japans-driverless-shinkansen-ato-5g-revolution.html",
+    "date": "2026-07-10"
+  },
+  {
+    "title": "Japan's JR Central Partners with NVIDIA for AI-Powered Autonomous Shinkansen Control System",
+    "link": "https://www.jr-central.co.jp/en/newsroom/press/2026/07/nvidia-partnership-ai-autonomous-shinkansen.html",
+    "date": "2026-07-06"
+  },
+  {
+    "title": "Japan's JR East Deploys AI-Controlled Autonomous Shinkansen Trains on Tokyo-Osaka Line",
+    "link": "https://www.jr-east.co.jp/en/newsroom/press/2026/07/ai-autonomous-shinkansen-tokyo-osaka.html",
+    "date": "2026-07-03"
+  },
+  {
+    "title": "Japan's Shinkansen Debuts AI-Powered Predictive Maintenance for Bullet Train Fleet",
+    "link": "https://www.jr-central.co.jp/en/newsroom/press/2026/06/ai-maintenance-shinkansen.html",
+    "date": "2026-06-29"
+  },
+  {
+    "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
+    "link": "https://www.lockheedmartin.com/en-us/capabilities/f-35-drone-wingman-autonomous-operations.html",
+    "date": "2026-07-07"
+  },
+  {
+    "title": "Lockheed Martin Sikorsky Raider X Autonomous Helicopter Completes First Operational Flight Test",
+    "link": "https://www.lockheedmartin.com/en-us/capabilities/unmanned-systems/sikorsky-raider-x-autonomous-helicopter.html",
+    "date": "2026-07-03"
+  },
+  {
+    "title": "Lockheed Martin's Polaris Autonomous UAV Completes Arctic Surveillance Mission",
+    "link": "https://www.lockheedmartin.com/en-us/capabilities/unmanned-systems/polaris-uav-arctic-surveillance.html",
+    "date": "2026-06-29"
+  },
+  {
+    "title": "M-346 Leads Baykar UCAV in Autonomous Formation Flight Trial",
+    "link": "https://www.ainonline.com/aviation-news/defense/2026-06-23/m-346-leads-baykar-ucav-autonomous-formation-flight",
+    "date": "2026-06-25"
+  },
+  {
+    "title": "Mercedes-Benz Launches Drive Pilot Ready for Commercial Fleet Deployment in California",
+    "link": "https://www.mercedes-benz.com/en/press/releases/drive-pilot-commercial-fleet-california/",
+    "date": "2026-06-30"
+  },
+  {
+    "title": "Mercedes-Benz Vision AV Speed Demon: 200+ mph Autonomous Concept Debuts at Goodwood Festival",
+    "link": "https://www.mercedes-benz.com/en/newsroom/vision-av-speed-demon-autonomous-200mph-goodwood/",
+    "date": "2026-07-06"
+  },
+  {
+    "title": "Modernising the EU's Rail Ticketing Regulation for Seamless Cross-Border Passenger Travel",
+    "link": "https://www.transportenvironment.org/articles/modernising-the-eus-rail-ticketing-regulation",
+    "date": "2026-06-25"
+  },
+  {
+    "title": "NATO Approves $40 Billion Counter-Drone Initiative to Defeat Low-Cost UAV Threats",
+    "link": "https://www.armyrecognition.com/news/aerospace-news/2026/nato-approves-40-billion-counter-drone-initiative-to-defeat-low-cost-uav-threats",
+    "date": "2026-07-11"
+  },
+  {
+    "title": "Northrop Grumman Demos Fully Autonomous RQ-180 Recon Drone with AI-Powered Mission Systems",
+    "link": "https://www.northropgrumman.com/capabilities/unmanned-systems/rq-180-autonomous-reconnaissance/",
+    "date": "2026-07-05"
+  },
+  {
+    "title": "Northrop Grumman's MQ-4C TRITON Autonomous UAV Completes Pacific Maritime Surveillance Mission",
+    "link": "https://www.northropgrumman.com/capabilities/unmanned-systems/mq-4c-triton-autonomous-uav/",
+    "date": "2026-07-01"
+  },
+  {
+    "title": "Open-Source Autonomous Driving Software Platforms: Comparison of Autoware and Apollo",
+    "link": "https://ave-lab.com/open-source-autonomous-driving-software-platforms-comparison-of-autoware-and-apollo/",
+    "date": "2026-06-22"
+  },
+  {
+    "title": "Quantum Systems Targets New World Speed Records for Electric Drones and Interceptor UAS",
+    "link": "https://www.commercialuavnews.com/quantum-systems-speed-records-electric-drones-interceptor-uas-2026/",
+    "date": "2026-07-10"
+  },
+  {
+    "title": "ROS 2-Based Architecture for Autonomous Driving Systems with Sensor Fusion",
+    "link": "https://github.com/manankharwar/FusionCore",
+    "date": "2026-06-21"
+  },
+  {
+    "title": "Robotaxi Race in 2026: Waymo Scaling While Tesla Promises Consumer Release",
+    "link": "https://www.vaasblock.com/news/tesla-waymo-robotaxi-autonomous-vehicles-2026/",
+    "date": "2026-07-10"
+  },
+  {
+    "title": "SkyDefense Unveils CobraJet AI-Powered VTOL Counter-Swarm Interceptor Jet for 2026 Deployment",
+    "link": "https://www.uasvision.com/2026/07/09/cobrajet-vtol-multirole-jet-for-c-uas-with-low-cost-interceptors/",
+    "date": "2026-07-09"
+  },
+  {
+    "title": "Swarm Aero's Legion Command and Control Software Successfully Completes Manned-Unmanned Teaming Exercises at U.S. Navy Fleet Experimentation (FLEX) 2026",
+    "link": "https://www.swarm.aero/news-release/swarm-aeros-command-and-control-software-successfully-completes-manned-unmanned-teaming-exercises-at-u-s-navy-fleet-experimentation-flex-2026",
+    "date": "2026-07-13"
+  },
+  {
+    "title": "TPE331 Engine Will Power Swarm Aero's Large Military Drone",
+    "link": "https://www.ainonline.com/aviation-news/defense/2026-06-11/tpe331-engine-will-power-swarm-aeros-large-military-drone",
+    "date": "2026-06-26"
+  },
+  {
+    "title": "Tesla Cybercab Enters Mass Production for Dedicated Robotaxi Fleet",
+    "link": "https://www.tesla.com/cybercab",
+    "date": "2026-06-17"
+  },
+  {
+    "title": "Tesla Launches Optimus Gen 3 Robotaxi Fleet in Austin with Full Autonomous Operations",
+    "link": "https://www.tesla.com/blog/2026/07/optimus-gen3-robotaxi-austin",
+    "date": "2026-07-08"
+  },
+  {
+    "title": "Tesla Optimus Gen 3 Production Begins Summer 2026 with Mass Production in 2027",
+    "link": "https://www.basenor.com/blogs/news/tesla-optimus-v3-production-starts-this-summer-full-timeline",
+    "date": "2026-06-30"
+  },
+  {
+    "title": "The Autonomous Warfare Revolution: AI-Powered Military Drones Reshaping Defense in 2026",
+    "link": "https://toptechnews.net/articles/autonomous-military-drones-2026.html",
+    "date": "2026-06-24"
+  },
+  {
+    "title": "The Autonomous Warfare Revolution: How AI-Powered Military Drones Are Reshaping Defense in 2026",
+    "link": "https://toptechnews.net/articles/autonomous-military-drones-2026.html",
+    "date": "2026-07-14"
+  },
+  {
+    "title": "The State of Autonomous Driving in 2026: Waymo, Tesla, and the Chinese Challengers",
+    "link": "https://6g-ai.com/news/autonomous-driving-2026-waymo-tesla-china",
+    "date": "2026-07-12"
+  },
+  {
+    "title": "Top 10 Rail Industry Trends & Innovations [2026]: The Digital Railway Revolution",
+    "link": "https://www.startus-insights.com/innovators-guide/rail-industry-trends/",
+    "date": "2026-07-12"
+  },
+  {
+    "title": "U.S. Explores Autonomous Containerized Drone Hubs to Enable Persistent Swarm Warfare From Dispersed Positions",
+    "link": "https://www.armyrecognition.com/news/army-news/2026/u-s-explores-autonomous-drone-containers-to-enable-persistent-swarm-warfare-from-dispersed-positions",
+    "date": "2026-07-11"
+  },
+  {
+    "title": "UK £15 Billion Defense Investment Targets Robot Warfare and Drone Modernization",
+    "link": "https://www.thenationalnews.com/news/uk/2026/06/30/britains-15-billion-defence-reset-prepares-for-age-of-robot-warfare/",
+    "date": "2026-06-30"
+  },
+  {
+    "title": "Waymo 2026 Expansion: Opening Fully Driverless Service to 12 US Cities",
+    "link": "https://www.waymo.com/blog/2026/06/waymo-los-angeles-driverless.html",
+    "date": "2026-06-24"
+  },
+  {
+    "title": "Waymo Begins San Francisco Bay Area Robotaxi Expansion with Palo Alto Operations",
+    "link": "https://waymo.com/blog/2026/07/waymo-san-francisco-bay-area-expansion/",
+    "date": "2026-07-01"
+  },
+  {
+    "title": "Waymo Expands Fully Autonomous Robotaxi Service to 10 US Cities",
+    "link": "https://waymo.com/blog/2026/02/ro-on-6th-gen-waymo-driver/",
+    "date": "2026-06-24"
+  },
+  {
+    "title": "Waymo Expands to 12 Cities with New Los Angeles Full Driverless Service",
+    "link": "https://www.waymo.com/blog/2026/06/waymo-los-angeles-driverless.html",
+    "date": "2026-06-17"
+  },
+  {
+    "title": "Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions",
+    "link": "https://waymo.com/blog/2026/07/waymo-phoenix-zero-intervention/",
+    "date": "2026-07-07"
+  },
+  {
+    "title": "Waymo Launches Sixth-Generation Robotaxi System Targeting 20 New Cities in 2026",
+    "link": "https://insideautonomousvehicles.com/waymo-launches-sixth-generation-robotaxi-system/",
+    "date": "2026-07-14"
+  },
+  {
+    "title": "Waymo Opens Fully Autonomous Robotaxi Service to All Riders in Nashville",
+    "link": "https://waymo.com/blog/shorts/nashville-june2026/",
+    "date": "2026-06-28"
+  },
+  {
+    "title": "Waymo Phoenix Full Driverless Service Surpasses 500,000 Weekly Rides",
+    "link": "https://www.waymo.com/blog/2026/06/waymo-phoenix-full-driverless.html",
+    "date": "2026-06-16"
+  },
+  {
+    "title": "Waymo to start driverless rides in 4 more U.S. markets as expansion accelerates",
+    "link": "https://www.cnbc.com/2026/07/08/waymo-starts-driverless-rides-in-san-diego-las-vegas-tampa-denver.html",
+    "date": "2026-07-13"
   }
 ]
