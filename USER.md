@@ -188,7 +188,7 @@ _Learn about the person you're helping. Update this as you go._
 - Updated NY Stroll Stuff website with Tuesday July 14 baseball and hiking events
 - Added 3 baseball games (Yankees @ Tigers at Comerica Park, Mets vs Phillies at Citi Field, Cyclones vs Hudson Valley Renegades at Maimonides Park)
 - Added 5 NYC hiking events (Inwood Hill Park Sunset Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Hike & Ice Cream for Entrepreneurs at Peebles Island)
-- Added 3 new verified articles to innovateav/articles2.json (71 total):
+- Added 3 new verified articles to innovateav/articles2.json (74 unique total after removing existing duplicates):
   1. Waymo Launches Sixth-Generation Robotaxi System Targeting 20 New Cities in 2026 (AV) - verified via web fetch
   2. CRRC Unveils World's First Driverless High-Speed Train Capable of 200 km/h for Beijing-Xiong'an Line (Train) - verified via web fetch
   3. The Autonomous Warfare Revolution: How AI-Powered Military Drones Are Reshaping Defense in 2026 (Aircraft) - verified via web fetch
