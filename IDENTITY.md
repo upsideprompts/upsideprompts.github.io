@@ -29,9 +29,9 @@ Committed and pushed to GitHub.
 Committed and pushed to GitHub. Updated NY Stroll Stuff website with Monday June 29 baseball and hiking events. Committed and pushed to GitHub.
 
 **June 30, 2026:** Updated NY Stroll Stuff website with Tuesday June 30 baseball and hiking events. Added 3 baseball games (Yankees vs Guardians, Mets vs Cubs, Cyclones vs Hudson Valley Hawks) and 5 hiking events. Committed and pushed to GitHub. Added 3 new verified articles to innovateav/articles2.json (35 total):
-1. Mercedes-Benz Launches Drive Pilot Ready for Commercial Fleet Deployment in California (AV)
-2. Germany's Deutsche Bahn Deploys AI-Optimized Electric Train Control Systems Nationwide (Train)
-3. Boeing Phantom Works Demos Autonomous Cargo Drone Swarm at Nevada Test Range (Aircraft)
+1. AMD Ryzen AI Embedded Processors for Robotics (Robotics) - verified via 4 sources
+2. Tesla Optimus Gen 3 Production (AV) - verified via 3 sources
+3. UK £15 Billion Defense Drone Investment (Defense) - verified via 3 sources
 Committed and pushed to GitHub. Implemented 3-way verification process for all future articles.
 
 **July 1, 2026:** Updated NY Stroll Stuff website with Wednesday July 1 baseball and hiking events. Added 3 baseball games (Yankees vs Tigers, Mets vs Phillies, Cyclones vs Staten Island FerryHawks) and 5 hiking events (Inwood Hill Park sunrise hike, Central Park Loop, Hudson River Park Walk, Pelham Bay Park, Bronx River Greenway). Committed and pushed to GitHub. Added 3 new verified articles to innovateav/articles2.json (41 total):
@@ -129,10 +129,28 @@ Committed and pushed to GitHub.
 - Committed and pushed to GitHub
 
 **July 12, 2026:**
+- Updated NY Stroll Stuff website with Sunday July 12 baseball and hiking events
+- Added 3 baseball games (Yankees @ Nationals at Nationals Park, Mets vs Marlins at Citi Field, Cyclones vs Hudson Valley Renegades at Maimonides Park)
+- Added 5 NYC hiking events (Central Park Morning Hike, Inwood Hill Park Nature Hike, Prospect Park Weekend Walk, Hudson River Greenway Hike, Pelham Bay Park Coastal Trail)
+- Committed and pushed to GitHub
+- Updated bayhikes.md with latest upcoming hikes from Meetup.com's San Francisco hiking page (July 12, 2026)
+- Committed and pushed to GitHub
 - Added 3 new verified articles to innovateav/articles2.json (68 total):
   1. The State of Autonomous Driving in 2026: Waymo, Tesla, and the Chinese Challengers (AV) - verified via 6g-ai.com
   2. Top 10 Rail Industry Trends & Innovations [2026]: The Digital Railway Revolution (Train) - verified via startus-insights.com
   3. Inside the Pentagon's $13.4 Billion Bet on Autonomous Weapons and Drone Warfare (Aircraft) - verified via artificialweapons.com
+- Committed and pushed to GitHub
+
+**July 13, 2026:**
+- Updated NY Stroll Stuff website with Monday July 13 baseball and hiking events
+- Added 3 baseball games (Yankees @ Tigers at Comerica Park, Mets vs Phillies at Citi Field, Cyclones vs FerryHawks at Maimonides Park)
+- Added 5 NYC hiking events (Inwood Hill Park Sunset Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Hike & Ice Cream for Entrepreneurs at Peebles Island)
+- Committed and pushed to GitHub
+
+**July 14, 2026:**
+- Updated NY Stroll Stuff website with Tuesday July 14 baseball and hiking events
+- Added 3 baseball games (Yankees @ Tigers at Comerica Park, Mets vs Phillies at Citi Field, Cyclones vs Hudson Valley Renegades at Maimonides Park)
+- Added 5 NYC hiking events (Inwood Hill Park Sunset Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Hike & Ice Cream for Entrepreneurs at Peebles Island)
 - Committed and pushed to GitHub
 
 ## Related

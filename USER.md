@@ -178,6 +178,18 @@ _Learn about the person you're helping. Update this as you go._
   3. Inside the Pentagon's $13.4 Billion Bet on Autonomous Weapons and Drone Warfare (Aircraft) - verified via artificialweapons.com
 - Committed and pushed to GitHub
 
+**July 13, 2026:**
+- Updated NY Stroll Stuff website with Monday July 13 baseball and hiking events
+- Added 3 baseball games (Yankees @ Tigers at Comerica Park, Mets vs Phillies at Citi Field, Cyclones vs FerryHawks at Maimonides Park)
+- Added 5 NYC hiking events (Inwood Hill Park Sunset Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Hike & Ice Cream for Entrepreneurs at Peebles Island)
+- Committed and pushed to GitHub
+
+**July 14, 2026:**
+- Updated NY Stroll Stuff website with Tuesday July 14 baseball and hiking events
+- Added 3 baseball games (Yankees @ Tigers at Comerica Park, Mets vs Phillies at Citi Field, Cyclones vs Hudson Valley Renegades at Maimonides Park)
+- Added 5 NYC hiking events (Inwood Hill Park Sunset Hike, Central Park Evening Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Hike & Ice Cream for Entrepreneurs at Peebles Island)
+- Committed and pushed to GitHub
+
 ## Related
 
 - [Agent workspace](/concepts/agent-workspace)
