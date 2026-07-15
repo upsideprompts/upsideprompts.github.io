@@ -162,6 +162,11 @@ Committed and pushed to GitHub.
 - Added 3 baseball games (Yankees vs Tigers at Yankee Stadium, Mets vs Marlins at Citi Field, Cyclones vs FerryHawks at Maimonides Park)
 - Added 5 NYC hiking events (Inwood Hill Park Morning Hike, Central Park Nature Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail, Brooklyn Bridge Park Evening Stroll)
 - Committed and pushed to GitHub
+- Added 3 new verified articles to innovateav/articles2.json (77 unique total):
+  1. Waymo Launches Simultaneous Driverless Robotaxi Service in San Diego, Las Vegas, Tampa, and Denver (AV) - verified via web fetch
+  2. Autonomous Rail Reliability Test Results: Operational Metrics and Workforce Transition (2026) (Train) - verified via web fetch
+  3. Pentagon Centralizes Drone Programs Under Autonomy Czar for Accelerated Development (Aircraft) - verified via web fetch
+- Committed and pushed to GitHub
 
 ## Related
 
