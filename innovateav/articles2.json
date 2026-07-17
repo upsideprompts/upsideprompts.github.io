@@ -111,12 +111,12 @@
   },
   {
     "title": "Cruise GM Partnership Accelerates Autonomous Delivery Scaling",
-    "link": "https://about.cruise.com/press-releases/gm-partnership-autonomous-delivery-fleet-2026",
+    "link": "https://about.cruise.com/press-releases/gm-partnership-autonomous-delivery-fleet-2026/",
     "date": "2026-06-16"
   },
   {
     "title": "Cruise Launches Autonomous Food Delivery Network in 50 Major US Cities with GM Fleet Integration",
-    "link": "https://about.cruise.com/press-releases/cruise-autonomous-food-delivery-network-2026",
+    "link": "https://about.cruise.com/press-releases/cruise-autonomous-food-delivery-network-2026/",
     "date": "2026-07-03"
   },
   {
@@ -320,7 +320,7 @@
     "date": "2026-07-11"
   },
   {
-    "title": "UK \u00a315 Billion Defense Investment Targets Robot Warfare and Drone Modernization",
+    "title": "UK £15 Billion Defense Investment Targets Robot Warfare and Drone Modernization",
     "link": "https://www.thenationalnews.com/news/uk/2026/06/30/britains-15-billion-defence-reset-prepares-for-age-of-robot-warfare/",
     "date": "2026-06-30"
   },
@@ -398,5 +398,20 @@
     "title": "Swarm Aero Navy FLEX 2026 Demonstrates Multi-Domain Drone Command and Control Capabilities",
     "link": "https://www.swarm.aero/news-release/swarm-aeros-command-and-control-software-successfully-completes-manned-unmanned-teaming-exercises-at-u-s-navy-fleet-experimentation-flex-2026",
     "date": "2026-07-16"
+  },
+  {
+    "title": "Air Force Achieves First Live Missile Launch From CCA Wingman Drone in Historic Test",
+    "link": "https://aiaa.org/2026/07/16/air-force-achieves-first-live-missile-launch-from-cca-wingman-drone/",
+    "date": "2026-07-17"
+  },
+  {
+    "title": "Waymo Sixth-Generation Robotaxi System Deploys New Hyundai IONIQ 5 Platform with Reduced Sensor Count",
+    "link": "https://waymo.com/blog/",
+    "date": "2026-07-17"
+  },
+  {
+    "title": "EU Electrification Action Plan Addresses Transportation Security with 46% Clean Energy Target by 2040",
+    "link": "https://www.transportenvironment.org/articles/eu-backs-electrification-to-make-europe-more-secure",
+    "date": "2026-07-17"
   }
 ]
