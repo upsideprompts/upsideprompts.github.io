@@ -34,7 +34,7 @@ Things like:
 ### Bay Area Hikes
 
 - Website: bayhikes.md (relative to workspace root)
-- Last updated: July 12, 2026 - Updated with latest upcoming hikes from Meetup.com's San Francisco hiking page
+- Last updated: July 17, 2026 - Updated with latest upcoming hikes from Meetup.com's San Francisco hiking page
 - Source: Meetup.com San Francisco hiking groups
 - Content: Upcoming hike events with dates, distances, difficulty, and organizer info
 
@@ -43,7 +43,7 @@ Things like:
 - Website: nystrollstuff/index.html (relative to workspace root)
 - Repository: github.com/upsideprompts/upsideprompts.github.io (gh-pages branch)
 - Content: Baseball schedule (Yankees, Mets, Cyclones, FerryHawks) + NYC hiking events
-- Last updated: July 15, 2026 - Updated with Wednesday July 15 baseball and hiking events
+- Last updated: July 16, 2026 - Updated with Thursday July 16 baseball and hiking events
 - Automation: Daily cron job (ee46fe6c) runs at 9:30 AM UTC
 - Channel access: Successfully sent update to initflux channel (C0AS1FCPQHG) - channel access working
 
@@ -59,9 +59,9 @@ Things like:
 
 - Website: innovateav/index.html (relative to workspace root)
 - Articles JSON: innovateav/articles2.json
-- Last updated: July 14, 2026 - Added 3 new verified articles (74 unique total after deduplication)
+- Last updated: July 15, 2026 - Added 3 new verified articles (77 total)
 - Automation: Daily cron jobs (8:30am PT lookup, 8:50am PT add) for AV/train/aircraft news
-- Current total: 74 unique verified articles
+- Current total: 77 unique verified articles
 - Verification rule: All articles must be confirmed to exist via 3 different loading methods before adding
 
 ### AMD LLM Processor YouTube Summaries
