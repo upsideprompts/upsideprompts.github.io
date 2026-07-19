@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Essentials Quiz - 20 Questions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; padding: 20px;
+        }
+        .container {
+            max-width: 800px; margin: 0 auto; background: white;
+            border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden;
+        }
+        .header { background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .score-board { background: #f8f9fa; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e9ecef; }
+        .score, .question-counter { font-size: 1.2em; font-weight: bold; color: #333; }
+        .question-container { padding: 30px; }
+        .question-text { font-size: 1.3em; margin-bottom: 25px; color: #333; line-height: 1.5; }
+        .answers { display: grid; gap: 15px; }
+        .answer-btn {
+            background: #f8f9fa; border: 2px solid #e9ecef; padding: 20px; border-radius: 10px;
+            cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; text-align: left; color: #333;
+        }
+        .answer-btn:hover { background: #e9ecef; border-color: #4a90d9; transform: translateX(5px); }
+        .answer-btn.correct { background: #28a745; color: white; border-color: #1e7e34; }
+        .answer-btn.wrong { background: #dc3545; color: white; border-color: #bd2126; }
+        .navigation { padding: 20px 30px; display: flex; justify-content: space-between; background: #f8f9fa; }
+        .nav-btn { background: #4a90d9; color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-size: 1em; transition: background 0.3s; }
+        .nav-btn:hover { background: #357abd; }
+        .result-screen { padding: 50px 30px; text-align: center; display: none; }
+        .result-screen.active { display: block; }
+        .score-circle { width: 150px; height: 150px; background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%); border-radius: 50%; margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; font-size: 3em; color: white; font-weight: bold; }
+        .explanation { background: #e7f3ff; padding: 15px; border-radius: 8px; margin-top: 20px; display: none; border-left: 4px solid #4a90d9; }
+        .explanation.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Python Essentials Quiz</h1>
+            <p>Test your Python knowledge with 20 questions</p>
+        </div>
+        <div class="score-board">
+            <div class="score">Score: <span id="score">0</span>/20</div>
+            <div class="question-counter">Question: <span id="current-q">1</span>/20</div>
+        </div>
+        <div class="question-container" id="quiz-container">
+            <div class="question-text" id="question-text"></div>
+            <div class="answers" id="answers"></div>
+            <div class="explanation" id="explanation"></div>
+        </div>
+        <div class="result-screen" id="result-screen">
+            <div class="score-circle" id="final-score">0</div>
+            <div class="result-message" id="result-message"></div>
+            <button class="nav-btn" onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+        <div class="navigation">
+            <button class="nav-btn" id="prev-btn" onclick="previousQuestion()" disabled>Previous</button>
+            <button class="nav-btn" id="next-btn" onclick="nextQuestion()" disabled>Next</button>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            { question: "What is the output of print(2 + 3 * 4)?", correct: "14", wrong: ["20", "24", "10"], explanation: "Multiplication has higher precedence than addition" },
+            { question: "Which keyword defines a function?", correct: "def", wrong: ["function", "fun", "define"], explanation: "Python uses 'def' keyword for functions" },
+            { question: "What creates a set?", correct: "{}", wrong: ["[]", "()", "<>"], explanation: "Curly braces create a set in Python" },
+            { question: "Add to end of list?", correct: "append()", wrong: ["add()", "insert()", "push()"], explanation: "append() adds an element to the end" },
+            { question: "What does 'in' check?", correct: "Membership", wrong: ["Equality", "Identity", "Type"], explanation: "The 'in' operator checks membership in sequences" },
+            { question: "Create venv?", correct: "python -m venv", wrong: ["pip install", "python env", "virtualenv"], explanation: "python -m venv creates a virtual environment" },
+            { question: "Exponent operator?", correct: "**", wrong: ["^", "exp()", "pow()"], explanation: "The ** operator raises numbers to powers" },
+            { question: "What is a tuple?", correct: "Immutable sequence", wrong: ["Mutable list", "Dictionary", "Set"], explanation: "Tuples are immutable ordered collections" },
+            { question: "Handle exceptions?", correct: "try/except", wrong: ["if/else", "catch/throw", "do/handle"], explanation: "Python uses try/except for exception handling" },
+            { question: "Get length?", correct: "len()", wrong: ["length()", "size()", "count()"], explanation: "len() returns the number of items" },
+            { question: "len('hello') result?", correct: "5", wrong: ["4", "6", "0"], explanation: "'hello' has 5 characters" },
+            { question: "Remove whitespace?", correct: "strip()", wrong: ["trim()", "clean()", "remove()"], explanation: "strip() removes leading and trailing whitespace" },
+            { question: "range() returns?", correct: "Sequence of numbers", wrong: ["Random number", "Boolean", "String"], explanation: "range() creates a sequence of numbers" },
+            { question: "Create dictionary?", correct: "{}", wrong: ["[]", "()", "[]"], explanation: "Dictionaries use curly braces with key:value" },
+            { question: "Lambda is?", correct: "Anonymous function", wrong: ["Loop", "Class", "Module"], explanation: "Lambda creates small anonymous functions" },
+            { question: "Import modules with?", correct: "import", wrong: ["include", "require", "load"], explanation: "import brings in external modules" },
+            { question: "pip stands for?", correct: "Pip Installs Packages", wrong: ["Python Install", "Package Installer", "Pip"], explanation: "pip stands for Pip Installs Packages" },
+            { question: "Create class?", correct: "class MyClass:", wrong: ["Class MyClass:", "def MyClass:", "new MyClass:"], explanation: "Use 'class Name:' to define classes" },
+            { question: "Object created?", correct: "__init__", wrong: ["__new__", "__start__", "__create__"], explanation: "__init__ is the constructor method" },
+            { question: "Purpose of self?", correct: "Instance reference", wrong: ["Class reference", "Global", "None"], explanation: "'self' refers to the instance" },
+            { question: "GIL stands for?", correct: "Global Interpreter Lock", wrong: ["Global Import", "Great Interpreter", "Generated Lock"], explanation: "GIL prevents concurrent bytecode execution" },
+            { question: "Iterate sequence?", correct: "for loop", wrong: ["while loop", "do-while", "foreach"], explanation: "for loops iterate over sequences in Python" }
+        ];
+
+        let currentQuestion = 0, score = 0, answered = false;
+
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function displayQuestion() {
+            const q = questions[currentQuestion];
+            const answers = shuffle([q.correct, ...q.wrong]);
+            document.getElementById('question-text').textContent = q.question;
+            document.getElementById('current-q').textContent = currentQuestion + 1;
+            document.getElementById('score').textContent = score;
+            document.getElementById('explanation').classList.remove('active');
+            answered = false;
+            
+            document.getElementById('answers').innerHTML = answers.map(a => 
+                `<button class="answer-btn" onclick="select('${a}', '${q.correct}')">${a}</button>`
+            ).join('');
+            
+            document.getElementById('prev-btn').disabled = currentQuestion === 0;
+            document.getElementById('next-btn').disabled = true;
+        }
+
+        function select(selected, correct) {
+            if (answered) return;
+            answered = true;
+            const buttons = document.querySelectorAll('.answer-btn');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if (btn.textContent === correct) btn.classList.add('correct');
+                else if (btn.textContent === selected) btn.classList.add('wrong');
+            });
+            if (selected === correct) score++;
+            document.getElementById('score').textContent = score;
+            document.getElementById('explanation').textContent = questions[currentQuestion].explanation;
+            document.getElementById('explanation').classList.add('active');
+            document.getElementById('next-btn').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+            } else showResults();
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                displayQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('result-screen').classList.add('active');
+            document.getElementById('final-score').textContent = score;
+            const msgs = ['Perfect! Python master!', 'Excellent!', 'Good job!', 'Keep practicing!', 'Study more!'];
+            document.getElementById('result-message').textContent = score >= 17 ? msgs[0] : score >= 13 ? msgs[1] : score >= 8 ? msgs[2] : score >= 4 ? msgs[3] : msgs[4];
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0; score = 0;
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('result-screen').classList.remove('active');
+            displayQuestion();
+        }
+
+        displayQuestion();
+    </script>
+</body>
+</html>
