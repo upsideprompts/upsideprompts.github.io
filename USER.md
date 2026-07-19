@@ -16,6 +16,11 @@ _Learn about the person you're helping. Update this as you go._
 3. Pentagon Centralizes Drone Programs Under Autonomy Czar for Accelerated Development (Aircraft) - verified via web fetch
 Committed and pushed to GitHub.
 
+**July 19, 2026:** Updated NY Stroll Stuff website with Sunday July 19 baseball and hiking events:
+- Added 3 baseball games (Yankees vs Tigers, Mets vs Phillies, Cyclones vs Hudson Valley Renegades)
+- Added 5 NYC hiking events (Inwood Hill Park Nature Exploration Hike, Tryon Park Perimeter Hike, Central Park Nature Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail)
+- Committed and pushed to GitHub
+
 ## Context
 
 - We just met - you said "Hiya" when I came online
@@ -197,6 +202,12 @@ Committed and pushed to GitHub.
   1. Waymo Launches Simultaneous Driverless Robotaxi Service in San Diego, Las Vegas, Tampa, and Denver (AV) - verified via web fetch
   2. Autonomous Rail Reliability Test Results: Operational Metrics and Workforce Transition (2026) (Train) - verified via web fetch
   3. Pentagon Centralizes Drone Programs Under Autonomy Czar for Accelerated Development (Aircraft) - verified via web fetch
+- Committed and pushed to GitHub
+
+**July 19, 2026:**
+- Updated NY Stroll Stuff website with Sunday July 19 baseball and hiking events
+- Added 3 baseball games (Yankees vs Tigers, Mets vs Phillies, Cyclones vs Hudson Valley Renegades)
+- Added 5 NYC hiking events (Inwood Hill Park Nature Exploration Hike, Tryon Park Perimeter Hike, Central Park Nature Walk, Hudson River Park Waterfront Walk, Pelham Bay Park Coastal Trail)
 - Committed and pushed to GitHub
 
 ## Related
