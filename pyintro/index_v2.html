@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Trivia Quiz</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; padding: 20px;
+        }
+        .container {
+            max-width: 800px; margin: 0 auto; background: white;
+            border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden;
+        }
+        .header { background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; }
+        .score-board { background: #f8f9fa; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e9ecef; }
+        .score, .question-counter { font-size: 1.2em; font-weight: bold; color: #333; }
+        .question-container { padding: 30px; }
+        .question-text { font-size: 1.3em; margin-bottom: 25px; color: #333; line-height: 1.5; }
+        .answers { display: grid; gap: 15px; }
+        .answer-btn {
+            background: #f8f9fa; border: 2px solid #e9ecef; padding: 15px; border-radius: 8px;
+            cursor: pointer; font-size: 1em; transition: all 0.3s ease; text-align: left; color: #333;
+        }
+        .answer-btn:hover { background: #e9ecef; border-color: #4a90d9; transform: translateX(5px); }
+        .answer-btn.correct { background: #28a745; color: white; border-color: #1e7e34; }
+        .answer-btn.wrong { background: #dc3545; color: white; border-color: #bd2126; }
+        .navigation { padding: 20px 30px; display: flex; justify-content: space-between; background: #f8f9fa; }
+        .nav-btn { background: #4a90d9; color: white; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-size: 1em; transition: background 0.3s; }
+        .nav-btn:hover { background: #357abd; }
+        .nav-btn:disabled { background: #ccc; cursor: not-allowed; }
+        .result-screen { padding: 50px 30px; text-align: center; display: none; }
+        .result-screen.active { display: block; }
+        .score-circle { width: 150px; height: 150px; background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%); border-radius: 50%; margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; font-size: 3em; color: white; font-weight: bold; }
+        .explanation { background: #e7f3ff; padding: 15px; border-radius: 8px; margin-top: 20px; display: none; border-left: 4px solid #4a90d9; }
+        .explanation.active { display: block; }
+        .controls { padding: 20px 30px; background: #f8f9fa; border-top: 1px solid #e9ecef; }
+        .start-btn { background: #28a745; color: white; border: none; padding: 15px 40px; border-radius: 25px; cursor: pointer; font-size: 1.1em; transition: background 0.3s; margin: 0 auto; display: block; }
+        .start-btn:hover { background: #218838; }
+        .start-btn:disabled { background: #ccc; cursor: not-allowed; }
+        .game-mode-selector { display: flex; gap: 10px; margin: 15px auto; max-width: 400px; }
+        .mode-btn { flex: 1; padding: 10px; border: 2px solid #4a90d9; background: white; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+        .mode-btn.active { background: #4a90d9; color: white; }
+        .mode-btn:hover:not(.active) { background: #e9ecef; }
+        .random-indicator { text-align: center; color: #666; margin: 10px 0; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Python Trivia Quiz</h1>
+            <p>Choose your game mode and test your Python knowledge!</p>
+        </div>
+        
+        <div class="controls" id="setup-screen">
+            <div class="game-mode-selector">
+                <button class="mode-btn active" onclick="selectMode('classic')" id="classic-btn">Classic (All 20 Questions)</button>
+                <button class="mode-btn" onclick="selectMode('random')" id="random-btn">Random (5 Questions)</button>
+            </div>
+            <p class="random-indicator" id="random-indicator">Random mode picks 5 questions out of 20</p>
+            <button class="start-btn" id="start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div class="score-board" id="score-board" style="display: none;">
+            <div class="score">Score: <span id="score">0</span>/<span id="total-questions">20</span></div>
+            <div class="question-counter">Question: <span id="current-q">1</span>/<span id="max-q">20</span></div>
+        </div>
+        
+        <div class="question-container" id="quiz-container" style="display: none;">
+            <div class="question-text" id="question-text"></div>
+            <div class="answers" id="answers"></div>
+            <div class="explanation" id="explanation"></div>
+        </div>
+        
+        <div class="result-screen" id="result-screen">
+            <div class="score-circle" id="final-score">0</div>
+            <div class="result-message" id="result-message"></div>
+            <button class="nav-btn" onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+        
+        <div class="navigation" id="navigation" style="display: none;">
+            <button class="nav-btn" id="prev-btn" onclick="previousQuestion()" disabled>Previous</button>
+            <button class="nav-btn" id="next-btn" onclick="nextQuestion()" disabled>Next</button>
+        </div>
+    </div>
+    
+    <script>
+        const ALL_QUESTIONS = [
+            // Question 1
+            {
+                question: "What unique distinction does Outkast's 2003 double album, 'Speakerboxxx/The Love Below,' hold in Grammy history?",
+                correct: "It won the Grammy Award for Album of the Year, becoming only the second rap album in history to achieve the feat.",
+                wrong: [
+                    "It was the first rap album to receive a Grammy nomination.",
+                    "It held the record for most Grammys won by a hip-hop act for 10 years.",
+                    "It was the first double album from a rap group to win Album of the Year."
+                ],
+                explanation: "Outkast's 'Speakerboxxx/The Love Below' made history by winning Album of the Year, becoming only the second rap album ever to achieve this distinction (the first was 'The Miseducation of Lauryn Hill' in 1999)."
+            },
+            // Question 2
+            {
+                question: "Before achieving multi-platinum superstardom as a rapper and actor, what was Ludacris's profession in the Atlanta media industry?",
+                correct: "He worked as an intern and later as an on-air DJ for Atlanta's urban radio station Hot 107.5 under the moniker 'DJ Chris Lova Lova.'",
+                wrong: [
+                    "He was a record producer for local Atlanta labels.",
+                    "He worked as a club bouncer in Atlanta.",
+                    "He was a high school math teacher."
+                ],
+                explanation: "Ludacris started his career in Atlanta's music industry as 'DJ Chris Lova Lova,' working as both an intern and on-air DJ at Hot 107.5 before focusing on his own rap career."
+            },
+            // Question 3
+            {
+                question: "Which popular subgenre of hip-hop did T.I. help popularize and name with his breakthrough 2003 sophomore album?",
+                correct: "Trap music, solidified by the title of his album 'Trap Muzik'.",
+                wrong: [
+                    "G-funk, established with his West Coast sound. distancing himself from mainstream radio.",
+                    "Crunk, characterized by its aggressive, sped-up tempo.",
+                    "Mumble rap, focusing on minimal lyrics that are difficult to understand."
+                ],
+                explanation: "T.I.'s 2003 album 'Trap Muzik' was pivotal in defining and popularizing the trap subgenre, with the album's title helping cement 'trap' as a mainstream hip-hop category."
+            },
+            // Question 4
+            {
+                question: "What was the original stage name Jeezy used when he released his independent debut album 'Thuggin' Under the Influence (T.U.I.)' in 2001?",
+                correct: "Lil J.",
+                wrong: [
+                    "Young Jeezy.",
+                    " Jeezy Fresh.",
+                    " T.U.I. Jeezy."
+                ],
+                explanation: "Jeezy's original stage name when he released his first independent album in 2001 was 'Lil J.,' before he went simply by 'Jeezy.'"
+            },
+            // Question 5
+            {
+                question: "Which iconic Atlanta-based record label did Gucci Mane found in 2007, which later helped launch the careers of artists like Waka Flocka Flame and Young Thug?",
+                correct: "1017 Records (originally 1017 Brick Squad Records).",
+                wrong: [
+                    "LaFace Records.",
+                    "Dreamville Records.",
+                    "Moxie Entertainment."
+                ],
+                explanation: "Gucci Mane founded 1017 Records (originally 1017 Brick Squad Records) in 2007, which became a major Atlanta label launching artists like Waka Flocka Flame and Young Thug."
+            },
+            // Question 6
+            {
+                question: "What high-energy, fast-paced subgenre of hip-hop did Lil Jon and the East Side Boyz pioneer and drive to the mainstream in the early 2000s?",
+                correct: "Crunk music.",
+                wrong: [
+                    "Trap music.",
+                    "Hyphy.",
+                    "Moombahton."
+                ],
+                explanation: "Lil Jon and the East Side Boyz were instrumental in bringing 'crunk' music to mainstream audiences in the early 2000s, known for its aggressive, sped-up tempos and call-and-response chants."
+            },
+            // Question 7
+            {
+                question: "Before focusing on his own vocal career and becoming a pioneer of melodic trap, Future was a primary writer and member of which collective formed by Rico Wade?",
+                correct: "The Dungeon Family (specifically connected through his cousin and member, Rico Wade of Organized Noize).",
+                wrong: [
+                    "The State College Movement.",
+                    "The Stellar Team.",
+                    "The Atlanta Sound Collective."
+                ],
+                explanation: "Future was initially part of The Dungeon Family, the influential Atlanta collective founded by Rico Wade of Organized Noize, before launching his solo career that revolutionized melodic trap."
+            },
+            // Question 8
+            {
+                question: "What is the name of the independent record label founded by Young Thug in 2016 that serves as an acronym for 'Slime Language'?",
+                correct: "YSL Records (Young Stoner Life Records).",
+                wrong: [
+                    "YSL Music.",
+                    "Young Stoner Life (YSL).",
+                    "Young Slime Legends (YSL)."
+                ],
+                explanation: "Young Thug founded YSL Records (Young Stoner Life Records) in 2016 as an independent label that grew to include major artists and stood for 'Slime Language.'"
+            },
+            // Question 9
+            {
+                question: "On which major international artist's 2022 studio album ('Her Loss') did 21 Savage collaborate for a full-length joint release?",
+                correct: "Drake.",
+                wrong: [
+                    "The Weeknd.",
+                    "Kanye West.",
+                    "Post Malone."
+                ],
+                explanation: "21 Savage's collaborative album 'Her Loss' (2022) was a full-length joint project with Drake, featuring 16 tracks that blended their signature styles."
+            },
+            // Question 10
+            {
+                question: "What sport did Lil Baby excel at during his youth in West Atlanta before eventually turning to a path in music?",
+                correct: "Track and field (along with playing football), where he was notably fast and athletic.",
+                wrong: [
+                    "Basketball.",
+                    "Baseball.",
+                    "Soccer."
+                ],
+                explanation: "Lil Baby was a talented athlete in his youth, excelling in track and field events and playing football in West Atlanta before fully committing to his rap career."
+            },
+            // Question 11
+            {
+                question: "What was the title of Goodie Mob's critically acclaimed 1995 debut album, which featured landmark socially conscious tracks like 'Cell Therapy'?",
+                correct: "'Soul Food'.",
+                wrong: [
+                    "'Integrated System.'.",
+                    "'Still Standing'.",
+                    "'atincin' Entelligence.'."
+                ],
+                explanation: "Goodie Mob's 1995 debut 'Soul Food' was a critically acclaimed album that established them as leaders of Atlanta's conscious hip hop movement."
+            },
+            // Question 12
+            {
+                question: "Which breakout 2013 hit single by Migos popularized a staccato triplet flow that heavily influenced modern hip-hop rhythm?",
+                correct: "'Versace'.",
+                wrong: [
+                    "'Bad and Boujee'.",
+                    "'One Dance'.",
+                    "'Goosebumps'."
+                ],
+                explanation: "Migos' 2013 hit 'Versace' popularized the distinctive triplet flow that became a staple of modern rap and hip-hop rhythm patterns."
+            },
+            // Question 13
+            {
+                question: "Under what initial stage name and as part of which duo did 2 Chainz release music alongside his partner Dolla Boy in the late 1990s and 2000s?",
+                correct: "Tity Boi, as one-half of the duo Playaz Circle.",
+                wrong: [
+                    "Tity Boi, as one-half of Dolla Boy.",
+                    "2 Chainz, as one-half of Playaz Circle.",
+                    "Tity Boi, as one-half of Trill."
+                ],
+                explanation: "2 Chainz was originally known as 'Tity Boi' and achieved early success as one-half of the Atlanta-based hip-hop duo 'Playaz Circle' with his partner Dolla Boy."
+            },
+            // Question 14
+            {
+                question: "In addition to his solo career and his work as half of Run the Jewels, Killer Mike won a Grammy for his 2002 feature verse on which Outkast song?",
+                correct: "'The Whole World'.",
+                wrong: [
+                    "'Hey Ya!'.",
+                    "'Maybe Boy.',
+                    "'Two Agents.'"
+                ],
+                explanation: "Killer Mike won a Grammy for his feature verse on Outkast's 'The Whole World' (2002), showcasing his impact beyond his work in Run the Jewels."
+            },
+            // Question 15
+            {
+                question: "Which Billboard Hot 100 number-one hit by Childish Gambino featured a powerful music video addressing systemic racism and gun violence in America?",
+                correct: "'This Is America' (2018).",
+                wrong: [
+                    "'Red Piano'.",
+                    "'3005'.",
+                    "'Teardrop."
+                ],
+                explanation: "Childish Gambino's 'This Is America' (2018) reached #1 on the Billboard Hot 100 and featured a powerful music video that addressed systemic racism and gun violence in America."
+            },
+            // Question 16
+            {
+                question: "What major Atlanta-founded record label signed Earthgang in 2017, aligning them with artists like J. Cole?",
+                correct: "Dreamville Records.",
+                wrong: [
+                    "LaFace Records.",
+                    "Moxie Entertainment.",
+                    "Jive Records."
+                ],
+                explanation: "Dreamville Records, founded in Atlanta and associated with J. Cole, signed Earthgang in 2017, providing them with a platform to reach mainstream success."
+            },
+            // Question 17
+            {
+                question: "Before dedicating himself fully to music and signing with Dreamville, what collegiate sport did JID play on an athletic scholarship?",
+                correct: "Football (as a defensive back and running back at Hampton University).",
+                wrong: [
+                    "Basketball.",
+                    "Baseball.",
+                    "Soccer."
+                ],
+                explanation: "JID played college football as a defensive back and running back at Hampton University on an athletic scholarship before fully committing to his music career with Dreamville."
+            },
+            // Question 18
+            {
+                question: "Which pioneering 1990s Atlanta bass and hip-hop artist scored major regional hits with club anthems like 'Baby Baby' and 'Love in Miami'?",
+                correct: "Kilo Ali.",
+                wrong: [
+                    "Outkast.",
+                    "Goodie Mob.",
+                    "Jeezy."
+                ],
+                explanation: "Kilo Ali was a pioneering Atlanta hip-hop artist in the 1990s known for regional club hits like 'Baby Baby' and 'Love in Miami,' helping establish Atlanta's reputation in the Southern rap scene."
+            },
+            // Question 19
+            {
+                question: "What was the signature prop that Bone Crusher famously wore and swung around while performing his massive 2003 crunk hit 'Never Scared'?",
+                correct: "Heavy gold chains featuring a large medallion.",
+                wrong: [
+                    "A wooden clarinet.",
+                    "A bullhorn.",
+                    "A football helmet."
+                ],
+                explanation: "Bone Crusher was known for wearing heavy gold chains featuring large medallions, which he would often swing around while performing his 2003 crunk hit 'Never Scared.'"
+            },
+            // Question 20 (Additional question to reach 20 total)
+            {
+                question: "Which Atlanta-born artist formed the duo Outkast with André 3000 in 1991, later becoming one of hip-hop's most successful and critically acclaimed acts?",
+                correct: "Big Boi.",
+                wrong: [
+                    "Future.",
+                    "Killer Mike.",
+                    "J. Cole."
+                ],
+                explanation: "Outkast was formed in Atlanta in 1991 by Big Boi (Antwan Patton) and André 3000 (André Benjamin), becoming one of hip-hop's most successful duos with multiple Grammy wins and widespread critical acclaim."
+            }
+        ];
+
+        let currentQuestion = 0, score = 0, answered = false;
+        let selectedMode = 'classic';
+        let questionsToUse = [];
+        
+        function selectMode(mode) {
+            selectedMode = mode;
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (mode === 'classic') {
+                document.getElementById('classic-btn').classList.add('active');
+                document.getElementById('random-indicator').textContent = 'Classic mode includes all 20 questions';
+            } else {
+                document.getElementById('random-btn').classList.add('active');
+                document.getElementById('random-indicator').textContent = 'Random mode picks 5 questions out of 20';
+            }
+        }
+
+        function startQuiz() {
+            if (selectedMode === 'classic') {
+                questionsToUse = ALL_QUESTIONS;
+            } else {
+                questionsToUse = shuffle(ALL_QUESTIONS.slice(0, 5));
+            }
+            
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('score-board').style.display = 'flex';
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('navigation').style.display = 'flex';
+            document.getElementById('current-q').textContent = currentQuestion + 1;
+            document.getElementById('total-questions').textContent = questionsToUse.length;
+            document.getElementById('max-q').textContent = questionsToUse.length;
+            
+            displayQuestion();
+        }
+
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function displayQuestion() {
+            const q = questionsToUse[currentQuestion];
+            const answers = shuffle([q.correct, ...q.wrong]);
+            document.getElementById('question-text').textContent = q.question;
+            document.getElementById('current-q').textContent = currentQuestion + 1;
+            document.getElementById('score').textContent = score;
+            document.getElementById('explanation').classList.remove('active');
+            answered = false;
+            
+            document.getElementById('answers').innerHTML = answers.map(a => 
+                `<button class="answer-btn" onclick="select('${a}', '${q.correct}')">${a}</button>`
+            ).join('');
+            
+            document.getElementById('prev-btn').disabled = currentQuestion === 0;
+            document.getElementById('next-btn').disabled = true;
+        }
+
+        function select(selected, correct) {
+            if (answered) return;
+            answered = true;
+            const buttons = document.querySelectorAll('.answer-btn');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if (btn.textContent === correct) btn.classList.add('correct');
+                else if (btn.textContent === selected) btn.classList.add('wrong');
+            });
+            if (selected === correct) score++;
+            document.getElementById('score').textContent = score;
+            document.getElementById('explanation').textContent = questionsToUse[currentQuestion].explanation;
+            document.getElementById('explanation').classList.add('active');
+            document.getElementById('next-btn').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questionsToUse.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+            } else showResults();
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                displayQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('navigation').style.display = 'none';
+            document.getElementById('result-screen').classList.add('active');
+            document.getElementById('final-score').textContent = score;
+            const percentage = (score / questionsToUse.length) * 100;
+            const msgs = [
+                'Perfect! You know your Python trivia!',
+                'Excellent!',
+                'Good job!',
+                'Keep practicing!',
+                'Study more!'
+            ];
+            if (percentage >= 80) {
+                document.getElementById('result-message').textContent = msgs[0];
+            } else if (percentage >= 60) {
+                document.getElementById('result-message').textContent = msgs[1];
+            } else if (percentage >= 40) {
+                document.getElementById('result-message').textContent = msgs[2];
+            } else if (percentage >= 20) {
+                document.getElementById('result-message').textContent = msgs[3];
+            } else {
+                document.getElementById('result-message').textContent = msgs[4];
+            }
+        }
+
+        function restartQuiz() {
+            document.getElementById('result-screen').classList.remove('active');
+            startQuiz();
+        }
+
+        displayQuestion();
+    </script>
+</body>
+</html>
