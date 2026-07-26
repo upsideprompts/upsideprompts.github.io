@@ -92,190 +92,190 @@
         const ALL_QUESTIONS = [
             // Question 1
             {
-                question: "What unique distinction does Outkast's 2003 double album, 'Speakerboxxx/The Love Below,' hold in Grammy history?",
-                correct: "It won the Grammy Award for Album of the Year, becoming only the second rap album in history to achieve the feat.",
+                question: "In Outkast's album 'Speakerboxxx/The Love Below,' which song contains the line 'I don't know much about history, but I do know about rap battles'? This illustrates which programming concept where variables hold different data types?",
+                correct: "Lists and dictionaries for storing musical data.",
                 wrong: [
-                    "It was the first rap album to receive a Grammy nomination.",
-                    "It held the record for most Grammys won by a hip-hop act for 10 years.",
-                    "It was the first double album from a rap group to win Album of the Year."
+                    "Only string variables for lyrics.",
+                    "Float variables for tempo measurements.",
+                    "Boolean variables for yes/no decisions."
                 ],
-                explanation: "Outkast's 'Speakerboxxx/The Love Below' made history by winning Album of the Year, becoming only the second rap album ever to achieve this distinction (the first was 'The Miseducation of Lauryn Hill' in 1999)."
+                explanation: "This lyric about history and rap battles demonstrates how programming concepts can be applied to understand music and culture. Lists and dictionaries are perfect for storing different types of musical information."
             },
             // Question 2
             {
-                question: "Before achieving multi-platinum superstardom as a rapper and actor, what was Ludacris's profession in the Atlanta media industry?",
-                correct: "He worked as an intern and later as an on-air DJ for Atlanta's urban radio station Hot 107.5 under the moniker 'DJ Chris Lova Lova.'",
+                question: "Similar to how Ludacris was an intern at Hot 107.5 before going pro, in Python you can write functions and call them. Write a function that takes a list of radio stations and returns only the ones with 100 or more listeners.",
+                correct: "def filter_big_stations(stations):\n    return [station for station in stations if station['listeners'] >= 100]",
                 wrong: [
-                    "He was a record producer for local Atlanta labels.",
-                    "He worked as a club bouncer in Atlanta.",
-                    "He was a high school math teacher."
+                    "def big_stations(stations):\n    return [station for station in stations if station['listeners'] >= 50]",
+                    "def radio_stations(stations):\n    return stations.filter(lambda x: x['listeners'] > 100)",
+                    "def select_stations(stations):\n    return [s for s in stations if s['listeners'] > 100]"
                 ],
-                explanation: "Ludacris started his career in Atlanta's music industry as 'DJ Chris Lova Lova,' working as both an intern and on-air DJ at Hot 107.5 before focusing on his own rap career."
+                explanation: "Just like Ludacris interned at Hot 107.5 to gain experience in radio, list comprehensions in Python give you the skills to filter and work with data efficiently. The correct solution includes >= 100 to match the '100 or more' condition."
             },
             // Question 3
             {
-                question: "Which popular subgenre of hip-hop did T.I. help popularize and name with his breakthrough 2003 sophomore album?",
-                correct: "Trap music, solidified by the title of his album 'Trap Muzik'.",
+                question: "T.I.'s 'Trap Muzik' established the 'trap' subgenre. In Python, what keyword do you use to create a dictionary that can hold the metadata for a trap song like title, artist, tempo, and key?",
+                correct: "The dictionary literal with {} brackets.",
                 wrong: [
-                    "G-funk, established with his West Coast sound. distancing himself from mainstream radio.",
-                    "Crunk, characterized by its aggressive, sped-up tempo.",
-                    "Mumble rap, focusing on minimal lyrics that are difficult to understand."
+                    "The list comprehension with [].",
+                    "The tuple declaration with ().",
+                    "The set creation with set()."
                 ],
-                explanation: "T.I.'s 2003 album 'Trap Muzik' was pivotal in defining and popularizing the trap subgenre, with the album's title helping cement 'trap' as a mainstream hip-hop category."
+                explanation: "Trap music has its own culture and syntax, just like Python dictionaries. Using {} brackets creates a dictionary perfect for storing song metadata like title, artist, tempo, and key."
             },
             // Question 4
             {
-                question: "What was the original stage name Jeezy used when he released his independent debut album 'Thuggin' Under the Influence (T.U.I.)' in 2001?",
-                correct: "Lil J.",
+                question: "Jeezy was originally 'Lil J' before becoming 'Jeezy.' In Python, what do you call the process of giving a variable a new, more meaningful name, which is like Jeezy evolving his stage name?",
+                correct: "Variable assignment and naming.",
                 wrong: [
-                    "'Young Jeezy.'",
-                    "'Jeezy Fresh.'",
-                    "'T.U.I. Jeezy.'"
+                    "Function definition.",
+                    "Class inheritance.",
+                    "Method overloading."
                 ],
-                explanation: "Jeezy's original stage name when he released his first independent album in 2001 was 'Lil J.,' before he went simply by 'Jeezy.'"
+                explanation: "Just as Jeezy changed from 'Lil J' to 'Jeezy' for better branding, Python programmers use variable assignment and meaningful naming to make their code more readable and professional."
             },
             // Question 5
             {
-                question: "Which iconic Atlanta-based record label did Gucci Mane found in 2007, which later helped launch the careers of artists like Waka Flocka Flame and Young Thug?",
-                correct: "1017 Records (originally 1017 Brick Squad Records).",
+                question: "Gucci Mane founded 1017 Records, similar to how you import modules in Python. Write code that imports both the 'os' module and a custom module named 'trap_music' for your project.",
+                correct: "import os\nfrom trap_music import trap_songs",
                 wrong: [
-                    "'LaFace Records.'",
-                    "'Dreamville Records.'",
-                    "'Moxie Entertainment.'"
+                    "import os\nimport trap_music",
+                    "from os import *\nfrom trap_music import *",
+                    "import os\ntrap_music = __import__('trap_music')"
                 ],
-                explanation: "Gucci Mane founded 1017 Records (originally 1017 Brick Squad Records) in 2007, which became a major Atlanta label launching artists like Waka Flocka Flame and Young Thug."
+                explanation: "Just as Gucci Mane's 1017 Records helped launch careers, proper Python imports are essential for building your projects. Using 'from trap_music import trap_songs' allows you to directly access trap_songs without the module prefix."
             },
             // Question 6
             {
-                question: "What high-energy, fast-paced subgenre of hip-hop did Lil Jon and the East Side Boyz pioneer and drive to the mainstream in the early 2000s?",
-                correct: "Crunk music.",
+                question: "Lil Jon's crunk music was known for its fast tempo. In Python, what type of loop would you use to simulate a 'crunk beat' that repeats a sequence of beats 4 times?",
+                correct: "A for loop with range(4).",
                 wrong: [
-                    "Trap music.",
-                    "Hyphy.",
-                    "Moombahton."
+                    "A while loop with no condition.",
+                    "A do-while loop with true condition.",
+                    "A recursive function call."
                 ],
-                explanation: "Lil Jon and the East Side Boyz were instrumental in bringing 'crunk' music to mainstream audiences in the early 2000s, known for its aggressive, sped-up tempos and call-and-response chants."
+                explanation: "Crunk music's fast, repetitive nature is perfectly captured in programming with a for loop using range(4). This loop repeats the sequence exactly 4 times, creating that looping beat pattern that makes crunk music so energetic."
             },
             // Question 7
             {
-                question: "Before focusing on his own vocal career and becoming a pioneer of melodic trap, Future was a primary writer and member of which collective formed by Rico Wade?",
-                correct: "The Dungeon Family (specifically connected through his cousin and member, Rico Wade of Organized Noize).",
+                question: "Future was part of The Dungeon Family before going solo. In Python, what data structure would you use to represent The Dungeon Family where each member can have their own group of affiliated artists?",
+                correct: "A dictionary of dictionaries.",
                 wrong: [
-                    "The State College Movement.",
-                    "The Stellar Team.",
-                    "The Atlanta Sound Collective."
+                    "A list of lists.",
+                    "A single string.",
+                    "A boolean value."
                 ],
-                explanation: "Future was initially part of The Dungeon Family, the influential Atlanta collective founded by Rico Wade of Organized Noize, before launching his solo career that revolutionized melodic trap."
+                explanation: "Just like The Dungeon Family where each main member has their own collective of affiliated artists, a dictionary of dictionaries in Python perfectly represents nested relationships and organizational structures in your data."
             },
             // Question 8
             {
-                question: "What is the name of the independent record label founded by Young Thug in 2016 that serves as an acronym for 'Slime Language'?",
-                correct: "YSL Records (Young Stoner Life Records).",
+                question: "Young Thug founded YSL Records, which stands for 'Young Stoner Life.' In Python, what data type would you use to store a list of drugs (as strings) that are available at a 'Young Stoner Life' party?",
+                correct: "A list of strings.",
                 wrong: [
-                    "'YSL Music.'",
-                    "'Young Stoner Life (YSL).',",
-                    "'Young Slime Legends (YSL).',"
+                    "A single string with commas.",
+                    "A boolean value.",
+                    "A floating-point number."
                 ],
-                explanation: "Young Thug founded YSL Records (Young Stoner Life Records) in 2016 as an independent label that grew to include major artists and stood for 'Slime Language.'"
+                explanation: "YSL Records represents 'Young Stoner Life,' just as a list of strings in Python can store the variety of drugs available at a party. Each item in the list can be a specific substance, making lists perfect for this kind of inventory management."
             },
             // Question 9
             {
-                question: "On which major international artist's 2022 studio album ('Her Loss') did 21 Savage collaborate for a full-length joint release?",
-                correct: "Drake.",
+                question: "21 Savage collaborated with Drake on 'Her Loss.' In Python, what would you use to store the metadata for a 16-track collaborative album, including track titles, features, and release year?",
+                correct: "A dictionary with 'tracks' as a key containing a list of track dictionaries.",
                 wrong: [
-                    "The Weeknd.",
-                    "Kanye West.",
-                    "Post Malone."
+                    "A single string containing all track information.",
+                    "A boolean value indicating whether it's collaborative.",
+                    "A floating-point number representing the album's length."
                 ],
-                explanation: "21 Savage's collaborative album 'Her Loss' (2022) was a full-length joint project with Drake, featuring 16 tracks that blended their signature styles."
+                explanation: "Just as 'Her Loss' contains 16 tracks with rich metadata, Python dictionaries with nested lists of dictionaries are perfect for storing complex album information including track titles, features, and release year in an organized way."
             },
             // Question 10
             {
-                question: "What sport did Lil Baby excel at during his youth in West Atlanta before eventually turning to a path in music?",
-                correct: "Track and field (along with playing football), where he was notably fast and athletic.",
+                question: "Lil Baby was an athlete before music. In Python, write a function that takes a list of athlete stats and returns only those with a 40-yard dash time under 4.5 seconds, similar to how scouts filter for speed.",
+                correct: "def filter_fast_players(stats):\n    return [stat for stat in stats if stat['40yd_time'] < 4.5]",
                 wrong: [
-                    "Basketball.",
-                    "Baseball.",
-                    "Soccer."
+                    "def track_players(stats):\n    return [stat for stat in stats if stat['40yd_time'] < 5.0]",
+                    "def select_players(stats):\n    return list(stats.filter(lambda x: x['40yd_time'] < 4.5))",
+                    "def speed_stats(stats):\n    return [s for s in stats if s['40yd_time'] < 4.0]"
                 ],
-                explanation: "Lil Baby was a talented athlete in his youth, excelling in track and field events and playing football in West Atlanta before fully committing to his rap career."
+                explanation: "Just as NFL scouts filter for 40-yard dash times under 4.5 seconds to identify fast athletes, Python list comprehensions allow you to efficiently filter athletic performance data. The correct solution uses < 4.5 to match the speed threshold."
             },
             // Question 11
             {
-                question: "What was the title of Goodie Mob's critically acclaimed 1995 debut album, which featured landmark socially conscious tracks like 'Cell Therapy'?",
-                correct: "'Soul Food'.",
+                question: "Goodie Mob's 'Soul Food' featured 'Cell Therapy.' In Python, what decorator would you use to create a reusable function that generates cell therapy lyrics with different drug names?",
+                correct: "A function with parameters and f-strings for dynamic content.",
                 wrong: [
-                    "'Integrated System.'.",
-                    "'Still Standing'.",
-                    "'atincin' Entelligence.'."
+                    "A class inheritance decorator.",
+                    "A lambda function.",
+                    "A recursive decorator."
                 ],
-                explanation: "Goodie Mob's 1995 debut 'Soul Food' was a critically acclaimed album that established them as leaders of Atlanta's conscious hip hop movement."
+                explanation: "Just as Goodie Mob's 'Cell Therapy' lyrics can be adapted for different scenarios, Python functions with parameters and f-strings allow you to create reusable code that generates dynamic content like lyrics with different drug names."
             },
             // Question 12
             {
-                question: "Which breakout 2013 hit single by Migos popularized a staccato triplet flow that heavily influenced modern hip-hop rhythm?",
-                correct: "'Versace'.",
+                question: "Migos' 'Versace' popularized the triplet flow. In Python, what programming concept creates a loop that processes each element in a list of rap verses and applies a flow pattern?",
+                correct: "A for loop iterating over the list.",
                 wrong: [
-                    "'Bad and Boujee'.",
-                    "'One Dance'.",
-                    "'Goosebumps'."
+                    "A while loop with manual indexing.",
+                    "A recursive function call.",
+                    "A dictionary comprehension."
                 ],
-                explanation: "Migos' 2013 hit 'Versace' popularized the distinctive triplet flow that became a staple of modern rap and hip-hop rhythm patterns."
+                explanation: "The Migos triplet flow's repetitive nature is perfectly captured with a for loop in Python. Just as each verse follows the same triplet rhythm pattern, a for loop processes each element in a list of rap verses sequentially, creating the consistent flow that makes their music distinctive."
             },
             // Question 13
             {
-                question: "Under what initial stage name and as part of which duo did 2 Chainz release music alongside his partner Dolla Boy in the late 1990s and 2000s?",
-                correct: "Tity Boi, as one-half of the duo Playaz Circle.",
+                question: "2 Chainz was originally 'Tity Boi' in Playaz Circle. In Python, what mathematical operator would you use to double a DMX quote's impact, similar to how Tity Boi added his distinct style?",
+                correct: "The multiplication operator (*).",
                 wrong: [
-                    "Tity Boi, as one-half of Dolla Boy.",
-                    "2 Chainz, as one-half of Playaz Circle.",
-                    "Tity Boi, as one-half of Trill."
+                    "The addition operator (+).",
+                    "The division operator (/).",
+                    "The exponent operator (**)."
                 ],
-                explanation: "2 Chainz was originally known as 'Tity Boi' and achieved early success as one-half of the Atlanta-based hip-hop duo 'Playaz Circle' with his partner Dolla Boy."
+                explanation: "Just as 2 Chainz (formerly Tity Boi) added his unique style to Playaz Circle, doubling something in Python with the multiplication operator (*) creates a much stronger impact, making the result twice as powerful."
             },
             // Question 14
             {
-                question: "In addition to his solo career and his work as half of Run the Jewels, Killer Mike won a Grammy for his 2002 feature verse on which Outkast song?",
-                correct: "'The Whole World'.",
+                question: "Killer Mike won a Grammy for Outkast's 'The Whole World.' In Python, what data structure would you use to store information about a Grammy-winning feature track including artist, song, year, and category?",
+                correct: "A dictionary with keys for artist, song, year, and category.",
                 wrong: [
-                    "'Hey Ya!'.",
-                    "'Maybe Boy.'.",
-                    "'Two Agents.'"
+                    "A list of strings.",
+                    "A boolean value.",
+                    "A floating-point number."
                 ],
-                explanation: "Killer Mike won a Grammy for his feature verse on Outkast's 'The Whole World' (2002), showcasing his impact beyond his work in Run the Jewels."
+                explanation: "Just as Killer Mike's Grammy for 'The Whole World' has specific details about the feature track, a Python dictionary with keys for artist, song, year, and category perfectly stores all the important information about Grammy-winning collaborations in an organized way."
             },
             // Question 15
             {
-                question: "Which Billboard Hot 100 number-one hit by Childish Gambino featured a powerful music video addressing systemic racism and gun violence in America?",
-                correct: "'This Is America' (2018).",
+                question: "Childish Gambino's 'This Is America' went viral. In Python, what data structure would you use to store information about viral TikTok videos including views, likes, and the challenge name?",
+                correct: "A dictionary with 'views', 'likes', and 'challenge' as keys.",
                 wrong: [
-                    "'Red Piano'.",
-                    "'3005'.",
-                    "'Teardrop.'"
+                    "A single string containing all video data.",
+                    "A boolean value indicating if it's viral.",
+                    "A floating-point number representing engagement rate."
                 ],
-                explanation: "Childish Gambino's 'This Is America' (2018) reached #1 on the Billboard Hot 100 and featured a powerful music video that addressed systemic racism and gun violence in America."
+                explanation: "Just as 'This Is America' became a cultural phenomenon with measurable impact, a Python dictionary with keys for 'views', 'likes', and 'challenge' perfectly captures the metadata of viral TikTok videos, organizing all the important statistics in one place."
             },
             // Question 16
             {
-                question: "What major Atlanta-founded record label signed Earthgang in 2017, aligning them with artists like J. Cole?",
-                correct: "Dreamville Records.",
+                question: "Dreamville Records signed Earthgang. In Python, what programming concept creates a reusable function that generates dreamville signed artist profiles with artist names and their joining years?",
+                correct: "A function with parameters and docstrings for documentation.",
                 wrong: [
-                    "'LaFace Records.'",
-                    "'Moxie Entertainment.'",
-                    "'Jive Records.'"
+                    "A class inheritance.",
+                    "A lambda function.",
+                    "A recursive generator."
                 ],
-                explanation: "Dreamville Records, founded in Atlanta and associated with J. Cole, signed Earthgang in 2017, providing them with a platform to reach mainstream success."
+                explanation: "Just as Dreamville Records builds relationships with signed artists, Python functions with parameters and docstrings create reusable, well-documented code that generates artist profiles. The docstring helps other developers understand how to use the function, just like how Dreamville's brand represents their artistic vision."
             },
             // Question 17
             {
-                question: "Before dedicating himself fully to music and signing with Dreamville, what collegiate sport did JID play on an athletic scholarship?",
-                correct: "Football (as a defensive back and running back at Hampton University).",
+                question: "JID played college football before music. Write a function that takes a list of NFL player stats and returns only those with a 40-yard dash time under 4.5 seconds and a bench press over 225 pounds.",
+                correct: "def filter_pro_combinators(stats):\n    return [stat for stat in stats if stat['40yd'] < 4.5 and stat['bench'] > 225]",
                 wrong: [
-                    "Basketball.",
-                    "Baseball.",
-                    "Soccer."
+                    "def select_players(stats):\n    return [s for s in stats if s['40yd'] < 4.5 or s['bench'] > 225]",
+                    "def combine_stats(stats):\n    return list(filter(lambda x: x['40yd'] < 4.5 and x['bench'] > 225, stats))",
+                    "def athletic_players(stats):\n    return [stat for stat in stats if stat['40yd'] < 4.0 or stat['bench'] > 200]"
                 ],
-                explanation: "JID played college football as a defensive back and running back at Hampton University on an athletic scholarship before fully committing to his music career with Dreamville."
+                explanation: "Just as scouts look for players with exceptional speed and strength, Python list comprehensions allow you to filter athletic performance data. The correct solution uses 'and' to require both conditions - speed under 4.5 seconds AND bench press over 225 pounds for true NFL prospects."
             },
             // Question 18
             {
