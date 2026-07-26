@@ -89,6 +89,16 @@
     </div>
     
     <script>
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/\"/g, '&quot;')
+                .replace(/\'/g, '&#039;')
+                .replace(/\\n/g, '<br>');
+        }
+        
         const ALL_QUESTIONS = [
             // Question 1
             {
@@ -370,24 +380,35 @@
             document.getElementById('explanation').classList.remove('active');
             answered = false;
             
-            document.getElementById('answers').innerHTML = answers.map(a => 
-                `<button class="answer-btn" onclick="select('${a}', '${q.correct}')">${a}</button>`
+            // Use safe button creation with data attributes
+            const answersHTML = answers.map(a => 
+                `<button class="answer-btn" onclick="selectAnswer('${a}', '${q.correct}')">${escapeHtml(a)}</button>`
             ).join('');
+            document.getElementById('answers').innerHTML = answersHTML;
             
             document.getElementById('prev-btn').disabled = currentQuestion === 0;
             document.getElementById('next-btn').disabled = true;
         }
 
-        function select(selected, correct) {
+        function selectAnswer(selected, correct, isCorrect) {
             if (answered) return;
             answered = true;
+            
             const buttons = document.querySelectorAll('.answer-btn');
             buttons.forEach(btn => {
+                const btnCorrect = btn.getAttribute('data-correct') === 'true';
+                
+                if (btnCorrect) {
+                    btn.classList.add('correct');
+                    btn.style.backgroundColor = '#d4edda';
+                    btn.style.borderColor = '#28a745';
+                    btn.style.fontWeight = 'bold';
+                }
+                
                 btn.disabled = true;
-                if (btn.textContent === correct) btn.classList.add('correct');
-                else if (btn.textContent === selected) btn.classList.add('wrong');
             });
-            if (selected === correct) score++;
+            
+            if (isCorrect) score++;
             document.getElementById('score').textContent = score;
             document.getElementById('explanation').textContent = questionsToUse[currentQuestion].explanation;
             document.getElementById('explanation').classList.add('active');
