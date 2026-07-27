@@ -395,7 +395,7 @@
             
             // Use safe button creation with data attributes
             const answersHTML = answers.map(a => 
-                `<button class="answer-btn" onclick="selectAnswer('${a}', '${q.correct}')">${escapeHtml(a)}</button>`
+                `<button class="answer-btn" onclick="selectAnswer('${a}', '${q.correct}', ${a} === ${q.correct})">${escapeHtml(a)}</button>`
             ).join('');
             document.getElementById('answers').innerHTML = answersHTML;
             
