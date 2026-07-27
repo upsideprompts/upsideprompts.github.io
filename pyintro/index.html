@@ -47,7 +47,22 @@
         .mode-btn.active { background: #4a90d9; color: white; }
         .mode-btn:hover:not(.active) { background: #e9ecef; }
         .random-indicator { text-align: center; color: #666; margin: 10px 0; font-style: italic; }
-    </style>
+    
+        .correct-btn { background: #d4edda; border-color: #28a745; color: #155724; font-weight: bold; }
+        .wrong-btn { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+        .correct-answer {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #4a90d9;
+            font-weight: bold;
+            color: #155724;
+            display: none;
+        }
+        .correct-answer.show {
+            display: block;
+        }</style>
 </head>
 <body>
     <div class="container">
@@ -74,7 +89,7 @@
             <div class="question-text" id="question-text"></div>
             <div class="answers" id="answers"></div>
             <div class="explanation" id="explanation"></div>
-        </div>
+ <div class="correct-answer" id="correct-answer"></div>       </div>
         
         <div class="result-screen" id="result-screen">
             <div class="score-circle" id="final-score">0</div>
@@ -394,24 +409,25 @@
             if (answered) return;
             answered = true;
             
+            // Simple: just disable all buttons
             const buttons = document.querySelectorAll('.answer-btn');
             buttons.forEach(btn => {
-                const btnCorrect = btn.getAttribute('data-correct') === 'true';
-                
-                if (btnCorrect) {
-                    btn.classList.add('correct');
-                    btn.style.backgroundColor = '#d4edda';
-                    btn.style.borderColor = '#28a745';
-                    btn.style.fontWeight = 'bold';
-                }
-                
                 btn.disabled = true;
             });
             
+            // Show correct answer at bottom
+            document.getElementById('correct-answer').textContent = 'Correct: ' + correct;
+            document.getElementById('correct-answer').classList.add('show');
+            
+            // Update score
             if (isCorrect) score++;
             document.getElementById('score').textContent = score;
+            
+            // Show explanation
             document.getElementById('explanation').textContent = questionsToUse[currentQuestion].explanation;
             document.getElementById('explanation').classList.add('active');
+            
+            // Enable next button
             document.getElementById('next-btn').disabled = false;
         }
 
