@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>Python Trivia Quiz</title>
+ <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+ <main class="wrap">
+ <header class="header">
+ <h1 id="quizTitle">Python Trivia Quiz</h1>
+ <p class="meta" id="quizMeta"></p>
+ </header>
+
+ <section class="card" id="app">
+ <h2 class="question" id="questionText">Loading…</h2>
+
+ <img class="image" id="questionImage" alt="" />
+
+ <div class="choices" id="choices"></div>
+
+ <div class="controls">
+ <button class="btn" id="prevBtn" type="button">Previous</button>
+ <button class="btn" id="nextBtn" type="button">Next</button>
+ <button class="btn primary" id="submitBtn" type="button">Submit</button>
+ </div>
+
+ <div class="progress">
+ <div class="bar" id="progressBar"></div>
+ </div>
+ <p class="meta" id="progressText"></p>
+ </section>
+ </main>
+
+ <script type="module" src="app.js"></script>
+</body>
+</html>
