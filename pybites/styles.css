@@ -1,0 +1,147 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+}
+
+.wrap {
+ max-width: 800px;
+ width: 100%;
+}
+
+.header {
+ text-align: center;
+ margin-bottom: 30px;
+ color: white;
+}
+
+.header h1 {
+ font-size: 2.5rem;
+ margin-bottom: 10px;
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header .meta {
+ font-size: 1.2rem;
+ opacity: 0.9;
+}
+
+.card {
+ background: white;
+ border-radius: 20px;
+ padding: 40px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.question {
+ font-size: 1.8rem;
+ margin-bottom: 30px;
+ color: #2d3748;
+ text-align: center;
+}
+
+.image {
+ max-width: 100%;
+ height: auto;
+ border-radius: 10px;
+ margin: 20px 0;
+ display: block;
+}
+
+.choices {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 15px;
+ margin: 30px 0;
+}
+
+.choice {
+ padding: 15px 20px;
+ border: 2px solid #e2e8f0;
+ border-radius: 10px;
+ background: white;
+ font-size: 1.1rem;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-align: left;
+}
+
+.choice:hover {
+ border-color: #667eea;
+ transform: translateY(-2px);
+}
+
+.choice.selected {
+ background: #f39c12;
+ color: #000000;
+ border-color: #e67e22;
+ font-weight: 600;
+}
+
+.choice.selected::before {
+ content: "✓ ";
+ font-weight: bold;
+}
+
+.btn {
+ padding: 12px 24px;
+ border: none;
+ border-radius: 8px;
+ background: #667eea;
+ color: white;
+ font-size: 1rem;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ margin: 0 5px;
+}
+
+.btn:hover {
+ background: #5a67d8;
+ transform: translateY(-2px);
+}
+
+.btn:disabled {
+ opacity: 0.5;
+ cursor: not-allowed;
+}
+
+.btn.primary {
+ background: #28a745;
+}
+
+.btn.primary:hover {
+ background: #218838;
+}
+
+.progress {
+ height: 30px;
+ background: #f8f9fa;
+ border-radius: 15px;
+ overflow: hidden;
+ margin: 30px 0;
+ border: 2px solid #e2e8f0;
+}
+
+.bar {
+ height: 100%;
+ background: linear-gradient(90deg, #667eea, #764ba2);
+ border-radius: 12px;
+ transition: width 0.5s ease;
+}
+
+.meta {
+ text-align: center;
+ color: #718096;
+ font-size: 0.9rem;
+ margin-top: 20px;
+}
