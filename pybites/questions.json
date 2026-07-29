@@ -1,0 +1,60 @@
+{
+ "title": "Python Trivia Quiz",
+ "questions": [
+   {
+     "question": "Which of the following is a mutable sequence type in Python?",
+     "choices": [
+       "Integer",
+       "Tuple",
+       "List",
+       "String"
+     ],
+     "correctIndex": 2,
+     "hint": "Used for dynamic lists. Can be modified with append, insert, remove."
+   },
+   {
+     "question": "What does the range(5) function generate in Python?",
+     "choices": [
+       "[1, 2, 3, 4, 5]",
+       "(1, 2, 3, 4, 5)",
+       "1, 2, 3, 4, 5",
+       "[0, 1, 2, 3, 4]"
+     ],
+     "correctIndex": 3,
+     "hint": "Generates numbers from 0 up to, but not including, the given number."
+   },
+   {
+     "question": "Which of these methods is used to add an element to the end of a list?",
+     "choices": [
+       "insert()",
+       "append()",
+       "add()",
+       "push()"
+     ],
+     "correctIndex": 1,
+     "hint": "Adds element to the end of list. Opposite of pop()"
+   },
+   {
+     "question": "What is the correct syntax for a for loop in Python?",
+     "choices": [
+       "for x in range(5):",
+       "for i = 1 to 10:",
+       "for each item in list:",
+       "for(item in list):"
+     ],
+     "correctIndex": 0,
+     "hint": "Uses 'for' keyword followed by variable, then 'in', then iterable."
+   },
+   {
+     "question": "Which keyword is used to define a function in Python?",
+     "choices": [
+       "def",
+       "function",
+       "define",
+       "func"
+     ],
+     "correctIndex": 0,
+     "hint": "Used to define a function definition, like def greet():"
+   }
+ ]
+}
