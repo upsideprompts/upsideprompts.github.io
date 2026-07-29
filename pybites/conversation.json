@@ -1,0 +1,15 @@
+{
+ "chat_id": "user:U094XGUPSE9",
+ "message_id": "1785349423.997689",
+ "reply_to_id": "1785349423.997689",
+ "sender_id": "U094XGUPSE9",
+ "sender": "U094XGUPSE9",
+ "timestamp": "Wed 2026-07-29 18:23 UTC",
+ "group_space": "T094XGUPS6R",
+ "inbound_event_kind": "user_request",
+ "sender_metadata": {
+   "label": "U094XGUPSE9",
+   "id": "U094XGUPSE9",
+   "name": "U094XGUPSE9"
+ }
+}
