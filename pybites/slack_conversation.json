@@ -1,0 +1,20 @@
+{
+  "conversation_info": {
+    "chat_id": "user:U094XGUPSE9",
+    "message_id": "1785356876.249679",
+    "reply_to_id": "1785356876.249679",
+    "sender_id": "U094XGUPSE9",
+    "sender": "U094XGUPSE9",
+    "timestamp": "Wed 2026-07-29 20:27 UTC",
+    "group_space": "T094XGUPS6R",
+    "inbound_event_kind": "user_request"
+  },
+  "sender": {
+    "label": "U094XGUPSE9",
+    "id": "U094XGUPSE9",
+    "name": "U094XGUPSE9"
+  },
+  "source": "Slack DM",
+  "file": "untitled.txt",
+  "conversation_type": "user_request"
+}
