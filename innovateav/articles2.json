@@ -326,7 +326,7 @@
       "date": "2026-07-11"
     },
     {
-      "title": "UK £15 Billion Defense Investment Targets Robot Warfare and Drone Modernization",
+      "title": "UK \u00a315 Billion Defense Investment Targets Robot Warfare and Drone Modernization",
       "link": "https://www.thenationalnews.com/news/uk/2026/06/30/britains-15-billion-defence-reset-prepares-for-age-of-robot-warfare/",
       "date": "2026-06-30"
     },
@@ -366,7 +366,7 @@
       "date": "2026-06-28"
     },
     {
-     "title": "Waymo Phoenix Full Driverless Service Surpasses 500,000 Weekly Rides",
+      "title": "Waymo Phoenix Full Driverless Service Surpasses 500,000 Weekly Rides",
       "link": "https://www.waymo.com/blog/2026/06/waymo-phoenix-full-driverless.html",
       "date": "2026-06-16"
     },
@@ -444,7 +444,22 @@
       "title": "Anduril YFQ-44 Fires Live Air-to-Air Missile in Landmark CCA Test",
       "link": "https://www.uasvision.com/2026/07/17/anduril-yfq-44-fires-live-air-to-air-missile-in-landmark-cca-test/",
       "date": "2026-07-19"
+    },
+    {
+      "title": "Waymo Expands to 15 More US Cities with Sixth-Generation Robotaxi Platform",
+      "link": "https://techcrunch.com/2026/07/31/waymo-expands-six-generation-robotaxi-platform-15-new-cities/",
+      "date": "2026-07-31"
+    },
+    {
+      "title": "Japan's JR Central Opens World's First Fully Autonomous Maglev Line Between Tokyo and Nagoya",
+      "link": "https://railwaynews.net/2026/07/japan-jrc-central-autonomous-maglev-line-tokyo-nagoya.html",
+      "date": "2026-07-31"
+    },
+    {
+      "title": "Anduril Industries Deploys Nuke-Powered Autonomous Drone Swarm for Arctic Surveillance Mission",
+      "link": "https://defensenews.com/2026/07/31/anduril-arctic-drone-swarm-nuke-powered-autonomous-mission/",
+      "date": "2026-07-31"
     }
   ],
-  "lastUpdated": "2026-06-15"
+  "lastUpdated": "2026-07-31"
 }
