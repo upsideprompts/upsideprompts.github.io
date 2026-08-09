@@ -145,3 +145,24 @@ body {
  font-size: 0.9rem;
  margin-top: 20px;
 }
+
+.results-list {
+  margin: 24px 0;
+  padding-left: 1.25rem;
+  color: #2d3748;
+}
+
+.result-item {
+  margin-bottom: 20px;
+}
+
+.result-item p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.result-explanation {
+  color: #4a5568;
+  font-style: italic;
+}
