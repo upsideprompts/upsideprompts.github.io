@@ -31,6 +31,11 @@ body {
  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+.header h1 .atl {
+ color: #e11d48;
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.35);
+}
+
 .header .meta {
  font-size: 1.2rem;
  opacity: 0.9;
@@ -44,14 +49,13 @@ body {
  position: relative;
 }
 
-.card-top {
+.card-bottom {
  display: flex;
- justify-content: flex-end;
- min-height: 0;
- margin: -12px 0 8px;
+ justify-content: center;
+ margin-top: 20px;
 }
 
-.card-top:has(#do20Btn[hidden]) {
+.card-bottom:has(#do20Btn[hidden]) {
  display: none;
  margin: 0;
 }

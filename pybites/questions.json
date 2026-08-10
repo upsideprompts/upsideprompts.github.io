@@ -79,14 +79,14 @@
     },
     {
       "index": 7,
-      "question": "Young Thug founded YSL Records, which stands for 'Young Stoner Life.' In Python, what data type would you use to store a list of drugs (as strings) that are available at a 'Young Stoner Life' party?",
+      "question": "Young Thug founded YSL Records in Atlanta. In Python, what data type would you use to store a roster of YSL artists as separate names you can loop through?",
       "correct": "A list of strings.",
       "wrong": [
         "A single string with commas.",
         "A boolean value.",
         "A floating-point number."
       ],
-      "explanation": "YSL Records represents 'Young Stoner Life,' just as a list of strings in Python can store the variety of drugs available at a party. Each item in the list can be a specific substance, making lists perfect for this kind of inventory management."
+      "explanation": "YSL Records built a roster of artists under one label. A list of strings holds each artist name as its own item so you can add, remove, or loop over the roster cleanly—unlike one long string or a boolean."
     },
     {
       "index": 8,
@@ -189,36 +189,36 @@
     },
     {
       "index": 17,
-      "question": "Kilo Ali.",
-      "correct": "Kilo Ali.",
+      "question": "Kilo Ali lit up Atlanta clubs with 'Baby Baby' and 'Love in Miami.' In Python, which expression builds a single playlist title string from a list of his hit names without putting a comma after the last track?",
+      "correct": "', '.join(hits)",
       "wrong": [
-        "Outkast.",
-        "Goodie Mob.",
-        "Jeezy."
+        "hits + ', '",
+        "str(hits)",
+        "hits.split(', ')"
       ],
-      "explanation": "Kilo Ali was a pioneering Atlanta hip-hop artist in the 1990s known for regional club hits like 'Baby Baby' and 'Love in Miami,' helping establish Atlanta's reputation in the Southern rap scene."
+      "explanation": "Just as Kilo Ali strung together regional club hits into a career, join() combines a list of strings into one playlist line with separators only between items—no trailing comma after the final track."
     },
     {
       "index": 18,
-      "question": "Bone Crusher's signature prop.",
-      "correct": "Heavy gold chains featuring a large medallion.",
+      "question": "Bone Crusher's 'Never Scared' hit hard on repeat. In Python, what do you use to loop over each word in the lyric string 'never scared never scared' so you can count how many times 'scared' appears?",
+      "correct": "for word in lyric.split():",
       "wrong": [
-        "A wooden clarinet.",
-        "A bullhorn.",
-        "A football helmet."
+        "for word in lyric:",
+        "while lyric in 'scared':",
+        "lyric.forEach(word):"
       ],
-      "explanation": "Bone Crusher was known for wearing heavy gold chains featuring large medallions, which he would often swing around while performing his 2003 crunk hit 'Never Scared.'"
+      "explanation": "Splitting the lyric into words and using a for loop lets you process each token the way a crowd chants the hook—iterating word by word. Looping over the string without split would give characters, not words."
     },
     {
       "index": 19,
-      "question": "Outkast was formed by which Atlanta-born artist?",
-      "correct": "Big Boi.",
+      "question": "Outkast is a duo (Big Boi and André 3000). In Python, which structure best stores two fixed member names you do not want reassigned later, like a sealed duo lineup?",
+      "correct": "duo = ('Big Boi', 'André 3000')",
       "wrong": [
-        "Future.",
-        "Killer Mike.",
-        "J. Cole."
+        "duo = ['Big Boi', 'André 3000']",
+        "duo = {'Big Boi', 'André 3000'}",
+        "duo = 'Big Boi' + 'André 3000'"
       ],
-      "explanation": "Outkast was formed in Atlanta in 1991 by Big Boi (Antwan Patton) and André 3000 (André Benjamin), becoming one of hip-hop's most successful duos with multiple Grammy wins and widespread critical acclaim."
+      "explanation": "A tuple holds a fixed pair of values—perfect for Outkast's two-member lineup. Lists are mutable, sets are unordered and don’t keep ordered roles as clearly, and string concatenation loses the separate-member structure."
     }
   ]
 }
