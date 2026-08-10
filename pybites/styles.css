@@ -113,11 +113,6 @@ body {
  animation: wiggle 0.5s ease;
 }
 
-.choice.wrong::before {
- content: "✗ ";
- font-weight: bold;
-}
-
 @keyframes wiggle {
   0%, 100% { transform: translateX(0); }
   15% { transform: translateX(-10px); }

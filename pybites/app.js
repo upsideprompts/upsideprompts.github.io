@@ -31,6 +31,9 @@ async function init() {
       throw new Error("No questions found in questions.json");
     }
 
+    // Use 5 random questions from the full bank (or all if fewer than 5)
+    quiz.questions = pickRandom(quiz.questions, 5);
+
     selected = new Array(quiz.questions.length).fill(null);
 
     hookEvents();
@@ -89,6 +92,13 @@ function shuffle(arr) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
+}
+
+/** Return up to `count` unique items chosen at random from `items`. */
+function pickRandom(items, count) {
+  const pool = items.slice();
+  shuffle(pool);
+  return pool.slice(0, Math.min(count, pool.length));
 }
 
 function hookEvents() {
