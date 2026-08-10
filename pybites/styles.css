@@ -41,6 +41,34 @@ body {
  border-radius: 20px;
  padding: 40px;
  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+ position: relative;
+}
+
+.card-top {
+ display: flex;
+ justify-content: flex-end;
+ min-height: 0;
+ margin: -12px 0 8px;
+}
+
+.card-top:has(#do20Btn[hidden]) {
+ display: none;
+ margin: 0;
+}
+
+.do20-btn {
+ font-size: 0.85rem;
+ padding: 8px 14px;
+ margin: 0;
+ background: #4a5568;
+}
+
+.do20-btn:hover {
+ background: #2d3748;
+}
+
+.do20-btn[hidden] {
+ display: none;
 }
 
 .question {

@@ -8,16 +8,19 @@ const choicesEl = document.getElementById("choices");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const submitBtn = document.getElementById("submitBtn");
+const do20Btn = document.getElementById("do20Btn");
 
 const answerFeedbackEl = document.getElementById("answerFeedback");
 const progressBarEl = document.getElementById("progressBar");
 const progressTextEl = document.getElementById("progressText");
 
 let quiz = null;
+let allQuestions = []; // full bank after normalize
 let currentIndex = 0;
-let selected = []; // stores selected correct choice index per question (number or null)
+let selected = []; // choice index per question (number or null)
 let wrongFlashIndex = null; // temporary wrong pick while wiggling
 let isAnimatingWrong = false;
+let isFullQuiz = false;
 
 init();
 
@@ -31,8 +34,10 @@ async function init() {
       throw new Error("No questions found in questions.json");
     }
 
-    // Use 5 random questions from the full bank (or all if fewer than 5)
-    quiz.questions = pickRandom(quiz.questions, 5);
+    allQuestions = quiz.questions.slice();
+    // Default: 5 random questions from the full bank
+    quiz.questions = pickRandom(allQuestions, 5);
+    isFullQuiz = quiz.questions.length >= allQuestions.length;
 
     selected = new Array(quiz.questions.length).fill(null);
 
@@ -101,7 +106,24 @@ function pickRandom(items, count) {
   return pool.slice(0, Math.min(count, pool.length));
 }
 
+function startFullQuiz() {
+  if (isFullQuiz || !allQuestions.length) return;
+
+  wrongFlashIndex = null;
+  isAnimatingWrong = false;
+  currentIndex = 0;
+  isFullQuiz = true;
+  // All 20 (shuffled so order isn't always the same)
+  quiz.questions = pickRandom(allQuestions, allQuestions.length);
+  selected = new Array(quiz.questions.length).fill(null);
+  render();
+}
+
 function hookEvents() {
+  if (do20Btn) {
+    do20Btn.addEventListener("click", startFullQuiz);
+  }
+
   prevBtn.addEventListener("click", () => {
     if (currentIndex > 0) {
       wrongFlashIndex = null;
@@ -127,7 +149,10 @@ function hookEvents() {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (selected[currentIndex] !== null || isAnimatingWrong) return;
+    const q = quiz && quiz.questions[currentIndex];
+    if (!q || isAnimatingWrong) return;
+    const picked = selected[currentIndex];
+    if (picked !== null && picked === q.correctIndex) return;
     const n = Number(e.key);
     if (n >= 1 && n <= 4) {
       choose(n - 1);
@@ -139,11 +164,19 @@ function render() {
   const total = quiz.questions.length;
   const q = quiz.questions[currentIndex];
   const picked = selected[currentIndex];
-  const isCorrect = picked !== null;
+  const answered = picked !== null;
+  const isCorrect = answered && picked === q.correctIndex;
   const flashWrong = wrongFlashIndex !== null;
 
   quizTitleEl.textContent = quiz.title || "Quiz";
   quizMetaEl.textContent = `Question ${currentIndex + 1} of ${total}`;
+
+  // "Do 20 questions" only on first question of the short quiz
+  if (do20Btn) {
+    const showDo20 =
+      currentIndex === 0 && !isFullQuiz && allQuestions.length > quiz.questions.length;
+    do20Btn.hidden = !showDo20;
+  }
 
   questionTextEl.textContent = q.question;
 
@@ -156,14 +189,16 @@ function render() {
     const btn = document.createElement("button");
     btn.type = "button";
     let className = "choice";
-    if (isCorrect && idx === picked) {
-      className += " correct";
-    } else if (flashWrong && idx === wrongFlashIndex) {
+    if (flashWrong && idx === wrongFlashIndex) {
       className += " wrong";
+    } else if (isCorrect && idx === picked) {
+      className += " correct";
+    } else if (answered && !isCorrect && idx === picked && !flashWrong) {
+      className += " selected";
     }
     btn.className = className;
     btn.textContent = text;
-    // Lock only after correct; during wrong wiggle, disable all briefly
+    // Lock only after correct; during wrong wiggle, briefly disable
     btn.disabled = isCorrect || isAnimatingWrong;
     if (!isCorrect && !isAnimatingWrong) {
       btn.addEventListener("click", () => choose(idx));
@@ -184,15 +219,19 @@ function render() {
   const onLast = currentIndex === total - 1;
   nextBtn.style.display = onLast ? "none" : "inline-block";
   submitBtn.style.display = onLast ? "inline-block" : "none";
-  nextBtn.disabled = !isCorrect;
-  submitBtn.disabled = !isCorrect;
+  // Next/Submit after any selection (correct or incorrect)
+  nextBtn.disabled = !answered;
+  submitBtn.disabled = !answered;
 
   updateProgress();
 }
 
 function choose(choiceIndex) {
-  if (selected[currentIndex] !== null || isAnimatingWrong) return;
   const q = quiz.questions[currentIndex];
+  if (isAnimatingWrong) return;
+  if (selected[currentIndex] !== null && selected[currentIndex] === q.correctIndex) {
+    return;
+  }
   if (choiceIndex < 0 || choiceIndex >= q.choices.length) return;
 
   if (choiceIndex === q.correctIndex) {
@@ -202,22 +241,23 @@ function choose(choiceIndex) {
     return;
   }
 
-  // Wrong answer: wiggle the row, then clear so user can retry
+  // Wrong answer: keep selection (Next works), wiggle, then allow retry
+  selected[currentIndex] = choiceIndex;
   isAnimatingWrong = true;
   wrongFlashIndex = choiceIndex;
   render();
 
   const wrongBtn = choicesEl.querySelector(".choice.wrong");
-  const clearWrong = () => {
+  const afterWiggle = () => {
     isAnimatingWrong = false;
     wrongFlashIndex = null;
     render();
   };
 
   if (wrongBtn) {
-    wrongBtn.addEventListener("animationend", clearWrong, { once: true });
+    wrongBtn.addEventListener("animationend", afterWiggle, { once: true });
   } else {
-    setTimeout(clearWrong, 500);
+    setTimeout(afterWiggle, 500);
   }
 }
 
