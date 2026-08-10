@@ -93,6 +93,44 @@ body {
  font-weight: bold;
 }
 
+.choice.correct {
+ background: #28a745;
+ color: #ffffff;
+ border-color: #1e7e34;
+ font-weight: 600;
+}
+
+.choice.correct::before {
+ content: "✓ ";
+ font-weight: bold;
+}
+
+.choice:disabled {
+ cursor: default;
+ transform: none;
+}
+
+.choice:disabled:hover {
+ transform: none;
+}
+
+.choice:not(.selected):not(.correct):disabled {
+ opacity: 0.75;
+}
+
+.answer-feedback {
+ text-align: center;
+ min-height: 1.6em;
+ margin: 8px 0 20px;
+ font-size: 1.25rem;
+ font-weight: 700;
+ letter-spacing: 0.02em;
+}
+
+.answer-feedback.is-correct {
+ color: #28a745;
+}
+
 .btn {
  padding: 12px 24px;
  border: none;

@@ -9,6 +9,7 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const submitBtn = document.getElementById("submitBtn");
 
+const answerFeedbackEl = document.getElementById("answerFeedback");
 const progressBarEl = document.getElementById("progressBar");
 const progressTextEl = document.getElementById("progressText");
 
@@ -97,10 +98,7 @@ function hookEvents() {
   });
 
   nextBtn.addEventListener("click", () => {
-    if (selected[currentIndex] === null) {
-      alert("Please choose an answer first.");
-      return;
-    }
+    if (selected[currentIndex] === null) return;
     if (currentIndex < quiz.questions.length - 1) {
       currentIndex++;
       render();
@@ -108,14 +106,13 @@ function hookEvents() {
   });
 
   submitBtn.addEventListener("click", () => {
-    if (selected[currentIndex] === null) {
-      alert("Please answer the last question.");
-      return;
-    }
+    if (selected[currentIndex] === null) return;
     showResults();
   });
 
   document.addEventListener("keydown", (e) => {
+    // Don't change selection after an answer is locked for this question
+    if (selected[currentIndex] !== null) return;
     const n = Number(e.key);
     if (n >= 1 && n <= 4) {
       choose(n - 1);
@@ -126,6 +123,9 @@ function hookEvents() {
 function render() {
   const total = quiz.questions.length;
   const q = quiz.questions[currentIndex];
+  const picked = selected[currentIndex];
+  const answered = picked !== null;
+  const isCorrect = answered && picked === q.correctIndex;
 
   quizTitleEl.textContent = quiz.title || "Quiz";
   quizMetaEl.textContent = `Question ${currentIndex + 1} of ${total}`;
@@ -140,23 +140,40 @@ function render() {
   q.choices.forEach((text, idx) => {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "choice" + (selected[currentIndex] === idx ? " selected" : "");
+    let className = "choice";
+    if (answered && idx === picked) {
+      className += isCorrect ? " correct" : " selected";
+    }
+    btn.className = className;
     btn.textContent = text;
-    btn.addEventListener("click", () => choose(idx));
+    btn.disabled = answered;
+    if (!answered) {
+      btn.addEventListener("click", () => choose(idx));
+    }
     choicesEl.appendChild(btn);
   });
+
+  if (isCorrect) {
+    answerFeedbackEl.textContent = "Correct";
+    answerFeedbackEl.className = "answer-feedback is-correct";
+  } else {
+    answerFeedbackEl.textContent = "";
+    answerFeedbackEl.className = "answer-feedback";
+  }
 
   prevBtn.disabled = currentIndex === 0;
 
   const onLast = currentIndex === total - 1;
   nextBtn.style.display = onLast ? "none" : "inline-block";
   submitBtn.style.display = onLast ? "inline-block" : "none";
-  submitBtn.disabled = selected[currentIndex] === null;
+  nextBtn.disabled = !answered;
+  submitBtn.disabled = !answered;
 
   updateProgress();
 }
 
 function choose(choiceIndex) {
+  if (selected[currentIndex] !== null) return;
   if (choiceIndex < 0 || choiceIndex >= quiz.questions[currentIndex].choices.length) {
     return;
   }
