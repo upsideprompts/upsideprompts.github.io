@@ -112,7 +112,7 @@
     },
     {
       "index": 10,
-      "question": "Goodie Mob's 'Soul Food' featured 'Cell Therapy.' In Python, what decorator would you use to create a reusable function that generates cell therapy lyrics with different drug names?",
+      "question": "Goodie Mob's 'Soul Food' featured 'Cell Therapy.' In Python, what decorator would you use to create a reusable function that generates lyrics with different types of windows?",
       "correct": "A function with parameters and f-strings for dynamic content.",
       "wrong": [
         "A class inheritance decorator.",
