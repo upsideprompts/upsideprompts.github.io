@@ -128,7 +128,7 @@
         async function loadArticles() {
             const container = document.getElementById('articles');
             try {
-                const response = await fetch('articles2.json?v=' + new Date().getTime());
+                const response = await fetch('/innovateav/articles2.json?v=' + new Date().getTime());
                 const data = await response.json();
                 // Sort by date descending (newest first)
                 data.sort((a, b) => new Date(b.date) - new Date(a.date));
