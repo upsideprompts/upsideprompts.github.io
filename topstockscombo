@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Stocks Combo Dashboard</title>
+    <style>
+        :root {
+            --primary: #87ceeb;
+            --primary-dark: #5f9ea0;
+            --secondary: #b0e0e6;
+            --accent: #4682b4;
+            --light: #f0f8ff;
+            --dark: #191970;
+            --success: #2e8b57;
+            --danger: #dc143c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(135, 206, 235, 0.3);
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--primary-dark);
+            font-size: 1.1em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .sort-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.4);
+        }
+
+        .sort-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .dashboard {
+            display: grid;
+            gap: 20px;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(135, 206, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .category-header {
+            padding: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .category-header:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--accent));
+            color: white;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .category.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .category.open .category-content {
+            max-height: 2000px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--secondary);
+            font-size: 55%;
+        }
+
+        th {
+            background: var(--light);
+            color: var(--dark);
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        th.sortable-month {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th.sortable-month:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        tr:hover {
+            background: rgba(135, 206, 235, 0.1);
+        }
+
+        .ticker {
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .ticker:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .month-return.positive, .change-positive {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .month-return.negative, .change-negative {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .current-price {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .selected {
+            animation: selectAnim 0.5s ease;
+            background: rgba(135, 206, 235, 0.2);
+        }
+
+        @keyframes selectAnim {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background: rgba(135, 206, 235, 0.4); }
+            100% { transform: scale(1); }
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .chip-design { background: var(--accent); }
+        .manufacturing { background: var(--primary-dark); }
+        .equipment { background: var(--primary); }
+        .infrastructure { background: var(--secondary); }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 Top Stocks Combo Dashboard</h1>
+            <p class="subtitle">Cryptocurrency & Technology • Agriculture & Commodities • Crypto & Blockchain</p>
+        </header>
+
+        <div class="controls">
+            <button class="sort-btn active" onclick="sortStocks('month-desc', this)">Sort by Monthly Return</button>
+            <button class="sort-btn" onclick="sortStocks('change-desc', this)">Sort by 3-Month Change</button>
+            <button class="sort-btn" onclick="sortStocks('asc', this)">Sort Ascending</button>
+            <button class="sort-btn" onclick="sortStocks('desc', this)">Sort Descending</button>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color chip-design"></div>
+                <span>Cryptocurrency & Tech</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color manufacturing"></div>
+                <span>Agriculture & Commodities</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color equipment"></div>
+                <span>Crypto & Blockchain</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color infrastructure"></div>
+                <span>Digital Assets & FinTech</span>
+            </div>
+        </div>
+
+        <div class="dashboard" id="dashboard">
+            <!-- Categories will be generated by JavaScript -->
+        </div>
+
+        <footer>
+            <p>Data refreshed daily • Click category headers to expand/collapse • Sort by performance metrics</p>
+        </footer>
+    </div>
+
+    <script>
+        const stockData = {
+            "Cryptocurrency & Tech": {
+                "legacy": [
+                    { ticker: "WGMI", name: "CoinShares Bitcoin Mining ETF", currentPrice: "$83.70", monthReturn: 5.2, change3mo: 25.1 },
+                    { ticker: "SMH", name: "VanEck Semiconductor ETF", currentPrice: "$71.85", monthReturn: 0.9, change3mo: 12.2 },
+                    { ticker: "BITQ", name: "Bitwise Crypto Industry Innovators ETF", currentPrice: "$29.28", monthReturn: -0.3, change3mo: 19.3 },
+                    { ticker: "STCE", name: "Schwab Crypto Thematic ETF", currentPrice: "$30.58", monthReturn: -0.5, change3mo: 21.8 },
+                    { ticker: "DAPP", name: "VanEck Digital Transformation ETF", currentPrice: "$38.65", monthReturn: 1.7, change3mo: 21.5 },
+                    { ticker: "FTXL", name: "First Trust Nasdaq Semiconductor ETF", currentPrice: "$60.24", monthReturn: -1.2, change3mo: 15.8 },
+                    { ticker: "SOXX", name: "iShares Semiconductor ETF", currentPrice: "$24.51", monthReturn: -3.8, change3mo: 6.9 },
+                    { ticker: "XLK", name: "Technology Select Sector SPDR Fund", currentPrice: "$145.30", monthReturn: 1.2, change3mo: 11.7 },
+                    { ticker: "VGT", name: "Vanguard Information Technology ETF", currentPrice: "$71.85", monthReturn: 1.0, change3mo: 10.8 },
+                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", currentPrice: "$28.75", monthReturn: -2.1, change3mo: 3.7 }
+                ],
+                "news": [
+                    { ticker: "BTC", name: "Bitcoin", currentPrice: "$67,234.00", monthReturn: 4.8, change3mo: 18.9 },
+                    { ticker: "ETH", name: "Ethereum", currentPrice: "$2,891.25", monthReturn: 3.2, change3mo: 15.4 },
+                    { ticker: "ADA", name: "Cardano", currentPrice: "$0.42", monthReturn: 5.9, change3mo: 12.3 },
+                    { ticker: "DOT", name: "Polkadot", currentPrice: "$4.56", monthReturn: -2.1, change3mo: 8.7 },
+                    { ticker: "AVAX", name: "Avalanche", currentPrice: "$32.45", monthReturn: 6.7, change3mo: 20.2 }
+                ]
+            },
+            "Agriculture & Commodities": {
+                "legacy": [
+                    { ticker: "PDBA", name: "Invesco Agriculture Commodity Strategy No K-1 ETF", currentPrice: "$12.50", monthReturn: 0.5, change3mo: 5.2 },
+                    { ticker: "DBA", name: "Invesco DB Agriculture Fund", currentPrice: "$22.35", monthReturn: 0.3, change3mo: 4.9 },
+                    { ticker: "VEGI", name: "iShares MSCI Agriculture Producers ETF", currentPrice: "$18.75", monthReturn: -0.8, change3mo: 2.4 },
+                    { ticker: "FARMX", name: "Fidelity Agricultural Productivity Fund", currentPrice: "$15.60", monthReturn: -0.5, change3mo: 2.0 },
+                    { ticker: "COW", name: "iShares Global Agriculture Index ETF", currentPrice: "$28.95", monthReturn: -1.2, change3mo: 0.8 },
+                    { ticker: "MOO", name: "VanEck Agribusiness ETF", currentPrice: "$34.80", monthReturn: -2.1, change3mo: -1.2 },
+                    { ticker: "SOYB", name: "Teucrium Soybean Fund", currentPrice: "$10.85", monthReturn: -3.5, change3mo: -4.8 },
+                    { ticker: "TILL", name: "Teucrium Agricultural Strategy No K-1 ETF", currentPrice: "$11.45", monthReturn: -4.0, change3mo: -6.2 },
+                    { ticker: "CORN", name: "Teucrium Corn Fund", currentPrice: "$8.90", monthReturn: -6.0, change3mo: -11.5 },
+                    { ticker: "WEAT", name: "Teucrium Wheat Fund", currentPrice: "$6.15", monthReturn: -8.0, change3mo: -15.8 }
+                ],
+                "news": [
+                    { ticker: "MON", name: "Monsanto", currentPrice: "$256.45", monthReturn: 2.5, change3mo: 8.7 },
+                    { ticker: "ADM", name: "Archer-Daniels-Midland", currentPrice: "$84.23", monthReturn: 1.8, change3mo: 5.4 },
+                    { ticker: "CF", name: "CF Industries", currentPrice: "$128.67", monthReturn: 2.2, change3mo: 6.9 },
+                    { ticker: "FMC", name: "FMC Corp", currentPrice: "$62.34", monthReturn: 1.5, change3mo: 4.2 },
+                    { ticker: "SAFM", name: "Safal Farms", currentPrice: "$98.56", monthReturn: 3.1, change3mo: 9.8 }
+                ]
+            },
+            "Crypto & Blockchain": {
+                "legacy": [
+                    { ticker: "XRP", name: "Ripple XRP", currentPrice: "$0.52", monthReturn: 4.5, change3mo: 12.8 },
+                    { ticker: "LTC", name: "Litecoin", currentPrice: "$65.45", monthReturn: 2.3, change3mo: 8.9 },
+                    { ticker: "BCH", name: "Bitcoin Cash", currentPrice: "$223.67", monthReturn: 1.8, change3mo: 6.3 },
+                    { ticker: "EOS", name: "EOSIO", currentPrice: "$1.15", monthReturn: -1.2, change3mo: 3.4 },
+                    { ticker: "XLM", name: "Stellar", currentPrice: "$0.11", monthReturn: 3.7, change3mo: 9.2 },
+                    { ticker: "XTZ", name: "Tezos", currentPrice: "$1.89", monthReturn: -0.8, change3mo: 4.6 },
+                    { ticker: "BAT", name: "Basic Attention Token", currentPrice: "$0.28", monthReturn: 5.9, change3mo: 13.1 },
+                    { ticker: "ZEC", name: "Zcash", currentPrice: "$25.67", monthReturn: 2.1, change3mo: 7.5 }
+                ],
+                "news": [
+                    { ticker: "SOL", name: "Solana", currentPrice: "$123.45", monthReturn: 8.9, change3mo: 22.3 },
+                    { ticker: "AVAX", name: "Avalanche", currentPrice: "$32.45", monthReturn: 6.7, change3mo: 20.2 },
+                    { ticker: "DOT", name: "Polkadot", currentPrice: "$4.56", monthReturn: -2.1, change3mo: 8.7 },
+                    { ticker: "MATIC", name: "Polygon", currentPrice: "$0.78", monthReturn: 3.3, change3mo: 11.9 },
+                    { ticker: "SAND", name: "The Sandbox", currentPrice: "$0.65", monthReturn: 4.2, change3mo: 14.8 }
+                ]
+            },
+            "Digital Assets & FinTech": {
+                "legacy": [
+                    { ticker: "PYPL", name: "PayPal Holdings", currentPrice: "$65.23", monthReturn: 3.8, change3mo: 15.2 },
+                    { ticker: "SQ", name: "Block Inc (formerly Square)", currentPrice: "$78.45", monthReturn: 7.2, change3mo: 18.9 },
+                    { ticker: "JD", name: "JD.com", currentPrice: "$19.67", monthReturn: 2.5, change3mo: 9.8 },
+                    { ticker: "TTD", name: "The Trade Desk", currentPrice: "$43.89", monthReturn: 4.3, change3mo: 12.7 },
+                    { ticker: "AFRM", name: "Affirm Holdings", currentPrice: "$28.56", monthReturn: -5.7, change3mo: 8.2 },
+                    { ticker: "COIN", name: "Coinbase Global", currentPrice: "$55.67", monthReturn: 1.9, change3mo: 14.3 },
+                    { ticker: "HOOD", name: "Robinhood Markets", currentPrice: "$12.34", monthReturn: -8.4, change3mo: 12.1 },
+                    { ticker: "GOOGL", name: "Alphabet Inc", currentPrice: "$141.23", monthReturn: 2.1, change3mo: 11.5 }
+                ],
+                "news": [
+                    { ticker: "BTC", name: "Bitcoin", currentPrice: "$67,234.00", monthReturn: 4.8, change3mo: 18.9 },
+                    { ticker: "ETH", name: "Ethereum", currentPrice: "$2,891.25", monthReturn: 3.2, change3mo: 15.4 },
+                    { ticker: "ADA", name: "Cardano", currentPrice: "$0.42", monthReturn: 5.9, change3mo: 12.3 },
+                    { ticker: "DOT", name: "Polkadot", currentPrice: "$4.56", monthReturn: -2.1, change3mo: 8.7 },
+                    { ticker: "SHIB", name: "Shiba Inu", currentPrice: "$0.000022", monthReturn: 3.8, change3mo: 13.2 }
+                ]
+            }
+        };
+
+        // Track current sort state
+        let currentMonthSort = 'desc'; // 'asc' or 'desc'
+
+        function initDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            let html = '';
+
+            for (const [category, data] of Object.entries(stockData)) {
+                html += `
+                    <div class="category" id="cat-${category.replace(/\s+/g, '')}">
+                        <div class="category-header" onclick="toggleCategory('${category.replace(/\s+/g, '')}')">
+                            <span>${category}</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Ticker</th>
+                                        <th>Fund / Index Name</th>
+                                        <th>Current Price</th>
+                                        <th class="sortable-month" id="month-sort-header" onclick="toggleMonthSort(this);">Monthly Return ▼</th>
+                                        <th>3-Month Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-${category.replace(/\s+/g, '')}">
+                                    ${createStockRows(category, data)}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }
+
+            dashboard.innerHTML = html;
+            
+            // Open first category by default
+            toggleCategory('CryptocurrencyTech');
+        }
+
+        function createStockRows(category, data) {
+            let rows = '';
+            const allStocks = [...data.legacy, ...data.news];
+            
+            allStocks.forEach(stock => {
+                const monthClass = stock.monthReturn >= 0 ? 'positive' : 'negative';
+                const changeClass = stock.change3mo >= 0 ? 'positive' : 'negative';
+                const ticker = `https://www.cnbc.com/quotes/${stock.ticker}`;
+                
+                rows += `
+                    <tr onclick="selectRow(this)">
+                        <td><a href="${ticker}" class="ticker" target="_blank">${stock.ticker}</a></td>
+                        <td>${stock.name}</td>
+                        <td class="current-price">${stock.currentPrice}</td>
+                        <td class="month-return ${monthClass}">${stock.monthReturn >= 0 ? '+' : ''}${stock.monthReturn}%</td>
+                        <td class="change-${changeClass}">${stock.change3mo >= 0 ? '+' : ''}${stock.change3mo}%</td>
+                    </tr>
+                `;
+            });
+            
+            return rows;
+        }
+
+        function toggleCategory(categoryId) {
+            const category = document.getElementById(`cat-${categoryId}`);
+            category.classList.toggle('open');
+        }
+
+        function toggleMonthSort(el) {
+            const header = document.getElementById('month-sort-header');
+            
+            if (currentMonthSort === 'desc') {
+                // Currently descending, switch to ascending
+                currentMonthSort = 'asc';
+                header.textContent = 'Monthly Return ▲';
+                sortStocks('month-asc', el);
+            } else {
+                // Currently ascending, switch to descending
+                currentMonthSort = 'desc';
+                header.textContent = 'Monthly Return ▼';
+                sortStocks('month-desc', el);
+            }
+        }
+
+        function sortStocks(criteria, buttonElement) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            }
+
+            const dashboard = document.getElementById('dashboard');
+            const categories = Object.keys(stockData);
+
+            categories.forEach(category => {
+                const tbody = document.getElementById(`tbody-${category.replace(/\s+/g, '')}`);
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+
+                rows.sort((a, b) => {
+                    let aVal, bVal;
+                    
+                    switch(criteria) {
+                        case 'month':
+                        case 'month-asc':
+                            aVal = parseFloat(a.cells[3].textContent);
+                            bVal = parseFloat(b.cells[3].textContent);
+                            return aVal - bVal;
+                        case 'month-desc':
+                            aVal = parseFloat(a.cells[3].textContent);
+                            bVal = parseFloat(b.cells[3].textContent);
+                            return bVal - aVal;
+                        case 'change':
+                        case 'change-desc':
+                            aVal = parseFloat(a.cells[4].textContent);
+                            bVal = parseFloat(b.cells[4].textContent);
+                            return bVal - aVal;
+                        case 'change-asc':
+                            aVal = parseFloat(a.cells[4].textContent);
+                            bVal = parseFloat(b.cells[4].textContent);
+                            return aVal - bVal;
+                        case 'asc':
+                            aVal = a.cells[2].textContent;
+                            bVal = b.cells[2].textContent;
+                            return aVal.localeCompare(bVal);
+                        case 'desc':
+                            aVal = a.cells[2].textContent;
+                            bVal = b.cells[2].textContent;
+                            return bVal.localeCompare(aVal);
+                        default:
+                            return 0;
+                    }
+                });
+
+                rows.forEach(row => tbody.appendChild(row));
+            });
+        }
+
+        function selectRow(row) {
+            // Remove previous selection
+            document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+            // Add selection to clicked row
+            row.classList.add('selected');
+        }
+
+        // Initialize dashboard on load
+        initDashboard();
+    </script>
+</body>
+</html>
