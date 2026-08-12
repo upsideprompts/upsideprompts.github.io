@@ -45,6 +45,48 @@
         #articles {
             max-height: calc(100vh - 150px);
             overflow-y: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #00008B rgba(255, 255, 255, 0.3);
+        }
+        #articles::-webkit-scrollbar {
+            width: 8px;
+        }
+        #articles::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        #articles::-webkit-scrollbar-thumb {
+            background: #00008B;
+            border-radius: 4px;
+        }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .article {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            animation: fadeSlideIn 0.5s ease-out both;
+        }
+        .articles-loading {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1em;
+            opacity: 0.7;
+        }
+        .articles-error {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8B0000;
         }
         .av-list {
             list-style: none;
@@ -69,12 +111,6 @@
             text-align: center;
             font-size: 1.5em;
             margin-bottom: 20px;
-        }
-        .article {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
         }
         .article h4 {
             margin: 0 0 10px 0;
@@ -118,33 +154,46 @@
             <div class="articles-section">
                 <h3>AV Innovations</h3>
                 <div id="articles">
-                    <!-- Articles loaded from articles2.json -->
+                    <p class="articles-loading">Loading articles…</p>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        // Fetch articles from articles2.json
         async function loadArticles() {
             const container = document.getElementById('articles');
             try {
-                const response = await fetch('/innovateav/articles2.json?v=' + new Date().getTime());
+                const response = await fetch('articles2.json?v=' + new Date().getTime());
+                if (!response.ok) throw new Error('HTTP ' + response.status);
                 const data = await response.json();
-                // Sort by date descending (newest first)
-                data.sort((a, b) => new Date(b.date) - new Date(a.date));
-                data.forEach(article => {
+                const articles = Array.isArray(data) ? data : data.articles;
+                if (!Array.isArray(articles)) throw new Error('Invalid articles format');
+
+                articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                container.innerHTML = '';
+
+                articles.forEach((article, index) => {
                     const div = document.createElement('div');
                     div.className = 'article';
+                    div.style.animationDelay = `${Math.min(index * 0.04, 1.2)}s`;
                     div.innerHTML = `
-                        <h4><a href="${article.link}" target="_blank">${article.title}</a></h4>
-                        <p class="date">${article.date}</p>
+                        <h4><a href="${article.link}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a></h4>
+                        <p class="date">${escapeHtml(article.date)}</p>
                     `;
                     container.appendChild(div);
                 });
             } catch (err) {
                 console.error('Failed to load articles:', err);
+                container.innerHTML = '<p class="articles-error">Unable to load articles. Please refresh the page.</p>';
             }
         }
+
+        function escapeHtml(text) {
+            const el = document.createElement('span');
+            el.textContent = text;
+            return el.innerHTML;
+        }
+
         loadArticles();
     </script>
 </body>
