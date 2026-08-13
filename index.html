@@ -1,163 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Foundational Generative Models</title>
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #e8f5e9;
-        color: #333;
-        font-size: 40pt;
-    }
-    .header {
-        text-align: center;
-        padding: 2rem;
-        padding-top: 100px;
-        position: relative;
-    }
-    .header img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 1rem;
-    }
-    .side-image {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 225px;
-        height: auto;
-        border-radius: 5px;
-        z-index: 100;
-    }
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-    h1 {
-        text-align: center;
-        font-size: 48pt;
-        margin-bottom: 2rem;
-        color: #0066cc;
-    }
-    .article {
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 10px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        border-left: 4px solid #0066cc;
-    }
-    .article-title {
-        color: #00cc66;
-        font-size: 40pt;
-        margin-bottom: 0.5rem;
-    }
-    .article-meta {
-        color: #888;
-        font-size: 40pt;
-        margin-bottom: 1rem;
-    }
-    .article-summary {
-        line-height: 1.6;
-        font-size: 40pt;
-    }
-    .footer-image {
-        width: 50%;
-        max-width: 600px;
-        height: auto;
-        border-radius: 10px;
-        margin: 2rem auto;
-        display: block;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Stocks Combo Dashboard</title>
+    <style>
+        :root {
+            --primary: #87ceeb;
+            --primary-dark: #5f9ea0;
+            --secondary: #b0e0e6;
+            --accent: #4682b4;
+            --light: #f0f8ff;
+            --dark: #191970;
+            --success: #2e8b57;
+            --danger: #dc143c;
+            --warning: #ff8c00;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(135, 206, 235, 0.3);
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--primary-dark);
+            font-size: 1.1em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .sort-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.4);
+        }
+
+        .sort-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .dashboard {
+            display: grid;
+            gap: 20px;
+        }
+
+        .category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(135, 206, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .category-header {
+            padding: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .category-header:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--accent));
+            color: white;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        .category.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .category.open .category-content {
+            max-height: 2000px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--secondary);
+            font-size: 55%;
+        }
+
+        th {
+            background: var(--light);
+            color: var(--dark);
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        th.sortable-return {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th.sortable-return:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        tr:hover {
+            background: rgba(135, 206, 235, 0.1);
+        }
+
+        .ticker {
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .ticker:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .return.positive, .return.positive-change {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .return.negative, .return.negative-change {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .return.warning {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .current-price {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .selected {
+            animation: selectAnim 0.5s ease;
+            background: rgba(135, 206, 235, 0.2);
+        }
+
+        @keyframes selectAnim {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background: rgba(135, 206, 235, 0.4); }
+            100% { transform: scale(1); }
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .crypto-tech { background: var(--warning); }
+        .agri-commod { background: var(--success); }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--primary-dark);
+        }
+
+        .info-banner {
+            background: rgba(23, 162, 184, 0.1);
+            border-left: 4px solid var(--info);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <h1>New Foundational Generative Models (2025-2026) 🌟</h1>
-        <img src="https://raw.githubusercontent.com/upsideprompts/upsideprompts.github.io/refs/heads/gh-pages/deskpic1.png" alt="Desk Pic" class="side-image">
-    </div>
-    
     <div class="container">
-        <div class="article">
-            <div class="article-title"><a href="https://ai.google.dev/gemma" target="_blank">1. Gemma 4: Google's Open Foundation Model</a></div>
-            <div class="article-meta">Published: May 2026 | Category: Text Generation</div>
-            <div class="article-summary">Google's Gemma 4 introduces significant improvements in reasoning capabilities and multilingual support, with optimized weights for consumer hardware deployment.</div>
+        <header>
+            <h1>📈 Top Stocks Combo Dashboard</h1>
+            <p class="subtitle">Curated Tech + Agriculture & Commodities Stocks</p>
+        </header>
+
+        <div class="info-banner">
+            <strong>🎯 Updated Selection:</strong> Only 20 curated stocks from user's request - Tech & Agriculture (10 stocks) + Agriculture & Commodities (10 stocks)
         </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://ai.meta.com/llama" target="_blank">2. Llama 4 Scout: Meta's Cost-Effective Reasoning Model</a></div>
-            <div class="article-meta">Published: April 2026 | Category: Multimodal</div>
-            <div class="article-summary">Meta's latest foundation model focuses on efficient reasoning with 400B parameters, designed for both cloud and edge deployment scenarios.</div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color crypto-tech"></div>
+                <span>Tech & Agriculture</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color agri-commod"></div>
+                <span>Agriculture & Commodities</span>
+            </div>
         </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://github.com/QwenLM/Qwen-3.5" target="_blank">3. Qwen 3.5: Alibaba's Multimodal Breakthrough</a></div>
-            <div class="article-meta">Published: March 2026 | Category: Vision-Language</div>
-            <div class="article-summary">Qwen 3.5 achieves state-of-the-art performance in multimodal understanding, combining advanced vision and language processing capabilities.</div>
+
+        <div class="dashboard" id="dashboard">
+            <!-- Categories will be generated by JavaScript -->
         </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://stability.ai/stable-diffusion" target="_blank">4. Stable Diffusion 4: Industrial Image Generation</a></div>
-            <div class="article-meta">Published: February 2026 | Category: Image Generation</div>
-            <div class="article-summary">Stability AI's new foundation model brings enhanced control for commercial applications with improved safety and alignment features.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://mistral.ai/" target="_blank">5. Mistral 8B: Efficient Reasoning Architecture</a></div>
-            <div class="article-meta">Published: January 2026 | Category: Text Generation</div>
-            <div class="article-summary">Mistral's lightweight yet powerful model sets new benchmarks for efficiency in reasoning tasks while maintaining high-quality output.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://aka.ms/phi4" target="_blank">6. Phi 4: Microsoft's Scientific Foundation Model</a></div>
-            <div class="article-meta">Published: April 2026 | Category: Scientific AI</div>
-            <div class="article-summary">Designed specifically for scientific applications, Phi 4 excels in mathematical reasoning and code generation for research workflows.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://www.deepseek.com/v3" target="_blank">7. DeepSeek V3: Open Source Reasoning Powerhouse</a></div>
-            <div class="article-meta">Published: May 2026 | Category: Open Source</div>
-            <div class="article-summary">DeepSeek V3 emerges as a strong open-source alternative with competitive performance in coding and mathematical problem-solving.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://recraft.ai/" target="_blank">8. Recraft 3: Designer-Quality Graphics Generation</a></div>
-            <div class="article-meta">Published: March 2026 | Category: Creative AI</div>
-            <div class="article-summary">Recraft 3 brings professional-grade graphic design capabilities to generative AI, supporting vector and raster outputs.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://runwayml.com/gen-4" target="_blank">9. Runway Gen-4: Video Foundation Model</a></div>
-            <div class="article-meta">Published: February 2026 | Category: Video Generation</div>
-            <div class="article-summary">Runway's latest model enables cinematic video generation with unprecedented control over motion and style consistency.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://krea.ai/" target="_blank">10. Krea: Real-time Interactive Generation</a></div>
-            <div class="article-meta">Published: June 2026 | Category: Interactive AI</div>
-            <div class="article-summary">Krea introduces real-time generative capabilities for interactive applications, bridging the gap between AI and live creative workflows.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://clarifai.com/" target="_blank">11. Clarifai: Enterprise AI Vision</a></div>
-            <div class="article-meta">Published: May 2026 | Category: Enterprise AI</div>
-            <div class="article-summary">Clarifai provides robust computer vision APIs for enterprise applications, enabling automated image and video analysis.</div>
-        </div>
-        
-        <div class="article">
-            <div class="article-title"><a href="https://ai21.com/h2o" target="_blank">11. H2O-3: Open Source AutoML Platform</a></div>
-            <div class="article-meta">Published: June 2026 | Category: AutoML</div>
-            <div class="article-summary">H2O-3 offers a powerful, open-source platform for automated machine learning with extensive algorithm support.</div>
-        </div>
+
+        <footer>
+            <p>Curated selection based on user's request • Data reflects latest 3-year annualized returns</p>
+        </footer>
     </div>
-    
-    <img src="https://s.wsj.net/public/resources/images/RV-AP028_WORKPR_M_20141205152651.jpg" alt="River Rafting Adventure" class="footer-image">
-<!-- Redeployed: 2026-06-07T04:35:00Z -->
+
+    <script>
+        const stockData = {
+            "Tech & Agriculture": {
+                "stocks": [
+                    { ticker: "WGMI", name: "CoinShares Bitcoin Mining ETF", focus: "Crypto & Data Center Tech", return3yr: 83.7, currentPrice: "$83.70" },
+                    { ticker: "SMH", name: "VanEck Semiconductor ETF", focus: "Semiconductors", return3yr: 61.4, currentPrice: "$71.85" },
+                    { ticker: "BITQ", name: "Bitwise Crypto Industry Innovators ETF", focus: "Blockchain Infrastructure", return3yr: 60.6, currentPrice: "$29.28" },
+                    { ticker: "STCE", name: "Schwab Crypto Thematic ETF", focus: "Digital Assets & Tech", return3yr: 60.2, currentPrice: "$30.58" },
+                    { ticker: "DAPP", name: "VanEck Digital Transformation ETF", focus: "FinTech & Blockchain Tech", return3yr: 59.3, currentPrice: "$38.65" },
+                    { ticker: "FTXL", name: "First Trust Nasdaq Semiconductor ETF", focus: "Semiconductors", return3yr: 58.5, currentPrice: "$60.24" },
+                    { ticker: "SOXX", name: "iShares Semiconductor ETF", focus: "Semiconductors", return3yr: 47.8, currentPrice: "$24.51" },
+                    { ticker: "XLK", name: "Technology Select Sector SPDR Fund", focus: "Broad Tech (S&P 500)", return3yr: 33.5, currentPrice: "$145.30" },
+                    { ticker: "VGT", name: "Vanguard Information Technology ETF", focus: "Broad U.S. Tech", return3yr: 33.2, currentPrice: "$71.85" },
+                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "$28.75" }
+                ]
+            },
+            "Agriculture & Commodities": {
+                "stocks": [
+                    { ticker: "PDBA", name: "Invesco Agriculture Commodity Strategy No K-1 ETF", focus: "Commodity Futures", return3yr: 12.5, currentPrice: "$12.50" },
+                    { ticker: "DBA", name: "Invesco DB Agriculture Fund", focus: "Commodity Futures Index", return3yr: 12.3, currentPrice: "$22.35" },
+                    { ticker: "VEGI", name: "iShares MSCI Agriculture Producers ETF", focus: "Agribusiness Equities", return3yr: 6.2, currentPrice: "$18.75" },
+                    { ticker: "FARMX", name: "Fidelity Agricultural Productivity Fund", focus: "Agribusiness Equities", return3yr: 6.1, currentPrice: "$15.60" },
+                    { ticker: "COW", name: "iShares Global Agriculture Index ETF", focus: "Global Agribusiness", return3yr: 4.3, currentPrice: "$28.95" },
+                    { ticker: "MOO", name: "VanEck Agribusiness ETF", focus: "Global Agribusiness Equities", return3yr: 0.8, currentPrice: "$34.80" },
+                    { ticker: "SOYB", name: "Teucrium Soybean Fund", focus: "Single Commodity (Soybeans)", return3yr: -2.8, currentPrice: "$10.85" },
+                    { ticker: "TILL", name: "Teucrium Agricultural Strategy No K-1 ETF", focus: "Commodity Futures Strategy", return3yr: -4.5, currentPrice: "$11.45" },
+                    { ticker: "CORN", name: "Teucrium Corn Fund", focus: "Single Commodity (Corn)", return3yr: -7.9, currentPrice: "$8.90" },
+                    { ticker: "WEAT", name: "Teucrium Wheat Fund", focus: "Single Commodity (Wheat)", return3yr: -9.7, currentPrice: "$6.15" }
+                ]
+            }
+        };
+
+        // Track current sort state
+        let currentSort = 'desc'; // 'asc' or 'desc'
+
+        function initDashboard() {
+            const dashboard = document.getElementById('dashboard');
+            let html = '';
+
+            for (const [category, data] of Object.entries(stockData)) {
+                const categoryId = category.replace(/\s+/g, '');
+                html += `
+                    <div class="category" id="cat-${categoryId}">
+                        <div class="category-header" onclick="toggleCategory('${categoryId}')">
+                            <span>${category}</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="category-content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Ticker</th>
+                                        <th>Fund / Index Name</th>
+                                        <th>Focus Area</th>
+                                        <th>3-Year Return (Annualized)</th>
+                                        <th>Current Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-${categoryId}">
+                                    ${createStockRows(category, data)}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }
+
+            dashboard.innerHTML = html;
+            
+            // Open first category by default
+            toggleCategory('CryptoTech');
+        }
+
+        function createStockRows(category, data) {
+            let rows = '';
+            const stocks = data.stocks.sort((a, b) => b.return3yr - a.return3yr); // Default sort by return3yr descending
+            
+            stocks.forEach((stock, index) => {
+                const returnClass = stock.return3yr >= 0 ? 'positive' : (stock.return3yr >= -5 ? 'warning' : 'negative');
+                const ticker = `https://www.cnbc.com/quotes/${stock.ticker}`;
+                
+                const formattedReturn = stock.return3yr >= 0 ? `~${stock.return3yr}%` : `${stock.return3yr}%`;
+                
+                rows += `
+                    <tr onclick="selectRow(this)">
+                        <td>${index + 1}</td>
+                        <td><a href="${ticker}" class="ticker" target="_blank">${stock.ticker}</a></td>
+                        <td>${stock.name}</td>
+                        <td>${stock.focus}</td>
+                        <td class="return ${returnClass}">${formattedReturn}</td>
+                        <td class="current-price">${stock.currentPrice}</td>
+                    </tr>
+                `;
+            });
+            
+            return rows;
+        }
+
+        function toggleCategory(categoryId) {
+            const category = document.getElementById(`cat-${categoryId}`);
+            category.classList.toggle('open');
+        }
+
+        function sortStocks(sortType, sortDirection) {
+            const dashboard = document.getElementById('dashboard');
+            const categories = Object.keys(stockData);
+
+            // Update sort buttons active state
+            document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.querySelector(`.sort-btn[onclick*="'${sortType}-${sortDirection}'"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            categories.forEach(category => {
+                const categoryId = category.replace(/\s+/g, '');
+                const tbody = document.getElementById(`tbody-${categoryId}`);
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+
+                rows.sort((a, b) => {
+                    let aVal, bVal;
+                    
+                    switch(sortType) {
+                        case 'return':
+                            // Extract numeric return values
+                            aVal = parseFloat(a.cells[4].textContent.replace(/[^0-9.-]+/g, ''));
+                            bVal = parseFloat(b.cells[4].textContent.replace(/[^0-9.-]+/g, ''));
+                            break;
+                        case 'rank':
+                            aVal = parseInt(a.cells[0].textContent);
+                            bVal = parseInt(b.cells[0].textContent);
+                            break;
+                        case 'ticker':
+                            aVal = a.cells[1].textContent.trim();
+                            bVal = b.cells[1].textContent.trim();
+                            break;
+                        case 'name':
+                            aVal = a.cells[2].textContent.trim();
+                            bVal = b.cells[2].textContent.trim();
+                            break;
+                        default:
+                            return 0;
+                    }
+                    
+                    if (sortDirection === 'asc') {
+                        return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
+                    } else {
+                        return aVal < bVal ? 1 : aVal > bVal ? -1 : 0;
+                    }
+                });
+
+                rows.forEach(row => tbody.appendChild(row));
+                
+                // Renumber rows after sorting
+                const newRows = Array.from(tbody.querySelectorAll('tr'));
+                newRows.forEach((row, index) => {
+                    row.cells[0].textContent = index + 1;
+                });
+            });
+        }
+
+        function selectRow(row) {
+            // Remove previous selection
+            document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+            // Add selection to clicked row
+            row.classList.add('selected');
+        }
+
+        // Initialize dashboard on load
+        initDashboard();
+    </script>
 </body>
 </html>
-<!-- redeployed: 2026-06-07T04:33:33Z -->
-<!-- deployed: 1780806859 --><!-- cache buster: 2026-06-19T07:30:14+00:00 -->
