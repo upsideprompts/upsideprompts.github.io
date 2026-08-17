@@ -1,0 +1,106 @@
+{
+  "updated_at": "2026-08-17T02:57:33",
+  "day": "2026-08-17",
+  "prices": [
+    {
+      "ticker": "SMH",
+      "day": "2026-08-17",
+      "price": 587.82
+    },
+    {
+      "ticker": "PSI",
+      "day": "2026-08-17",
+      "price": 153.01
+    },
+    {
+      "ticker": "FTXL",
+      "day": "2026-08-17",
+      "price": 239.81
+    },
+    {
+      "ticker": "SOXQ",
+      "day": "2026-08-17",
+      "price": 97.74
+    },
+    {
+      "ticker": "SOXX",
+      "day": "2026-08-17",
+      "price": 550.42
+    },
+    {
+      "ticker": "XLK",
+      "day": "2026-08-17",
+      "price": 190.01
+    },
+    {
+      "ticker": "VGT",
+      "day": "2026-08-17",
+      "price": 122.56
+    },
+    {
+      "ticker": "DTCR",
+      "day": "2026-08-17",
+      "price": 29.33
+    },
+    {
+      "ticker": "XSD",
+      "day": "2026-08-17",
+      "price": 544.29
+    },
+    {
+      "ticker": "FCLD",
+      "day": "2026-08-17",
+      "price": 44.61
+    },
+    {
+      "ticker": "PDBA",
+      "day": "2026-08-17",
+      "price": 37.1
+    },
+    {
+      "ticker": "DBA",
+      "day": "2026-08-17",
+      "price": 27.77
+    },
+    {
+      "ticker": "VEGI",
+      "day": "2026-08-17",
+      "price": 44.53
+    },
+    {
+      "ticker": "FARMX",
+      "day": "2026-08-17",
+      "price": 21.8
+    },
+    {
+      "ticker": "COW",
+      "day": "2026-08-17",
+      "price": 39.87
+    },
+    {
+      "ticker": "MOO",
+      "day": "2026-08-17",
+      "price": 81.37
+    },
+    {
+      "ticker": "SOYB",
+      "day": "2026-08-17",
+      "price": 25.37
+    },
+    {
+      "ticker": "TILL",
+      "day": "2026-08-17",
+      "price": 19.0
+    },
+    {
+      "ticker": "CORN",
+      "day": "2026-08-17",
+      "price": 18.26
+    },
+    {
+      "ticker": "WEAT",
+      "day": "2026-08-17",
+      "price": 24.97
+    }
+  ]
+}

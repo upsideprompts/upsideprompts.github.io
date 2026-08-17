@@ -238,7 +238,6 @@
 
         .crypto-tech { background: var(--warning); }
         .agri-commod { background: var(--success); }
-        .blockchain { background: var(--info); }
 
         footer {
             text-align: center;
@@ -263,21 +262,17 @@
         </header>
 
         <div class="info-banner">
-            <strong>🎯 Updated Selection:</strong> Only 20 curated stocks from user's request - Tech & Agriculture (10 stocks) + Agriculture & Commodities (10 stocks)
+            <strong>🎯 Updated Selection:</strong> Only 20 curated stocks from user's request - Tech Stock Funds (10 stocks) + Agriculture & Commodities (10 stocks)
         </div>
 
         <div class="legend">
             <div class="legend-item">
                 <div class="legend-color crypto-tech"></div>
-                <span>Tech & Agriculture</span>
+                <span>Tech Stock Funds</span>
             </div>
             <div class="legend-item">
                 <div class="legend-color agri-commod"></div>
                 <span>Agriculture & Commodities</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color blockchain"></div>
-                <span>Blockchain Focus</span>
             </div>
         </div>
 
@@ -292,18 +287,18 @@
 
     <script>
         const stockData = {
-            "Tech & Agriculture": {
+            "Tech Stock Funds": {
                 "stocks": [
-                    { ticker: "WGMI", name: "CoinShares Bitcoin Mining ETF", focus: "Crypto & Data Center Tech", return3yr: 83.7, currentPrice: "$83.70" },
                     { ticker: "SMH", name: "VanEck Semiconductor ETF", focus: "Semiconductors", return3yr: 61.4, currentPrice: "$71.85" },
-                    { ticker: "BITQ", name: "Bitwise Crypto Industry Innovators ETF", focus: "Blockchain Infrastructure", return3yr: 60.6, currentPrice: "$29.28" },
-                    { ticker: "STCE", name: "Schwab Crypto Thematic ETF", focus: "Digital Assets & Tech", return3yr: 60.2, currentPrice: "$30.58" },
-                    { ticker: "DAPP", name: "VanEck Digital Transformation ETF", focus: "FinTech & Blockchain Tech", return3yr: 59.3, currentPrice: "$38.65" },
+                    { ticker: "PSI", name: "Invesco Semiconductors ETF", focus: "Semiconductors", return3yr: 60.5, currentPrice: "$153.01" },
                     { ticker: "FTXL", name: "First Trust Nasdaq Semiconductor ETF", focus: "Semiconductors", return3yr: 58.5, currentPrice: "$60.24" },
+                    { ticker: "SOXQ", name: "Invesco PHLX Semiconductor ETF", focus: "PHLX Semiconductors", return3yr: 51.8, currentPrice: "$97.74" },
                     { ticker: "SOXX", name: "iShares Semiconductor ETF", focus: "Semiconductors", return3yr: 47.8, currentPrice: "$24.51" },
                     { ticker: "XLK", name: "Technology Select Sector SPDR Fund", focus: "Broad Tech (S&P 500)", return3yr: 33.5, currentPrice: "$145.30" },
                     { ticker: "VGT", name: "Vanguard Information Technology ETF", focus: "Broad U.S. Tech", return3yr: 33.2, currentPrice: "$71.85" },
-                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "$28.75" }
+                    { ticker: "DTCR", name: "Global X Data Center & Digital Infrastructure ETF", focus: "Data Center & Digital Infrastructure", return3yr: 32.4, currentPrice: "$29.33" },
+                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "$28.75" },
+                    { ticker: "FCLD", name: "Fidelity Cloud Computing ETF", focus: "Cloud Computing", return3yr: 28.0, currentPrice: "$44.61" }
                 ]
             },
             "Agriculture & Commodities": {
@@ -361,7 +356,7 @@
             dashboard.innerHTML = html;
             
             // Open first category by default
-            toggleCategory('CryptoTech');
+            toggleCategory('TechStockFunds');
         }
 
         function createStockRows(category, data) {
