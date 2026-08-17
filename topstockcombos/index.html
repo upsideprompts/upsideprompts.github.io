@@ -134,8 +134,24 @@
             max-height: 2000px;
         }
 
+        .table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
+            scrollbar-gutter: stable;
+        }
+
+        .table-scroll-hint {
+            display: none;
+            padding: 8px 16px 12px;
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+            text-align: center;
+        }
+
         table {
             width: 100%;
+            min-width: 720px;
             border-collapse: collapse;
         }
 
@@ -252,6 +268,35 @@
             margin: 20px 0;
             border-radius: 5px;
         }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.75em;
+            }
+
+            .table-scroll {
+                border-top: 1px solid var(--secondary);
+                background: linear-gradient(to right, white 0%, white 88%, rgba(135, 206, 235, 0.25) 100%);
+            }
+
+            .table-scroll-hint {
+                display: block;
+            }
+
+            th, td {
+                white-space: nowrap;
+            }
+
+            th:nth-child(3),
+            td:nth-child(3) {
+                white-space: normal;
+                min-width: 140px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -295,7 +340,7 @@
                     { ticker: "SOXQ", name: "Invesco PHLX Semiconductor ETF", focus: "PHLX Semiconductors", return3yr: 51.8, currentPrice: "$97.74" },
                     { ticker: "SOXX", name: "iShares Semiconductor ETF", focus: "Semiconductors", return3yr: 47.8, currentPrice: "$24.51" },
                     { ticker: "XLK", name: "Technology Select Sector SPDR Fund", focus: "Broad Tech (S&P 500)", return3yr: 33.5, currentPrice: "$145.30" },
-                    { ticker: "VGT", name: "Vanguard Information Technology ETF", focus: "Broad U.S. Tech", return3yr: 33.2, currentPrice: "$71.85" },
+                    { ticker: "SKYY", name: "First Trust Cloud Computing ETF", focus: "Cloud Computing", return3yr: 21.0, currentPrice: "$165.34" },
                     { ticker: "DTCR", name: "Global X Data Center & Digital Infrastructure ETF", focus: "Data Center & Digital Infrastructure", return3yr: 32.4, currentPrice: "$29.33" },
                     { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "$28.75" },
                     { ticker: "FCLD", name: "Fidelity Cloud Computing ETF", focus: "Cloud Computing", return3yr: 28.0, currentPrice: "$44.61" }
@@ -333,21 +378,24 @@
                             <span class="toggle-icon">▼</span>
                         </div>
                         <div class="category-content">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Ticker</th>
-                                        <th>Fund / Index Name</th>
-                                        <th>Focus Area</th>
-                                        <th>3-Year Return (Annualized)</th>
-                                        <th>Current Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tbody-${categoryId}">
-                                    ${createStockRows(category, data)}
-                                </tbody>
-                            </table>
+                            <div class="table-scroll">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Ticker</th>
+                                            <th>Fund / Index Name</th>
+                                            <th>Current Price</th>
+                                            <th>Focus Area</th>
+                                            <th>3-Year Return (Annualized)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody-${categoryId}">
+                                        ${createStockRows(category, data)}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="table-scroll-hint">Swipe right to see more columns →</p>
                         </div>
                     </div>
                 `;
@@ -374,9 +422,9 @@
                         <td>${index + 1}</td>
                         <td><a href="${ticker}" class="ticker" target="_blank">${stock.ticker}</a></td>
                         <td>${stock.name}</td>
+                        <td class="current-price">${stock.currentPrice}</td>
                         <td>${stock.focus}</td>
                         <td class="return ${returnClass}">${formattedReturn}</td>
-                        <td class="current-price">${stock.currentPrice}</td>
                     </tr>
                 `;
             });
@@ -409,8 +457,8 @@
                     switch(sortType) {
                         case 'return':
                             // Extract numeric return values
-                            aVal = parseFloat(a.cells[4].textContent.replace(/[^0-9.-]+/g, ''));
-                            bVal = parseFloat(b.cells[4].textContent.replace(/[^0-9.-]+/g, ''));
+                            aVal = parseFloat(a.cells[5].textContent.replace(/[^0-9.-]+/g, ''));
+                            bVal = parseFloat(b.cells[5].textContent.replace(/[^0-9.-]+/g, ''));
                             break;
                         case 'rank':
                             aVal = parseInt(a.cells[0].textContent);
