@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Stocks Combo Dashboard</title>
+    <title>LLM Comparison Dashboard</title>
     <style>
         :root {
             --primary: #87ceeb;
@@ -14,8 +14,13 @@
             --dark: #191970;
             --success: #2e8b57;
             --danger: #dc143c;
-            --warning: #ff8c00;
-            --info: #17a2b8;
+            --warning: #ffd700;
+            --info: #4169e1;
+            --model-1: #ff6b6b;
+            --model-2: #4ecdc4;
+            --model-3: #ffe66d;
+            --model-4: #a8e6cf;
+            --model-5: #ffb3ba;
         }
 
         * {
@@ -32,7 +37,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -84,6 +89,26 @@
         .sort-btn.active {
             background: var(--accent);
             color: white;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
         }
 
         .dashboard {
@@ -159,12 +184,12 @@
             color: white;
         }
 
-        th.sortable-return {
+        th.sortable-model {
             cursor: pointer;
             user-select: none;
         }
 
-        th.sortable-return:hover {
+        th.sortable-model:hover {
             background: var(--primary);
             color: white;
         }
@@ -173,37 +198,37 @@
             background: rgba(135, 206, 235, 0.1);
         }
 
-        .ticker {
+        .model-name {
             font-weight: 600;
             color: var(--accent);
             text-decoration: none;
             transition: color 0.2s;
         }
 
-        .ticker:hover {
+        .model-name:hover {
             color: var(--primary-dark);
             text-decoration: underline;
         }
 
-        .return.positive, .return.positive-change {
-            color: var(--success);
+        .model-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 85%;
             font-weight: 600;
+            margin-right: 5px;
         }
 
-        .return.negative, .return.negative-change {
-            color: var(--danger);
-            font-weight: 600;
-        }
+        .model-1-tag { background: var(--model-1); color: white; }
+        .model-2-tag { background: var(--model-2); color: white; }
+        .model-3-tag { background: var(--model-3); color: var(--dark); }
+        .model-4-tag { background: var(--model-4); color: var(--dark); }
+        .model-5-tag { background: var(--model-5); color: var(--dark); }
 
-        .return.warning {
-            color: var(--warning);
-            font-weight: 600;
-        }
-
-        .current-price {
-            font-weight: 600;
-            color: var(--dark);
-        }
+        .metric-positive, .month-return.positive { color: var(--success); font-weight: 600; }
+        .metric-negative, .month-return.negative { color: var(--danger); font-weight: 600; }
+        .metric-warning, .month-return.warning { color: var(--warning); font-weight: 600; }
+        .metric-info { color: var(--info); font-weight: 600; }
 
         .selected {
             animation: selectAnim 0.5s ease;
@@ -216,63 +241,63 @@
             100% { transform: scale(1); }
         }
 
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-        }
-
-        .crypto-tech { background: var(--warning); }
-        .agri-commod { background: var(--success); }
-
         footer {
             text-align: center;
             margin-top: 30px;
             color: var(--primary-dark);
         }
 
-        .info-banner {
-            background: rgba(23, 162, 184, 0.1);
-            border-left: 4px solid var(--info);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
+        .model-info {
+            font-size: 85%;
+            color: var(--dark);
+            margin-top: 5px;
+        }
+
+        .provider-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            background: var(--light);
+            border: 1px solid var(--primary);
+            font-size: 80%;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📈 Top Stocks Combo Dashboard</h1>
-            <p class="subtitle">Curated Tech + Agriculture & Commodities Stocks</p>
+            <h1>🤖 LLM Comparison Dashboard</h1>
+            <p class="subtitle">Open Source & Commercial AI Models • Performance, Capabilities & Pricing • Model Comparison & Analysis</p>
         </header>
 
-        <div class="info-banner">
-            <strong>🎯 Updated Selection:</strong> Only 20 curated stocks from user's request - Tech & Agriculture (10 stocks) + Agriculture & Commodities (10 stocks)
+        <div class="controls">
+            <button class="sort-btn active" onclick="sortModels('capability', this)">Sort by Capability</button>
+            <button class="sort-btn" onclick="sortModels('speed', this)">Sort by Speed</button>
+            <button class="sort-btn" onclick="sortModels('cost', this)">Sort by Cost</button>
+            <button class="sort-btn" onclick="sortModels('model', this)">Sort Alphabetical</button>
         </div>
 
         <div class="legend">
             <div class="legend-item">
-                <div class="legend-color crypto-tech"></div>
-                <span>Tech & Agriculture</span>
+                <div class="legend-color" style="background: var(--model-1);"></div>
+                <span>Open Source</span>
             </div>
             <div class="legend-item">
-                <div class="legend-color agri-commod"></div>
-                <span>Agriculture & Commodities</span>
+                <div class="legend-color" style="background: var(--model-2);"></div>
+                <span>Commercial</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: var(--model-3);"></div>
+                <span>API Accessible</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: var(--model-4);"></div>
+                <span>Local Deployable</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: var(--model-5);"></div>
+                <span>Customizable</span>
             </div>
         </div>
 
@@ -281,50 +306,230 @@
         </div>
 
         <footer>
-            <p>Curated selection based on user's request • Data reflects latest 3-year annualized returns</p>
+            <p>AI model data refreshed daily • Click model names for more details • Sort by performance metrics</p>
         </footer>
     </div>
 
     <script>
-        const stockData = {
-            "Tech & Agriculture": {
-                "stocks": [
-                    { ticker: "WGMI", name: "CoinShares Bitcoin Mining ETF", focus: "Crypto & Data Center Tech", return3yr: 83.7, currentPrice: "$83.70" },
-                    { ticker: "SMH", name: "VanEck Semiconductor ETF", focus: "Semiconductors", return3yr: 61.4, currentPrice: "$71.85" },
-                    { ticker: "BITQ", name: "Bitwise Crypto Industry Innovators ETF", focus: "Blockchain Infrastructure", return3yr: 60.6, currentPrice: "$29.28" },
-                    { ticker: "STCE", name: "Schwab Crypto Thematic ETF", focus: "Digital Assets & Tech", return3yr: 60.2, currentPrice: "$30.58" },
-                    { ticker: "DAPP", name: "VanEck Digital Transformation ETF", focus: "FinTech & Blockchain Tech", return3yr: 59.3, currentPrice: "$38.65" },
-                    { ticker: "FTXL", name: "First Trust Nasdaq Semiconductor ETF", focus: "Semiconductors", return3yr: 58.5, currentPrice: "$60.24" },
-                    { ticker: "SOXX", name: "iShares Semiconductor ETF", focus: "Semiconductors", return3yr: 47.8, currentPrice: "$24.51" },
-                    { ticker: "XLK", name: "Technology Select Sector SPDR Fund", focus: "Broad Tech (S&P 500)", return3yr: 33.5, currentPrice: "$145.30" },
-                    { ticker: "VGT", name: "Vanguard Information Technology ETF", focus: "Broad U.S. Tech", return3yr: 33.2, currentPrice: "$71.85" },
-                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "$28.75" }
+        const modelData = {
+            "Open Source": {
+                "General Purpose": [
+                    { 
+                        name: "Llama 3.1 405B", 
+                        provider: "Meta", 
+                        parameters: "405B parameters", 
+                        speed: "High", 
+                        cost: "$0.0001/M tokens", 
+                        capability: 9.2,
+                        languages: "100+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "Apache 2.0",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "api-accessible", "fine-tuning", "100-language", "large-model"]
+                    },
+                    { 
+                        name: "Mistral 7B", 
+                        provider: "Mistral AI", 
+                        parameters: "7B parameters", 
+                        speed: "Very Fast", 
+                        cost: "$0.00005/M tokens", 
+                        capability: 8.5,
+                        languages: "30+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "MIT",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "api-accessible", "fine-tuning", "fast", "small-model"]
+                    },
+                    { 
+                        name: "Falcon 40B", 
+                        provider: "TII UAE", 
+                        parameters: "40B parameters", 
+                        speed: "High", 
+                        cost: "$0.0002/M tokens", 
+                        capability: 8.8,
+                        languages: "100+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "Apache 2.0",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "api-accessible", "fine-tuning", "100-language", "medium-model"]
+                    },
+                    { 
+                        name: "Stable LM 7B", 
+                        provider: "Stability AI", 
+                        parameters: "7B parameters", 
+                        speed: "Very Fast", 
+                        cost: "$0.00003/M tokens", 
+                        capability: 7.8,
+                        languages: "20+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "Apache 2.0",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "api-accessible", "fine-tuning", "fast", "small-model"]
+                    },
+                    { 
+                        name: "LLaVA 1.5", 
+                        provider: "LLaVA Team", 
+                        parameters: "13B vision + 7B text", 
+                        speed: "Medium", 
+                        cost: "$0.0001/M tokens", 
+                        capability: 8.9,
+                        languages: "80+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "Apache 2.0",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "vision-capability", "api-accessible", "fine-tuning"]
+                    }
+                ],
+                "Specialized": [
+                    { 
+                        name: "CodeLlama 34B", 
+                        provider: "Meta", 
+                        parameters: "34B parameters", 
+                        speed: "High", 
+                        cost: "$0.00008/M tokens", 
+                        capability: 9.5,
+                        languages: "100+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "Apache 2.0",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "api-accessible", "fine-tuning", "coding", "large-model"]
+                    },
+                    { 
+                        name: "BLOOM 176B", 
+                        provider: "BigScience", 
+                        parameters: "176B parameters", 
+                        speed: "Slow", 
+                        cost: "$0.0005/M tokens", 
+                        capability: 8.2,
+                        languages: "100+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "MIT",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "api-accessible", "fine-tuning", "multi-language", "large-model"]
+                    },
+                    { 
+                        name: "Arctic", 
+                        provider: "Yandex", 
+                        parameters: "200B parameters", 
+                        speed: "Medium", 
+                        cost: "$0.0003/M tokens", 
+                        capability: 9.0,
+                        languages: "100+", 
+                        webSearch: "No",
+                        fineTuning: "Yes",
+                        license: "Apache 2.0",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["open-source", "api-accessible", "fine-tuning", "large-model"]
+                    }
                 ]
             },
-            "Agriculture & Commodities": {
-                "stocks": [
-                    { ticker: "PDBA", name: "Invesco Agriculture Commodity Strategy No K-1 ETF", focus: "Commodity Futures", return3yr: 12.5, currentPrice: "$12.50" },
-                    { ticker: "DBA", name: "Invesco DB Agriculture Fund", focus: "Commodity Futures Index", return3yr: 12.3, currentPrice: "$22.35" },
-                    { ticker: "VEGI", name: "iShares MSCI Agriculture Producers ETF", focus: "Agribusiness Equities", return3yr: 6.2, currentPrice: "$18.75" },
-                    { ticker: "FARMX", name: "Fidelity Agricultural Productivity Fund", focus: "Agribusiness Equities", return3yr: 6.1, currentPrice: "$15.60" },
-                    { ticker: "COW", name: "iShares Global Agriculture Index ETF", focus: "Global Agribusiness", return3yr: 4.3, currentPrice: "$28.95" },
-                    { ticker: "MOO", name: "VanEck Agribusiness ETF", focus: "Global Agribusiness Equities", return3yr: 0.8, currentPrice: "$34.80" },
-                    { ticker: "SOYB", name: "Teucrium Soybean Fund", focus: "Single Commodity (Soybeans)", return3yr: -2.8, currentPrice: "$10.85" },
-                    { ticker: "TILL", name: "Teucrium Agricultural Strategy No K-1 ETF", focus: "Commodity Futures Strategy", return3yr: -4.5, currentPrice: "$11.45" },
-                    { ticker: "CORN", name: "Teucrium Corn Fund", focus: "Single Commodity (Corn)", return3yr: -7.9, currentPrice: "$8.90" },
-                    { ticker: "WEAT", name: "Teucrium Wheat Fund", focus: "Single Commodity (Wheat)", return3yr: -9.7, currentPrice: "$6.15" }
+            "Commercial": {
+                "General Purpose": [
+                    { 
+                        name: "Claude 3.5 Sonnet", 
+                        provider: "Anthropic", 
+                        parameters: "200K context", 
+                        speed: "High", 
+                        cost: "$0.003/M tokens", 
+                        capability: 9.8,
+                        languages: "100+", 
+                        webSearch: "No",
+                        fineTuning: "No",
+                        license: "Proprietary",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["commercial", "api-accessible", "large-context", "proprietary"]
+                    },
+                    { 
+                        name: "GPT-4 Turbo", 
+                        provider: "OpenAI", 
+                        parameters: "128K context", 
+                        speed: "High", 
+                        cost: "$0.01/M tokens", 
+                        capability: 9.9,
+                        languages: "50+", 
+                        webSearch: "Yes",
+                        fineTuning: "No",
+                        license: "Proprietary",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["commercial", "api-accessible", "web-search", "proprietary"]
+                    },
+                    { 
+                        name: "Gemini 1.5 Pro", 
+                        provider: "Google", 
+                        parameters: "1M context", 
+                        speed: "Very High", 
+                        cost: "$0.007/M tokens", 
+                        capability: 9.7,
+                        languages: "100+", 
+                        webSearch: "Yes",
+                        fineTuning: "No",
+                        license: "Proprietary",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["commercial", "api-accessible", "web-search", "large-context", "proprietary"]
+                    },
+                    { 
+                        name: "Command R+", 
+                        provider: "Cohere", 
+                        parameters: "128K context", 
+                        speed: "High", 
+                        cost: "$0.0015/M tokens", 
+                        capability: 9.4,
+                        languages: "50+", 
+                        webSearch: "No",
+                        fineTuning: "No",
+                        license: "Proprietary",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["commercial", "api-accessible", "large-context", "proprietary"]
+                    }
+                ],
+                "Specialized": [
+                    { 
+                        name: "Claude 3.5 Opus", 
+                        provider: "Anthropic", 
+                        parameters: "200K context", 
+                        speed: "High", 
+                        cost: "$0.008/M tokens", 
+                        capability: 10.0,
+                        languages: "100+", 
+                        webSearch: "No",
+                        fineTuning: "No",
+                        license: "Proprietary",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["commercial", "premium", "large-context", "proprietary"]
+                    },
+                    { 
+                        name: "GPT-4o", 
+                        provider: "OpenAI", 
+                        parameters: "128K context", 
+                        speed: "Very High", 
+                        cost: "$0.015/M tokens", 
+                        capability: 10.0,
+                        languages: "100+", 
+                        webSearch: "Yes",
+                        fineTuning: "No",
+                        license: "Proprietary",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["commercial", "premium", "web-search", "proprietary"]
+                    }
                 ]
             }
         };
 
         // Track current sort state
-        let currentSort = 'desc'; // 'asc' or 'desc'
+        let currentSort = 'capability'; // 'capability', 'speed', 'cost', 'model'
 
         function initDashboard() {
             const dashboard = document.getElementById('dashboard');
             let html = '';
 
-            for (const [category, data] of Object.entries(stockData)) {
+            for (const [category, data] of Object.entries(modelData)) {
                 const categoryId = category.replace(/\s+/g, '');
                 html += `
                     <div class="category" id="cat-${categoryId}">
@@ -336,16 +541,17 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Rank</th>
-                                        <th>Ticker</th>
-                                        <th>Fund / Index Name</th>
-                                        <th>Focus Area</th>
-                                        <th>3-Year Return (Annualized)</th>
-                                        <th>Current Price</th>
+                                        <th>Model Name</th>
+                                        <th>Provider</th>
+                                        <th>Parameters</th>
+                                        <th class="sortable-model" id="sort-header" onclick="toggleSort(this);">Capability ▼</th>
+                                        <th>Speed</th>
+                                        <th>Cost</th>
+                                        <th>Tags</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tbody-${categoryId}">
-                                    ${createStockRows(category, data)}
+                                    ${createModelRows(category, data)}
                                 </tbody>
                             </table>
                         </div>
@@ -356,27 +562,46 @@
             dashboard.innerHTML = html;
             
             // Open first category by default
-            toggleCategory('CryptoTech');
+            toggleCategory('OpenSource');
         }
 
-        function createStockRows(category, data) {
+        function createModelRows(category, data) {
             let rows = '';
-            const stocks = data.stocks.sort((a, b) => b.return3yr - a.return3yr); // Default sort by return3yr descending
+            const allModels = [];
             
-            stocks.forEach((stock, index) => {
-                const returnClass = stock.return3yr >= 0 ? 'positive' : (stock.return3yr >= -5 ? 'warning' : 'negative');
-                const ticker = `https://www.cnbc.com/quotes/${stock.ticker}`;
-                
-                const formattedReturn = stock.return3yr >= 0 ? `~${stock.return3yr}%` : `${stock.return3yr}%`;
+            for (const subcategory of Object.values(data)) {
+                allModels.push(...subcategory);
+            }
+            
+            allModels.sort((a, b) => {
+                if (currentSort === 'capability') return b.capability - a.capability;
+                if (currentSort === 'speed') {
+                    const speedOrder = { 'Very Fast': 4, 'Fast': 3, 'High': 2, 'Medium': 1, 'Slow': 0 };
+                    return speedOrder[b.speed] - speedOrder[a.speed];
+                }
+                if (currentSort === 'cost') {
+                    const costOrder = { '$0.00005/M tokens': 5, '$0.0001/M tokens': 4, '$0.0002/M tokens': 3, '$0.003/M tokens': 2, '$0.007/M tokens': 1, '$0.01/M tokens': 0, '$0.008/M tokens': 0.5, '$0.015/M tokens': 0.2 };
+                    return costOrder[a.cost] - costOrder[b.cost];
+                }
+                return a.name.localeCompare(b.name);
+            });
+            
+            allModels.forEach(model => {
+                const tagElements = model.tags.map(tag => `<span class="model-tag model-${tag}-tag">${tag}</span>`).join('');
+                const providerBadge = `<span class="provider-badge">${model.provider}</span>`;
                 
                 rows += `
                     <tr onclick="selectRow(this)">
-                        <td>${index + 1}</td>
-                        <td><a href="${ticker}" class="ticker" target="_blank">${stock.ticker}</a></td>
-                        <td>${stock.name}</td>
-                        <td>${stock.focus}</td>
-                        <td class="return ${returnClass}">${formattedReturn}</td>
-                        <td class="current-price">${stock.currentPrice}</td>
+                        <td>
+                            <a href="${model.siteUrl}" class="model-name" target="_blank">${model.name}</a>
+                            <div class="model-info">${model.parameters} • ${model.languages} languages</div>
+                        </td>
+                        <td>${providerBadge}</td>
+                        <td>${model.parameters}</td>
+                        <td class="metric-${getCapabilityClass(model.capability)}">${model.capability.toFixed(1)}</td>
+                        <td class="metric-info">${model.speed}</td>
+                        <td class="metric-${getCostClass(model.cost)}">${model.cost}</td>
+                        <td>${tagElements}</td>
                     </tr>
                 `;
             });
@@ -384,19 +609,61 @@
             return rows;
         }
 
+        function getCapabilityClass(cap) {
+            if (cap >= 9.5) return 'positive';
+            if (cap >= 9.0) return 'info';
+            if (cap >= 8.0) return 'warning';
+            return 'negative';
+        }
+
+        function getCostClass(cost) {
+            if (cost.includes('$0.00005')) return 'positive';
+            if (cost.includes('$0.0001')) return 'info';
+            if (cost.includes('$0.0015')) return 'warning';
+            return 'negative';
+        }
+
         function toggleCategory(categoryId) {
             const category = document.getElementById(`cat-${categoryId}`);
             category.classList.toggle('open');
         }
 
-        function sortStocks(sortType, sortDirection) {
-            const dashboard = document.getElementById('dashboard');
-            const categories = Object.keys(stockData);
+        function toggleSort(el) {
+            const header = document.getElementById('sort-header');
+            
+            if (currentSort === 'capability') {
+                // Currently capability, switch to speed
+                currentSort = 'speed';
+                header.textContent = 'Capability ▲';
+                sortModels('speed', el);
+            } else if (currentSort === 'speed') {
+                // Currently speed, switch to cost
+                currentSort = 'cost';
+                header.textContent = 'Capability ▼';
+                sortModels('cost', el);
+            } else if (currentSort === 'cost') {
+                // Currently cost, switch to alphabetical
+                currentSort = 'model';
+                header.textContent = 'Capability ▼';
+                sortModels('model', el);
+            } else {
+                // Currently alphabetical, switch to capability
+                currentSort = 'capability';
+                header.textContent = 'Capability ▼';
+                sortModels('capability', el);
+            }
+        }
 
-            // Update sort buttons active state
+        function sortModels(criteria, buttonElement) {
+            // Remove active class from all buttons
             document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.querySelector(`.sort-btn[onclick*="'${sortType}-${sortDirection}'"]`);
-            if (activeBtn) activeBtn.classList.add('active');
+            // Add active class to clicked button
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            }
+
+            const dashboard = document.getElementById('dashboard');
+            const categories = Object.keys(modelData);
 
             categories.forEach(category => {
                 const categoryId = category.replace(/\s+/g, '');
@@ -406,42 +673,31 @@
                 rows.sort((a, b) => {
                     let aVal, bVal;
                     
-                    switch(sortType) {
-                        case 'return':
-                            // Extract numeric return values
-                            aVal = parseFloat(a.cells[4].textContent.replace(/[^0-9.-]+/g, ''));
-                            bVal = parseFloat(b.cells[4].textContent.replace(/[^0-9.-]+/g, ''));
-                            break;
-                        case 'rank':
-                            aVal = parseInt(a.cells[0].textContent);
-                            bVal = parseInt(b.cells[0].textContent);
-                            break;
-                        case 'ticker':
-                            aVal = a.cells[1].textContent.trim();
-                            bVal = b.cells[1].textContent.trim();
-                            break;
-                        case 'name':
-                            aVal = a.cells[2].textContent.trim();
-                            bVal = b.cells[2].textContent.trim();
-                            break;
+                    switch(criteria) {
+                        case 'capability':
+                            aVal = parseFloat(a.cells[3].textContent);
+                            bVal = parseFloat(b.cells[3].textContent);
+                            return bVal - aVal;
+                        case 'speed':
+                            const speedOrder = { 'Very Fast': 4, 'Fast': 3, 'High': 2, 'Medium': 1, 'Slow': 0 };
+                            aVal = speedOrder[a.cells[4].textContent];
+                            bVal = speedOrder[b.cells[4].textContent];
+                            return bVal - aVal;
+                        case 'cost':
+                            const costOrder = { '$0.00005/M tokens': 5, '$0.0001/M tokens': 4, '$0.0002/M tokens': 3, '$0.003/M tokens': 2, '$0.007/M tokens': 1, '$0.01/M tokens': 0, '$0.008/M tokens': 0.5, '$0.015/M tokens': 0.2 };
+                            aVal = costOrder[a.cells[5].textContent];
+                            bVal = costOrder[b.cells[5].textContent];
+                            return aVal - bVal;
+                        case 'model':
+                            aVal = a.cells[0].textContent.toLowerCase();
+                            bVal = b.cells[0].textContent.toLowerCase();
+                            return aVal.localeCompare(bVal);
                         default:
                             return 0;
-                    }
-                    
-                    if (sortDirection === 'asc') {
-                        return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
-                    } else {
-                        return aVal < bVal ? 1 : aVal > bVal ? -1 : 0;
                     }
                 });
 
                 rows.forEach(row => tbody.appendChild(row));
-                
-                // Renumber rows after sorting
-                const newRows = Array.from(tbody.querySelectorAll('tr'));
-                newRows.forEach((row, index) => {
-                    row.cells[0].textContent = index + 1;
-                });
             });
         }
 

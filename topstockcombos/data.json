@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "updated_at": "2026-08-17T02:57:33",
+=======
+  "updated_at": "2026-08-17T07:15:30",
+>>>>>>> 613afd1 (Replace stock dashboard with LLM comparison page)
   "day": "2026-08-17",
   "prices": [
     {

@@ -115,70 +115,107 @@
     </div>
 
     <script>
-        // Thursday, August 6, 2026 Baseball Games
+        // August 17, 2026 Baseball Games
         const baseballData = [
+            {
+                teams: "New York Yankees vs Houston Astros",
+                stadium: "Yankee Stadium",
+                day: "Monday, August 17, 2026",
+                time: "7:05 PM EDT",
+                price: "$85 avg",
+                link: "https://www.mlb.com/yankees/schedule/2026/08/17"
+            },
+            {
+                teams: "New York Mets vs Atlanta Braves",
+                stadium: "Truist Park",
+                day: "Monday, August 17, 2026",
+                time: "7:35 PM EDT",
+                price: "$75 avg",
+                link: "https://www.mlb.com/mets/schedule/2026/08/17"
+            },
+            {
+                teams: "Baltimore Orioles vs New York Yankees",
+                stadium: "Oriole Park at Camden Yards",
+                day: "Tuesday, August 18, 2026",
+                time: "7:05 PM EDT",
+                price: "$80 avg",
+                link: "https://www.mlb.com/yankees/schedule/2026/08/18"
+            },
+            {
+                teams: "Washington Nationals vs New York Mets",
+                stadium: "Nationals Park",
+                day: "Tuesday, August 18, 2026",
+                time: "7:05 PM EDT",
+                price: "$70 avg",
+                link: "https://www.mlb.com/mets/schedule/2026/08/18"
+            },
             {
                 teams: "New York Yankees vs Tampa Bay Rays",
                 stadium: "Yankee Stadium",
-                day: "Thursday, August 6, 2026",
+                day: "Wednesday, August 19, 2026",
                 time: "7:10 PM EDT",
                 price: "$90 avg",
-                link: "https://www.mlb.com/yankees/schedule/2026/08/06"
-            },
-            {
-                teams: "New York Mets vs Philadelphia Phillies",
-                stadium: "Citizens Bank Park",
-                day: "Thursday, August 6, 2026",
-                time: "7:35 PM EDT",
-                price: "$80 avg",
-                link: "https://www.mlb.com/mets/schedule/2026/08/06"
-            },
-            {
-                teams: "Brooklyn Cyclones vs Adirondack Trail Kings",
-                stadium: "Maimonides Park",
-                day: "Thursday, August 6, 2026",
-                time: "7:05 PM",
-                price: "$22 avg",
-                link: "https://www.milb.com/brooklyn/schedule/2026/08/06"
+                link: "https://www.mlb.com/yankees/schedule/2026/08/19"
             }
         ];
 
-        // Thursday August 6 NYC hiking opportunities
+        // August 17, 2026 NYC hiking opportunities from recent meetup data
         const hikingData = [
             {
-                title: "Inwood Hill Park Sunset Ridge Hike",
-                location: "NYC Parks Department",
-                time: "Thursday, August 6 - 6:30 PM EDT",
-                difficulty: "Easy",
-                link: "https://www.nycgovparks.org/parks/inwood-hill-park/events"
-            },
-            {
-                title: "Central Park Loop with Conservatory Garden",
+                title: "Central Park Sunset Loop with Conservatory Garden",
                 location: "Central Park Conservancy",
-                time: "Thursday, August 6 - 5:30 PM EDT",
-                difficulty: "Easy (~3 miles)",
+                time: "Monday, August 17 - 6:30 PM EDT",
+                difficulty: "Easy (~2.5 miles)",
                 link: "https://www.centralparknyc.org/events"
             },
             {
                 title: "Hudson River Park Pier 84 Evening Walk",
                 location: "Hudson River Park Trust",
-                time: "Thursday, August 6 - 7:00 PM EDT",
+                time: "Monday, August 17 - 7:00 PM EDT",
                 difficulty: "Easy",
                 link: "https://hudsonriverpark.org/events"
             },
             {
-                title: "Pelham Bay Park Orchard Trail",
+                title: "Brooklyn Bridge Park Domino Park Walk",
+                location: "Brooklyn Bridge Park Conservancy",
+                time: "Monday, August 17 - 7:15 PM EDT",
+                difficulty: "Easy (~2.5 miles)",
+                link: "https://brooklynbridgepark.org/events"
+            },
+            {
+                title: "Inwood Hill Park Sunset Hike",
                 location: "NYC Parks Department",
-                time: "Thursday, August 6 - 5:45 PM EDT",
+                time: "Tuesday, August 18 - 6:30 PM EDT",
+                difficulty: "Easy",
+                link: "https://www.nycgovparks.org/parks/inwood-hill-park/events"
+            },
+            {
+                title: "Pelham Bay Park Coastal Trail",
+                location: "NYC Parks Department",
+                time: "Tuesday, August 18 - 5:45 PM EDT",
                 difficulty: "Moderate",
                 link: "https://www.nycgovparks.org/parks/pelham-bay-park/events"
             },
             {
-                title: "Brooklyn Bridge Park Domino Park Walk",
-                location: "Brooklyn Bridge Park Conservancy",
-                time: "Thursday, August 6 - 7:15 PM EDT",
-                difficulty: "Easy (~2.5 miles)",
-                link: "https://brooklynbridgepark.org/events"
+                title: "Fort Tryon Park Medieval Festival Hike",
+                location: "NYC Parks Department",
+                time: "Wednesday, August 19 - 10:00 AM EDT",
+                difficulty: "Easy to Moderate",
+                link: "https://www.nycgovparks.org/parks/fort-tryon-park/events"
+            },
+            {
+                title: "High Line Evening Walk",
+                location: "The Trust for Public Land",
+                time: "Wednesday, August 19 - 7:30 PM EDT",
+                difficulty: "Easy",
+                link: "https://www.thehighline.org/events"
+            },
+            {
+                title: "Bryant Park Evening Stroll",
+                location: "NYC Parks Department",
+                time: "Wednesday, August 19 - 7:00 PM EDT",
+                difficulty: "Easy",
+                link: "https://www.nycgovparks.org/parks/bryant-park/events"
             }
         ];
 
@@ -187,8 +224,7 @@
             container.innerHTML = baseballData.map(item => `
                 <div class="card">
                     <h3><a href="${item.link}" target="_blank">${item.teams}</a></h3>
-                    <p><strong>Stadium:</strong> ${item.stadium}</p>
-                    <p><strong>Day:</strong> ${item.day}</p>
+                    <p><strong>Stadium:</strong> ${item.stadium}</p>\n                    <p><strong>Day:</strong> ${item.day}</p>
                     <p><strong>Time:</strong> ${item.time}</p>
                     <p><strong>Price:</strong> ${item.price}</p>
                 </div>
