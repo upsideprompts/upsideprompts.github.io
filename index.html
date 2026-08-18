@@ -262,13 +262,21 @@
             font-size: 80%;
             margin-right: 5px;
         }
+        
+        .description {
+            font-size: 85%;
+            color: var(--dark);
+            margin-top: 5px;
+            line-height: 1.4;
+            font-weight: normal;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🤖 LLM Comparison Dashboard</h1>
-            <p class="subtitle">Open Source & Commercial AI Models • Performance, Capabilities & Pricing • Model Comparison & Analysis</p>
+            <p class="subtitle">Kimi, Gemini, Claude Opus & Open Source Models • Compare capabilities, pricing, and features</p>
         </header>
 
         <div class="controls">
@@ -306,7 +314,7 @@
         </div>
 
         <footer>
-            <p>AI model data refreshed daily • Click model names for more details • Sort by performance metrics</p>
+            <p>LLM comparison data refreshed daily • Click model names for details • Sort by performance metrics</p>
         </footer>
     </div>
 
@@ -315,21 +323,22 @@
             "Open Source": {
                 "General Purpose": [
                     { 
-                        name: "Llama 3.1 405B", 
-                        provider: "Meta", 
-                        parameters: "405B parameters", 
+                        name: "<a href=\"https://github.com/XuYangGit/FasterTransformer/tree/main/examples/kiminet\" class=\"model-name\">Kimi</a>", 
+                        provider: "Moonshot AI", 
+                        parameters: "180B parameters", 
                         speed: "High", 
-                        cost: "$0.0001/M tokens", 
+                        cost: "$0.002/M tokens", 
                         capability: 9.2,
                         languages: "100+", 
                         webSearch: "No",
                         fineTuning: "Yes",
-                        license: "Apache 2.0",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "api-accessible", "fine-tuning", "100-language", "large-model"]
+                        license: "Proprietary",
+                        siteUrl: "https://www.moonshot.ai/",
+                        tags: ["commercial", "api-accessible", "proprietary"],
+                        description: "Kimi is a powerful language model from Moonshot AI with exceptional reasoning capabilities and high performance across diverse tasks."
                     },
                     { 
-                        name: "Mistral 7B", 
+                        name: "<a href=\"https://github.com/microsoft/onnxruntime\" class=\"model-name\">Mistral 7B</a>", 
                         provider: "Mistral AI", 
                         parameters: "7B parameters", 
                         speed: "Very Fast", 
@@ -340,10 +349,11 @@
                         fineTuning: "Yes",
                         license: "MIT",
                         siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "api-accessible", "fine-tuning", "fast", "small-model"]
+                        tags: ["open-source", "api-accessible", "fine-tuning", "fast", "small-model"],
+                        description: "Mistral 7B is a highly efficient open source model that achieves state-of-the-art performance despite its smaller size."
                     },
                     { 
-                        name: "Falcon 40B", 
+                        name: "<a href=\"https://github.com/cohere-ai/cohere-python-sdk\" class=\"model-name\">Falcon 40B</a>", 
                         provider: "TII UAE", 
                         parameters: "40B parameters", 
                         speed: "High", 
@@ -354,144 +364,30 @@
                         fineTuning: "Yes",
                         license: "Apache 2.0",
                         siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "api-accessible", "fine-tuning", "100-language", "medium-model"]
+                        tags: ["open-source", "api-accessible", "fine-tuning", "100-language", "medium-model"],
+                        description: "Falcon 40B delivers competitive performance while maintaining open source accessibility for research and commercial use."
                     },
                     { 
-                        name: "Stable LM 7B", 
-                        provider: "Stability AI", 
-                        parameters: "7B parameters", 
-                        speed: "Very Fast", 
-                        cost: "$0.00003/M tokens", 
-                        capability: 7.8,
-                        languages: "20+", 
-                        webSearch: "No",
-                        fineTuning: "Yes",
-                        license: "Apache 2.0",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "api-accessible", "fine-tuning", "fast", "small-model"]
-                    },
-                    { 
-                        name: "LLaVA 1.5", 
-                        provider: "LLaVA Team", 
-                        parameters: "13B vision + 7B text", 
-                        speed: "Medium", 
-                        cost: "$0.0001/M tokens", 
-                        capability: 8.9,
-                        languages: "80+", 
-                        webSearch: "No",
-                        fineTuning: "Yes",
-                        license: "Apache 2.0",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "vision-capability", "api-accessible", "fine-tuning"]
-                    }
-                ],
-                "Specialized": [
-                    { 
-                        name: "CodeLlama 34B", 
+                        name: "<a href=\"https://github.com/huggingface/transformers\" class=\"model-name\">Llama 3.1</a>", 
                         provider: "Meta", 
-                        parameters: "34B parameters", 
+                        parameters: "405B parameters", 
                         speed: "High", 
-                        cost: "$0.00008/M tokens", 
-                        capability: 9.5,
+                        cost: "$0.0001/M tokens", 
+                        capability: 9.2,
                         languages: "100+", 
                         webSearch: "No",
                         fineTuning: "Yes",
                         license: "Apache 2.0",
                         siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "api-accessible", "fine-tuning", "coding", "large-model"]
-                    },
-                    { 
-                        name: "BLOOM 176B", 
-                        provider: "BigScience", 
-                        parameters: "176B parameters", 
-                        speed: "Slow", 
-                        cost: "$0.0005/M tokens", 
-                        capability: 8.2,
-                        languages: "100+", 
-                        webSearch: "No",
-                        fineTuning: "Yes",
-                        license: "MIT",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "api-accessible", "fine-tuning", "multi-language", "large-model"]
-                    },
-                    { 
-                        name: "Arctic", 
-                        provider: "Yandex", 
-                        parameters: "200B parameters", 
-                        speed: "Medium", 
-                        cost: "$0.0003/M tokens", 
-                        capability: 9.0,
-                        languages: "100+", 
-                        webSearch: "No",
-                        fineTuning: "Yes",
-                        license: "Apache 2.0",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["open-source", "api-accessible", "fine-tuning", "large-model"]
+                        tags: ["open-source", "api-accessible", "fine-tuning", "100-language", "large-model"],
+                        description: "Llama 3.1 is Meta's latest open source model with improved capabilities and multilingual support."
                     }
                 ]
             },
             "Commercial": {
                 "General Purpose": [
                     { 
-                        name: "Claude 3.5 Sonnet", 
-                        provider: "Anthropic", 
-                        parameters: "200K context", 
-                        speed: "High", 
-                        cost: "$0.003/M tokens", 
-                        capability: 9.8,
-                        languages: "100+", 
-                        webSearch: "No",
-                        fineTuning: "No",
-                        license: "Proprietary",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["commercial", "api-accessible", "large-context", "proprietary"]
-                    },
-                    { 
-                        name: "GPT-4 Turbo", 
-                        provider: "OpenAI", 
-                        parameters: "128K context", 
-                        speed: "High", 
-                        cost: "$0.01/M tokens", 
-                        capability: 9.9,
-                        languages: "50+", 
-                        webSearch: "Yes",
-                        fineTuning: "No",
-                        license: "Proprietary",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["commercial", "api-accessible", "web-search", "proprietary"]
-                    },
-                    { 
-                        name: "Gemini 1.5 Pro", 
-                        provider: "Google", 
-                        parameters: "1M context", 
-                        speed: "Very High", 
-                        cost: "$0.007/M tokens", 
-                        capability: 9.7,
-                        languages: "100+", 
-                        webSearch: "Yes",
-                        fineTuning: "No",
-                        license: "Proprietary",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["commercial", "api-accessible", "web-search", "large-context", "proprietary"]
-                    },
-                    { 
-                        name: "Command R+", 
-                        provider: "Cohere", 
-                        parameters: "128K context", 
-                        speed: "High", 
-                        cost: "$0.0015/M tokens", 
-                        capability: 9.4,
-                        languages: "50+", 
-                        webSearch: "No",
-                        fineTuning: "No",
-                        license: "Proprietary",
-                        siteUrl: "https://console.anthropic.com/",
-                        tags: ["commercial", "api-accessible", "large-context", "proprietary"]
-                    }
-                ],
-                "Specialized": [
-                    { 
-                        name: "Claude 3.5 Opus", 
+                        name: "<a href=\"https://console.anthropic.com/\" class=\"model-name\">Claude 3.5 Opus</a>", 
                         provider: "Anthropic", 
                         parameters: "200K context", 
                         speed: "High", 
@@ -502,21 +398,38 @@
                         fineTuning: "No",
                         license: "Proprietary",
                         siteUrl: "https://console.anthropic.com/",
-                        tags: ["commercial", "premium", "large-context", "proprietary"]
+                        tags: ["commercial", "premium", "large-context", "proprietary"],
+                        description: "Claude 3.5 Opus is Anthropic's most powerful model with exceptional reasoning and complex task handling capabilities."
                     },
                     { 
-                        name: "GPT-4o", 
+                        name: "<a href=\"https://openai.com/blog/gpt-4\" class=\"model-name\">GPT-4 Turbo</a>", 
                         provider: "OpenAI", 
                         parameters: "128K context", 
+                        speed: "High", 
+                        cost: "$0.01/M tokens", 
+                        capability: 9.9,
+                        languages: "50+", 
+                        webSearch: "Yes",
+                        fineTuning: "No",
+                        license: "Proprietary",
+                        siteUrl: "https://console.anthropic.com/",
+                        tags: ["commercial", "api-accessible", "web-search", "proprietary"],
+                        description: "GPT-4 Turbo provides powerful AI capabilities with web search functionality and strong performance across complex tasks."
+                    },
+                    { 
+                        name: "<a href=\"https://gemini.google.ai/\" class=\"model-name\">Gemini 1.5 Pro</a>", 
+                        provider: "Google", 
+                        parameters: "1M context", 
                         speed: "Very High", 
-                        cost: "$0.015/M tokens", 
-                        capability: 10.0,
+                        cost: "$0.007/M tokens", 
+                        capability: 9.7,
                         languages: "100+", 
                         webSearch: "Yes",
                         fineTuning: "No",
                         license: "Proprietary",
                         siteUrl: "https://console.anthropic.com/",
-                        tags: ["commercial", "premium", "web-search", "proprietary"]
+                        tags: ["commercial", "api-accessible", "web-search", "large-context", "proprietary"],
+                        description: "Gemini 1.5 Pro excels with massive context windows and multimodal capabilities for complex reasoning tasks."
                     }
                 ]
             }
@@ -593,8 +506,9 @@
                 rows += `
                     <tr onclick="selectRow(this)">
                         <td>
-                            <a href="${model.siteUrl}" class="model-name" target="_blank">${model.name}</a>
+                            <div>${model.name}</div>
                             <div class="model-info">${model.parameters} • ${model.languages} languages</div>
+                            <div class="description">${model.description}</div>
                         </td>
                         <td>${providerBadge}</td>
                         <td>${model.parameters}</td>
