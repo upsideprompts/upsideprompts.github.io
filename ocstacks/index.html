@@ -118,7 +118,7 @@ const steps = [
     extraCodeBlocks: [
       { label: "", code: "nano ~/.openclaw/config.json5" }
     ],
-    moreDesc: "Modify or add the agents property block to map directly to permanent free models (like Gemini 2.5 Flash Free):",
+    moreDesc: "Modify or add the agents property block to map directly to available free models (like Gemini 2.5 Flash Free):",
     moreCodeBlocks: [
       { label: "", code: "{\n  \"agents\": {\n    \"defaults\": {\n      \"workspace\": \"/root/.openclaw/workspace\",\n      \"models\": {\n        \"openrouter/free\": {\n          \"alias\": \"OpenRouter\"\n        },\n        \"openrouter/poolside/laguna-xs.2:free\": {},\n        \"openrouter/google/gemma-4-26b-a4b-it:free\": {},\n        \"openrouter/meta-llama/llama-3.3-70b-instruct:free\": {},\n        \"openrouter/qwen/qwen3-next-80b-a3b-instruct:free\": {},\n        \"openrouter/google/gemma-4-31b-it:free\": {},\n        \"openrouter/cohere/north-mini-code:free\": {},\n        \"openrouter/poolside/laguna-m.1:free\": {}\n      },\n      \"model\": {\n        \"primary\": \"openrouter/poolside/laguna-xs.2:free\",\n        \"fallbacks\": [\n          \"openrouter/poolside/laguna-xs.2:free\",\n          \"openrouter/google/gemma-4-26b-a4b-it:free\",\n          \"openrouter/meta-llama/llama-3.3-70b-instruct:free\",\n          \"openrouter/qwen/qwen3-next-80b-a3b-instruct:free\",\n          \"openrouter/google/gemma-4-31b-it:free\",\n          \"openrouter/cohere/north-mini-code:free\",\n          \"openrouter/poolside/laguna-m.1:free\"\n        ]\n      }\n    }\n  }\n}" }
     ],
