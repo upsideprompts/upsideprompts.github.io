@@ -1,110 +1,106 @@
 {
-<<<<<<< HEAD
-  "updated_at": "2026-08-17T02:57:33",
-=======
-  "updated_at": "2026-08-17T07:15:30",
->>>>>>> 613afd1 (Replace stock dashboard with LLM comparison page)
-  "day": "2026-08-17",
+  "updated_at": "2026-08-19T03:55:19",
+  "day": "2026-08-19",
   "prices": [
     {
       "ticker": "SMH",
-      "day": "2026-08-17",
-      "price": 587.82
+      "day": "2026-08-19",
+      "price": 569.77
     },
     {
       "ticker": "PSI",
-      "day": "2026-08-17",
-      "price": 153.01
+      "day": "2026-08-19",
+      "price": 146.31
     },
     {
       "ticker": "FTXL",
-      "day": "2026-08-17",
-      "price": 239.81
+      "day": "2026-08-19",
+      "price": 230.99
     },
     {
       "ticker": "SOXQ",
-      "day": "2026-08-17",
-      "price": 97.74
+      "day": "2026-08-19",
+      "price": 94.37
     },
     {
       "ticker": "SOXX",
-      "day": "2026-08-17",
-      "price": 550.42
+      "day": "2026-08-19",
+      "price": 531.39
     },
     {
       "ticker": "XLK",
-      "day": "2026-08-17",
-      "price": 190.01
+      "day": "2026-08-19",
+      "price": 185.62
     },
     {
       "ticker": "VGT",
-      "day": "2026-08-17",
-      "price": 122.56
+      "day": "2026-08-19",
+      "price": 119.79
     },
     {
       "ticker": "DTCR",
-      "day": "2026-08-17",
-      "price": 29.33
+      "day": "2026-08-19",
+      "price": 28.47
     },
     {
       "ticker": "XSD",
-      "day": "2026-08-17",
-      "price": 544.29
+      "day": "2026-08-19",
+      "price": 517.74
     },
     {
       "ticker": "FCLD",
-      "day": "2026-08-17",
-      "price": 44.61
+      "day": "2026-08-19",
+      "price": 43.67
     },
     {
       "ticker": "PDBA",
-      "day": "2026-08-17",
-      "price": 37.1
+      "day": "2026-08-19",
+      "price": 37.44
     },
     {
       "ticker": "DBA",
-      "day": "2026-08-17",
-      "price": 27.77
+      "day": "2026-08-19",
+      "price": 28.03
     },
     {
       "ticker": "VEGI",
-      "day": "2026-08-17",
-      "price": 44.53
+      "day": "2026-08-19",
+      "price": 44.25
     },
     {
       "ticker": "FARMX",
-      "day": "2026-08-17",
-      "price": 21.8
+      "day": "2026-08-19",
+      "price": 21.7
     },
     {
       "ticker": "COW",
-      "day": "2026-08-17",
+      "day": "2026-08-19",
       "price": 39.87
     },
     {
       "ticker": "MOO",
-      "day": "2026-08-17",
-      "price": 81.37
+      "day": "2026-08-19",
+      "price": 81.35
     },
     {
       "ticker": "SOYB",
-      "day": "2026-08-17",
-      "price": 25.37
+      "day": "2026-08-19",
+      "price": 25.8
     },
     {
       "ticker": "TILL",
-      "day": "2026-08-17",
-      "price": 19.0
+      "day": "2026-08-19",
+      "price": 19.32
     },
     {
       "ticker": "CORN",
-      "day": "2026-08-17",
-      "price": 18.26
+      "day": "2026-08-19",
+      "price": 18.42
     },
     {
       "ticker": "WEAT",
-      "day": "2026-08-17",
-      "price": 24.97
+      "day": "2026-08-19",
+      "price": 24.71
     }
   ]
 }
