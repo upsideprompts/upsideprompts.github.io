@@ -1,7 +1,59 @@
 # Bay Area Hikes Update
 
 Current Date and Time:
-Thursday, August 6, 2026 - 3:00 PM UTC
+Tuesday, August 18, 2026 - 3:00 PM UTC
+
+## Upcoming Hikes from Meetup.com (San Francisco Area)
+
+### August 2026
+
+#### 🏖️ Ocean Beach to GGB Overlook
+- **Date:** Saturday, August 15, 2026
+- **Time:** 10:30 AM PDT
+- **Group:** San Francisco Bay Area Outings (Rating: 4.9 ⭐, 61 attendees)
+
+#### 🥾 Urban Hike: Bernal Heights Park
+- **Date:** Sunday, August 23, 2026
+- **Time:** 9:30 AM PDT
+- **Group:** Have Fun Make Friends SF (Rating: 4.9 ⭐, 30 attendees)
+
+#### ⛰️ Montara Mountain State Park Hike
+- **Date:** Saturday, August 29, 2026
+- **Time:** 10:30 AM PDT
+- **Group:** San Francisco Bay Area Outings (Rating: 4.9 ⭐, 39 attendees)
+
+#### 🥾 Easy Evening Sunset-Twin Peaks hike (4mi/700' elev. gain)
+- **Date:** Thursday, August 20, 2026
+- **Time:** 6:00 PM PDT
+- **Group:** Sleep Late and Hike (Rating: 4.8 ⭐, 48 attendees)
+
+#### 🤠 Adventures of Huckleberry and Redwood, 6.8 miles, 1,227 ft, 70% shaded
+- **Date:** Sunday, August 23, 2026
+- **Time:** 9:30 AM PDT
+- **Group:** Casual Hikers of the East Bay (Rating: 4.9 ⭐, 40 attendees)
+
+#### 🌊 Green Exercise Easy 5 Miles 🥾 Hike SF Golden Gate Park
+- **Date:** Sunday, September 6, 2026
+- **Time:** 1:30 PM PDT
+- **Group:** Bay Area Hiking, Walking, Wellness Club (Rating: 4.8 ⭐, 61 attendees)
+
+#### 🏔️ Hell For Sure, Mt. Goddard & The LeConte Divide
+- **Date:** Wednesday, September 16, 2026
+- **Time:** 6:00 PM PDT
+- **Format:** Online
+- **Group:** TSX Challenge (Rating: 4.7 ⭐, 2 attendees)
+
+#### 🏞️ The Grand Canyon's Escalante Route
+- **Date:** Wednesday, September 2, 2026
+- **Time:** 6:00 PM PDT
+- **Format:** Online
+- **Group:** TSX Challenge (Rating: 4.7 ⭐, 7 attendees)
+
+#### 🏕️ Training for a TSX Backpacking Challenge
+- **Date:** Wednesday, September 23, 2026
+- **Time:** 6:00 PM PDT
+- **Format:** Online
+- **Group:** TSX Challenge (Rating: 4.7 ⭐, 10 attendees)
 
 ## Upcoming Hikes from Meetup.com (San Francisco Area)
 
