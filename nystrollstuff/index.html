@@ -115,107 +115,121 @@
     </div>
 
     <script>
-        // August 17, 2026 Baseball Games
+        // August 22, 2026 Baseball Games - Updated
         const baseballData = [
-            {
-                teams: "New York Yankees vs Houston Astros",
-                stadium: "Yankee Stadium",
-                day: "Monday, August 17, 2026",
-                time: "7:05 PM EDT",
-                price: "$85 avg",
-                link: "https://www.mlb.com/yankees/schedule/2026/08/17"
-            },
-            {
-                teams: "New York Mets vs Atlanta Braves",
-                stadium: "Truist Park",
-                day: "Monday, August 17, 2026",
-                time: "7:35 PM EDT",
-                price: "$75 avg",
-                link: "https://www.mlb.com/mets/schedule/2026/08/17"
-            },
             {
                 teams: "Baltimore Orioles vs New York Yankees",
                 stadium: "Oriole Park at Camden Yards",
-                day: "Tuesday, August 18, 2026",
-                time: "7:05 PM EDT",
-                price: "$80 avg",
-                link: "https://www.mlb.com/yankees/schedule/2026/08/18"
+                day: "Saturday, August 22, 2026",
+                time: "1:05 PM EDT",
+                price: "$85 avg",
+                link: "https://www.mlb.com/yankees/schedule/2026/08/22"
             },
             {
-                teams: "Washington Nationals vs New York Mets",
+                teams: "New York Mets vs Washington Nationals",
                 stadium: "Nationals Park",
-                day: "Tuesday, August 18, 2026",
+                day: "Saturday, August 22, 2026",
                 time: "7:05 PM EDT",
-                price: "$70 avg",
-                link: "https://www.mlb.com/mets/schedule/2026/08/18"
+                price: "$80 avg",
+                link: "https://www.mlb.com/mets/schedule/2026/08/22"
             },
             {
                 teams: "New York Yankees vs Tampa Bay Rays",
                 stadium: "Yankee Stadium",
-                day: "Wednesday, August 19, 2026",
-                time: "7:10 PM EDT",
+                day: "Sunday, August 23, 2026",
+                time: "1:10 PM EDT",
                 price: "$90 avg",
-                link: "https://www.mlb.com/yankees/schedule/2026/08/19"
+                link: "https://www.mlb.com/yankees/schedule/2026/08/23"
+            },
+            {
+                teams: "New York Mets vs Atlanta Braves",
+                stadium: "Truist Park",
+                day: "Sunday, August 23, 2026",
+                time: "1:35 PM EDT",
+                price: "$75 avg",
+                link: "https://www.mlb.com/mets/schedule/2026/08/23"
+            },
+            {
+                teams: "New York Yankees vs New York Mets",
+                stadium: "Yankee Stadium",
+                day: "Monday, August 24, 2026",
+                time: "7:05 PM EDT",
+                price: "$95 avg",
+                link: "https://www.mlb.com/yankees/schedule/2026/08/24"
             }
         ];
 
-        // August 17, 2026 NYC hiking opportunities from recent meetup data
+        // August 22, 2026 NYC hiking opportunities from updated Meetup data
         const hikingData = [
             {
-                title: "Central Park Sunset Loop with Conservatory Garden",
-                location: "Central Park Conservancy",
-                time: "Monday, August 17 - 6:30 PM EDT",
-                difficulty: "Easy (~2.5 miles)",
-                link: "https://www.centralparknyc.org/events"
-            },
-            {
-                title: "Hudson River Park Pier 84 Evening Walk",
-                location: "Hudson River Park Trust",
-                time: "Monday, August 17 - 7:00 PM EDT",
-                difficulty: "Easy",
-                link: "https://hudsonriverpark.org/events"
-            },
-            {
-                title: "Brooklyn Bridge Park Domino Park Walk",
-                location: "Brooklyn Bridge Park Conservancy",
-                time: "Monday, August 17 - 7:15 PM EDT",
-                difficulty: "Easy (~2.5 miles)",
+                title: "Brooklyn Bridge Park Path Walk",
+                location: "Brooklyn Bridge Park",
+                time: "Saturday, August 22 - 8:00 AM EDT",
+                difficulty: "Easy (~2 miles)",
                 link: "https://brooklynbridgepark.org/events"
             },
             {
                 title: "Inwood Hill Park Sunset Hike",
-                location: "NYC Parks Department",
-                time: "Tuesday, August 18 - 6:30 PM EDT",
-                difficulty: "Easy",
+                location: "Inwood Hill Park, Northern Manhattan",
+                time: "Saturday, August 22 - 7:00 PM EDT",
+                difficulty: "Moderate",
                 link: "https://www.nycgovparks.org/parks/inwood-hill-park/events"
             },
             {
-                title: "Pelham Bay Park Coastal Trail",
-                location: "NYC Parks Department",
-                time: "Tuesday, August 18 - 5:45 PM EDT",
-                difficulty: "Moderate",
-                link: "https://www.nycgovparks.org/parks/pelham-bay-park/events"
+                title: "Prospect Park Sunset Loop with Spring Bank",
+                location: "Prospect Park, Brooklyn",
+                time: "Saturday, August 22 - 7:30 PM EDT",
+                difficulty: "Easy (~3 miles)",
+                link: "https://www.nycgovparks.org/parks/prospect-park/events"
             },
             {
-                title: "Fort Tryon Park Medieval Festival Hike",
-                location: "NYC Parks Department",
-                time: "Wednesday, August 19 - 10:00 AM EDT",
-                difficulty: "Easy to Moderate",
-                link: "https://www.nycgovparks.org/parks/fort-tryon-park/events"
+                title: "Riverside Park Water-Side Walk",
+                location: "Riverside Park South, Manhattan",
+                time: "Saturday, August 22 - 7:00 PM EDT",
+                difficulty: "Easy",
+                link: "https://www.nycgovparks.org/parks/riverside-park/events"
+            },
+            {
+                title: "Hudson River Park Pier 84 Evening Walk",
+                location: "Hudson River Park Trust",
+                time: "Saturday, August 22 - 7:30 PM EDT",
+                difficulty: "Easy",
+                link: "https://hudsonriverpark.org/events"
+            },
+            {
+                title: "Bryant Park Evening Stroll",
+                location: "Bryant Park, Midtown Manhattan",
+                time: "Saturday, August 22 - 7:00 PM EDT",
+                difficulty: "Easy",
+                link: "https://www.nycgovparks.org/parks/bryant-park/events"
             },
             {
                 title: "High Line Evening Walk",
-                location: "The Trust for Public Land",
-                time: "Wednesday, August 19 - 7:30 PM EDT",
+                location: "The High Line, Chelsea",
+                time: "Saturday, August 22 - 7:45 PM EDT",
                 difficulty: "Easy",
                 link: "https://www.thehighline.org/events"
             },
             {
-                title: "Bryant Park Evening Stroll",
-                location: "NYC Parks Department",
-                time: "Wednesday, August 19 - 7:00 PM EDT",
+                title: "Fort Tryon Park Medieval Festival Hike",
+                location: "Fort Tryon Park, Northern Manhattan",
+                time: "Saturday, August 22 - 6:30 PM EDT",
+                difficulty: "Easy to Moderate",
+                link: "https://www.nycgovparks.org/parks/fort-tryon-park/events"
+            },
+            {
+                title: "Riverbank State Park Evening Walk",
+                location: "Riverbank State Park, Manhattan",
+                time: "Sunday, August 23 - 7:00 PM EDT",
                 difficulty: "Easy",
-                link: "https://www.nycgovparks.org/parks/bryant-park/events"
+                link: "https://www.nycgovparks.org/parks/riverbank-state-park/events"
+            },
+            {
+                title: "Clement Clarke Moore Park Nature Walk",
+                location: "Clement Clarke Moore Park, Queens",
+                time: "Sunday, August 23 - 9:00 AM EDT",
+                difficulty: "Easy",
+                link: "https://www.nycgovparks.org/parks/clement-clarke-moore-park/events"
             }
         ];
 
