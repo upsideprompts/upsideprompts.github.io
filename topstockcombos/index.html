@@ -327,6 +327,7 @@
 
         <footer>
             <p>Curated selection based on user's request • Data reflects latest 3-year annualized returns</p>
+            <p id="price-updated" class="subtitle" style="margin-top: 8px;"></p>
         </footer>
     </div>
 
@@ -334,36 +335,61 @@
         const stockData = {
             "Tech Stock Funds": {
                 "stocks": [
-                    { ticker: "SMH", name: "VanEck Semiconductor ETF", focus: "Semiconductors", return3yr: 61.4, currentPrice: "$71.85" },
-                    { ticker: "PSI", name: "Invesco Semiconductors ETF", focus: "Semiconductors", return3yr: 60.5, currentPrice: "$153.01" },
-                    { ticker: "FTXL", name: "First Trust Nasdaq Semiconductor ETF", focus: "Semiconductors", return3yr: 58.5, currentPrice: "$60.24" },
-                    { ticker: "SOXQ", name: "Invesco PHLX Semiconductor ETF", focus: "PHLX Semiconductors", return3yr: 51.8, currentPrice: "$97.74" },
-                    { ticker: "SOXX", name: "iShares Semiconductor ETF", focus: "Semiconductors", return3yr: 47.8, currentPrice: "$24.51" },
-                    { ticker: "XLK", name: "Technology Select Sector SPDR Fund", focus: "Broad Tech (S&P 500)", return3yr: 33.5, currentPrice: "$145.30" },
-                    { ticker: "SKYY", name: "First Trust Cloud Computing ETF", focus: "Cloud Computing", return3yr: 21.0, currentPrice: "$165.34" },
-                    { ticker: "DTCR", name: "Global X Data Center & Digital Infrastructure ETF", focus: "Data Center & Digital Infrastructure", return3yr: 32.4, currentPrice: "$29.33" },
-                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "$28.75" },
-                    { ticker: "FCLD", name: "Fidelity Cloud Computing ETF", focus: "Cloud Computing", return3yr: 28.0, currentPrice: "$44.61" }
+                    { ticker: "SMH", name: "VanEck Semiconductor ETF", focus: "Semiconductors", return3yr: 61.4 },
+                    { ticker: "PSI", name: "Invesco Semiconductors ETF", focus: "Semiconductors", return3yr: 60.5 },
+                    { ticker: "FTXL", name: "First Trust Nasdaq Semiconductor ETF", focus: "Semiconductors", return3yr: 58.5 },
+                    { ticker: "SOXQ", name: "Invesco PHLX Semiconductor ETF", focus: "PHLX Semiconductors", return3yr: 51.8 },
+                    { ticker: "SOXX", name: "iShares Semiconductor ETF", focus: "Semiconductors", return3yr: 47.8 },
+                    { ticker: "XLK", name: "Technology Select Sector SPDR Fund", focus: "Broad Tech (S&P 500)", return3yr: 33.5 },
+                    { ticker: "VGT", name: "Vanguard Information Technology ETF", focus: "Broad Tech", return3yr: 21.0 },
+                    { ticker: "DTCR", name: "Global X Data Center & Digital Infrastructure ETF", focus: "Data Center & Digital Infrastructure", return3yr: 32.4 },
+                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3 },
+                    { ticker: "FCLD", name: "Fidelity Cloud Computing ETF", focus: "Cloud Computing", return3yr: 28.0 }
                 ]
             },
             "Agriculture & Commodities": {
                 "stocks": [
-                    { ticker: "PDBA", name: "Invesco Agriculture Commodity Strategy No K-1 ETF", focus: "Commodity Futures", return3yr: 12.5, currentPrice: "$12.50" },
-                    { ticker: "DBA", name: "Invesco DB Agriculture Fund", focus: "Commodity Futures Index", return3yr: 12.3, currentPrice: "$22.35" },
-                    { ticker: "VEGI", name: "iShares MSCI Agriculture Producers ETF", focus: "Agribusiness Equities", return3yr: 6.2, currentPrice: "$18.75" },
-                    { ticker: "FARMX", name: "Fidelity Agricultural Productivity Fund", focus: "Agribusiness Equities", return3yr: 6.1, currentPrice: "$15.60" },
-                    { ticker: "COW", name: "iShares Global Agriculture Index ETF", focus: "Global Agribusiness", return3yr: 4.3, currentPrice: "$28.95" },
-                    { ticker: "MOO", name: "VanEck Agribusiness ETF", focus: "Global Agribusiness Equities", return3yr: 0.8, currentPrice: "$34.80" },
-                    { ticker: "SOYB", name: "Teucrium Soybean Fund", focus: "Single Commodity (Soybeans)", return3yr: -2.8, currentPrice: "$10.85" },
-                    { ticker: "TILL", name: "Teucrium Agricultural Strategy No K-1 ETF", focus: "Commodity Futures Strategy", return3yr: -4.5, currentPrice: "$11.45" },
-                    { ticker: "CORN", name: "Teucrium Corn Fund", focus: "Single Commodity (Corn)", return3yr: -7.9, currentPrice: "$8.90" },
-                    { ticker: "WEAT", name: "Teucrium Wheat Fund", focus: "Single Commodity (Wheat)", return3yr: -9.7, currentPrice: "$6.15" }
+                    { ticker: "PDBA", name: "Invesco Agriculture Commodity Strategy No K-1 ETF", focus: "Commodity Futures", return3yr: 12.5 },
+                    { ticker: "DBA", name: "Invesco DB Agriculture Fund", focus: "Commodity Futures Index", return3yr: 12.3 },
+                    { ticker: "VEGI", name: "iShares MSCI Agriculture Producers ETF", focus: "Agribusiness Equities", return3yr: 6.2 },
+                    { ticker: "FARMX", name: "Fidelity Agricultural Productivity Fund", focus: "Agribusiness Equities", return3yr: 6.1 },
+                    { ticker: "COW", name: "iShares Global Agriculture Index ETF", focus: "Global Agribusiness", return3yr: 4.3 },
+                    { ticker: "MOO", name: "VanEck Agribusiness ETF", focus: "Global Agribusiness Equities", return3yr: 0.8 },
+                    { ticker: "SOYB", name: "Teucrium Soybean Fund", focus: "Single Commodity (Soybeans)", return3yr: -2.8 },
+                    { ticker: "TILL", name: "Teucrium Agricultural Strategy No K-1 ETF", focus: "Commodity Futures Strategy", return3yr: -4.5 },
+                    { ticker: "CORN", name: "Teucrium Corn Fund", focus: "Single Commodity (Corn)", return3yr: -7.9 },
+                    { ticker: "WEAT", name: "Teucrium Wheat Fund", focus: "Single Commodity (Wheat)", return3yr: -9.7 }
                 ]
             }
         };
 
-        // Track current sort state
-        let currentSort = 'desc'; // 'asc' or 'desc'
+        let priceByTicker = {};
+
+        function formatPrice(price) {
+            if (price == null || Number.isNaN(Number(price))) return '—';
+            return `$${Number(price).toFixed(2)}`;
+        }
+
+        async function loadPrices() {
+            try {
+                const response = await fetch('data.json', { cache: 'no-store' });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                priceByTicker = Object.fromEntries(
+                    (data.prices || [])
+                        .filter((entry) => entry.ticker && entry.price != null)
+                        .map((entry) => [entry.ticker, entry.price])
+                );
+                const updatedEl = document.getElementById('price-updated');
+                if (updatedEl && data.day) {
+                    updatedEl.textContent = `Prices from data.json as of ${data.day}`;
+                }
+            } catch (err) {
+                console.error('Failed to load data.json prices:', err);
+                const updatedEl = document.getElementById('price-updated');
+                if (updatedEl) updatedEl.textContent = 'Price data unavailable';
+            }
+        }
 
         function initDashboard() {
             const dashboard = document.getElementById('dashboard');
@@ -409,20 +435,21 @@
 
         function createStockRows(category, data) {
             let rows = '';
-            const stocks = data.stocks.sort((a, b) => b.return3yr - a.return3yr); // Default sort by return3yr descending
+            const stocks = [...data.stocks].sort((a, b) => b.return3yr - a.return3yr);
             
             stocks.forEach((stock, index) => {
                 const returnClass = stock.return3yr >= 0 ? 'positive' : (stock.return3yr >= -5 ? 'warning' : 'negative');
                 const ticker = `https://www.cnbc.com/quotes/${stock.ticker}`;
                 
                 const formattedReturn = stock.return3yr >= 0 ? `~${stock.return3yr}%` : `${stock.return3yr}%`;
+                const formattedPrice = formatPrice(priceByTicker[stock.ticker]);
                 
                 rows += `
                     <tr onclick="selectRow(this)">
                         <td>${index + 1}</td>
                         <td><a href="${ticker}" class="ticker" target="_blank">${stock.ticker}</a></td>
                         <td>${stock.name}</td>
-                        <td class="current-price">${stock.currentPrice}</td>
+                        <td class="current-price">${formattedPrice}</td>
                         <td>${stock.focus}</td>
                         <td class="return ${returnClass}">${formattedReturn}</td>
                     </tr>
@@ -500,8 +527,8 @@
             row.classList.add('selected');
         }
 
-        // Initialize dashboard on load
-        initDashboard();
+        // Load prices from data.json, then render
+        loadPrices().then(initDashboard);
     </script>
 </body>
 </html>
