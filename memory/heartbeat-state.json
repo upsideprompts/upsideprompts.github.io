@@ -1,11 +1,8 @@
 {
   "lastChecks": {
-    "articles": 1783589545000,
-    "nystrollstuff": 1783589544765
-  },
-  "lastRun": {
-    "jobId": "ee46fe6c-b05d-42e9-bc3b-9f7db2fa0758",
-    "status": "ok",
-    "completedAt": 1783589544765
+    "email": 1703275200,
+    "calendar": 1703260800,
+    "weather": null,
+    "innovateav": 1703275400
   }
 }
