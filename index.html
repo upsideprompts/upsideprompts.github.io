@@ -48,6 +48,17 @@
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 8px 32px rgba(135, 206, 235, 0.3);
+            position: relative;
+        }
+
+        .side-image {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 225px;
+            height: auto;
+            border-radius: 5px;
+            z-index: 100;
         }
 
         h1 {
@@ -275,6 +286,7 @@
 <body>
     <div class="container">
         <header>
+            <img src="ocstacks/screens/deskpic1.png" alt="Desk Pic" class="side-image">
             <h1>🤖 LLM Comparison Dashboard</h1>
             <p class="subtitle">Kimi, Gemini, Claude Opus & Open Source Models • Compare capabilities, pricing, and features</p>
         </header>
