@@ -130,6 +130,17 @@
             transition: max-height 0.5s ease;
         }
 
+        .scrollable-columns {
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: 600px;
+            width: 100%;
+        }
+
+        .scrollable-columns table {
+            min-width: 800px;
+        }
+
         .category.open .category-content {
             max-height: 2000px;
         }
@@ -139,6 +150,19 @@
             -webkit-overflow-scrolling: touch;
             overscroll-behavior-x: contain;
             scrollbar-gutter: stable;
+            width: 100%;
+            min-height: 300px;
+        }
+
+        .scrollable-columns {
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: 600px;
+            width: 100%;
+        }
+
+        .scrollable-columns table {
+            min-width: 800px;
         }
 
         .table-scroll-hint {
@@ -346,18 +370,6 @@
                     { ticker: "DTCR", name: "Global X Data Center & Digital Infrastructure ETF", focus: "Data Center & Digital Infrastructure", return3yr: 32.4, currentPrice: "" },
                     { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "" },
                     { ticker: "FCLD", name: "Fidelity Cloud Computing ETF", focus: "Cloud Computing", return3yr: 28.0, currentPrice: "" }
-=======
-                    { ticker: "SMH", name: "VanEck Semiconductor ETF", focus: "Semiconductors", return3yr: 61.4, currentPrice: "" },
-                    { ticker: "PSI", name: "Invesco Semiconductors ETF", focus: "Semiconductors", return3yr: 60.5, currentPrice: "" },
-                    { ticker: "FTXL", name: "First Trust Nasdaq Semiconductor ETF", focus: "Semiconductors", return3yr: 58.5, currentPrice: "" },
-                    { ticker: "SOXQ", name: "Invesco PHLX Semiconductor ETF", focus: "PHLX Semiconductors", return3yr: 51.8, currentPrice: "" },
-                    { ticker: "SOXX", name: "iShares Semiconductor ETF", focus: "Semiconductors", return3yr: 47.8, currentPrice: "" },
-                    { ticker: "XLK", name: "Technology Select Sector SPDR Fund", focus: "Broad Tech (S&P 500)", return3yr: 33.5, currentPrice: "" },
-                    { ticker: "SKYY", name: "First Trust Cloud Computing ETF", focus: "Cloud Computing", return3yr: 21.0, currentPrice: "" },
-                    { ticker: "DTCR", name: "Global X Data Center & Digital Infrastructure ETF", focus: "Data Center & Digital Infrastructure", return3yr: 32.4, currentPrice: "" },
-                    { ticker: "XSD", name: "SPDR S&P Semiconductor ETF", focus: "Equal-Weight Semiconductors", return3yr: 28.3, currentPrice: "" },
-                    { ticker: "FCLD", name: "Fidelity Cloud Computing ETF", focus: "Cloud Computing", return3yr: 28.0, currentPrice: "" }
->>>>>>> 81dd35a (Make columns left and right scrollable on main index page)
                 ]
             },
             "Agriculture & Commodities": {
