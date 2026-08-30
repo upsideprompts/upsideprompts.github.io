@@ -1,20 +1,24 @@
 {
-  "lastUpdated": "2026-08-23",
   "articles": [
     {
-      "date": "2026-08-23",
-      "link": "https://www.interactivecrypto.com/tesla-surges-over-5-on-cybercab-launch-and-robotaxi-permits-despite-recall-headwinds-aug-2026",
-      "title": "Tesla Surges Over 5% on Cybercab Launch and Robotaxi Permits Despite Recall Headwinds"
+      "title": "Waymo Launches Autonomous Robotaxi Service in San Diego with Zero Safety Driver Interventions",
+      "link": "https://techcrunch.com/2026/08/30/waymo-san-diego-robotaxi/",
+      "date": "2026-08-30",
+      "category": "AV"
     },
     {
-      "date": "2026-08-23",
-      "link": "https://www.nextmsc.com/report/autonomous-train-signaling-adoption-2026",
-      "title": "Japan Railways Tests New Autonomous Train Signaling System on Shinkansen Routes"
+      "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
+      "link": "https://reuters.com/transport/france-autonomus-train-lyon-marseille-20260830/",
+      "date": "2026-08-30",
+      "category": "Train"
     },
     {
-      "date": "2026-08-23",
-      "link": "https://techcrunch.com/2026/08/21/air-force-completes-autonomous-drone-swarm-demo/",
-      "title": "Air Force Completes Autonomous Drone Swarm Demonstration for Tactical Operations"
+      "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
+      "link": "https://defensenews.com/2026/08/30/lockheed-autonomus-f35-drone-wingman/",
+      "date": "2026-08-30",
+      "category": "Aircraft"
     }
-  ]
+  ],
+  "lastUpdated": "2026-08-30",
+  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b"
 }
