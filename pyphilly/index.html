@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philadelphia Rappers Python Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h1 id="quizTitle">Philadelphia Rappers Python Quiz : <span class="atl">PHL</span></h1>
+                <div class="quiz-meta">
+                    <span id="quizMeta">Question 1 of 20</span>
+                    <button id="do20Btn" class="btn btn-small" hidden>Do All 20 Questions</button>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <span class="progress-text" id="progressText">0/20 answered (0%)</span>
+                </div>
+            </div>
+            
+            <div class="quiz-content">
+                <h2 id="questionText">Loading questions...</h2>
+                <div id="choices" class="choices-container">
+                    <!-- Choices will be dynamically inserted here -->
+                </div>
+                <div id="answerFeedback" class="answer-feedback"></div>
+            </div>
+            
+            <div class="quiz-navigation">
+                <button id="prevBtn" class="btn" disabled>Previous</button>
+                <button id="nextBtn" class="btn">Next</button>
+                <button id="submitBtn" class="btn" style="display: none;">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="app.js"></script>
+</body>
+</html>
