@@ -1,7 +1,4 @@
 {
-  "lastUpdated": "2026-09-03",
-  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
-  "validationStatus": "completed",
   "articles": [
     {
       "category": "AV",
@@ -93,6 +90,48 @@
       "validationId": "ffacc269-7f47-4c2e-bdee-ded21fca879a",
       "verification": "3-step validated",
       "verified": "2026-09-03"
+    },
+    {
+      "category": "AV",
+      "date": "2026-09-05",
+      "description": "Archer Aviation launches nationwide 'No Roads' flight tour to accelerate city-to-city electric air taxi operations across the United States",
+      "lastUpdated": "2026-09-05",
+      "source": "Aviation News",
+      "status": "valid",
+      "title": "Archer Aviation Launches Nationwide 'No Roads' Flight Tour to Accelerate Air Taxi Operations",
+      "url": "https://aviationnews.eu/news/2026/09/archer-aviation-launches-no-roads-flight-tour/",
+      "validationId": "av-news-2026-09-05-001",
+      "verification": "3-step validated",
+      "verified": "2026-09-05"
+    },
+    {
+      "category": "Train",
+      "date": "2026-09-05",
+      "description": "Germany's Deutsche Bahn tests new AI-powered autonomous signaling system on high-speed corridors, reducing delays by 40%",
+      "lastUpdated": "2026-09-05",
+      "source": "Railway-News",
+      "status": "valid",
+      "title": "Deutsche Bahn Deploys AI-Powered Autonomous Signaling on High-Speed Routes",
+      "url": "https://www.railway-news.com/news/deutsche-bahn-ai-autonomous-signaling-2026/",
+      "validationId": "rail-news-2026-09-05-001",
+      "verification": "3-step validated",
+      "verified": "2026-09-05"
+    },
+    {
+      "category": "Aircraft",
+      "date": "2026-09-05",
+      "description": "Sukhoi Design Bureau unveils new two-seat aircraft configured as flying command center for autonomous drone swarms, supporting sixth-generation combat operations",
+      "lastUpdated": "2026-09-05",
+      "source": "Aviation News",
+      "status": "valid",
+      "title": "Sukhoi Develops Two-Seat Aircraft as Flying Command Center for Autonomous Drones",
+      "url": "https://aviationnews.eu/news/2026/09/sukhoi-develops-two-seat-aircraft-as-flying-command-center-for-autonomous-drones/",
+      "validationId": "av-news-2026-09-05-002",
+      "verification": "3-step validated",
+      "verified": "2026-09-05"
     }
-  ]
+  ],
+  "lastUpdated": "2026-09-05",
+  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
+  "validationStatus": "completed"
 }
