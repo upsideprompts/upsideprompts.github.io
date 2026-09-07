@@ -1,0 +1,29 @@
+{
+  "articles": [
+    {
+      "category": "AV",
+      "date": "2026-08-31",
+      "link": "https://techcrunch.com/2026/08/31/waymo-expands-autonomous-robotaxi-service/",
+      "title": "Waymo Expands Autonomous Robotaxi Service to Additional City Neighborhoods",
+      "verified": 0
+    },
+    {
+      "category": "Train",
+      "date": "2026-08-31",
+      "link": "https://reuters.com/transport/high-speed-rail-autonomous-ai-lyon-marseille-20260831/",
+      "title": "AI-Controlled High-Speed Rail Network Expands Between Lyon and Marseille",
+      "verified": 0
+    },
+    {
+      "category": "Aircraft",
+      "date": "2026-08-31",
+      "link": "https://defensenews.com/2026/08/31/lockheed-autonomus-f35-drone-wingman-expansion/",
+      "title": "Lockheed Martin Expands Autonomous F-35 Drone Wingman Program",
+      "verified": 0
+    }
+  ],
+  "lastUpdated": "2026-09-04",
+  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
+  "validationStatus": "failed",
+  "validationFailure": "All URLs returned 404 errors - articles not added"
+}
