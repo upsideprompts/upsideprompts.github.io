@@ -4,199 +4,230 @@ import json
 
 ALL_QUESTIONS = [
     {
-        "question": "Which Philadelphia rapper first gained fame as a radio host on 92.3 I'M Radio before becoming a solo artist with the hit 'B.R. Town'?",
-        "correct": "Yella Diaffa.",
+        "index": 0,
+        "question": "Schoolly D's 'P.S.K. What Does It Mean?' helped pioneer gangsta rap from Philly. In Python, which function definition correctly takes a song title and a year as parameters?",
+        "correct": "def release(title, year):",
         "wrong": [
-            "Debbie Deb.",
-            "CocoRosie.",
-            "Gigi D'azzo."
+            "def release(title year):",
+            "function release(title, year):",
+            "def release = (title, year):"
         ],
-        "explanation": "Yella Diaffa was a Philadelphia radio personality on 92.3 I'M Radio before launching his solo rap career with 'B.R. Town.'"
+        "explanation": "Like naming a track and its year on a Schoolly D release, Python function parameters are listed in parentheses and separated by commas: def release(title, year):"
     },
     {
-        "question": "Which Philadelphia-born rapper formed the duo 'Pitbull' with his cousin after performing at local high school talent shows?",
-        "correct": "Armand 'Madd Matty' Tankard.",
+        "index": 1,
+        "question": "DJ Jazzy Jeff & The Fresh Prince won a Grammy for 'Parents Just Don't Understand.' In Python, which call uses a default parameter so the city is Philly unless you override it?",
+        "correct": "def tour(city='Philly'):",
         "wrong": [
-            "Armando Christian 'Pitbull' Gutiérrez.",
-            "Marcus 'Madd Matty' Thompson.",
-            "Adrian 'Pitbull' Martinez."
+            "def tour(city=='Philly'):",
+            "def tour(default city 'Philly'):",
+            "def tour[city='Philly']:"
         ],
-        "explanation": "Before becoming the international star Pitbull, he was part of a Philadelphia duo called 'Pitbull' with cousin Madd Matty, formed during local high school talent shows."
+        "explanation": "Default parameters work like a hometown show on the calendar—Philly is assumed unless you pass another city. Syntax is name='value' in the def line."
     },
     {
-        "question": "Which Philadelphia rapper was the first artist to sell out the first WrestleMania event at the Spectrum arena in 1987?",
-        "correct": "Future.",
+        "index": 2,
+        "question": "The Roots' album 'Things Fall Apart' is a Philly classic. In Python, which structure best stores album metadata like title, year, and lead MC as named fields?",
+        "correct": "album = {'title': 'Things Fall Apart', 'year': 1999, 'mc': 'Black Thought'}",
         "wrong": [
-            "Beanie Sigel.",
-            "Lil Uzi Vert.",
-            "Busta Rhymes."
+            "album = ['Things Fall Apart', 1999, 'Black Thought']",
+            "album = ('Things Fall Apart'; 1999; 'Black Thought')",
+            "album = 'Things Fall Apart' + 1999"
         ],
-        "explanation": "Future (originally Nayvadius DeMun Wilburn) was the first Philadelphia rapper to sell out the WrestleMania event at the Spectrum arena in 1987."
+        "explanation": "A dictionary maps keys to values—perfect for labeled album facts. A plain list loses the field names that make the data self-describing."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough mixtape 'Wap High Generator' was recorded in his basement apartment on North 20th Street?",
-        "correct": "Meek Mill.",
+        "index": 3,
+        "question": "Questlove can hold down drums while also producing and bandleading. In Python, which signature accepts any number of extra positional guest features?",
+        "correct": "def setlist(headliner, *guests):",
         "wrong": [
-            "Fabolous.",
-            "Jim Jones.",
-            "Manny Wellz."
+            "def setlist(headliner, guests*):",
+            "def setlist(headliner, **guests):",
+            "def setlist(headliner, &guests):"
         ],
-        "explanation": "Meek Mill recorded his breakthrough mixtape 'Wap High Generator' in his basement apartment on North 20th Street in Philadelphia."
+        "explanation": "*guests gathers extra positional arguments into a tuple—like an open mic for as many features as show up after the headliner."
     },
     {
-        "question": "Which Philadelphia rapper's debut album 'Daddy Fat Pants' featured the hit single 'Bout Time'?",
-        "correct": "Lil' Kim.",
+        "index": 4,
+        "question": "Beanie Sigel's 'The Truth' put State Property on the map. Which call correctly uses keyword arguments so order does not matter?",
+        "correct": "drop(title='The Truth', year=2000)",
         "wrong": [
-            "Beanie Sigel.",
-            "Tupac.",
-            "Nas."
+            "drop(title='The Truth'; year=2000)",
+            "drop[title='The Truth', year=2000]",
+            "drop(title: 'The Truth', year: 2000)"
         ],
-        "explanation": "Lil' Kim's debut album 'Daddy Fat Pants' featured the hit single 'Bout Time' and established her as one of the first female emcees from Philadelphia to achieve mainstream success."
+        "explanation": "Keyword arguments name each parameter at the call site: title='The Truth', year=2000. That mirrors labeling tracks clearly instead of relying on position alone."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough track 'Philly Free' was recorded while he was still in high school at William Penn High School for Girls?",
-        "correct": "Smif-N-Wessun.",
+        "index": 5,
+        "question": "Freeway rode with Roc-A-Fella and State Property. Write a function that takes a list of Philly crew members and returns only names longer than 4 letters.",
+        "correct": "def filter_names(members):\\n    return [m for m in members if len(m) > 4]",
         "wrong": [
-            "The Roots.",
-            "Jadakiss.",
-            "Cam'ron."
+            "def filter_names(members):\\n    return [m for m in members if len(m) < 4]",
+            "def filter_names(members):\\n    return members.filter(lambda m: len(m) > 4)",
+            "def filter_names(members):\\n    return (m for m if len(m) > 4)"
         ],
-        "explanation": "Smif-N-Wessun recorded their breakthrough track 'Philly Free' while attending William Penn High School for Girls in Philadelphia."
+        "explanation": "A list comprehension filters a roster the way A&R filters a crew tape. The correct cut keeps names where len(m) > 4."
     },
     {
-        "question": "Which Philadelphia-based rapper's debut single 'Ike Dirty' was recorded in a basement studio in the city's Wynnefield neighborhood?",
-        "correct": "Lil' Keed.",
+        "index": 6,
+        "question": "Eve broke through with Ruff Ryders and hits like 'Let Me Blow Ya Mind.' In Python, what does a function send back to the caller after it finishes?",
+        "correct": "Its return value.",
         "wrong": [
-            "Navajo.",
-            "Chill Dan.",
-            "Shorty.",
-            "Wiz Khalifa."
+            "Only printed text.",
+            "The function name as a string.",
+            "Nothing unless you use global."
         ],
-        "explanation": "Lil' Keed recorded his debut single 'Ike Dirty' in a basement studio in the Wynnefield neighborhood of Philadelphia."
+        "explanation": "return hands a result back to the caller—like Eve delivering a finished verse to the track. print shows output; it is not the same as returning data."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough mixtape 'The Dirty Resume' was recorded in his grandmother's basement on Oxford Street?",
-        "correct": "Meek Mill.",
+        "index": 7,
+        "question": "Meek Mill's 'Dreams and Nightmares' intro is legendary in Philly sports arenas. Which line builds that title with an f-string from variables dreams and nightmares?",
+        "correct": "title = f'{dreams} and {nightmares}'",
         "wrong": [
-            "Fabolous.",
-            "Jim Jones.",
-            "Cam'ron."
+            "title = f(dreams + ' and ' + nightmares)",
+            "title = '{dreams} and {nightmares}'.format",
+            "title = f[dreams] and f[nightmares]"
         ],
-        "explanation": "Meek Mill recorded his breakthrough mixtape 'The Dirty Resume' in his grandmother's basement on Oxford Street in Philadelphia."
+        "explanation": "f-strings embed expressions in braces inside a quoted string: f'{dreams} and {nightmares}'. That is clean string formatting syntax in modern Python."
     },
     {
-        "question": "Which Philadelphia rapper's debut album 'Bitch I'ma Nigga' was recorded in a neighborhood barbershop in South Philadelphia?",
-        "correct": "Lil' Kim.",
+        "index": 8,
+        "question": "Lil Uzi Vert came up out of Philly with projects like 'Luv Is Rage.' Which statement correctly appends a new track name to a mutable playlist list?",
+        "correct": "playlist.append('XO Tour Llif3')",
         "wrong": [
-            "Tupac.",
-            "Nas."
+            "playlist.add('XO Tour Llif3')",
+            "playlist.push('XO Tour Llif3')",
+            "append(playlist, 'XO Tour Llif3')"
         ],
-        "explanation": "Lil' Kim recorded her debut album 'Bitch Ima Nigga' in a neighborhood barbershop in South Philadelphia."
+        "explanation": "Lists are mutable; append() adds an item in place. add() is for sets, and push() is not Python list syntax."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough track 'Blow Your Highlighter' was recorded in a basement studio in the city's Frankford neighborhood?",
-        "correct": "Lil' Kim.",
+        "index": 9,
+        "question": "Cassidy made his name in battle rap, where punchlines land or they do not. Which expression correctly checks whether score is at least 10 using a comparison?",
+        "correct": "if score >= 10:",
         "wrong": [
-            "Beanie Sigel.",
-            "Jay-Z."
+            "if score => 10:",
+            "if score >= 10 then:",
+            "if (score >= 10)"
         ],
-        "explanation": "Lil' Kim recorded her breakthrough track 'Blow Your Highlighter' in a basement studio in the Frankford neighborhood of Philadelphia."
+        "explanation": "Python comparison syntax uses >= and ends the if header with a colon. => is invalid, and Python does not use then."
     },
     {
-        "question": "Which Philadelphia rapper's debut single 'Bout Time' was recorded at Studio 57 in the city's West Oak Lane neighborhood?",
-        "correct": "Lil' Kim.",
+        "index": 10,
+        "question": "Bahamadia's 'Kollage' is a key Philly underground album. Which import correctly brings in only the path helper from pathlib?",
+        "correct": "from pathlib import Path",
         "wrong": [
-            "Beanie Sigel.",
-            "Tupac."
+            "import Path from pathlib",
+            "include pathlib.Path",
+            "using pathlib import Path"
         ],
-        "explanation": "Lil' Kim recorded her debut single 'Bout Time' at Studio 57 in the West Oak Lane neighborhood of Philadelphia."
+        "explanation": "from module import name is the standard way to pull a specific symbol—like sampling one instrument from a larger crate."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough mixtape 'The Come Up' was recorded in his mother's basement on North 13th Street?",
-        "correct": "Meek Mill.",
+        "index": 11,
+        "question": "Steady B was part of Philly's early hip-hop wave. Which loop correctly visits each bar in a list of lyrics named bars?",
+        "correct": "for bar in bars:",
         "wrong": [
-            "Jim Jones.",
-            "Fabolous."
+            "foreach bar in bars:",
+            "for bar in bars",
+            "loop bar over bars:"
         ],
-        "explanation": "Meek Mill recorded his breakthrough mixtape 'The Come Up' in his mother's basement on North 13th Street in Philadelphia."
+        "explanation": "for item in sequence: is Python's basic iteration syntax. The colon is required; foreach is not Python."
     },
     {
-        "question": "Which Philadelphia rapper's debut album 'You Know How We Do It' was recorded in a neighborhood recording studio on North Broad Street?",
-        "correct": "Mick Boogie.",
+        "index": 12,
+        "question": "Kurupt was born in Philadelphia before making waves on the West Coast. Which line reassigns a variable to a new stage name the way artists rebrand?",
+        "correct": "artist = 'Kurupt'",
         "wrong": [
-            "D.J. Quik.",
-            "Mickey Factz."
+            "artist := 'Kurupt'",
+            "let artist = 'Kurupt'",
+            "artist -> 'Kurupt'"
         ],
-        "explanation": "Mick Boogie recorded his debut album 'You Know How We Do It' in a neighborhood recording studio on North Broad Street in Philadelphia."
+        "explanation": "Plain assignment with = updates a name binding in Python. := is the walrus operator for assignment expressions, and let is not Python syntax."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough track 'Philly Philly' was recorded in his basement apartment on East Haines Street?",
-        "correct": "Lil' Kim.",
+        "index": 13,
+        "question": "Tierra Whack's 'Whack World' has 15 one-minute songs. Which slice gets the first 15 tracks from a list called tracks?",
+        "correct": "tracks[:15]",
         "wrong": [
-            "Beanie Sigel.",
-            "Tupac."
+            "tracks[15:]",
+            "tracks(15)",
+            "tracks[1:15]"
         ],
-        "explanation": "Lil' Kim recorded her breakthrough track 'Philly Philly' in her basement apartment on East Haines Street in Philadelphia."
+        "explanation": "tracks[:15] is slice syntax for the first 15 items (indexes 0 through 14). tracks[15:] is everything after index 15."
     },
     {
-        "question": "Which Philadelphia rapper's debut single 'Bout Time' was recorded at Krosswalk Studios in the city's Overbrook neighborhood?",
-        "correct": "Lil' Kim.",
+        "index": 14,
+        "question": "PnB Rock's 'Selfish' was a Philly-bred hit. Which condition requires BOTH radio=True and streams over 1_000_000?",
+        "correct": "if radio and streams > 1_000_000:",
         "wrong": [
-            "Beanie Sigel.",
-            "Tupac."
+            "if radio or streams > 1_000_000:",
+            "if radio && streams > 1_000_000:",
+            "if radio and then streams > 1_000_000:"
         ],
-        "explanation": "Lil' Kim recorded her debut single 'Bout Time' at Krosswalk Studios in the Overbrook neighborhood of Philadelphia."
+        "explanation": "and combines boolean conditions in Python. or would pass if either were true; && is not Python syntax."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough mixtape 'I'm Da Boss' was recorded in a basement studio on North 16th Street?",
-        "correct": "Meek Mill.",
+        "index": 15,
+        "question": "Lisa 'Left Eye' Lopes was born in Philadelphia. In Python, which definition correctly creates a method that takes self plus a guest parameter?",
+        "correct": "def feature(self, guest):",
         "wrong": [
-            "Fabolous.",
-            "Jim Jones."
+            "def feature(guest, self):",
+            "def feature(this, guest):",
+            "method feature(self, guest):"
         ],
-        "explanation": "Meek Mill recorded his breakthrough mixtape 'I'm Da Boss' in a basement studio on North 16th Street in Philadelphia."
+        "explanation": "Instance methods take self as the first parameter, then any extra parameters like guest. Putting self second breaks normal method binding."
     },
     {
-        "question": "Which Philadelphia rapper's debut album 'Philly's Most Wanted' was recorded at Studio 57 in the city's West Oak Lane neighborhood?",
-        "correct": "Beanie Sigel.",
+        "index": 16,
+        "question": "State Property's roster (Beanie, Freeway, Peedi, and more) worked as a crew. Which structure best stores an ordered, changeable list of member names?",
+        "correct": "crew = ['Beanie Sigel', 'Freeway', 'Peedi Crakk']",
         "wrong": [
-            "Lil' Kim.",
-            "Mickey Factz."
+            "crew = ('Beanie Sigel', 'Freeway', 'Peedi Crakk')",
+            "crew = {'Beanie Sigel', 'Freeway', 'Peedi Crakk'}",
+            "crew = 'Beanie Sigel', 'Freeway', 'Peedi Crakk'"
         ],
-        "explanation": "Beanie Sigel recorded his debut album 'Philly's Most Wanted' at Studio 57 in the West Oak Lane neighborhood of Philadelphia."
+        "explanation": "A list keeps order and can grow or shrink as the roster changes. Tuples are fixed; sets are unordered."
     },
     {
-        "question": "Which Philadelphia rapper's breakthrough track 'Philly Philly' was recorded at Sigma Sound Studios in the city's Callowhill neighborhood?",
-        "correct": "Lil' Kim.",
+        "index": 17,
+        "question": "Black Thought is known for dense bars. Which loop gives both the bar number and the lyric text while iterating verses?",
+        "correct": "for i, line in enumerate(verses):",
         "wrong": [
-            "Beanie Sigel.",
-            "Mickey Factz."
+            "for i, line in verses.enumerate():",
+            "for enumerate(i, line) in verses:",
+            "for i and line in verses:"
         ],
-        "explanation": "Lil' Kim recorded her breakthrough track 'Philly Philly' at Sigma Sound Studios in the Callowhill neighborhood of Philadelphia."
+        "explanation": "enumerate(verses) yields (index, item) pairs—like numbering bars while you spit each line."
     },
     {
-        "question": "Which Philadelphia rapper's debut single 'Bout Time' was recorded at Sound on Sound Recording Studios in the city's Mount Airy neighborhood?",
-        "correct": "Lil' Kim.",
+        "index": 18,
+        "question": "Meek Mill's Dreamchasers mixtape series kept dropping volumes. Which signature accepts arbitrary named options like volume=2 and host='Meek'?",
+        "correct": "def mixtape(title, **options):",
         "wrong": [
-            "Beanie Sigel.",
-            "Mickey Factz."
+            "def mixtape(title, *options):",
+            "def mixtape(title, options**):",
+            "def mixtape(title, &options):"
         ],
-        "explanation": "Lil' Kim recorded her debut single 'Bout Time' at Sound on Sound Recording Studios in the Mount Airy neighborhood of Philadelphia."
+        "explanation": "**options collects keyword arguments into a dictionary—ideal for optional mixtape settings passed by name."
     },
     {
-        "question": "Which Philadelphia-born rapper collaborated with Meek Mill on the track 'Young & Gettin' Money'?",
-        "correct": "K. Michelle.",
+        "index": 19,
+        "question": "The Roots became the house band for The Tonight Show, locking live beats to late-night cues. Which call pairs each beat with a cue using zip?",
+        "correct": "for beat, cue in zip(beats, cues):",
         "wrong": [
-            "Cardi B.",
-            "Nicki Minaj.",
-            "Cardi B."
+            "for beat, cue in beats.zip(cues):",
+            "for beat + cue in zip(beats, cues):",
+            "for (beat, cue) zip beats, cues:"
         ],
-        "explanation": "K. Michelle collaborated with Meek Mill on the track 'Young & Gettin' Money,' showcasing Philadelphia's rising musical talent beyond just male emcees."
-    }
+        "explanation": "zip(beats, cues) walks two sequences together—like locking drums to show cues bar by bar."
+    },
 ]
 
+
 if __name__ == "__main__":
-    # Save to JSON file for web use
-    with open('questions.json', 'w') as f:
-        json.dump(ALL_QUESTIONS, f, indent=2)
-    print("Questions saved to questions.json")
+    with open("questions.json", "w", encoding="utf-8") as f:
+        json.dump({"ALL_QUESTIONS": ALL_QUESTIONS}, f, indent=2)
+        f.write("\n")
+    print(f"Saved {len(ALL_QUESTIONS)} questions to questions.json")
