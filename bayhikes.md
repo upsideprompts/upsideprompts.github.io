@@ -1,7 +1,7 @@
 # Bay Area Hikes Update
 
 ## Current Date and Time
-Monday, September 7, 2026 - 3:00 PM UTC
+Tuesday, September 8, 2026 - 3:00 PM UTC
 
 ## Upcoming Hikes from Meetup.com (San Francisco Bay Area)
 ### September 2026
@@ -77,7 +77,7 @@ Monday, September 7, 2026 - 3:00 PM UTC
 - **Time:** 9:30 AM PDT
 - **Group:** Bay Area - Hike On! (Rating: 4.9 ⭐, 40 attendees)
 - **Details:** 5-mile easy hike. Leashed dogs OK. *Waitlist available.*
-- **Status:** ⚠️ Event may have already occurred (Sep 6)
+- **Status:** ✅ Event occurred (Sep 6)
 
 #### 🏜️ The Grand Canyon's Escalante Route
 - **Date:** Wednesday, September 16, 2026
@@ -175,4 +175,6 @@ Monday, September 7, 2026 - 3:00 PM UTC
   - **Venue:** Octavius Octopus Statue, San Francisco
 
 ## Source
-- Meetup.com San Francisco Bay Area hiking
+- Meetup.com San Francisco Bay Area hiking (updated September 8, 2026)
+- allevents.in San Francisco Hiking
+- Last updated: September 8, 2026 3:00 PM UTC

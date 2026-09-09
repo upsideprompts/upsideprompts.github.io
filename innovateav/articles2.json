@@ -1,27 +1,5 @@
-{
-  "articles": [],
-  "lastUpdated": "2026-09-07",
-  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
-  "validationStatus": "completed",
-  "lastCleanup": "2026-09-07",
-  "articles": [
-    {
-      "title": "Waymo Launches Sixth-Generation Robotaxi System Targeting 20 New Cities in 2026",
-      "link": "https://example.com/waymo-sixth-gen",
-      "date": "2026-09-07",
-      "category": "AV"
-    },
-    {
-      "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
-      "link": "https://example.com/france-hsr-autonomous",
-      "date": "2026-09-07",
-      "category": "Train"
-    },
-    {
-      "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
-      "link": "https://example.com/lockheed-f35-wingman",
-      "date": "2026-09-07",
-      "category": "Aircraft"
-    }
-  ]
-}
+{"articles": [
+  {"category": "AV", "date": "2026-09-09", "link": "https://autotech.news/press-room/hyundai-autonomous-driving/", "title": "Hyundai Launches Advanced Autonomous Driving System for Gasoline and Hybrid Vehicles"},
+  {"category": "Train", "date": "2026-09-09", "link": "https://www.thebusinessresearchcompany.com/report/autonomous-train-technology-global-market-report", "title": "Autonomous Train Technology Market Report 2026 Shows 4.8% Growth to $4.78B"},
+  {"category": "Aircraft", "date": "2026-09-09", "link": "https://www.ainonline.com/aviation-news/2026/september/airbus-autonomous-uav-missions", "title": "Airbus Demonstrates Advanced Autonomous UAV Missions at ILA 2026 Berlin Air Show"}
+], "lastCleanup": "2026-09-09", "lastUpdated": "2026-09-09", "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b", "validationStatus": "completed"}
