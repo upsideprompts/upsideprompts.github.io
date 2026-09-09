@@ -1,0 +1,224 @@
+{
+  "ALL_QUESTIONS": [
+    {
+      "index": 0,
+      "question": "Nelly's 'Country Grammar' put St. Louis on the mainstream map. In Python, which function definition correctly takes a city and a debut_year as parameters?",
+      "correct": "def breakout(city, debut_year):",
+      "wrong": [
+        "def breakout(city debut_year):",
+        "function breakout(city, debut_year):",
+        "def breakout = (city, debut_year):"
+      ],
+      "explanation": "Like crediting Nelly's city and breakthrough year, Python parameters are comma-separated in parentheses: def breakout(city, debut_year):"
+    },
+    {
+      "index": 1,
+      "question": "The St. Lunatics (Nelly, Ali, Murphy Lee, Kyjuan, City Spud) rolled as a crew. Which signature gives hometown a default of 'St. Louis' unless you override it?",
+      "correct": "def crew_show(hometown='St. Louis'):",
+      "wrong": [
+        "def crew_show(hometown=='St. Louis'):",
+        "def crew_show(default hometown 'St. Louis'):",
+        "def crew_show[hometown='St. Louis']:"
+      ],
+      "explanation": "Default parameters use name='value' in the def line\u2014St. Louis is assumed until you pass another hometown."
+    },
+    {
+      "index": 2,
+      "question": "Chingy's 'Right Thurr' was a St. Louis club smash. Which structure best stores hit metadata like title, year, and city as named fields?",
+      "correct": "hit = {'title': 'Right Thurr', 'year': 2003, 'city': 'St. Louis'}",
+      "wrong": [
+        "hit = ['Right Thurr', 2003, 'St. Louis']",
+        "hit = ('Right Thurr'; 2003; 'St. Louis')",
+        "hit = 'Right Thurr' + 2003"
+      ],
+      "explanation": "A dictionary maps keys to values\u2014perfect for labeled song facts. A plain list loses the field names."
+    },
+    {
+      "index": 3,
+      "question": "Murphy Lee scored with 'Wat Da Hook Gon Be' featuring Nelly. Which signature accepts any number of extra positional guest features after the lead?",
+      "correct": "def hook(lead, *guests):",
+      "wrong": [
+        "def hook(lead, guests*):",
+        "def hook(lead, **guests):",
+        "def hook(lead, &guests):"
+      ],
+      "explanation": "*guests gathers extra positional arguments into a tuple\u2014like stacking features after the lead verse."
+    },
+    {
+      "index": 4,
+      "question": "J-Kwon's 'Tipsy' became a Midwestern party anthem. Which call correctly uses keyword arguments so order does not matter?",
+      "correct": "drop(title='Tipsy', year=2004)",
+      "wrong": [
+        "drop(title='Tipsy'; year=2004)",
+        "drop[title='Tipsy', year=2004]",
+        "drop(title: 'Tipsy', year: 2004)"
+      ],
+      "explanation": "Keyword arguments name each parameter at the call site: title='Tipsy', year=2004."
+    },
+    {
+      "index": 5,
+      "question": "Huey's 'Pop, Lock & Drop It' came out of St. Louis dance culture. Write a function that takes a list of move names and returns only names longer than 4 letters.",
+      "correct": "def filter_moves(moves):\\n    return [m for m in moves if len(m) > 4]",
+      "wrong": [
+        "def filter_moves(moves):\\n    return [m for m in moves if len(m) < 4]",
+        "def filter_moves(moves):\\n    return moves.filter(lambda m: len(m) > 4)",
+        "def filter_moves(moves):\\n    return (m for m if len(m) > 4)"
+      ],
+      "explanation": "A list comprehension filters a dance roster cleanly. The correct cut keeps names where len(m) > 4."
+    },
+    {
+      "index": 6,
+      "question": "Jibbs broke through with 'Chain Hang Low.' In Python, what does a function send back to the caller after it finishes?",
+      "correct": "Its return value.",
+      "wrong": [
+        "Only printed text.",
+        "The function name as a string.",
+        "Nothing unless you use global."
+      ],
+      "explanation": "return hands a result back to the caller. print shows output; it is not the same as returning data."
+    },
+    {
+      "index": 7,
+      "question": "Nelly's 'Hot in Herre' owned early-2000s radio. Which line builds a title with an f-string from variables hot and herre?",
+      "correct": "title = f'{hot} in {herre}'",
+      "wrong": [
+        "title = f(hot + ' in ' + herre)",
+        "title = '{hot} in {herre}'.format",
+        "title = f[hot] in f[herre]"
+      ],
+      "explanation": "f-strings embed expressions in braces: f'{hot} in {herre}'."
+    },
+    {
+      "index": 8,
+      "question": "Metro Boomin, raised in St. Louis, became a chart-dominating producer. Which statement correctly appends a new beat title to a mutable list called beats?",
+      "correct": "beats.append('Mask Off')",
+      "wrong": [
+        "beats.add('Mask Off')",
+        "beats.push('Mask Off')",
+        "append(beats, 'Mask Off')"
+      ],
+      "explanation": "Lists are mutable; append() adds an item in place. add() is for sets, and push() is not Python list syntax."
+    },
+    {
+      "index": 9,
+      "question": "Smino represents St. Louis with melodic, off-kilter flows. Which expression correctly checks whether bars is at least 16?",
+      "correct": "if bars >= 16:",
+      "wrong": [
+        "if bars => 16:",
+        "if bars >= 16 then:",
+        "if (bars >= 16)"
+      ],
+      "explanation": "Python comparison syntax uses >= and ends the if header with a colon. => is invalid, and Python does not use then."
+    },
+    {
+      "index": 10,
+      "question": "Sexyy Red blew up worldwide while repping St. Louis. Which import correctly brings in only Path from pathlib?",
+      "correct": "from pathlib import Path",
+      "wrong": [
+        "import Path from pathlib",
+        "include pathlib.Path",
+        "using pathlib import Path"
+      ],
+      "explanation": "from module import name pulls a specific symbol\u2014standard Python import syntax."
+    },
+    {
+      "index": 11,
+      "question": "Ali of the St. Lunatics held down verses alongside Nelly. Which loop correctly visits each verse in a list named verses?",
+      "correct": "for verse in verses:",
+      "wrong": [
+        "foreach verse in verses:",
+        "for verse in verses",
+        "loop verse over verses:"
+      ],
+      "explanation": "for item in sequence: is Python's basic iteration syntax. The colon is required; foreach is not Python."
+    },
+    {
+      "index": 12,
+      "question": "City Spud was part of the St. Lunatics before legal trouble paused his run. Which line correctly reassigns a variable to a new stage name?",
+      "correct": "artist = 'City Spud'",
+      "wrong": [
+        "artist := 'City Spud'",
+        "let artist = 'City Spud'",
+        "artist -> 'City Spud'"
+      ],
+      "explanation": "Plain assignment with = updates a name binding. := is the walrus operator; let is not Python syntax."
+    },
+    {
+      "index": 13,
+      "question": "Nelly's 'Sweat / Suit' era dropped two albums at once. Which slice gets the first 10 tracks from a list called tracks?",
+      "correct": "tracks[:10]",
+      "wrong": [
+        "tracks[10:]",
+        "tracks(10)",
+        "tracks[1:10]"
+      ],
+      "explanation": "tracks[:10] is slice syntax for the first 10 items (indexes 0 through 9)."
+    },
+    {
+      "index": 14,
+      "question": "Ebony Eyez was an early-2000s St. Louis voice on the national scene. Which condition requires BOTH radio=True and streams over 1_000_000?",
+      "correct": "if radio and streams > 1_000_000:",
+      "wrong": [
+        "if radio or streams > 1_000_000:",
+        "if radio && streams > 1_000_000:",
+        "if radio and then streams > 1_000_000:"
+      ],
+      "explanation": "and combines boolean conditions in Python. or would pass if either were true; && is not Python syntax."
+    },
+    {
+      "index": 15,
+      "question": "Toya, born in St. Louis, scored with 'I Do!!' In Python, which definition correctly creates a method that takes self plus a guest parameter?",
+      "correct": "def feature(self, guest):",
+      "wrong": [
+        "def feature(guest, self):",
+        "def feature(this, guest):",
+        "method feature(self, guest):"
+      ],
+      "explanation": "Instance methods take self as the first parameter, then any extra parameters like guest."
+    },
+    {
+      "index": 16,
+      "question": "The St. Lunatics roster worked as a unit. Which structure best stores an ordered, changeable list of member names?",
+      "correct": "crew = ['Nelly', 'Ali', 'Murphy Lee', 'Kyjuan', 'City Spud']",
+      "wrong": [
+        "crew = ('Nelly', 'Ali', 'Murphy Lee', 'Kyjuan', 'City Spud')",
+        "crew = {'Nelly', 'Ali', 'Murphy Lee', 'Kyjuan', 'City Spud'}",
+        "crew = 'Nelly', 'Ali', 'Murphy Lee'"
+      ],
+      "explanation": "A list keeps order and can grow or shrink as the roster changes. Tuples are fixed; sets are unordered."
+    },
+    {
+      "index": 17,
+      "question": "Tef Poe has been a St. Louis lyricist and activist voice. Which loop gives both the bar number and the lyric text while iterating verses?",
+      "correct": "for i, line in enumerate(verses):",
+      "wrong": [
+        "for i, line in verses.enumerate():",
+        "for enumerate(i, line) in verses:",
+        "for i and line in verses:"
+      ],
+      "explanation": "enumerate(verses) yields (index, item) pairs\u2014like numbering bars while you spit each line."
+    },
+    {
+      "index": 18,
+      "question": "Nelly kept dropping sequels and remixes after Country Grammar. Which signature accepts arbitrary named options like volume=2 and host='Nelly'?",
+      "correct": "def mixtape(title, **options):",
+      "wrong": [
+        "def mixtape(title, *options):",
+        "def mixtape(title, options**):",
+        "def mixtape(title, &options):"
+      ],
+      "explanation": "**options collects keyword arguments into a dictionary\u2014ideal for optional settings passed by name."
+    },
+    {
+      "index": 19,
+      "question": "Metro Boomin locks drums to melodies for hit records. Which call pairs each beat with a melody line using zip?",
+      "correct": "for beat, melody in zip(beats, melodies):",
+      "wrong": [
+        "for beat, melody in beats.zip(melodies):",
+        "for beat + melody in zip(beats, melodies):",
+        "for (beat, melody) zip beats, melodies:"
+      ],
+      "explanation": "zip(beats, melodies) walks two sequences together\u2014like locking a drum pattern to a melody bar by bar."
+    }
+  ]
+}
