@@ -8,7 +8,7 @@ from pathlib import Path
 import yfinance as yf
 
 TICKERS = [
-    "SMH", "PSI", "FTXL", "SOXQ", "SOXX", "XLK", "VGT", "DTCR", "XSD", "FCLD",
+    "SMH", "PSI", "FTXL", "SOXQ", "SOXX", "XLK", "SKYY", "VGT", "DTCR", "XSD", "FCLD",
     "PDBA", "DBA", "VEGI", "FARMX", "COW", "MOO", "SOYB", "TILL", "CORN", "WEAT",
 ]
 
