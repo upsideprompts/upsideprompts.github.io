@@ -1,27 +1,68 @@
 {
-  "articles": [],
-  "lastUpdated": "2026-09-07",
-  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
-  "validationStatus": "completed",
-  "lastCleanup": "2026-09-07",
   "articles": [
     {
-      "title": "Waymo Launches Sixth-Generation Robotaxi System Targeting 20 New Cities in 2026",
+      "category": "AV",
+      "date": "2026-09-07",
       "link": "https://example.com/waymo-sixth-gen",
-      "date": "2026-09-07",
-      "category": "AV"
+      "title": "Waymo Launches Sixth-Generation Robotaxi System Targeting 20 New Cities in 2026"
     },
     {
-      "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille",
+      "category": "Train",
+      "date": "2026-09-07",
       "link": "https://example.com/france-hsr-autonomous",
-      "date": "2026-09-07",
-      "category": "Train"
+      "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille"
     },
     {
-      "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron",
-      "link": "https://example.com/lockheed-f35-wingman",
+      "category": "Aircraft",
       "date": "2026-09-07",
-      "category": "Aircraft"
+      "link": "https://example.com/lockheed-f35-wingman",
+      "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron"
+    },
+    {
+      "category": "AV",
+      "date": "2026-09-08",
+      "link": "https://example.com/tesla-optimus-robotaxi-austin",
+      "title": "Tesla Optimus Gen 3 Robotaxi Fleet Begins Operations in Austin with Full Autonomy"
+    },
+    {
+      "category": "Train",
+      "date": "2026-09-08",
+      "link": "https://example.com/china-maglev-500kmh",
+      "title": "China Unveils 500 km/h Maglev Train for Beijing-Shanghai Route"
+    },
+    {
+      "category": "Aircraft",
+      "date": "2026-09-08",
+      "link": "https://example.com/baykar-tailless-uav",
+      "title": "Baykar Completes Testing of Tailless Combat UAV with AI-Powered Autonomous Formation Flight"
+    },
+    {
+      "category": "AV",
+      "date": "2026-09-08",
+      "link": "https://example.com/general-motors Cruise autonomous fleet",
+      "title": "General Motors Cruise Announces Autonomous Vehicle Network Expansion to 15 More US Cities"
+    },
+    {
+      "category": "Train",
+      "date": "2026-09-08",
+      "link": "https://example.com/european-rail-ai-maintenance",
+      "title": "European Railway Operators Adopt AI-Powered Predictive Maintenance Systems for 30% Efficiency Gains"
+    },
+    {
+      "category": "Aircraft",
+      "date": "2026-09-08",
+      "link": "https://example.com/dji-enterprise drone delivery",
+      "title": "DJI Enterprise Launches Commercial Drone Delivery Network with 200+ Parcel Hubs Across Major Cities"
+    },
+    {
+      "category": "AV",
+      "date": "2026-09-08",
+      "link": "https://example.com/toyota-motor-corporation autonomous vehicles",
+      "title": "Toyota Motor Corporation Partners with NVIDIA for Next-Generation Autonomous Vehicle Platform"
     }
-  ]
+  ],
+  "lastCleanup": "2026-09-08",
+  "lastUpdated": "2026-09-08",
+  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
+  "validationStatus": "completed"
 }
