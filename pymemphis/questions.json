@@ -13,7 +13,7 @@
     },
     {
       "index": 1,
-      "question": "Juicy J, born in Memphis, went from Three 6 Mafia to solo hits and producing. Which signature gives hometown a default of 'Memphis' unless you override it?",
+      "question": "Juicy J, in Memphis, went from Three 6 Mafia to solo hits and producing. Which signature gives hometown a default of 'Memphis' unless you override it?",
       "correct": "def hometown_show(city='Memphis'):",
       "wrong": [
         "def hometown_show(city=='Memphis'):",
@@ -46,7 +46,7 @@
     },
     {
       "index": 4,
-      "question": "Yo Gotti, born in Memphis, built CMG and hits like 'Act Right'. Which call correctly uses keyword arguments so order does not matter?",
+      "question": "Yo Gotti, in Memphis, built CMG and hits like 'Act Right'. Which call correctly uses keyword arguments so order does not matter?",
       "correct": "drop(title='Act Right', year=2013)",
       "wrong": [
         "drop(title='Act Right'; year=2013)",
@@ -79,7 +79,7 @@
     },
     {
       "index": 7,
-      "question": "Moneybagg Yo, born in Memphis, scored with 'Said Sum' and CMG affiliation. Which line builds a title with an f-string from variables said and sum_?",
+      "question": "Moneybagg Yo, in Memphis, scored with 'Said Sum' and CMG affiliation. Which line builds a title with an f-string from variables said and sum_?",
       "correct": "title = f'{said} {sum_}'",
       "wrong": [
         "title = f(said + ' ' + sum_)",
@@ -90,7 +90,7 @@
     },
     {
       "index": 8,
-      "question": "GloRilla, born in Memphis, broke nationally with 'F.N.F. (Let's Go)'. Which statement correctly appends a new track name to a mutable playlist list?",
+      "question": "GloRilla, in Memphis, broke nationally with 'F.N.F. (Let's Go)'. Which statement correctly appends a new track name to a mutable playlist list?",
       "correct": "playlist.append('F.N.F.')",
       "wrong": [
         "playlist.add('F.N.F.')",
@@ -123,7 +123,7 @@
     },
     {
       "index": 11,
-      "question": "DJ Paul, born in Memphis, co-founded Three 6 Mafia and produced classic dark Memphis beats. Which loop correctly visits each beat in a list named beats?",
+      "question": "DJ Paul, in Memphis, co-founded Three 6 Mafia and produced classic dark Memphis beats. Which loop correctly visits each beat in a list named beats?",
       "correct": "for beat in beats:",
       "wrong": [
         "foreach beat in beats:",
@@ -134,7 +134,7 @@
     },
     {
       "index": 12,
-      "question": "Blac Youngsta, born in Memphis, came up under Yo Gotti's CMG. Which line correctly reassigns a variable to a new stage name?",
+      "question": "Blac Youngsta, in Memphis, came up under Yo Gotti's CMG. Which line correctly reassigns a variable to a new stage name?",
       "correct": "artist = 'Blac Youngsta'",
       "wrong": [
         "artist := 'Blac Youngsta'",
@@ -156,7 +156,7 @@
     },
     {
       "index": 14,
-      "question": "Duke Deuce, born in Memphis, brought crunk energy back with 'Crunk Ain't Dead'. Which condition requires BOTH radio=True and streams over 500_000?",
+      "question": "Duke Deuce, in Memphis, brought crunk energy back with 'Crunk Ain't Dead'. Which condition requires BOTH radio=True and streams over 500_000?",
       "correct": "if radio and streams > 500_000:",
       "wrong": [
         "if radio or streams > 500_000:",
@@ -211,7 +211,7 @@
     },
     {
       "index": 19,
-      "question": "Jazze Pha, born in Memphis, produced and featured across Southern hip-hop. Which call pairs each beat with a hook using zip?",
+      "question": "Jazze Pha, in Memphis, produced and featured across Southern hip-hop. Which call pairs each beat with a hook using zip?",
       "correct": "for beat, hook in zip(beats, hooks):",
       "wrong": [
         "for beat, hook in beats.zip(hooks):",

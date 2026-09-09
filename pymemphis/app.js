@@ -75,7 +75,7 @@ function normalizeQuiz(raw) {
   }
 
   return {
-    title: raw.title || "Python Trivia Quiz : Memphis Rappers",
+    title: raw.title || "Python Trivia Quiz : Memphis Rap",
     questions: items.map((q) => {
       const correct = q.correct;
       const wrong = Array.isArray(q.wrong) ? q.wrong : [];
@@ -168,7 +168,7 @@ function render() {
   const isCorrect = answered && picked === q.correctIndex;
   const flashWrong = wrongFlashIndex !== null;
 
-  quizTitleEl.innerHTML = 'Python Trivia Quiz : <span class="memphis">Memphis Rappers</span>';
+  quizTitleEl.innerHTML = 'Python Trivia Quiz : <span class="memphis">Memphis Rap</span>';
   quizMetaEl.textContent = `Question ${currentIndex + 1} of ${total}`;
 
   // "Do 20 questions" only on first question of the short quiz
