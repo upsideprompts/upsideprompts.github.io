@@ -1,0 +1,260 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body {
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+ background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+}
+
+.wrap {
+ max-width: 800px;
+ width: 100%;
+}
+
+.header {
+ text-align: center;
+ margin-bottom: 30px;
+ color: white;
+}
+
+.header h1 {
+ font-size: 2.5rem;
+ margin-bottom: 10px;
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header h1 .nj {
+ color: #e74c3c;
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.35);
+}
+
+.header .meta {
+ font-size: 1.2rem;
+ opacity: 0.9;
+}
+
+.card {
+ background: white;
+ border-radius: 20px;
+ padding: 40px;
+ box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+ position: relative;
+}
+
+.card-bottom {
+ display: flex;
+ justify-content: center;
+ margin-top: 20px;
+}
+
+.card-bottom:has(#do20Btn[hidden]) {
+ display: none;
+ margin: 0;
+}
+
+.do20-btn {
+ font-size: 0.85rem;
+ padding: 8px 14px;
+ margin: 0;
+ background: #4a5568;
+}
+
+.do20-btn:hover {
+ background: #2d3748;
+}
+
+.do20-btn[hidden] {
+ display: none;
+}
+
+.question {
+ font-size: 1.08rem;
+ margin-bottom: 30px;
+ color: #2d3748;
+ text-align: center;
+}
+
+.image {
+ max-width: 100%;
+ height: auto;
+ border-radius: 10px;
+ margin: 20px 0;
+ display: block;
+}
+
+.choices {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 15px;
+ margin: 30px 0;
+}
+
+.choice {
+ padding: 15px 20px;
+ border: 2px solid #e2e8f0;
+ border-radius: 10px;
+ background: white;
+ font-size: 1.1rem;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ text-align: left;
+}
+
+.choice:hover {
+ border-color: #2c3e50;
+ transform: translateY(-2px);
+}
+
+.choice.selected {
+ background: #f39c12;
+ color: #000000;
+ border-color: #e67e22;
+ font-weight: 600;
+}
+
+.choice.selected::before {
+ content: "✓ ";
+ font-weight: bold;
+}
+
+.choice.correct {
+ background: #28a745;
+ color: #ffffff;
+ border-color: #1e7e34;
+ font-weight: 600;
+}
+
+.choice.correct::before {
+ content: "✓ ";
+ font-weight: bold;
+}
+
+.choice.wrong {
+ background: #e74c3c;
+ color: #ffffff;
+ border-color: #c0392b;
+ font-weight: 600;
+ animation: wiggle 0.5s ease;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-10px); }
+  30% { transform: translateX(10px); }
+  45% { transform: translateX(-8px); }
+  60% { transform: translateX(8px); }
+  75% { transform: translateX(-4px); }
+  90% { transform: translateX(4px); }
+}
+
+.choice:disabled {
+ cursor: default;
+ transform: none;
+}
+
+.choice:disabled:hover {
+ transform: none;
+}
+
+.choice:not(.selected):not(.correct):not(.wrong):disabled {
+ opacity: 0.75;
+}
+
+.choice.wrong:hover {
+ transform: none;
+}
+
+.answer-feedback {
+ text-align: center;
+ min-height: 1.6em;
+ margin: 8px 0 20px;
+ font-size: 1.25rem;
+ font-weight: 700;
+ letter-spacing: 0.02em;
+}
+
+.answer-feedback.is-correct {
+ color: #28a745;
+}
+
+.btn {
+ padding: 12px 24px;
+ border: none;
+ border-radius: 8px;
+ background: #2c3e50;
+ color: white;
+ font-size: 1rem;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ margin: 0 5px;
+}
+
+.btn:hover {
+ background: #1a252f;
+ transform: translateY(-2px);
+}
+
+.btn:disabled {
+ opacity: 0.5;
+ cursor: not-allowed;
+}
+
+.btn.primary {
+ background: #28a745;
+}
+
+.btn.primary:hover {
+ background: #218838;
+}
+
+.progress {
+ height: 30px;
+ background: #f8f9fa;
+ border-radius: 15px;
+ overflow: hidden;
+ margin: 30px 0;
+ border: 2px solid #e2e8f0;
+}
+
+.bar {
+ height: 100%;
+ background: linear-gradient(90deg, #2c3e50, #34495e);
+ border-radius: 12px;
+ transition: width 0.5s ease;
+}
+
+.meta {
+ text-align: center;
+ color: #718096;
+ font-size: 0.9rem;
+ margin-top: 20px;
+}
+
+.results-list {
+  margin: 24px 0;
+  padding-left: 1.25rem;
+  color: #2d3748;
+}
+
+.result-item {
+  margin-bottom: 20px;
+}
+
+.result-item p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.result-explanation {
+ color: #4a5568;
+ font-style: italic;
+}
