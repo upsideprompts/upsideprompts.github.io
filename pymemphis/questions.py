@@ -1,253 +1,236 @@
 #!/usr/bin/env python3
+"""Memphis rappers + Python trivia question bank."""
 
 import json
-import re
-import os
 from pathlib import Path
 
-def extract_all_questions():
-    """Generate Memphis rap trivia questions mixing local hip-hop history with Python concepts"""
-    
-    ALL_QUESTIONS = [
-        {
-            "index": 0,
-            "question": "_**Al Jarrett**""" from Memphis released 'King of the Jungle' in 1991. In Python, what data structure would you use to store a dictionary containing the album name, release year, and genre for Al Jarrett's debut?",
-            "correct": "A dictionary with string keys and mixed values.",
-            "wrong": [
-                "A list of separate strings.",
-                "A single boolean value.",
-                "A floating-point number for storage."
-            ],
-            "explanation": "Just like storing album metadata (name, year, genre), Python dictionaries with string keys and mixed values are perfect for organizing Memphis rap information."
-        },
-        {
-            "index": 1,
-            "question": "_**DJ Z**""" from Memphis pioneered the 'Memphis bounce' sound in the late '90s. Write a function that takes a list of DJ Z's bounce tracks and returns only those with 'bounce' in the genre.",
-            "correct": "def filter_bounce_tracks(tracks):\n    return [track for track in tracks if 'bounce' in track['genre']]",
-            "wrong": [
-                "def get_tracks(tracks):\n    return [track for track in tracks if track['genre'] == 'bounce']",
-                "def bounce_tracks(tracks):\n    return [t for t in tracks if t.get('genre', '').find('bounce')]",
-                "def select_tracks(tracks):\n    return [track for track in tracks if 'bounce' in track]"
-            ],
-            "explanation": "List comprehensions in Python allow you to efficiently filter data based on string inclusion, just as you'd want to identify DJ Z's bounce tracks from his diverse catalog."
-        },
-        {
-            "index": 2,
-            "question": "_**Young 'N**""" from Memphis' '18 Wheeler' era brought the 'Memphis rap sound' to national attention in 2002. What Python keyword creates a dictionary literal to store the track's metadata (title, artist, year)?",
-            "correct": "The curly brace { }.",
-            "wrong": [
-                "The square bracket [ ].",
-                "The parenthesis ( ).",
-                "The angle bracket < >."
-            ],
-            "explanation": "Just as Young 'N's tracks established the Memphis rap sound, Python dictionaries with curly braces create the perfect structure for storing track metadata in an organized way."
-        },
-        {
-            "index": 3,
-            "question": "_**Moe Fick**"" from Memphis' underground scene released mixtapes in the early 2000s. In Python, what do you call the process of giving a variable a more descriptive name, like changing 'track_title' to 'moe_fick_track_name'?",
-            "correct": "Variable naming and assignment.",
-            "wrong": [
-                "Function definition.",
-                "Class inheritance.",
-                "Method overriding."
-            ],
-            "explanation": "Just as Moe Fick developed his unique underground identity, descriptive variable naming makes code more readable and maintainable in Python projects."
-        },
-        {
-            "index": 4,
-            "question": "_**Trex**""" from Memphis' '123 Sampling' era pioneered the chopped and screwed Memphis style in 2005. Write code that imports both the 'memphis_rap' module and a custom module called 'tracks' for your project.",
-            "correct": "import memphis_rap\nfrom tracks import mixtapes",
-            "wrong": [
-                "import memphis_rap\nimport tracks",
-                "from memphis_rap import *\nfrom tracks import *",
-                "import memphis_rap\ntracks = __import__('tracks')"
-            ],
-            "explanation": "Just as Trex's sampling style needs the right tools, proper Python imports are essential. Using 'from tracks import mixtapes' allows direct access to mixtape data without module prefix."
-        },
-        {
-            "index": 5,
-            "question": "_**L.W.~~**""" from Memphis released 'Memphis Heat' in 1998, featuring the iconic track 'I Luv Memphis.' In Python, what type of loop would you use to simulate a 'Memphis bounce' beat that repeats a pattern 8 times?",
-            "correct": "A for loop with range(8).",
-            "wrong": [
-                "A while loop with no condition.",
-                "A do-while loop with true condition.",
-                "A recursive function call."
-            ],
-            "explanation": "Just as Memphis bounce beats have repetitive patterns, a for loop with range(8) creates that looping beat pattern that repeats exactly 8 times, creating the intense, relentless rhythm that defines the Memphis sound."
-        },
-        {
-            "index": 6,
-            "question": "_**C-Rock**""" from Memphis' 'Urban Legend' era (2001) was known for his storytelling lyrics. In Python, what data structure would you use to represent a 'Memphis crew' where each member has their own stage name and flow style?",
-            "correct": "A dictionary of dictionaries.",
-            "wrong": [
-                "A list of lists.",
-                "A single string.",
-                "A boolean value."
-            ],
-            "explanation": "Just as a Memphis rap crew has different leaders with their own teams and specialties, a dictionary of dictionaries in Python perfectly represents nested relationships where each member has unique characteristics."
-        },
-        {
-            "index": 7,
-            "question": "_**G Deep**""" from Memphis 'Come & Get It' era brought the 'Memphis melodic rap' style to mainstream in 2004. What data type would you use to store a list of G Deep's melodic anthems (as strings) that are available for streaming?
-            """,
-            "correct": "A list of strings.",
-            "wrong": [
-                "A single string with commas.",
-                "A boolean value.",
-                "A floating-point number."
-            ],
-            "explanation": "Just as melodic rap anthems are individual tracks that can be played in any order, a list of strings in Python can store multiple anthems where each element is a specific song available for streaming."
-        },
-        {
-            "index": 8,
-            "question": "_**Lil' R***""" from Memphis 'Stackin' Acres' era (2006) was known for his complex rhyme schemes. In Python, what would you use to store metadata for a 12-track album including track titles, features, and release year?
-            """,
-            "correct": "A dictionary with 'tracks' as a key containing a list of track dictionaries.",
-            "wrong": [
-                "A single string containing all track information.",
-                "A boolean value indicating whether it's collaborative.",
-                "A floating-point number representing the album's length."
-            ],
-            "explanation": "Just as Lil' R's 'Stackin' Acres' contains 12 tracks with rich metadata, Python dictionaries with nested lists of dictionaries are perfect for storing complex album information including track titles, features, and release year."
-        },
-        {
-            "index": 9,
-            "question": "_**E-40**"" (from Oakland but Memphis-rooted) released 'Memphis or Bust' in 1995. Write a function that takes a list of E-40's Memphis collaborations and returns only those with features from 'Lil R' or 'C-Rock'.
-            """,
-            "correct": "def filter_memphis_collabs(collabs):\n    return [collab for collab in collabs if collab['feature'] in ['Lil R', 'C-Rock']]",
-            "wrong": [
-                "def memphis_collabs(collabs):\n    return [collab for collab in collabs if collab['feature'] == 'Lil R']",
-                "def select_collabs(collabs):\n    return [collab for collab in collabs if collab.get('feature') == 'Lil R' or collab['feature'] == 'C-Rock']",
-                "def collab_filter(collabs):\n    return [collab for collab in collabs if collab['feature'] == 'Lil R' or collab['feature'] == 'C-Rock']"
-            ],
-            "explanation": "Just as you'd want to filter E-40's Memphis collaborations for specific artists, Python list comprehensions allow you to efficiently filter data based on specific value matching. The correct solution uses 'in ['Lil R', 'C-Rock']' to match multiple valid features."
-        },
-        {
-            "index": 10,
-            "question": "_**B-Legit**"" (from California but Memphis-influenced) released 'Memphis Bound' in 2003. In Python, what programming concept creates a reusable function that generates 'B-Legit's flow patterns' with different punchline rhymes?
-            """,
-            "correct": "A function with parameters and docstrings for documentation.",
-            "wrong": [
-                "A class inheritance.",
-                "A lambda function.",
-                "A recursive generator."
-            ],
-            "explanation": "Just as B-Legit's flow patterns can be adapted for different scenarios, Python functions with parameters and docstrings create reusable, well-documented code that generates rap flow patterns. The docstring helps other developers understand how to use the function."
-        },
-        {
-            "index": 11,
-            "question": "_**Keak**"" (from Oakland but Memphis-rooted) released 'Back to the Streets of Memphis' in 2008. What data type would you use to store information about viral TikTok videos of Keak's Memphis anthems including views, likes, and the challenge name?
-            """,
-            "correct": "A dictionary with 'views', 'likes', and 'challenge' as keys.",
-            "wrong": [
-                "A single string containing all video data.",
-                "A boolean value indicating if it's viral.",
-                "A floating-point number representing engagement rate."
-            ],
-            "explanation": "Just as Keak's TikTok anthems became cultural phenomena with measurable impact, a Python dictionary with keys for 'views', 'likes', and 'challenge' perfectly captures the metadata of viral TikTok videos, organizing all the important statistics in one place."
-        },
-        {
-            "index": 12,
-            "question": "_**Mack 10**"" (from Compton but Memphis-influenced) released 'Memphis Express' in 2001. In Python, what programming concept creates a loop that processes each element in a list of 'Mack 10's Memphis verses' and applies a punchline pattern?
-            """,
-            "correct": "A for loop iterating over the list.",
-            "wrong": [
-                "A while loop with manual indexing.",
-                "A recursive function call.",
-                "A dictionary comprehension."
-            ],
-            "explanation": "Just as Mack 10's Memphis verses each follow a punchline pattern, a for loop in Python processes each element in a list of verses sequentially, creating the consistent rhythm and flow that makes his Memphis-influenced music distinctive."
-        },
-        {
-            "index": 13,
-            "question": "_**Master P**"" (from New Orleans but Memphis-rooted) released 'Down South EP' in 1994. In Python, what data structure would you use to store information about a Grammy-winning Memphis track including artist, song, year, and category?
-            """,
-            "correct": "A dictionary with keys for artist, song, year, and category.",
-            "wrong": [
-                "A list of strings.",
-                "A boolean value.",
-                "A floating-point number."
-            ],
-            "explanation": "Just as Master P's Grammy-winning Memphis collaborations have specific details about the track, a Python dictionary with keys for artist, song, year, and category perfectly stores all the important information about award-winning Memphis music in an organized way."
-        },
-        {
-            "index": 14,
-            "question": "_**3-2**"" (from South Side Chicago but Memphis-culturally significant) released 'Memphis Streets' in 2002. Write a function that takes a list of '3-2's Memphis connections' and returns only those with cities listed as 'Memphis' or 'Memphis, TN'.
-            """,
-            "correct": "def filter_memphis_connections(connections):\n    return [conn for conn in connections if conn['city'] in ['Memphis', 'Memphis, TN']]",
-            "wrong": [
-                "def memphis_connections(connections):\n    return [conn for conn in connections if conn['city'] == 'Memphis']",
-                "def select_connections(connections):\n    return [conn for conn in connections if conn.get('city') == 'Memphis, TN']",
-                "def city_filter(connections):\n    return [conn for conn in connections if conn['city'] == 'Memphis' or conn['city'] == 'Memphis, TN']"
-            ],
-            "explanation": "Just as 3-2's music connects different Memphis cities, Python list comprehensions with conditional logic allow you to filter data based on specific city criteria. The correct solution uses 'in ['Memphis', 'Memphis, TN']' to match multiple valid Memphis city names."
-        },
-        {
-            "index": 15,
-            "question": "_**Boss**""" from Memphis 'Strip Club' era (2007) was known for his streetwise lyrics. In Python, what programming concept creates a reusable function that generates 'Boss's verse structures' with different punchline patterns?
-            """,
-            "correct": "A function with parameters and docstrings for documentation.",
-            "wrong": [
-                "A class inheritance.",
-                "A lambda function.",
-                "A recursive generator."
-            ],
-            "explanation": "Just as Boss's verse structures can be described with different punchline patterns, Python functions with parameters and docstrings create reusable, well-documented code that generates rap verse patterns. The docstring helps other developers understand how to use the function."
-        },
-        {
-            "index": 16,
-            "question": "_**The Game**"" (from LA but Memphis-influenced) released 'Memphis Legends' in 2010. Write a function that takes a list of 'The Game's Memphis collaborations' and returns only those with features from 'Lil R' or 'Boss'.
-            """,
-            "correct": "def filter_game_memphis_collabs(collabs):\n    return [collab for collab in collabs if collab['feature'] in ['Lil R', 'Boss']]",
-            "wrong": [
-                "def memphis_collabs(collabs):\n    return [collab for collab in collabs if collab['feature'] == 'Lil R']",
-                "def select_collabs(collabs):\n    return [collab for collab in collabs if collab.get('feature') == 'Boss']",
-                "def collab_filter(collabs):\n    return [collab for collab in collabs if collab['feature'] == 'Lil R' or collab['feature'] == 'Boss']"
-            ],
-            "explanation": "Just as The Game collaborated with Memphis legends like Lil R and Boss, Python list comprehensions with conditional logic allow you to filter data based on specific artist criteria. The correct solution uses 'in ['Lil R', 'Boss']' to match multiple valid Memphis collaborators."
-        },
-        {
-            "index": 17,
-            "question": "_**Bun B**"" (from New Orleans but Memphis-rooted) released 'Memphis Overlord' in 2004. What data type would you use to store information about viral TikTok videos of Bun B's Memphis anthems including views, likes, and the challenge name?
-            """,
-            "correct": "A dictionary with 'views', 'likes', and 'challenge' as keys.",
-            "wrong": [
-                "A single string containing all video data.",
-                "A boolean value indicating if it's viral.",
-                "A floating-point number representing engagement rate."
-            ],
-            "explanation": "Just as Bun B's TikTok anthems became cultural phenomena with measurable impact, a Python dictionary with keys for 'views', 'likes', and 'challenge' perfectly captures the metadata of viral TikTok videos, organizing all the important statistics in one place."
-        },
-        {
-            "index": 18,
-            "question": "_**Snoop Dogg**" (from Long Beach but Memphis-influenced) released 'Memphis Bound' in 1995. In Python, what programming concept creates a reusable function that generates 'Snoop Dogg's flow patterns' with different melodic styles?
-            """,
-            "correct": "A function with parameters and docstrings for documentation.",
-            "wrong": [
-                "A class inheritance.",
-                "A lambda function.",
-                "A recursive generator."
-            ],
-            "explanation": "Just as Snoop Dogg's flow patterns can be adapted for different melodic styles, Python functions with parameters and docstrings create reusable, well-documented code that generates rap flow patterns. The docstring helps other developers understand how to use the function."
-        },
-        {
-            "index": 19,
-            "question": "_**Eazy-E**"" (from Compton but Memphis-influenced) released 'Memphis or Bust' in 1992. Which pioneering 1990s Memphis rap artist scored major regional hits with club anthems like 'Baby Baby' and 'Love in Miami'?",
-            "correct": "Mack 10.",
-            "wrong": [
-                "The Game.",
-                "Bun B.",
-                "Lil' R."
-            ],
-            "explanation": "Mack 10 was a pioneering Memphis rap artist in the 1990s known for regional club hits like 'Baby Baby' and 'Love in Miami,' helping establish Memphis's reputation in the Southern rap scene."
-        }
-    ]
+ALL_QUESTIONS = [
+    {
+        "index": 0,
+        "question": "Al Jarrett from Memphis released 'King of the Jungle' in 1991. In Python, what data structure would you use to store a dictionary containing the album name, release year, and genre for Al Jarrett's debut?",
+        "correct": "A dictionary with string keys and mixed values.",
+        "wrong": [
+            "A list of separate strings.",
+            "A single boolean value.",
+            "A floating-point number for storage.",
+        ],
+        "explanation": "Just like storing album metadata (name, year, genre), Python dictionaries with string keys and mixed values are perfect for organizing Memphis rap information.",
+    },
+    {
+        "index": 1,
+        "question": "DJ Z from Memphis pioneered the 'Memphis bounce' sound in the late '90s. Write a function that takes a list of DJ Z's bounce tracks and returns only those with 'bounce' in the genre.",
+        "correct": "def filter_bounce_tracks(tracks):\\n    return [track for track in tracks if 'bounce' in track['genre']]",
+        "wrong": [
+            "def get_tracks(tracks):\\n    return [track for track in tracks if track['genre'] == 'bounce']",
+            "def bounce_tracks(tracks):\\n    return [t for t in tracks if t.get('genre', '').find('bounce')]",
+            "def select_tracks(tracks):\\n    return [track for track in tracks if 'bounce' in track]",
+        ],
+        "explanation": "List comprehensions in Python allow you to efficiently filter data based on string inclusion, just as you'd want to identify DJ Z's bounce tracks from his diverse catalog.",
+    },
+    {
+        "index": 2,
+        "question": "Young 'N from Memphis' '18 Wheeler' era brought the 'Memphis rap sound' to national attention in 2002. What Python keyword creates a dictionary literal to store the track's metadata (title, artist, year)?",
+        "correct": "The curly brace { }.",
+        "wrong": [
+            "The square bracket [ ].",
+            "The parenthesis ( ).",
+            "The angle bracket < >.",
+        ],
+        "explanation": "Just as Young 'N's tracks established the Memphis rap sound, Python dictionaries with curly braces create the perfect structure for storing track metadata in an organized way.",
+    },
+    {
+        "index": 3,
+        "question": "Moe Fick from Memphis' underground scene released mixtapes in the early 2000s. In Python, what do you call the process of giving a variable a more descriptive name, like changing 'track_title' to 'moe_fick_track_name'?",
+        "correct": "Variable naming and assignment.",
+        "wrong": [
+            "Function definition.",
+            "Class inheritance.",
+            "Method overriding.",
+        ],
+        "explanation": "Just as Moe Fick developed his unique underground identity, descriptive variable naming makes code more readable and maintainable in Python projects.",
+    },
+    {
+        "index": 4,
+        "question": "Trex from Memphis' '123 Sampling' era pioneered the chopped and screwed Memphis style in 2005. Write code that imports both the 'memphis_rap' module and a custom module called 'tracks' for your project.",
+        "correct": "import memphis_rap\\nfrom tracks import mixtapes",
+        "wrong": [
+            "import memphis_rap\\nimport tracks",
+            "from memphis_rap import *\\nfrom tracks import *",
+            "import memphis_rap\\ntracks = __import__('tracks')",
+        ],
+        "explanation": "Just as Trex's sampling style needs the right tools, proper Python imports are essential. Using 'from tracks import mixtapes' allows direct access to mixtape data without module prefix.",
+    },
+    {
+        "index": 5,
+        "question": "L.W. from Memphis released 'Memphis Heat' in 1998, featuring the iconic track 'I Luv Memphis.' In Python, what type of loop would you use to simulate a 'Memphis bounce' beat that repeats a pattern 8 times?",
+        "correct": "A for loop with range(8).",
+        "wrong": [
+            "A while loop with no condition.",
+            "A do-while loop with true condition.",
+            "A recursive function call.",
+        ],
+        "explanation": "Just as Memphis bounce beats have repetitive patterns, a for loop with range(8) creates that looping beat pattern that repeats exactly 8 times, creating the intense, relentless rhythm that defines the Memphis sound.",
+    },
+    {
+        "index": 6,
+        "question": "C-Rock from Memphis' 'Urban Legend' era (2001) was known for his storytelling lyrics. In Python, what data structure would you use to represent a 'Memphis crew' where each member has their own stage name and flow style?",
+        "correct": "A dictionary of dictionaries.",
+        "wrong": [
+            "A list of lists.",
+            "A single string.",
+            "A boolean value.",
+        ],
+        "explanation": "Just as a Memphis rap crew has different leaders with their own teams and specialties, a dictionary of dictionaries in Python perfectly represents nested relationships where each member has unique characteristics.",
+    },
+    {
+        "index": 7,
+        "question": "G Deep from Memphis' 'Come & Get It' era brought the 'Memphis melodic rap' style to mainstream in 2004. What data type would you use to store a list of G Deep's melodic anthems (as strings) that are available for streaming?",
+        "correct": "A list of strings.",
+        "wrong": [
+            "A single string with commas.",
+            "A boolean value.",
+            "A floating-point number.",
+        ],
+        "explanation": "Just as melodic rap anthems are individual tracks that can be played in any order, a list of strings in Python can store multiple anthems where each element is a specific song available for streaming.",
+    },
+    {
+        "index": 8,
+        "question": "Lil' R from Memphis' 'Stackin' Acres' era (2006) was known for his complex rhyme schemes. In Python, what would you use to store metadata for a 12-track album including track titles, features, and release year?",
+        "correct": "A dictionary with 'tracks' as a key containing a list of track dictionaries.",
+        "wrong": [
+            "A single string containing all track information.",
+            "A boolean value indicating whether it's collaborative.",
+            "A floating-point number representing the album's length.",
+        ],
+        "explanation": "Just as Lil' R's 'Stackin' Acres' contains 12 tracks with rich metadata, Python dictionaries with nested lists of dictionaries are perfect for storing complex album information including track titles, features, and release year.",
+    },
+    {
+        "index": 9,
+        "question": "E-40 (from Oakland but Memphis-rooted) released 'Memphis or Bust' in 1995. Write a function that takes a list of E-40's Memphis collaborations and returns only those with features from 'Lil R' or 'C-Rock'.",
+        "correct": "def filter_memphis_collabs(collabs):\\n    return [collab for collab in collabs if collab['feature'] in ['Lil R', 'C-Rock']]",
+        "wrong": [
+            "def memphis_collabs(collabs):\\n    return [collab for collab in collabs if collab['feature'] == 'Lil R']",
+            "def select_collabs(collabs):\\n    return [collab for collab in collabs if collab.get('feature') == 'Lil R' or collab['feature'] == 'C-Rock']",
+            "def collab_filter(collabs):\\n    return [collab for collab in collabs if collab['feature'] == 'Lil R' or collab['feature'] == 'C-Rock']",
+        ],
+        "explanation": "Just as you'd want to filter E-40's Memphis collaborations for specific artists, Python list comprehensions allow you to efficiently filter data based on specific value matching. The correct solution uses 'in ['Lil R', 'C-Rock']' to match multiple valid features.",
+    },
+    {
+        "index": 10,
+        "question": "B-Legit (from California but Memphis-influenced) released 'Memphis Bound' in 2003. In Python, what programming concept creates a reusable function that generates 'B-Legit's flow patterns' with different punchline rhymes?",
+        "correct": "A function with parameters and docstrings for documentation.",
+        "wrong": [
+            "A class inheritance.",
+            "A lambda function.",
+            "A recursive generator.",
+        ],
+        "explanation": "Just as B-Legit's flow patterns can be adapted for different scenarios, Python functions with parameters and docstrings create reusable, well-documented code that generates rap flow patterns. The docstring helps other developers understand how to use the function.",
+    },
+    {
+        "index": 11,
+        "question": "Keak (from Oakland but Memphis-rooted) released 'Back to the Streets of Memphis' in 2008. What data type would you use to store information about viral TikTok videos of Keak's Memphis anthems including views, likes, and the challenge name?",
+        "correct": "A dictionary with 'views', 'likes', and 'challenge' as keys.",
+        "wrong": [
+            "A single string containing all video data.",
+            "A boolean value indicating if it's viral.",
+            "A floating-point number representing engagement rate.",
+        ],
+        "explanation": "Just as Keak's TikTok anthems became cultural phenomena with measurable impact, a Python dictionary with keys for 'views', 'likes', and 'challenge' perfectly captures the metadata of viral TikTok videos, organizing all the important statistics in one place.",
+    },
+    {
+        "index": 12,
+        "question": "Mack 10 (from Compton but Memphis-influenced) released 'Memphis Express' in 2001. In Python, what programming concept creates a loop that processes each element in a list of 'Mack 10's Memphis verses' and applies a punchline pattern?",
+        "correct": "A for loop iterating over the list.",
+        "wrong": [
+            "A while loop with manual indexing.",
+            "A recursive function call.",
+            "A dictionary comprehension.",
+        ],
+        "explanation": "Just as Mack 10's Memphis verses each follow a punchline pattern, a for loop in Python processes each element in a list of verses sequentially, creating the consistent rhythm and flow that makes his Memphis-influenced music distinctive.",
+    },
+    {
+        "index": 13,
+        "question": "Master P (from New Orleans but Memphis-rooted) released 'Down South EP' in 1994. In Python, what data structure would you use to store information about a Grammy-winning Memphis track including artist, song, year, and category?",
+        "correct": "A dictionary with keys for artist, song, year, and category.",
+        "wrong": [
+            "A list of strings.",
+            "A boolean value.",
+            "A floating-point number.",
+        ],
+        "explanation": "Just as Master P's Grammy-winning Memphis collaborations have specific details about the track, a Python dictionary with keys for artist, song, year, and category perfectly stores all the important information about award-winning Memphis music in an organized way.",
+    },
+    {
+        "index": 14,
+        "question": "3-2 (from South Side Chicago but Memphis-culturally significant) released 'Memphis Streets' in 2002. Write a function that takes a list of '3-2's Memphis connections' and returns only those with cities listed as 'Memphis' or 'Memphis, TN'.",
+        "correct": "def filter_memphis_connections(connections):\\n    return [conn for conn in connections if conn['city'] in ['Memphis', 'Memphis, TN']]",
+        "wrong": [
+            "def memphis_connections(connections):\\n    return [conn for conn in connections if conn['city'] == 'Memphis']",
+            "def select_connections(connections):\\n    return [conn for conn in connections if conn.get('city') == 'Memphis, TN']",
+            "def city_filter(connections):\\n    return [conn for conn in connections if conn['city'] == 'Memphis' or conn['city'] == 'Memphis, TN']",
+        ],
+        "explanation": "Just as 3-2's music connects different Memphis cities, Python list comprehensions with conditional logic allow you to filter data based on specific city criteria. The correct solution uses 'in ['Memphis', 'Memphis, TN']' to match multiple valid Memphis city names.",
+    },
+    {
+        "index": 15,
+        "question": "Boss from Memphis' 'Strip Club' era (2007) was known for his streetwise lyrics. In Python, what programming concept creates a reusable function that generates 'Boss's verse structures' with different punchline patterns?",
+        "correct": "A function with parameters and docstrings for documentation.",
+        "wrong": [
+            "A class inheritance.",
+            "A lambda function.",
+            "A recursive generator.",
+        ],
+        "explanation": "Just as Boss's verse structures can be described with different punchline patterns, Python functions with parameters and docstrings create reusable, well-documented code that generates rap verse patterns. The docstring helps other developers understand how to use the function.",
+    },
+    {
+        "index": 16,
+        "question": "The Game (from LA but Memphis-influenced) released 'Memphis Legends' in 2010. Write a function that takes a list of 'The Game's Memphis collaborations' and returns only those with features from 'Lil R' or 'Boss'.",
+        "correct": "def filter_game_memphis_collabs(collabs):\\n    return [collab for collab in collabs if collab['feature'] in ['Lil R', 'Boss']]",
+        "wrong": [
+            "def memphis_collabs(collabs):\\n    return [collab for collab in collabs if collab['feature'] == 'Lil R']",
+            "def select_collabs(collabs):\\n    return [collab for collab in collabs if collab.get('feature') == 'Boss']",
+            "def collab_filter(collabs):\\n    return [collab for collab in collabs if collab['feature'] == 'Lil R' or collab['feature'] == 'Boss']",
+        ],
+        "explanation": "Just as The Game collaborated with Memphis legends like Lil R and Boss, Python list comprehensions with conditional logic allow you to filter data based on specific artist criteria. The correct solution uses 'in ['Lil R', 'Boss']' to match multiple valid Memphis collaborators.",
+    },
+    {
+        "index": 17,
+        "question": "Bun B (from New Orleans but Memphis-rooted) released 'Memphis Overlord' in 2004. What data type would you use to store information about viral TikTok videos of Bun B's Memphis anthems including views, likes, and the challenge name?",
+        "correct": "A dictionary with 'views', 'likes', and 'challenge' as keys.",
+        "wrong": [
+            "A single string containing all video data.",
+            "A boolean value indicating if it's viral.",
+            "A floating-point number representing engagement rate.",
+        ],
+        "explanation": "Just as Bun B's TikTok anthems became cultural phenomena with measurable impact, a Python dictionary with keys for 'views', 'likes', and 'challenge' perfectly captures the metadata of viral TikTok videos, organizing all the important statistics in one place.",
+    },
+    {
+        "index": 18,
+        "question": "Snoop Dogg (from Long Beach but Memphis-influenced) released 'Memphis Bound' in 1995. In Python, what programming concept creates a reusable function that generates 'Snoop Dogg's flow patterns' with different melodic styles?",
+        "correct": "A function with parameters and docstrings for documentation.",
+        "wrong": [
+            "A class inheritance.",
+            "A lambda function.",
+            "A recursive generator.",
+        ],
+        "explanation": "Just as Snoop Dogg's flow patterns can be adapted for different melodic styles, Python functions with parameters and docstrings create reusable, well-documented code that generates rap flow patterns. The docstring helps other developers understand how to use the function.",
+    },
+    {
+        "index": 19,
+        "question": "Eazy-E (from Compton but Memphis-influenced) released 'Memphis or Bust' in 1992. Which pioneering 1990s Memphis rap artist scored major regional hits with club anthems like 'Baby Baby' and 'Love in Miami'?",
+        "correct": "Mack 10.",
+        "wrong": [
+            "The Game.",
+            "Bun B.",
+            "Lil' R.",
+        ],
+        "explanation": "Mack 10 was a pioneering Memphis rap artist in the 1990s known for regional club hits like 'Baby Baby' and 'Love in Miami,' helping establish Memphis's reputation in the Southern rap scene.",
+    },
+]
+
 
 if __name__ == "__main__":
-    questions = extract_all_questions()
     output_file = Path(__file__).resolve().parent / "questions.json"
-    
     with output_file.open("w", encoding="utf-8") as f:
-        json.dump({"ALL_QUESTIONS": questions}, f, indent=2)
-    
-    print(f"Generated {len(questions)} questions in {output_file}")
+        json.dump({"ALL_QUESTIONS": ALL_QUESTIONS}, f, indent=2)
+        f.write("\n")
+    print(f"Generated {len(ALL_QUESTIONS)} questions in {output_file}")
