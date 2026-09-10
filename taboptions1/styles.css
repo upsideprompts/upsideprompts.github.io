@@ -171,7 +171,7 @@ body {
 
 .box {
   --length: 237px;
-  --width: 372px;
+  --width: 352px;
   --depth: 101px;
   position: relative;
   width: var(--length);
