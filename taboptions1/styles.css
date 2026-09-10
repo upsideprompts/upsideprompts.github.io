@@ -30,6 +30,108 @@ body {
   padding: 24px;
 }
 
+.title-scene {
+  perspective: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(94vw, 360px);
+  height: 140px;
+  pointer-events: none;
+}
+
+.title-box {
+  --tl: 300px;
+  --tw: 100px;
+  --td: 30px;
+  position: relative;
+  width: var(--tl);
+  height: var(--tw);
+  transform-style: preserve-3d;
+  /* Leaning back 20deg (top away from viewer) */
+  transform: rotateX(-20deg);
+}
+
+@media (max-width: 360px) {
+  .title-box {
+    transform: rotateX(-20deg) scale(0.82);
+  }
+}
+
+.title-face {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(110, 190, 230, 0.34);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.2);
+}
+
+.title-front,
+.title-back {
+  width: var(--tl);
+  height: var(--tw);
+  margin-left: calc(var(--tl) / -2);
+  margin-top: calc(var(--tw) / -2);
+}
+
+.title-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 18px;
+  transform: translateZ(calc(var(--td) / 2));
+  color: #0b3d1c;
+  font-size: clamp(14px, 3.4vw, 20px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  background: rgba(110, 190, 230, 0.4);
+}
+
+.title-back {
+  transform: rotateY(180deg) translateZ(calc(var(--td) / 2));
+  background: rgba(90, 150, 200, 0.3);
+}
+
+.title-left,
+.title-right {
+  width: var(--td);
+  height: var(--tw);
+  margin-left: calc(var(--td) / -2);
+  margin-top: calc(var(--tw) / -2);
+  background: rgba(70, 140, 190, 0.32);
+}
+
+.title-right {
+  transform: rotateY(90deg) translateZ(calc(var(--tl) / 2));
+}
+
+.title-left {
+  transform: rotateY(-90deg) translateZ(calc(var(--tl) / 2));
+}
+
+.title-top,
+.title-bottom {
+  width: var(--tl);
+  height: var(--td);
+  margin-left: calc(var(--tl) / -2);
+  margin-top: calc(var(--td) / -2);
+}
+
+.title-top {
+  transform: rotateX(90deg) translateZ(calc(var(--tw) / 2));
+  background: rgba(160, 210, 240, 0.36);
+}
+
+.title-bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--tw) / 2));
+  background: rgba(60, 110, 150, 0.34);
+}
+
 .page-icon {
   width: 96px;
   height: auto;
