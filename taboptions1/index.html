@@ -8,11 +8,39 @@
 </head>
 <body>
   <main class="stage">
-    <p class="hint">Drag or swipe to rotate</p>
+    <p class="hint">Drag to rotate · Tap a green button to open</p>
 
     <div class="viewport" id="viewport">
       <div class="box" id="box" aria-label="Rotatable translucent 3D rectangle">
-        <div class="face front"></div>
+        <div class="face front">
+          <button
+            class="surface-btn"
+            type="button"
+            data-url="https://upsideprompts.github.io/ocstacks"
+            aria-label="Open OC Stacks"
+          >
+            <span class="btn-face btn-front">OC Stacks</span>
+            <span class="btn-face btn-back"></span>
+            <span class="btn-face btn-left"></span>
+            <span class="btn-face btn-right"></span>
+            <span class="btn-face btn-top"></span>
+            <span class="btn-face btn-bottom"></span>
+          </button>
+
+          <button
+            class="surface-btn"
+            type="button"
+            data-url="https://upsideprompts.github.io/pybites"
+            aria-label="Open Py Bites"
+          >
+            <span class="btn-face btn-front">Py Bites</span>
+            <span class="btn-face btn-back"></span>
+            <span class="btn-face btn-left"></span>
+            <span class="btn-face btn-right"></span>
+            <span class="btn-face btn-top"></span>
+            <span class="btn-face btn-bottom"></span>
+          </button>
+        </div>
         <div class="face back"></div>
         <div class="face left"></div>
         <div class="face right"></div>

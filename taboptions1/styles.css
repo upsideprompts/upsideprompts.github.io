@@ -91,6 +91,13 @@ body {
 .front {
   transform: translateZ(calc(var(--depth) / 2));
   background: rgba(110, 190, 230, 0.34);
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  overflow: visible;
 }
 
 .back {
@@ -132,4 +139,112 @@ body {
 .bottom {
   transform: rotateX(-90deg) translateZ(calc(var(--width) / 2));
   background: rgba(60, 110, 150, 0.34);
+}
+
+/* Front-face buttons: 100 wide × 20 long × 10 tall */
+.surface-btn {
+  --bw: 100px;
+  --bl: 20px;
+  --bh: 10px;
+  position: relative;
+  width: var(--bw);
+  height: var(--bl);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(1px);
+  transition: transform 0.18s ease;
+}
+
+.surface-btn.is-pressing {
+  animation: btn-press 0.45s ease;
+}
+
+@keyframes btn-press {
+  0% {
+    transform: translateZ(1px) scale(1);
+  }
+  35% {
+    transform: translateZ(-4px) scale(0.94);
+  }
+  70% {
+    transform: translateZ(8px) scale(1.04);
+  }
+  100% {
+    transform: translateZ(1px) scale(1);
+  }
+}
+
+.btn-face {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(220, 255, 230, 0.65);
+  background: rgba(120, 220, 140, 0.42);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+.btn-front,
+.btn-back {
+  width: var(--bw);
+  height: var(--bl);
+  margin-left: calc(var(--bw) / -2);
+  margin-top: calc(var(--bl) / -2);
+}
+
+.btn-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(calc(var(--bh) / 2));
+  background: rgba(140, 235, 160, 0.5);
+  color: #16361c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.btn-back {
+  transform: rotateY(180deg) translateZ(calc(var(--bh) / 2));
+  background: rgba(70, 160, 95, 0.4);
+}
+
+.btn-left,
+.btn-right {
+  width: var(--bh);
+  height: var(--bl);
+  margin-left: calc(var(--bh) / -2);
+  margin-top: calc(var(--bl) / -2);
+  background: rgba(90, 190, 120, 0.45);
+}
+
+.btn-right {
+  transform: rotateY(90deg) translateZ(calc(var(--bw) / 2));
+}
+
+.btn-left {
+  transform: rotateY(-90deg) translateZ(calc(var(--bw) / 2));
+}
+
+.btn-top,
+.btn-bottom {
+  width: var(--bw);
+  height: var(--bh);
+  margin-left: calc(var(--bw) / -2);
+  margin-top: calc(var(--bh) / -2);
+  background: rgba(160, 240, 180, 0.48);
+}
+
+.btn-top {
+  transform: rotateX(90deg) translateZ(calc(var(--bl) / 2));
+}
+
+.btn-bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--bl) / 2));
+  background: rgba(60, 140, 85, 0.42);
 }
