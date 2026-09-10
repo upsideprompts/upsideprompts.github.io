@@ -162,7 +162,7 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.45),
     0 18px 40px rgba(40, 70, 90, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.35);
-  transform: translateY(-80px);
+  transform: translateY(-65px);
 }
 
 .viewport.is-dragging {
@@ -171,8 +171,8 @@ body {
 
 .box {
   --length: 237px;
-  --width: 352px;
-  --depth: 101px;
+  --width: 372px;
+  --depth: 80px;
   position: relative;
   width: var(--length);
   height: var(--width);
