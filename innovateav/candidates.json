@@ -1,0 +1,6 @@
+{
+  "articles": [],
+  "lastUpdated": null,
+  "validationStatus": "empty",
+  "note": "Stage new articles here. Run: python3 validate_and_merge_articles.py — only HTTP 200 + content-pass URLs are merged into articles2.json."
+}

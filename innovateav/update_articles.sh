@@ -3,6 +3,9 @@
 # OpenClaw Site Verification Cron Script
 # Executes a prompt via OpenClaw, extracts searched URLs, validates HTTP reachability,
 # checks content legitimacy, and logs the results.
+#
+# IMPORTANT: This script does NOT write articles2.json.
+# Stage candidates in candidates.json and run validate_and_merge_articles.py to merge.
 
 set -euo pipefail
 
