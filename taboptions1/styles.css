@@ -149,8 +149,8 @@ body {
 }
 
 .viewport {
-  width: min(96vw, 480px);
-  height: min(75vh, 420px);
+  width: min(98vw, 560px);
+  height: min(80vh, 520px);
   perspective: 700px;
   display: flex;
   align-items: center;
@@ -170,9 +170,9 @@ body {
 }
 
 .box {
-  --length: 182px;
-  --width: 286px;
-  --depth: 78px;
+  --length: 237px;
+  --width: 372px;
+  --depth: 101px;
   position: relative;
   width: var(--length);
   height: var(--width);
@@ -208,7 +208,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 29px;
+  overflow: visible;
+}
 
 .back {
   transform: rotateY(180deg) translateZ(calc(var(--depth) / 2));
@@ -253,9 +255,9 @@ body {
 
 /* Front-face buttons: 100 wide × 20 long × 10 tall */
 .surface-btn {
-  --bw: 160px;
-  --bl: 26px;
-  --bh: 13px;
+  --bw: 208px;
+  --bl: 34px;
+  --bh: 17px;
   position: relative;
   width: var(--bw);
   height: var(--bl);
@@ -313,7 +315,7 @@ body {
   transform: translateZ(calc(var(--bh) / 2));
   background: rgba(140, 235, 160, 0.5);
   color: #16361c;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
   font-weight: 700;
   letter-spacing: 0.02em;
