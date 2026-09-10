@@ -150,7 +150,7 @@ body {
 
 .viewport {
   width: min(98vw, 560px);
-  height: min(80vh, 520px);
+  height: min(80vh, 540px);
   perspective: 700px;
   display: flex;
   align-items: center;
@@ -163,6 +163,7 @@ body {
     0 18px 40px rgba(40, 70, 90, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.35);
   transform: translateY(-50px);
+  padding-top: 20px;
 }
 
 .viewport.is-dragging {
