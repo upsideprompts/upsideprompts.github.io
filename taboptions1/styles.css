@@ -162,7 +162,7 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.45),
     0 18px 40px rgba(40, 70, 90, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.35);
-  transform: translateY(-65px);
+  transform: translateY(-50px);
 }
 
 .viewport.is-dragging {
