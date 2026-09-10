@@ -30,6 +30,15 @@ body {
   padding: 24px;
 }
 
+.page-icon {
+  width: 96px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(40, 70, 90, 0.2);
+  user-select: none;
+  pointer-events: none;
+}
+
 .hint {
   font-size: 0.95rem;
   letter-spacing: 0.04em;
