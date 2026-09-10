@@ -207,9 +207,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 36px;
-  overflow: visible;
-}
+  gap: 22px;
 
 .back {
   transform: rotateY(180deg) translateZ(calc(var(--depth) / 2));
@@ -254,7 +252,7 @@ body {
 
 /* Front-face buttons: 100 wide × 20 long × 10 tall */
 .surface-btn {
-  --bw: 130px;
+  --bw: 160px;
   --bl: 26px;
   --bh: 13px;
   position: relative;
@@ -314,7 +312,8 @@ body {
   transform: translateZ(calc(var(--bh) / 2));
   background: rgba(140, 235, 160, 0.5);
   color: #16361c;
-  font-size: 14px;
+  font-size: 10px;
+  white-space: nowrap;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
