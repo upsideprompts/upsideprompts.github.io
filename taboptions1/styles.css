@@ -58,9 +58,9 @@ body {
 }
 
 .box {
-  --length: 210px; /* long (70 × 3) */
-  --width: 150px;  /* wide (50 × 3) */
-  --depth: 60px;   /* deep (20 × 3) */
+  --length: 140px;
+  --width: 220px;
+  --depth: 60px;
   position: relative;
   width: var(--length);
   height: var(--width);
