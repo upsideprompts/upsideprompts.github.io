@@ -1,7 +1,7 @@
 # Bay Area Hikes Update
 
 ## Current Date and Time
-Wednesday, September 9, 2026 - 3:00 PM UTC
+Saturday, September 12, 2026 - 3:00 PM UTC
 
 ## Upcoming Hikes from Meetup.com (San Francisco Bay Area)
 ### September 2026
@@ -91,6 +91,7 @@ Wednesday, September 9, 2026 - 3:00 PM UTC
 - **Time:** TBD
 - **Group:** Heysis (via allevents.in)
 - **Details:** Swiss Escape getaway event.
+- **Status:** ✅ Event occurred (Sep 11)
 
 #### 🥾 Monthly Hiking Club
 - **Date:** Saturday, September 12, 2026
@@ -111,6 +112,7 @@ Wednesday, September 9, 2026 - 3:00 PM UTC
 - **Time:** 9:00 AM PDT
 - **Group:** Official Mt. Tamalpais State Park Docent Led Hiking Group (Rating: 4.9 ⭐, 8 attendees)
 - **Details:** Steep Ravine is one of the 4 hikes of the Pantoll Quad program. Meeting at Pantoll by the Friends of Mt Tam trailer. *6 seats left.*
+- **Status:** ✅ Event occurred (Sep 10)
 
 #### 🥾 1st Half of SF Crosstown Trail, 7 miles, 1200' elevation gain, MODERATE++
 - **Date:** Saturday, September 12, 2026
@@ -129,18 +131,21 @@ Wednesday, September 9, 2026 - 3:00 PM UTC
 - **Time:** 5:30 PM PDT
 - **Group:** Bay Area Women's Hiking Group (Rating: 4.9 ⭐, 10 attendees)
 - **Details:** ~4 miles, ~600 ft. Moderate + difficulty.
+- **Status:** ✅ Event occurred (Sep 10)
 
 #### 🥾 Smoky Mountain Boots and Roots Hiking
 - **Date:** Thursday, September 10, 2026
 - **Time:** 7:00 AM PDT
 - **Group:** Explorer Chicks of San Francisco (Rating: 4.8 ⭐, 3 attendees)
 - **Details:** Challenging trail with elevation changes.
+- **Status:** ✅ Event occurred (Sep 10)
 
 #### 🥾 Selby-Redwood-Grizzly Peak hike at Tilden (6 1/2 miles, Moderate) Dogs Okay
 - **Date:** Thursday, September 10, 2026
 - **Time:** 10:30 AM PDT
 - **Group:** Bay Area - Hike On! (Rating: 4.9 ⭐, 16 attendees)
 - **Details:** 6 1/2 miles, moderate difficulty, dogs welcome.
+- **Status:** ✅ Event occurred (Sep 10)
 
 #### 🥾 Vallejo Beer Hike
 - **Date:** Sunday, September 13, 2026
@@ -165,6 +170,7 @@ Wednesday, September 9, 2026 - 3:00 PM UTC
 - **Time:** 10:00 AM PDT
 - **Group:** North Bay 50+ Nature and Outdoors (Rating: 4.9 ⭐, 9 attendees)
 - **Details:** 5.2 mi, 1200 ft elevation gain along Marin Headlands.
+- **Status:** ✅ Event occurred (Sep 11)
 
 #### 🥾 Training for a TSX Backpacking Challenge
 - **Date:** Wednesday, September 23, 2026
@@ -268,6 +274,6 @@ Wednesday, September 9, 2026 - 3:00 PM UTC
   - **Venue:** Octavius Octopus Statue, San Francisco
 
 ## Source
-- Meetup.com San Francisco Bay Area hiking (updated September 9, 2026)
+- Meetup.com San Francisco Bay Area hiking (updated September 12, 2026)
 - allevents.in San Francisco Hiking
-- Last updated: September 9, 2026 3:00 PM UTC
+- Last updated: September 12, 2026 3:00 PM UTC
