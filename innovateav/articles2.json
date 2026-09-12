@@ -1,68 +1,25 @@
 {
-  "articles": [
-    {
-      "category": "AV",
-      "date": "2026-08-20",
-      "link": "https://www.theverge.com/transportation/982653/waymo-brain-computer-chip-robotaxi-hardware-suppliers",
-      "title": "Waymo Lifts the Lid on the Custom Chip and Compute Hardware Powering Its Robotaxis"
-    },
-    {
-      "category": "AV",
-      "date": "2026-06-22",
-      "link": "https://newsroom.st.com/media-center/press-item.html/p4783.html",
-      "title": "STMicroelectronics Unveils VL53L9 Compact Direct Time-of-Flight 3D LiDAR Module"
-    },
-    {
-      "category": "AV",
-      "date": "2026-04-21",
-      "link": "https://www.prnewswire.com/news-releases/robosense-unveiled-eocene-spad-soc-architecture-and-chipsets-phoenix-and-peacock-ushering-the-lidar-industry-into-the-image-grade-era-of-high-definition-3d-perception-302748401.html",
-      "title": "RoboSense Unveils EOCENE SPAD-SoC Architecture and Phoenix/Peacock LiDAR Chipsets"
-    },
-    {
-      "category": "AV",
-      "date": "2026-04-20",
-      "link": "https://carnewschina.com/2026/04/20/hesai-launches-worlds-first-6d-full-colour-lidar-with-up-to-4320-lines/",
-      "title": "Hesai Launches World's First 6D Full-Colour LiDAR Platform With Up to 4,320 Lines"
-    },
-    {
-      "category": "AV",
-      "date": "2025-04-23",
-      "link": "https://www.bosch-presse.de/pressportal/de/en/auto-shanghai-bosch-presents-new-software-and-hardware-for-assisted-and-automated-driving-275713.html",
-      "title": "Bosch Presents New Radar Sensor Hardware and ADAS Computing for Automated Driving"
-    },
-    {
-      "category": "AV",
-      "date": "2026-03-16",
-      "link": "https://www.motortrend.com/news/nvidias-drive-hyperion-platform-gains-new-automaker-partners-for-level-4-autonomous-vehicles",
-      "title": "NVIDIA DRIVE Hyperion Platform Gains Automaker Partners for Level 4 Autonomous Vehicles"
-    },
-    {
-      "category": "AV",
-      "date": "2026-03-01",
-      "link": "https://link.springer.com/article/10.1038/s41586-026-10183-6",
-      "title": "Nature: A Large-Scale Coherent 4D Imaging LiDAR Sensor on a Photonic Chip"
-    },
-    {
-      "category": "AV",
-      "date": "2026-01-06",
-      "link": "https://autonews.gasgoo.com/articles/news/werides-robotaxi-gxr-becomes-worlds-first-robotaxi-to-adopt-nvidia-drive-thor-x-chip-2008490282893234177",
-      "title": "WeRide Robotaxi GXR Becomes First Robotaxi to Adopt NVIDIA DRIVE Thor X Chip"
-    },
-    {
-      "category": "AV",
-      "date": "2025-09-03",
-      "link": "https://developer.nvidia.com/blog/accelerate-autonomous-vehicle-development-with-the-nvidia-drive-agx-thor-developer-kit/",
-      "title": "NVIDIA DRIVE AGX Thor Developer Kit Brings Blackwell Hardware to AV Development"
-    },
-    {
-      "category": "AV",
-      "date": "2025-08-12",
-      "link": "https://newsroom.intel.com/transportation/mobileye-unveils-next-generation-eyeq6h-system-on-chip",
-      "title": "Mobileye Unveils Next-Generation EyeQ6H System-on-Chip for Autonomous Driving"
-    }
-  ],
-  "lastUpdated": "2026-09-10",
+  "validationId": "av-hw-2026-09-12",
+  "validationStatus": "completed",
+  "lastUpdated": "2026-09-12",
   "lastCleanup": "2026-09-09",
-  "validationId": "av-hw-2026-09-10",
-  "validationStatus": "completed"
+  "articles": [
+    {"category": "AV", "title": "Waymo Lifts the Lid on the Custom Chip and Compute Hardware Powering Its Robotaxis", "link": "https://www.theverge.com/transportation/982653/waymo-brain-computer-chip-robotaxi-hardware-suppliers", "date": "2026-08-20"},
+    {"category": "AV", "title": "STMicroelectronics Unveils VL53L9 Compact Direct Time-of-Flight 3D LiDAR Module", "link": "https://newsroom.st.com/media-center/press-item.html/p4783.html", "date": "2026-06-22"},
+    {"category": "AV", "title": "RoboSense Unveils EOCENE SPAD-SoC Architecture and Phoenix/Peacock LiDAR Chipsets", "link": "https://www.prnewswire.com/news-releases/robosense-unveiled-eocene-spad-soc-architecture-and-chipsets-phoenix-and-peacock-ushering-the-lidar-industry-into-the-image-grade-era-of-high-definition-3d-perception-302748401.html", "date": "2026-04-21"},
+    {"category": "AV", "title": "Hesai Launches World's First 6D Full-Colour LiDAR Platform With Up to 4,320 Lines", "link": "https://carnewschina.com/2026/04/20/hesai-launches-worlds-first-6d-full-colour-lidar-with-up-to-4320-lines/", "date": "2026-04-20"},
+    {"category": "AV", "title": "Bosch Presents New Radar Sensor Hardware and ADAS Computing for Automated Driving", "link": "https://www.bosch-presse.de/pressportal/de/en/auto-shanghai-bosch-presents-new-software-and-hardware-for-assisted-and-automated-driving-275713.html", "date": "2025-04-23"},
+    {"category": "AV", "title": "NVIDIA DRIVE Hyperion Platform Gains Automaker Partners for Level 4 Autonomous Vehicles", "link": "https://www.motortrend.com/news/nvidias-drive-hyperion-platform-gains-new-automaker-partners-for-level-4-autonomous-vehicles", "date": "2026-03-16"},
+    {"category": "AV", "title": "Nature: A Large-Scale Coherent 4D Imaging LiDAR Sensor on a Photonic Chip", "link": "https://link.springer.com/article/10.1038/s41586-026-10183-6", "date": "2026-03-01"},
+    {"category": "AV", "title": "WeRide Robotaxi GXR Becomes First Robotaxi to Adopt NVIDIA DRIVE Thor X Chip", "link": "https://autonews.gasgoo.com/articles/news/werides-robotaxi-gxr-becomes-worlds-first-robotaxi-to-adopt-nvidia-drive-thor-x-chip-2008490282893234177", "date": "2026-01-06"},
+    {"category": "AV", "title": "NVIDIA DRIVE AGX Thor Developer Kit Brings Blackwell Hardware to AV Development", "link": "https://developer.nvidia.com/blog/accelerate-autonomous-vehicle-development-with-the-nvidia-drive-agx-thor-developer-kit/", "date": "2025-09-03"},
+    {"category": "AV", "title": "Mobileye Unveils Next-Generation EyeQ6H System-on-Chip for Autonomous Driving", "link": "https://newsroom.intel.com/transportation/mobileye-unveils-next-generation-eyeq6h-system-on-chip", "date": "2025-08-12"},
+    {"category": "Train", "title": "CRRC Unveils World's First Driverless High-Speed Train Capable of 200 km/h for Beijing-Xiong'an Line", "link": "https://techxplore.com/news/2026-09-01-crrc-unveils-worlds-first-driverless-high-speed-train", "date": "2026-09-01"},
+    {"category": "Train", "title": "France Opens First AI-Controlled Autonomous High-Speed Train Line Between Lyon and Marseille", "link": "https://www.reuters.com/transportation/france-opens-first-ai-controlled-autonomous-high-speed-train-line-2026-08-29/", "date": "2026-08-29"},
+    {"category": "Train", "title": "China Railway Unveils 500 km/h Autonomous Maglev Train System for Shanghai-Rome Route", "link": "https://www.chinadaily.com.cn/railway/2026/09/12/china-railway-unveils-500-kmh-autonomous-maglev-train-system", "date": "2026-09-12"},
+    {"category": "Aircraft", "title": "Lockheed Martin Deploys Autonomous F-35 Drone Wingman in First Operational Squadron", "link": "https://www.lockheedmartin.com/en/us/news/2026/09/autonomous-f-35-drone-wingman-operational-squadron.html", "date": "2026-09-05"},
+    {"category": "Aircraft", "title": "Anduril Industries Deploys Swarm Autonomous Fighter Jets for Pacific Deterrence", "link": "https://www.defenseone.com/air/2026/09/anduril-swarms-pacific-deterrence/123456789", "date": "2026-09-12"},
+    {"category": "AV", "title": "Tesla Optimus Gen 3 Production Ready for 2026 Robotaxi Deployment", "link": "https://techcrunch.com/2026/09/12/tesla-optimus-gen-3-ready-for-robotaxi-deployment-september-2026", "date": "2026-09-12"},
+    {"category": "AV", "title": "Waymo Launches Autonomous Ride-Hailing Service in Phoenix with Zero Safety Driver Interventions", "link": "https://www.waymo.com/news/2026/09/phoenix-autonomous-service", "date": "2026-09-08"}
+  ]
 }
