@@ -1,0 +1,69 @@
+# Flutter
+# Compiled application files
+*.flutter-plugins
+*.dart_tool/
+*.dart_observable/
+*.snapshot
+*.pdb
+*.keystore
+*.so
+*.app
+*.exe
+*.ipa
+*.apk
+*.aab
+*.zip
+*.tar.gz
+
+# Dart
+.dart_tool/
+*.dart_tool/
+*.dart_observable/
+
+# Android
+*.apk
+*.aab
+
+# iOS
+*.ipa
+
+# macOS
+*.dylib
+
+# Web
+*.map
+*.js
+*.js.map
+*.wasm
+*.woff
+*.woff2
+*.ttf
+*.otf
+
+# Environment
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+lib/data/
+lib/generated/
+
+# Build artifacts
+build/
+
+# Files that might be left by tools
+*.swp
+*.swo
+*~
