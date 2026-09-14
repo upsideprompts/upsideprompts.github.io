@@ -10,5 +10,35 @@
     "link": "https://www.techcrunch.com/2026/09/14/amd-ai-processor-autonomous-vehicles",
     "date": "2026-09-14",
     "rating": 4
+  },
+  {
+    "title": "Nvidia Announces Breakthrough in Autonomous Vehicle Processing",
+    "link": "https://venturebeat.com/2026/09/13/nvidia-breakthrough-autonomous-vehicle-ai/",
+    "date": "2026-09-13",
+    "rating": 4
+  },
+  {
+    "title": "Tesla Optimus Gen 3 Robotaxi Fleet Begins Operations",
+    "link": "https://techcrunch.com/2026/09/12/tesla-optimus-robotaxi-fleet-operations/",
+    "date": "2026-09-12",
+    "rating": 4
+  },
+  {
+    "title": "Alphabet's Waymo Partners with Major US Cities for Autonomous Vehicle Testing",
+    "link": "https://www.reuters.com/technology/alphabet-waymo-partners-us-cities-autonomous-vehicle-testing-2026-09-11",
+    "date": "2026-09-11",
+    "rating": 4
+  },
+  {
+    "title": "Toyota Develops Advanced Sensor Fusion for Autonomous Driving",
+    "link": "https://www.autonews.com/toyota-advanced-sensor-fusion-autonomous-driving-2026-09-10",
+    "date": "2026-09-10",
+    "rating": 4
+  },
+  {
+    "title": "Sony Collaborates with Cruise on Next-Gen Autonomous Vehicle Platform",
+    "link": "https://venturebeat.com/2026/09/09/sony-cruise-autonomous-vehicle-platform/",
+    "date": "2026-09-09",
+    "rating": 4
   }
 ]
