@@ -2,6 +2,12 @@
   "articles": [
     {
       "category": "AV",
+      "date": "2026-09-01",
+      "link": "https://techcrunch.com/2026/09/01/waymo-accelerates-robotaxi-expansion-with-launches-in-denver-san-diego-and-tampa/",
+      "title": "Waymo accelerates robotaxi expansion with launches in Denver, San Diego, and Tampa"
+    },
+    {
+      "category": "AV",
       "date": "2026-08-20",
       "link": "https://www.theverge.com/transportation/982653/waymo-brain-computer-chip-robotaxi-hardware-suppliers",
       "title": "Waymo Lifts the Lid on the Custom Chip and Compute Hardware Powering Its Robotaxis"
@@ -61,8 +67,8 @@
       "title": "Mobileye Unveils Next-Generation EyeQ6H System-on-Chip for Autonomous Driving"
     }
   ],
-  "lastCleanup": "2026-09-09",
-  "lastUpdated": "2026-09-09",
-  "validationId": "av-hw-2026-09-09",
+  "lastCleanup": "2026-09-13",
+  "lastUpdated": "2026-09-13",
+  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
   "validationStatus": "completed"
 }
