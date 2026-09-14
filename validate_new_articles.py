@@ -46,7 +46,7 @@ def validate_url_with_linkchecker(url):
         elif 'connection refused' in output_lower:
             return '❌ CONNECTION REFUSED', -1, "Connection refused"
         elif 'timeout' in output_lower:
-            return '❌ TIMEOUT', -1, "Connection timeout"
+            return '⏰ TIMEOUT', -1, "Connection timeout"
         elif 'forbidden' in output_lower or 'access denied' in output_lower:
             return '❌ ACCESS DENIED', -1, "Access denied or forbidden"
         elif process.returncode == 0:
@@ -126,8 +126,12 @@ def validate_and_rate_articles(new_articles):
         # Apply rating rules
         current_rating = article.get('rating', 5)
         
-        # Special rule: 402 or 404 = rating 1
-        if status.startswith(('❌ 402', '❌ 404')):
+        # NEW RULE: If timeout, set rating to 1
+        if status.startswith('⏰ TIMEOUT'):
+            new_rating = 1
+            credibility_note = " (NEW RULE: Timeout = rating 1)"
+        # Existing rule: 402 or 404 = rating 1
+        elif status.startswith(('❌ 402', '❌ 404')):
             new_rating = 1
             credibility_note = " (Special rule: 402/404 = rating 1)"
         else:
