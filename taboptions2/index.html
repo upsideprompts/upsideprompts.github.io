@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Tab Options 2 — Cassette Keyring STL</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="stage">
+    <div class="top-block">
+      <div class="title-scene">
+        <div class="title-box" aria-label="Cassette Keyring STL">
+          <div class="title-face title-front">Cassette Keyring · Binary STL</div>
+          <div class="title-face title-back"></div>
+          <div class="title-face title-left"></div>
+          <div class="title-face title-right"></div>
+          <div class="title-face title-top"></div>
+          <div class="title-face title-bottom"></div>
+        </div>
+      </div>
+      <p class="hint">Drag to rotate · scroll to zoom · translucent mesh from binary STL</p>
+    </div>
+
+    <div class="viewport" id="viewport" aria-label="Translucent STL viewer">
+      <canvas id="canvas"></canvas>
+      <p class="status" id="status">Loading Cassette_Keyring.stl…</p>
+    </div>
+
+    <aside class="spec" aria-label="STL format notes">
+      <h2>Binary STL (fabbers.com)</h2>
+      <ul>
+        <li>80-byte header</li>
+        <li>uint32 little-endian triangle count</li>
+        <li>Each facet: 12× float32 (normal + 3 vertices) + uint16 attribute</li>
+        <li>Source: <code>Cassette_Keyring.stl</code> · <span id="facetCount">—</span> facets</li>
+      </ul>
+    </aside>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
