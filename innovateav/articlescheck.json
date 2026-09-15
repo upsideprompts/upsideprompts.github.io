@@ -40,5 +40,17 @@
     "link": "https://venturebeat.com/2026/09/09/sony-cruise-autonomous-vehicle-platform/",
     "date": "2026-09-09",
     "rating": 1
+  },
+  {
+    "title": "Waymo Completes Autonomous Vehicle Fleet Expansion to Six New Cities",
+    "link": "https://www.reuters.com/technology/waymo-expands-autonomous-fleet-six-cities-2026-09-15",
+    "date": "2026-09-15",
+    "rating": 5
+  },
+  {
+    "title": "AMD Releases Next-Generation AI Processing Chip for Autonomous Vehicle Applications",
+    "link": "https://www.techcrunch.com/2026/09/15/amd-nextgen-ai-processor-autonomous-vehicles",
+    "date": "2026-09-15",
+    "rating": 5
   }
 ]
