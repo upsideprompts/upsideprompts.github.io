@@ -14,6 +14,12 @@ class QuotesProvider with ChangeNotifier {
   bool _isAnimating = false;
   bool get isAnimating => _isAnimating;
 
+  bool _isLoading = true;
+  bool get isLoading => _isLoading;
+
+  String? _error;
+  String? get error => _error;
+
   int _autoScrollInterval = 5000;
   int get autoScrollInterval => _autoScrollInterval;
 
@@ -21,13 +27,32 @@ class QuotesProvider with ChangeNotifier {
   bool get autoScrollEnabled => _autoScrollEnabled;
 
   Timer? _autoScrollTimer;
+  List<Quote> _source = [];
 
   QuotesProvider() {
-    _quotes = List<Quote>.from(quotesData);
+    _load();
+  }
+
+  Future<void> _load() async {
+    _isLoading = true;
+    _error = null;
+    notifyListeners();
+    try {
+      _source = await loadQuotesFromAsset();
+      _quotes = List<Quote>.from(_source);
+      _currentIndex = 0;
+      _isLoading = false;
+      notifyListeners();
+      startIfNeeded();
+    } catch (e) {
+      _isLoading = false;
+      _error = 'Failed to load quotes.json';
+      notifyListeners();
+    }
   }
 
   void startIfNeeded() {
-    if (_autoScrollEnabled) {
+    if (_autoScrollEnabled && _quotes.isNotEmpty) {
       _startAutoScroll();
     }
   }
@@ -77,6 +102,7 @@ class QuotesProvider with ChangeNotifier {
 
   void _startAutoScroll() {
     _stopAutoScroll();
+    if (_quotes.isEmpty) return;
     _autoScrollTimer = Timer.periodic(
       Duration(milliseconds: _autoScrollInterval),
       (_) => nextQuote(),
@@ -89,7 +115,11 @@ class QuotesProvider with ChangeNotifier {
   }
 
   void refreshQuotes() {
-    _quotes = List<Quote>.from(quotesData)..shuffle();
+    if (_source.isEmpty) {
+      _load();
+      return;
+    }
+    _quotes = List<Quote>.from(_source)..shuffle();
     _currentIndex = 0;
     notifyListeners();
   }

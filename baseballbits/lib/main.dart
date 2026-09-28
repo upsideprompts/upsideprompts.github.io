@@ -7,7 +7,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     ChangeNotifierProvider(
-      create: (_) => QuotesProvider()..startIfNeeded(),
+      create: (_) => QuotesProvider(),
       child: const BaseballBitsApp(),
     ),
   );
