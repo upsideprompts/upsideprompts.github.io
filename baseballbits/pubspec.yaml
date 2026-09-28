@@ -1,30 +1,20 @@
-name: flutter_quote_slider
+name: baseballbits
+description: Baseball Bits — Flutter quote slider (Dart-first web app)
+publish_to: "none"
 version: 1.0.0+1
 
-description: A Flutter quote slider app with navigation features and animations
-
 environment:
-  sdk: "^3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   provider: ^6.1.1
-  http: ^1.0.0
-  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.1
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/images/
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: fonts/Poppins-Regular.ttf
-        - asset: fonts/Poppins-Bold.ttf
-        - asset: fonts/Poppins-Italic.ttf

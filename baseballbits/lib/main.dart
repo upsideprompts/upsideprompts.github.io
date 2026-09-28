@@ -4,24 +4,32 @@ import 'screens/home_screen.dart';
 import 'models/quotes_provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     ChangeNotifierProvider(
-      create: (context) => QuotesProvider(),
-      child: MyApp(),
+      create: (_) => QuotesProvider()..startIfNeeded(),
+      child: const BaseballBitsApp(),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
+class BaseballBitsApp extends StatelessWidget {
+  const BaseballBitsApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Quote Slider',
+      title: 'Baseball Bits',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1E3C72),
+          brightness: Brightness.light,
+        ),
+        useMaterial3: true,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

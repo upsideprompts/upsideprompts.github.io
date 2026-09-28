@@ -1,0 +1,54 @@
+name: Deploy Baseball Bits Flutter Web
+
+on:
+  push:
+    branches: [gh-pages]
+    paths:
+      - "baseballbits/lib/**"
+      - "baseballbits/web/**"
+      - "baseballbits/pubspec.yaml"
+      - "baseballbits/pubspec.lock"
+      - ".github/workflows/baseballbits.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: baseballbits-web
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Build web
+        working-directory: baseballbits
+        run: |
+          flutter pub get
+          flutter build web --release --base-href /baseballbits/
+
+      - name: Publish build into baseballbits/
+        working-directory: baseballbits
+        run: |
+          chmod +x deploy_web.sh
+          ./deploy_web.sh
+
+      - name: Commit published web assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add baseballbits
+          if git diff --staged --quiet; then
+            echo "No web asset changes"
+            exit 0
+          fi
+          git commit -m "Build baseballbits Flutter web for GitHub Pages"
+          git push
