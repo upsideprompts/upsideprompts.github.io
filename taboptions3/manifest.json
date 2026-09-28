@@ -1,0 +1,35 @@
+{
+    "name": "Tab Options 3",
+    "short_name": "TabOptions3",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#EEF3F7",
+    "theme_color": "#6EC8E8",
+    "description": "Flutter translucent Cassette Keyring STL viewer",
+    "orientation": "any",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
