@@ -200,73 +200,102 @@ class QuoteCard extends StatelessWidget {
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
       margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: quote.backgroundColor,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.12),
-            blurRadius: 10,
+            color: Colors.black.withValues(alpha: 0.18),
+            blurRadius: 12,
             offset: const Offset(0, 4),
           ),
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      clipBehavior: Clip.antiAlias,
+      child: Stack(
+        fit: StackFit.expand,
         children: [
-          const Expanded(
-            flex: 2,
-            child: Center(
-              child: Icon(Icons.sports_baseball, size: 72, color: Colors.white70),
-            ),
+          Image.asset(
+            quote.backgroundImage,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) {
+              return Container(color: quote.backgroundColor);
+            },
           ),
-          Expanded(
-            flex: 3,
+          Container(color: quote.backgroundColor),
+          Padding(
+            padding: const EdgeInsets.all(24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: Text(
-                      '"${quote.quote}"',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: quote.textColor,
-                        height: 1.35,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                const Expanded(
+                  flex: 1,
+                  child: Center(
+                    child: Icon(Icons.sports_baseball, size: 56, color: Colors.white70),
                   ),
                 ),
-                const SizedBox(height: 14),
-                Text(
-                  '— ${quote.author}',
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontStyle: FontStyle.italic,
-                    color: quote.textColor.withValues(alpha: 0.85),
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: SingleChildScrollView(
+                          child: Text(
+                            '"${quote.quote}"',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: quote.textColor,
+                              height: 1.35,
+                              shadows: const [
+                                Shadow(
+                                  blurRadius: 8,
+                                  color: Colors.black54,
+                                  offset: Offset(0, 1),
+                                ),
+                              ],
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 14),
+                      Text(
+                        '— ${quote.author}',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontStyle: FontStyle.italic,
+                          color: quote.textColor.withValues(alpha: 0.92),
+                          shadows: const [
+                            Shadow(
+                              blurRadius: 6,
+                              color: Colors.black54,
+                              offset: Offset(0, 1),
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (quote.category.trim().isNotEmpty) ...[
+                        const SizedBox(height: 10),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: quote.textColor.withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            quote.category,
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: quote.textColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
-                if (quote.category.trim().isNotEmpty) ...[
-                  const SizedBox(height: 10),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: quote.textColor.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      quote.category,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        color: quote.textColor,
-                      ),
-                    ),
-                  ),
-                ],
               ],
             ),
           ),

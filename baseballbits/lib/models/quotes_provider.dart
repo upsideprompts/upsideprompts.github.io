@@ -39,7 +39,7 @@ class QuotesProvider with ChangeNotifier {
     notifyListeners();
     try {
       _source = await loadQuotesFromAsset();
-      _quotes = List<Quote>.from(_source);
+      _quotes = shuffleQuotesAlternatingPeople(_source);
       _currentIndex = 0;
       _isLoading = false;
       notifyListeners();
@@ -119,7 +119,7 @@ class QuotesProvider with ChangeNotifier {
       _load();
       return;
     }
-    _quotes = List<Quote>.from(_source)..shuffle();
+    _quotes = shuffleQuotesAlternatingPeople(_source);
     _currentIndex = 0;
     notifyListeners();
   }

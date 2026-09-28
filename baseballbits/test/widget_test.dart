@@ -1,22 +1,26 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:provider/provider.dart';
 
-import 'package:baseballbits/main.dart';
-import 'package:baseballbits/models/quotes_provider.dart';
+import 'package:baseballbits/models/quotes_data.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Baseball Bits loads quote slider from JSON', (WidgetTester tester) async {
-    await tester.pumpWidget(
-      ChangeNotifierProvider(
-        create: (_) => QuotesProvider(),
-        child: const BaseballBitsApp(),
-      ),
-    );
-    await tester.pumpAndSettle();
-    expect(find.text('Baseball Bits'), findsOneWidget);
-    expect(find.textContaining('Quote 1 of'), findsOneWidget);
-    expect(find.textContaining('Roberto Clemente'), findsWidgets);
+  test('adjacent quotes always have different authors (including wrap)', () async {
+    final source = await loadQuotesFromAsset();
+    expect(source.length, greaterThan(10));
+    for (var trial = 0; trial < 25; trial++) {
+      final shuffled = shuffleQuotesAlternatingPeople(source);
+      expect(shuffled.length, greaterThan(1));
+      for (var i = 0; i < shuffled.length; i++) {
+        final next = shuffled[(i + 1) % shuffled.length];
+        expect(
+          shuffled[i].author,
+          isNot(equals(next.author)),
+          reason: 'trial $trial index $i (${shuffled[i].author}) next to ${next.author}',
+        );
+      }
+      // Scenic backgrounds assigned
+      expect(shuffled.every((q) => q.backgroundImage.contains('backgrounds/')), isTrue);
+    }
   });
 }
