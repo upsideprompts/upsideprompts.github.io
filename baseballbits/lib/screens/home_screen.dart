@@ -28,15 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  void _goTo(int index) {
-    if (!_pageController.hasClients) return;
-    _pageController.animateToPage(
-      index,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-    );
-  }
-
   Rect? _shareOrigin() {
     final box = _shareButtonKey.currentContext?.findRenderObject() as RenderBox?;
     if (box == null || !box.hasSize) return null;
@@ -172,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Positioned(
                           left: 24,
                           right: 24,
-                          bottom: 100,
+                          bottom: 24,
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -202,17 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               const SizedBox(height: 12),
-                              _FloatingBar(
-                                provider: provider,
-                                onPrevious: () {
-                                  provider.previousQuote();
-                                  _goTo(provider.currentIndex);
-                                },
-                                onNext: () {
-                                  provider.nextQuote();
-                                  _goTo(provider.currentIndex);
-                                },
-                              ),
+                              const _SecondaryBar(),
                             ],
                           ),
                         ),
@@ -222,16 +203,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class _FloatingBar extends StatelessWidget {
-  const _FloatingBar({
-    required this.provider,
-    required this.onPrevious,
-    required this.onNext,
-  });
-
-  final QuotesProvider provider;
-  final VoidCallback onPrevious;
-  final VoidCallback onNext;
+class _SecondaryBar extends StatelessWidget {
+  const _SecondaryBar();
 
   static const _categories = [
     'Innovation',
@@ -309,48 +282,32 @@ class _FloatingBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
         color: Colors.black.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.white.withValues(alpha: 0.18)),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-            tooltip: 'Previous quote',
-            icon: const Icon(Icons.chevron_left, size: 32, color: Colors.white),
-            onPressed: onPrevious,
-          ),
-          IconButton(
             tooltip: 'Categories',
-            icon: const Icon(Icons.list_alt, size: 26, color: Colors.white),
+            icon: const Icon(Icons.list_alt, size: 28, color: Colors.white),
             onPressed: () => _showOptionModal(
               context,
               title: 'Categories',
               options: _categories,
             ),
           ),
-          Expanded(
-            child: Text(
-              'Quote ${provider.currentIndex + 1} of ${provider.quotes.length}',
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 16, color: Colors.white70),
-            ),
-          ),
           IconButton(
             tooltip: 'Backgrounds',
-            icon: const Icon(Icons.image_outlined, size: 26, color: Colors.white),
+            icon: const Icon(Icons.image_outlined, size: 28, color: Colors.white),
             onPressed: () => _showOptionModal(
               context,
               title: 'Backgrounds',
               options: _backgroundStyles,
             ),
-          ),
-          IconButton(
-            tooltip: 'Next quote',
-            icon: const Icon(Icons.chevron_right, size: 32, color: Colors.white),
-            onPressed: onNext,
           ),
         ],
       ),
