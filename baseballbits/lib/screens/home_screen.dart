@@ -1,5 +1,10 @@
+import 'dart:typed_data';
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../models/quotes_data.dart';
 import '../models/quotes_provider.dart';
@@ -13,6 +18,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final PageController _pageController = PageController();
+  final GlobalKey _captureKey = GlobalKey();
+  final GlobalKey _shareButtonKey = GlobalKey();
+  bool _sharing = false;
 
   @override
   void dispose() {
@@ -27,6 +35,75 @@ class _HomeScreenState extends State<HomeScreen> {
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
+  }
+
+  Rect? _shareOrigin() {
+    final box = _shareButtonKey.currentContext?.findRenderObject() as RenderBox?;
+    if (box == null || !box.hasSize) return null;
+    final origin = box.localToGlobal(Offset.zero);
+    return origin & box.size;
+  }
+
+  Future<void> _shareCurrentQuote(QuotesProvider provider) async {
+    if (_sharing || provider.quotes.isEmpty) return;
+    setState(() => _sharing = true);
+    try {
+      final quote = provider.quotes[provider.currentIndex];
+      final bytes = await _captureQuotePng();
+      final fileName =
+          'baseballbits_${quote.author.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '_')}.png';
+      await SharePlus.instance.share(
+        ShareParams(
+          files: [
+            XFile.fromData(
+              bytes,
+              mimeType: 'image/png',
+              name: fileName,
+            ),
+          ],
+          text: '"${quote.quote}" — ${quote.author}',
+          subject: 'Baseball Bits',
+          title: 'Baseball Bits',
+          downloadFallbackEnabled: true,
+          sharePositionOrigin: _shareOrigin(),
+        ),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not share quote: $e')),
+      );
+    } finally {
+      if (mounted) setState(() => _sharing = false);
+    }
+  }
+
+  Future<ui.Image> _waitForCaptureImage() async {
+    // Allow the active page to finish painting before snapshot.
+    await WidgetsBinding.instance.endOfFrame;
+    for (var attempt = 0; attempt < 20; attempt++) {
+      final boundary =
+          _captureKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+      if (boundary != null && boundary.hasSize) {
+        try {
+          return await boundary.toImage(pixelRatio: 3);
+        } catch (_) {
+          // Boundary may still be painting; retry shortly.
+        }
+      }
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+      await WidgetsBinding.instance.endOfFrame;
+    }
+    throw StateError('Quote image was not ready to capture');
+  }
+
+  Future<Uint8List> _captureQuotePng() async {
+    final image = await _waitForCaptureImage();
+    final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+    if (byteData == null) {
+      throw StateError('Failed to encode quote image');
+    }
+    return byteData.buffer.asUint8List();
   }
 
   @override
@@ -79,26 +156,64 @@ class _HomeScreenState extends State<HomeScreen> {
                           onPageChanged: provider.goToQuote,
                           itemBuilder: (context, index) {
                             final quote = provider.quotes[index];
-                            return QuoteCard(
+                            final card = QuoteCard(
                               quote: quote,
                               isActive: index == provider.currentIndex,
                             );
+                            if (index == provider.currentIndex) {
+                              return RepaintBoundary(
+                                key: _captureKey,
+                                child: card,
+                              );
+                            }
+                            return card;
                           },
                         ),
                         Positioned(
                           left: 24,
                           right: 24,
                           bottom: 200,
-                          child: _FloatingBar(
-                            provider: provider,
-                            onPrevious: () {
-                              provider.previousQuote();
-                              _goTo(provider.currentIndex);
-                            },
-                            onNext: () {
-                              provider.nextQuote();
-                              _goTo(provider.currentIndex);
-                            },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Material(
+                                key: _shareButtonKey,
+                                color: Colors.black.withValues(alpha: 0.6),
+                                shape: const CircleBorder(),
+                                child: IconButton(
+                                  tooltip: 'Share quote image',
+                                  onPressed: _sharing
+                                      ? null
+                                      : () => _shareCurrentQuote(provider),
+                                  icon: _sharing
+                                      ? const SizedBox(
+                                          width: 24,
+                                          height: 24,
+                                          child: CircularProgressIndicator(
+                                            strokeWidth: 2.5,
+                                            color: Colors.white,
+                                          ),
+                                        )
+                                      : const Icon(
+                                          Icons.ios_share,
+                                          color: Colors.white,
+                                          size: 26,
+                                        ),
+                                ),
+                              ),
+                              const SizedBox(height: 12),
+                              _FloatingBar(
+                                provider: provider,
+                                onPrevious: () {
+                                  provider.previousQuote();
+                                  _goTo(provider.currentIndex);
+                                },
+                                onNext: () {
+                                  provider.nextQuote();
+                                  _goTo(provider.currentIndex);
+                                },
+                              ),
+                            ],
                           ),
                         ),
                       ],

@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.1.1
+  share_plus: ^13.3.0
 
 dev_dependencies:
   flutter_test:
