@@ -233,10 +233,83 @@ class _FloatingBar extends StatelessWidget {
   final VoidCallback onPrevious;
   final VoidCallback onNext;
 
+  static const _categories = [
+    'Innovation',
+    'Focus',
+    'Appreciation',
+    'Improvement',
+  ];
+
+  static const _backgroundStyles = [
+    'Stadiums',
+    'Fields',
+    'Baseball Diamonds',
+    'Solid Colors',
+  ];
+
+  Future<void> _showOptionModal(
+    BuildContext context, {
+    required String title,
+    required List<String> options,
+  }) {
+    return showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: const Color(0xFF1A2744),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(8, 12, 8, 16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+                const SizedBox(height: 14),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                for (final option in options)
+                  ListTile(
+                    title: Text(
+                      option,
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    trailing: const Icon(
+                      Icons.chevron_right,
+                      color: Colors.white38,
+                    ),
+                    onTap: () {
+                      // Selection wiring comes later.
+                      Navigator.of(context).pop();
+                    },
+                  ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
       decoration: BoxDecoration(
         color: Colors.black.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(12),
@@ -245,18 +318,38 @@ class _FloatingBar extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            icon: const Icon(Icons.chevron_left, size: 36, color: Colors.white),
+            tooltip: 'Previous quote',
+            icon: const Icon(Icons.chevron_left, size: 32, color: Colors.white),
             onPressed: onPrevious,
+          ),
+          IconButton(
+            tooltip: 'Categories',
+            icon: const Icon(Icons.list_alt, size: 26, color: Colors.white),
+            onPressed: () => _showOptionModal(
+              context,
+              title: 'Categories',
+              options: _categories,
+            ),
           ),
           Expanded(
             child: Text(
               'Quote ${provider.currentIndex + 1} of ${provider.quotes.length}',
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 18, color: Colors.white70),
+              style: const TextStyle(fontSize: 16, color: Colors.white70),
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.chevron_right, size: 36, color: Colors.white),
+            tooltip: 'Backgrounds',
+            icon: const Icon(Icons.image_outlined, size: 26, color: Colors.white),
+            onPressed: () => _showOptionModal(
+              context,
+              title: 'Backgrounds',
+              options: _backgroundStyles,
+            ),
+          ),
+          IconButton(
+            tooltip: 'Next quote',
+            icon: const Icon(Icons.chevron_right, size: 32, color: Colors.white),
             onPressed: onNext,
           ),
         ],
