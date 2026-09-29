@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final PageController _pageController = PageController();
-  int _lastProviderIndex = 0;
 
   @override
   void dispose() {
@@ -21,14 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  void _syncPageFromProvider(QuotesProvider provider) {
+  void _goTo(int index) {
     if (!_pageController.hasClients) return;
-    if (provider.quotes.isEmpty) return;
-    if (provider.currentIndex == _lastProviderIndex) return;
-    _lastProviderIndex = provider.currentIndex;
     _pageController.animateToPage(
-      provider.currentIndex,
-      duration: const Duration(milliseconds: 350),
+      index,
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
   }
@@ -36,9 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<QuotesProvider>();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _syncPageFromProvider(provider);
-    });
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -54,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.refresh),
             onPressed: () {
               provider.refreshQuotes();
-              _lastProviderIndex = 0;
               if (_pageController.hasClients) {
                 _pageController.jumpToPage(0);
               }
@@ -84,10 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         PageView.builder(
                           controller: _pageController,
                           itemCount: provider.quotes.length,
-                          onPageChanged: (index) {
-                            _lastProviderIndex = index;
-                            provider.goToQuote(index);
-                          },
+                          onPageChanged: provider.goToQuote,
                           itemBuilder: (context, index) {
                             final quote = provider.quotes[index];
                             return QuoteCard(
@@ -97,13 +86,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ),
                         Positioned(
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          child: _ControlsBar(
+                          left: 24,
+                          right: 24,
+                          bottom: 200,
+                          child: _FloatingBar(
                             provider: provider,
-                            pageController: _pageController,
-                            onIndexSynced: (index) => _lastProviderIndex = index,
+                            onPrevious: () {
+                              provider.previousQuote();
+                              _goTo(provider.currentIndex);
+                            },
+                            onNext: () {
+                              provider.nextQuote();
+                              _goTo(provider.currentIndex);
+                            },
                           ),
                         ),
                       ],
@@ -112,101 +107,42 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class _ControlsBar extends StatelessWidget {
-  const _ControlsBar({
+class _FloatingBar extends StatelessWidget {
+  const _FloatingBar({
     required this.provider,
-    required this.pageController,
-    required this.onIndexSynced,
+    required this.onPrevious,
+    required this.onNext,
   });
 
   final QuotesProvider provider;
-  final PageController pageController;
-  final ValueChanged<int> onIndexSynced;
+  final VoidCallback onPrevious;
+  final VoidCallback onNext;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(
-        16,
-        12,
-        16,
-        12 + MediaQuery.paddingOf(context).bottom,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.black.withValues(alpha: 0.55),
-        border: Border(
-          top: BorderSide(color: Colors.white.withValues(alpha: 0.15)),
-        ),
+        color: Colors.black.withValues(alpha: 0.6),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.18)),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: Row(
         children: [
-          Text(
-            'Quote ${provider.currentIndex + 1} of ${provider.quotes.length}',
-            style: const TextStyle(fontSize: 22, color: Colors.white70),
+          IconButton(
+            icon: const Icon(Icons.chevron_left, size: 36, color: Colors.white),
+            onPressed: onPrevious,
           ),
-          const SizedBox(height: 4),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.chevron_left, size: 40, color: Colors.white),
-                onPressed: () {
-                  provider.previousQuote();
-                  onIndexSynced(provider.currentIndex);
-                  pageController.animateToPage(
-                    provider.currentIndex,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.chevron_right, size: 40, color: Colors.white),
-                onPressed: () {
-                  provider.nextQuote();
-                  onIndexSynced(provider.currentIndex);
-                  pageController.animateToPage(
-                    provider.currentIndex,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
-            ],
+          Expanded(
+            child: Text(
+              'Quote ${provider.currentIndex + 1} of ${provider.quotes.length}',
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 18, color: Colors.white70),
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('Auto-scroll', style: TextStyle(color: Colors.white70, fontSize: 18)),
-              Switch(
-                value: provider.autoScrollEnabled,
-                onChanged: provider.toggleAutoScroll,
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Slider(
-                  value: provider.autoScrollInterval.toDouble(),
-                  min: 2000,
-                  max: 10000,
-                  divisions: 8,
-                  label: '${provider.autoScrollInterval ~/ 1000}s',
-                  onChanged: (value) {
-                    provider.changeAutoScrollInterval(value.round());
-                  },
-                ),
-              ),
-              SizedBox(
-                width: 44,
-                child: Text(
-                  '${provider.autoScrollInterval ~/ 1000}s',
-                  style: const TextStyle(color: Colors.white70, fontSize: 18),
-                ),
-              ),
-            ],
+          IconButton(
+            icon: const Icon(Icons.chevron_right, size: 36, color: Colors.white),
+            onPressed: onNext,
           ),
         ],
       ),
@@ -247,7 +183,7 @@ class QuoteCard extends StatelessWidget {
         Container(color: quote.backgroundColor),
         SafeArea(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(28, 72, 28, 220),
+            padding: const EdgeInsets.fromLTRB(28, 72, 28, 280),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
