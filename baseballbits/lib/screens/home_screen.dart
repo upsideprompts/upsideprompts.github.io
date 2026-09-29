@@ -24,7 +24,8 @@ class _HomeScreenState extends State<HomeScreen>
   bool _sharing = false;
   bool _chromeVisible = true;
   late final AnimationController _chromeController;
-  late final Animation<Offset> _chromeSlide;
+  late final Animation<Offset> _bottomChromeSlide;
+  late final Animation<Offset> _topChromeSlide;
 
   @override
   void initState() {
@@ -34,13 +35,18 @@ class _HomeScreenState extends State<HomeScreen>
       duration: const Duration(milliseconds: 280),
       value: 1,
     );
-    _chromeSlide = Tween<Offset>(
-      begin: const Offset(0, 1.2),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
+    final curve = CurvedAnimation(
       parent: _chromeController,
       curve: Curves.easeOutCubic,
-    ));
+    );
+    _bottomChromeSlide = Tween<Offset>(
+      begin: const Offset(0, 1.2),
+      end: Offset.zero,
+    ).animate(curve);
+    _topChromeSlide = Tween<Offset>(
+      begin: const Offset(0, -1.2),
+      end: Offset.zero,
+    ).animate(curve);
   }
 
   @override
@@ -82,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen>
               name: fileName,
             ),
           ],
-          text: '"${quote.quote}" — ${quote.author}',
+          text: '"${quote.quote}"\n— ${quote.author}',
           subject: 'Baseball Bits',
           title: 'Baseball Bits',
           downloadFallbackEnabled: true,
@@ -94,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen>
       try {
         await SharePlus.instance.share(
           ShareParams(
-            text: '"${quote.quote}" — ${quote.author}',
+            text: '"${quote.quote}"\n— ${quote.author}',
             subject: 'Baseball Bits',
             title: 'Baseball Bits',
           ),
@@ -184,31 +190,6 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
-      appBar: _chromeVisible
-          ? AppBar(
-              title: const Text('Baseball Bits'),
-              backgroundColor: const Color(0x991E3C72),
-              foregroundColor: Colors.white,
-              elevation: 0,
-              actions: [
-                IconButton(
-                  tooltip: 'Search quotes',
-                  icon: const Icon(Icons.more_horiz),
-                  onPressed: () => _openSearch(provider),
-                ),
-                IconButton(
-                  tooltip: 'Shuffle quotes',
-                  icon: const Icon(Icons.refresh),
-                  onPressed: () {
-                    provider.refreshQuotes();
-                    if (_pageController.hasClients) {
-                      _pageController.jumpToPage(0);
-                    }
-                  },
-                ),
-              ],
-            )
-          : null,
       body: provider.isLoading
           ? const Center(child: CircularProgressIndicator(color: Colors.white))
           : provider.error != null
@@ -252,119 +233,188 @@ class _HomeScreenState extends State<HomeScreen>
                           ),
                         ),
                         Positioned(
-                          left: 24,
-                          right: 24,
-                          bottom: 24 + bottomInset,
-                          child: SlideTransition(
-                            position: _chromeSlide,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Material(
-                                      key: _shareButtonKey,
-                                      color: Colors.black.withValues(alpha: 0.6),
-                                      shape: const CircleBorder(),
-                                      child: IconButton(
-                                        tooltip: 'Share quote image',
-                                        onPressed: _sharing
-                                            ? null
-                                            : () => _shareCurrentQuote(provider),
-                                        icon: _sharing
-                                            ? const SizedBox(
-                                                width: 24,
-                                                height: 24,
-                                                child: CircularProgressIndicator(
-                                                  strokeWidth: 2.5,
-                                                  color: Colors.white,
-                                                ),
-                                              )
-                                            : const Icon(
-                                                Icons.ios_share,
-                                                color: Colors.white,
-                                                size: 26,
-                                              ),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 12),
-                                    Material(
-                                      color: Colors.black.withValues(alpha: 0.6),
-                                      shape: const CircleBorder(),
-                                      child: IconButton(
-                                        tooltip: provider.currentQuote != null &&
-                                                provider.isFavorite(
-                                                    provider.currentQuote!)
-                                            ? 'Remove favorite'
-                                            : 'Favorite quote',
-                                        onPressed: provider.currentQuote == null
-                                            ? null
-                                            : () => provider.toggleFavorite(
-                                                  provider.currentQuote!,
-                                                ),
-                                        icon: Icon(
-                                          Icons.sports_baseball,
-                                          color: provider.currentQuote != null &&
-                                                  provider.isFavorite(
-                                                      provider.currentQuote!)
-                                              ? const Color(0xFFFFC107)
-                                              : Colors.white,
-                                          size: 26,
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          child: IgnorePointer(
+                            ignoring: !_chromeVisible,
+                            child: SlideTransition(
+                              position: _topChromeSlide,
+                              child: Material(
+                                color: const Color(0x991E3C72),
+                                elevation: 0,
+                                child: SafeArea(
+                                  bottom: false,
+                                  child: SizedBox(
+                                    height: kToolbarHeight,
+                                    child: NavigationToolbar(
+                                      middle: const Text(
+                                        'Baseball Bits',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 12),
-                                _SecondaryBar(
-                                  provider: provider,
-                                  onJumpToQuote: (quote) {
-                                    final jumped =
-                                        provider.jumpToQuoteById(quote.id);
-                                    if (jumped && _pageController.hasClients) {
-                                      _pageController
-                                          .jumpToPage(provider.currentIndex);
-                                    }
-                                  },
-                                ),
-                                const SizedBox(height: 10),
-                                Align(
-                                  alignment: Alignment.centerRight,
-                                  child: Material(
-                                    color: Colors.black.withValues(alpha: 0.6),
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: InkWell(
-                                      borderRadius: BorderRadius.circular(20),
-                                      onTap: () => _openFeedback(provider),
-                                      child: const Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 14,
-                                          vertical: 10,
-                                        ),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Icon(
-                                              Icons.feedback_outlined,
+                                      trailing: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          IconButton(
+                                            tooltip: 'Search quotes',
+                                            icon: const Icon(
+                                              Icons.more_horiz,
                                               color: Colors.white,
-                                              size: 20,
                                             ),
-                                            SizedBox(width: 8),
-                                            Text(
-                                              'Feedback',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 15,
-                                              ),
+                                            onPressed: () =>
+                                                _openSearch(provider),
+                                          ),
+                                          IconButton(
+                                            tooltip: 'Shuffle quotes',
+                                            icon: const Icon(
+                                              Icons.refresh,
+                                              color: Colors.white,
                                             ),
-                                          ],
-                                        ),
+                                            onPressed: () {
+                                              provider.refreshQuotes();
+                                              if (_pageController.hasClients) {
+                                                _pageController.jumpToPage(0);
+                                              }
+                                            },
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 24,
+                          right: 24,
+                          bottom: 24 + bottomInset,
+                          child: IgnorePointer(
+                            ignoring: !_chromeVisible,
+                            child: SlideTransition(
+                              position: _bottomChromeSlide,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Material(
+                                        key: _shareButtonKey,
+                                        color: Colors.black.withValues(alpha: 0.6),
+                                        shape: const CircleBorder(),
+                                        child: IconButton(
+                                          tooltip: 'Share quote image',
+                                          onPressed: _sharing
+                                              ? null
+                                              : () =>
+                                                  _shareCurrentQuote(provider),
+                                          icon: _sharing
+                                              ? const SizedBox(
+                                                  width: 24,
+                                                  height: 24,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    strokeWidth: 2.5,
+                                                    color: Colors.white,
+                                                  ),
+                                                )
+                                              : const Icon(
+                                                  Icons.ios_share,
+                                                  color: Colors.white,
+                                                  size: 26,
+                                                ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      Material(
+                                        color: Colors.black.withValues(alpha: 0.6),
+                                        shape: const CircleBorder(),
+                                        child: IconButton(
+                                          tooltip: provider.currentQuote !=
+                                                      null &&
+                                                  provider.isFavorite(
+                                                      provider.currentQuote!)
+                                              ? 'Remove favorite'
+                                              : 'Favorite quote',
+                                          onPressed:
+                                              provider.currentQuote == null
+                                                  ? null
+                                                  : () =>
+                                                      provider.toggleFavorite(
+                                                        provider.currentQuote!,
+                                                      ),
+                                          icon: Icon(
+                                            Icons.sports_baseball,
+                                            color: provider.currentQuote !=
+                                                        null &&
+                                                    provider.isFavorite(
+                                                        provider.currentQuote!)
+                                                ? const Color(0xFFFFC107)
+                                                : Colors.white,
+                                            size: 26,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 12),
+                                  _SecondaryBar(
+                                    provider: provider,
+                                    onJumpToQuote: (quote) {
+                                      final jumped =
+                                          provider.jumpToQuoteById(quote.id);
+                                      if (jumped &&
+                                          _pageController.hasClients) {
+                                        _pageController.jumpToPage(
+                                            provider.currentIndex);
+                                      }
+                                    },
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Material(
+                                      color:
+                                          Colors.black.withValues(alpha: 0.6),
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: InkWell(
+                                        borderRadius: BorderRadius.circular(20),
+                                        onTap: () => _openFeedback(provider),
+                                        child: const Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 14,
+                                            vertical: 10,
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Icons.feedback_outlined,
+                                                color: Colors.white,
+                                                size: 20,
+                                              ),
+                                              SizedBox(width: 8),
+                                              Text(
+                                                'Feedback',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -729,7 +779,7 @@ class _SearchSheetState extends State<_SearchSheet> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            '"${_selected!.quote}" — ${_selected!.author}',
+                            '"${_selected!.quote}"\n— ${_selected!.author}',
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -947,7 +997,7 @@ class QuoteCard extends StatelessWidget {
         Container(color: quote.backgroundColor),
         SafeArea(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(28, 72, 28, 280),
+            padding: const EdgeInsets.fromLTRB(28, 72, 28, 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -956,7 +1006,7 @@ class QuoteCard extends StatelessWidget {
                 Flexible(
                   child: SingleChildScrollView(
                     child: Text(
-                      '"${quote.quote}" — ${quote.author}',
+                      '"${quote.quote}"\n— ${quote.author}',
                       style: TextStyle(
                         fontSize: quoteSize,
                         fontWeight: FontWeight.w600,
