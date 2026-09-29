@@ -38308,7 +38308,7 @@ q=new A.Pi(0)
 p=B.l.kJ(0.6)
 o=m.r
 n=o?l:new A.a9N(m,k)
-j=A.y8(B.cE,A.d([new A.wz(q,m.d,r,new A.a4C(new A.a9O(m,k),s.length,l),l),A.agU(200,A.afV(A.d([A.vT(!1,B.V,!0,A.p5(l,l,o?B.WA:B.Bk,l,l,n,l,l,"Share quote image"),B.R,p,0,m.f,l,B.ha,l,l,B.bu),B.w8,new A.KQ(k,new A.a9P(m,k),new A.a9Q(m,k),l)],j),B.b6,B.eP),l,l,24,24,l,l)],j),B.wa)}}}return new A.xn(!0,new A.th(B.a0B,i,0,B.zf,B.j,new A.MN(l,l,1/0,56),l),j,B.l,l)}}
+j=A.y8(B.cE,A.d([new A.wz(q,m.d,r,new A.a4C(new A.a9O(m,k),s.length,l),l),A.agU(100,A.afV(A.d([A.vT(!1,B.V,!0,A.p5(l,l,o?B.WA:B.Bk,l,l,n,l,l,"Share quote image"),B.R,p,0,m.f,l,B.ha,l,l,B.bu),B.w8,new A.KQ(k,new A.a9P(m,k),new A.a9Q(m,k),l)],j),B.b6,B.eP),l,l,24,24,l,l)],j),B.wa)}}}return new A.xn(!0,new A.th(B.a0B,i,0,B.zf,B.j,new A.MN(l,l,1/0,56),l),j,B.l,l)}}
 A.a9K.prototype={
 $0(){return this.a.r=!0},
 $S:0}
