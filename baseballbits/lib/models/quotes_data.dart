@@ -36,6 +36,9 @@ class Quote {
 
   String get author => '$firstname $lastname'.trim();
 
+  /// Stable id for favorites across reshuffles.
+  String get id => '$firstname|$lastname|$quote';
+
   factory Quote.fromJson(Map<String, dynamic> json, int index) {
     const overlays = <Color>[
       Color(0xCC1E3C72),
