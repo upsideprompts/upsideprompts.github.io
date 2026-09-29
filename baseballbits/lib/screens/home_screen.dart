@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Positioned(
                           left: 24,
                           right: 24,
-                          bottom: 200,
+                          bottom: 100,
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
