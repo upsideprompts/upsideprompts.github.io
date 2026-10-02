@@ -1,0 +1,65 @@
+AV INNOVATE ARTICLE VALIDATION LOG - SEPTEMBER 30, 2026
+
+VALIDATION ID: 4b8aa269-7f47-4c2e-bdee-ded21fca878b
+
+CURRENT STATE OF ARTICLES2.JSON:
+==============================
+
+Total articles in file: 13
+
+RECENT ARTICLES (September 2026):
+1. "Simple visual patterns can trick AI-powered vehicles and robots, UF research finds"
+   - Date: 2026-09-23
+   - Category: AV
+   - Issue: Duplicate article - appears to be research content
+
+2. "Autonomous Vehicles 2026: Where Self-Driving Tech Stands Today"
+   - Date: 2026-09-26
+   - Category: AV
+   - Issue: DUPLICATE TITLE - exact same title as article #9, different date (Aug vs Sep)
+
+3. "Autonomous Mobility Intelligence Brief – September 24, 2026"
+   - Date: 2026-09-24
+   - Category: AV
+   - Status: VALID (industry brief)
+
+OLDER ARTICLES (2025-2026):
+4. "Waymo Lifts the Lid on the Custom Chip and Compute Hardware Powering Its Robotaxis" (2026-08-20) - VALID
+5. "RoboSense Unveils EOCENE SPAD-SoC Architecture and Phoenix/Peacock LiDAR Chipsets" (2026-04-21) - VALID
+6. "Hesai Launches World's First 6D Full-Colour LiDAR Platform With Up to 4,320 Lines" (2026-04-20) - VALID
+7. "Bosch Presents New Radar Sensor Hardware and ADAS Computing for Automated Driving" (2025-04-23) - VALID
+8. "NVIDIA DRIVE Hyperion Platform Gains Automaker Partners for Level 4 Autonomous Vehicles" (2026-03-16) - VALID
+9. "Autonomous Vehicles 2026: Where Self-Driving Tech Stands Today" (2026-08-15) - VALID
+
+VALIDATION ISSUES FOUND:
+==============================
+
+1. DUPLICATE ARTICLE #1: "Simple visual patterns can trick AI-powered vehicles and robots, UF research finds"
+   - Date: 2026-09-23
+   - Issue: Research paper content doesn't belong in AV innovation list
+   - Category: AV (but should be RESEARCH or EDUCATION)
+
+2. DUPLICATE TITLE #2: "Autonomous Vehicles 2026: Where Self-Driving Tech Stands Today"
+   - Issue: Exact same title as article #9, different dates (Aug 15 vs Sep 26)
+   - Likely duplicate content, one should be removed
+
+3. OUTDATED CONTENT: Multiple articles from 2025
+   - Articles #4, #7, #8, #9 are from 2025, may need content updates
+   - Current validation should focus on September 2026 content
+
+VALIDATION REJECT CRITERIA MET:
+================================
+- ❌ DUPLICATE CONTENT: Article #1 is research paper, not AV innovation
+- ❌ DUPLICATE TITLE: Article #2 duplicates #9
+- ✅ VALID ARTICLES: Articles #3, #4, #5, #6, #7, #8, #9 contain valid AV innovation content
+
+RECOMMENDED ACTIONS:
+====================
+1. REMOVE Article #1 ("Simple visual patterns...") - research paper not AV innovation
+2. REMOVE Article #2 (Sep 26 duplicate) - keep Aug 15 version
+3. UPDATE Article #9 (Aug 15) if still relevant, or mark for review
+4. COMMIT validated changes to GitHub
+
+VALIDATION STATUS: ISSUES FOUND - REQUIRES CLEANUP
+
+Note: Web tools unavailable for external validation - manual review performed
