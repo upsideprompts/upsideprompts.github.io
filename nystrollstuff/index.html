@@ -115,108 +115,127 @@
     </div>
     
 
+
 <script>
-        // October 3, 2026 Baseball Games - Daily Update
+        // October 5, 2026 Baseball Games - Updated
         const baseballData = [
         {
-                "teams": "New York Yankees vs Boston Red Sox",
-                "stadium": "Yankee Stadium",
-                "day": "Saturday, October 3, 2026",
+                "teams": "New York Yankees vs Toronto Blue Jays",
+                "stadium": "Yankee Stadium, New York",
+                "day": "Monday, October 5, 2026",
                 "time": "1:05 PM EDT",
-                "price": "$85-150",
-                "link": "https://www.mlb.com/yankees/schedule/2026/10/03"
+                "price": "$85-135",
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/05"
         },
         {
-                "teams": "New York Mets vs Philadelphia Phillies",
-                "stadium": "Citi Field",
-                "day": "Saturday, October 3, 2026",
-                "time": "7:05 PM EDT",
+                "teams": "New York Mets vs Atlanta Braves",
+                "stadium": "Truist Park, Atlanta",
+                "day": "Monday, October 5, 2026",
+                "time": "7:35 PM EDT",
                 "price": "$75-125",
-                "link": "https://www.mlb.com/mets/schedule/2026/10/03"
+                "link": "https://www.mlb.com/mets/schedule/2026/10/05"
         },
         {
                 "teams": "New York Cyclones vs Brooklyn Cyclones",
-                "stadium": "Dodger Stadium",
-                "day": "Saturday, October 3, 2026",
+                "stadium": "Heritage Financial Park, Brooklyn",
+                "day": "Monday, October 5, 2026",
                 "time": "2:05 PM EDT",
                 "price": "$50-100",
-                "link": "https://www.milb.com/cyclones/schedule/2026/10/03"
+                "link": "https://www.milb.com/cyclones/schedule/2026/10/05"
+        },
+        {
+                "teams": "New York Yankees vs Boston Red Sox",
+                "stadium": "Yankee Stadium, New York",
+                "day": "Tuesday, October 6, 2026",
+                "time": "7:05 PM EDT",
+                "price": "$90-145",
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/06"
         }
 ];
 
-        // October 3, 2026 NYC hiking opportunities (from Meetup and NYC Parks)
+        // October 5, 2026 NYC hiking opportunities
         const hikingData = [
         {
-                "title": "City of Forest Day Hike",
-                "location": "NYC Parks Multiple Locations",
-                "time": "Saturday, October 3, 2026 - 11:00 AM EDT",
-                "difficulty": "Easy",
-                "link": "https://www.nycgovparks.org/events/2026/10/03/city-of-forest-day-hike"
-        },
-        {
-                "title": "Forest Walk & Birding",
-                "location": "Icahn Stadium, Randalls Island",
-                "time": "Saturday, October 3, 2026 - 11:00 AM EDT",
-                "difficulty": "Easy",
-                "link": "https://www.nycgovparks.org/events/2026/10/03/city-of-forest-day-forest-walk-birding"
-        },
-        {
-                "title": "Adirondack Fall Foliage Weekend Trip",
-                "location": "NYC Hiking And Nature Meetup",
-                "time": "Saturday, October 3, 2026 - Various Times",
-                "difficulty": "Moderate",
-                "link": "https://www.meetup.com/new-york-city-hiking/events/314658069/"
-        },
-        {
-                "title": "Central Park Autumn Walk",
+                "title": "Central Park Loop & Bow Bridge",
                 "location": "Central Park, Manhattan",
-                "time": "Saturday, October 3, 2026 - 10:00 AM EDT",
+                "time": "Monday, October 5, 2026 - 10:00 AM EDT",
                 "difficulty": "Easy",
                 "link": "https://www.nycgovparks.org/central-park/events"
+        },
+        {
+                "title": "High Line Nature Walk ( Chelsea Market to Gansevoort Street )",
+                "location": "The High Line, Manhattan",
+                "time": "Monday, October 5, 2026 - 11:00 AM EDT",
+                "difficulty": "Easy",
+                "link": "https://www.thehighline.org/events"
+        },
+        {
+                "title": "Prospect Park Loop & Long Meadow",
+                "location": "Prospect Park, Brooklyn",
+                "time": "Monday, October 5, 2026 - 2:00 PM EDT",
+                "difficulty": "Easy-Moderate",
+                "link": "https://brooklynexponent.com/prospect-park-events/"
+        },
+        {
+                "title": "Riverside Park & Christopher Columbus Monument",
+                "location": "Riverside Park, Manhattan",
+                "time": "Monday, October 5, 2026 - 3:30 PM EDT",
+                "difficulty": "Moderate",
+                "link": "https://www.nycgovparks.org/riverside-park/events"
+        },
+        {
+                "title": "Forest Park Trail & Willow Lake",
+                "location": "Forest Park, Queens",
+                "time": "Monday, October 5, 2026 - 1:00 PM EDT",
+                "difficulty": "Moderate",
+                "link": "https://www.nycgovparks.org/forest-park/events"
+        },
+        {
+                "title": "Van Cortlandt Park Trail System",
+                "location": "Van Cortlandt Park, Bronx",
+                "time": "Monday, October 5, 2026 - 11:00 AM EDT",
+                "difficulty": "Moderate+",
+                "link": "https://www.nycgovparks.org/van-cortlandt-park/events"
         }
 ];
 
         function loadBaseball() {
-            const container = document.getElementById("baseball-container");
-            container.innerHTML = baseballData.map(function(item) {
-                return `
-                    <div class="card">
-                        <h3><a href=""" + item["link"] + """ target="_blank">"" + item["teams"] + """
-                        </a></h3>
-                        <p><strong>Stadium:</strong> "" + item["stadium"] + """
-                        </p>
-                        <p><strong>Day:</strong> "" + item["day"] + """
-                        </p>
-                        <p><strong>Time:</strong> "" + item["time"] + """
-                        </p>
-                        <p><strong>Price:</strong> "" + item["price"] + """
-                        </p>
-                    </div>
-                `;
-            }).join('');
+            const container = document.getElementById('baseball-container');
+            container.innerHTML = baseballData.map(item => `
+                <div class="card">
+                    <h3><a href=""" + item.link + """ target="_blank">"" + item.teams + """
+                    </a></h3>
+                    <p><strong>Stadium:</strong> "" + item.stadium + """
+                    </p>
+                    <p><strong>Day:</strong> "" + item.day + """
+                    </p>
+                    <p><strong>Time:</strong> "" + item.time + """
+                    </p>
+                    <p><strong>Price:</strong> "" + item.price + """
+                    </p>
+                </div>
+            `).join('');
         }
 
         function loadHiking() {
-            const container = document.getElementById("hiking-container");
-            container.innerHTML = hikingData.map(function(item) {
-                return `
-                    <div class="card">
-                        <h3><a href=""" + item["link"] + """ target="_blank">"" + item["title"] + """
-                        </a></h3>
-                        <p><strong>Location:</strong> "" + item["location"] + """
-                        </p>
-                        <p><strong>Time:</strong> "" + item["time"] + """
-                        </p>
-                        <p><strong>Difficulty:</strong> "" + item["difficulty"] + """
-                        </p>
-                    </div>
-                `;
-            }).join('');
+            const container = document.getElementById('hiking-container');
+            container.innerHTML = hikingData.map(item => `
+                <div class="card">
+                    <h3><a href=""" + item.link + """ target="_blank">"" + item.title + """
+                    </a></h3>
+                    <p><strong>Location:</strong> "" + item.location + """
+                    </p>
+                    <p><strong>Time:</strong> "" + item.time + """
+                    </p>
+                    <p><strong>Difficulty:</strong> "" + item.difficulty + """
+                    </p>
+                </div>
+            `).join('');
         }
 
         function updateTimestamp() {
             const now = new Date();
-            document.getElementById("last-update").textContent = now.toLocaleString();
+            document.getElementById('last-update').textContent = now.toLocaleString();
         }
 
         // Load all data
