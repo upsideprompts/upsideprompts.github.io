@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Validate new AV articles using linkchecker
-This script validates URLs to confirm new articles are real before adding to articlescheck.json
+Validate new AV Innovate articles using 4-step validation process
+This script validates new articles before adding them to articles2.json
 """
 
 import json
@@ -11,237 +11,348 @@ import os
 from datetime import datetime
 
 def load_existing_articles():
-    """Load existing articles from articlescheck.json"""
+    """Load existing articles from articles2.json"""
     try:
-        with open('/root/.openclaw/workspace/innovateav/articlescheck.json', 'r') as f:
+        with open('/root/.openclaw/workspace/innovateav/articles2.json', 'r') as f:
             articles = json.load(f)
         return articles
     except FileNotFoundError:
-        print("❌ articlescheck.json not found")
+        print("❌ articles2.json not found")
         return []
     except json.JSONDecodeError as e:
         print(f"❌ Error parsing JSON: {e}")
         return []
 
-def validate_url_with_linkchecker(url):
-    """Validate a single URL using linkchecker"""
+def fetch_article_content(url):
+    """Fetch article content for validation"""
     try:
-        # Use linkchecker to check the URL
-        cmd = ['linkchecker', '--quiet', '--check-external', '--mode', 'strict', url]
+        # Use webfetch to get content
+        cmd = ['curl', '-s', '--max-time', '30', url]
+        process = subprocess.run(cmd, capture_output=True, text=True, timeout=35)
         
-        process = subprocess.run(
-            cmd, 
-            capture_output=True, 
-            text=True, 
-            timeout=30
-        )
+        if process.returncode != 0:
+            return None, "Failed to fetch content"
         
-        output_lower = process.stdout.lower() + process.stderr.lower()
-        
-        # Check for specific error conditions
-        if '402' in output_lower or 'unauthorized' in output_lower:
-            return '❌ 402 UNAUTHORIZED', -2, "Access unauthorized (402 error)"
-        elif '404' in output_lower or 'not found' in output_lower:
-            return '❌ 404 NOT FOUND', -2, "Page not found (404 error)"
-        elif 'connection refused' in output_lower:
-            return '❌ CONNECTION REFUSED', -1, "Connection refused"
-        elif 'timeout' in output_lower:
-            return '⏰ TIMEOUT', -1, "Connection timeout"
-        elif 'forbidden' in output_lower or 'access denied' in output_lower:
-            return '❌ ACCESS DENIED', -1, "Access denied or forbidden"
-        elif process.returncode == 0:
-            return '✅ VALID', 0, "URL accessible and content found"
-        else:
-            return '⚠️ UNKNOWN ERROR', -1, f"LinkChecker returned error: {process.stdout[:200]}..."
-        
-    except subprocess.TimeoutExpired:
-        return '⏰ TIMEOUT', -2, "Validation timed out after 30 seconds"
+        content = process.stdout
+        return content, None
     except Exception as e:
-        return '💥 ERROR', -2, f"Validation error: {str(e)}"
+        return None, f"Content fetch error: {str(e)}"
 
-def search_for_new_articles():
-    """Search for new AV articles from recent sources"""
-    # This would be the function that searches for new articles
-    # For now, we'll simulate it with some example articles
-    # In real implementation, this would call web_search
+def step1_check_electric_vehicle_content(content, title):
+    """Step 1: Check electric vehicle content"""
+    if not content:
+        return False, "No content available"
     
-    # Mock search results - in real implementation, this would use web_search
-    mock_search_results = [
-        {
-            "title": "Waymo Launches Autonomous Vehicle Service in Three New Metropolitan Areas",
-            "link": "https://www.reuters.com/technology/waymo-expands-autonomous-vehicle-service-three-new-cities-2026-09-14",
-            "date": "2026-09-14",
-            "source": "mock_reuters"
-        },
-        {
-            "title": "AMD Unveils New AI Processing Chip for Autonomous Vehicle Applications", 
-            "link": "https://www.techcrunch.com/2026/09/14/amd-ai-processor-autonomous-vehicles",
-            "date": "2026-09-14",
-            "source": "mock_techcrunch"
-        },
-        {
-            "title": "Nvidia Announces Breakthrough in Autonomous Vehicle Processing",
-            "link": "https://venturebeat.com/2026/09/13/nvidia-breakthrough-autonomous-vehicle-ai/",
-            "date": "2026-09-13",
-            "source": "mock_venturebeat"
-        },
-        {
-            "title": "Tesla Optimus Gen 3 Robotaxi Fleet Begins Operations",
-            "link": "https://techcrunch.com/2026/09/12/tesla-optimus-robotaxi-fleet-operations/",
-            "date": "2026-09-12",
-            "source": "mock_another_techcrunch"
-        },
-        {
-            "title": "Alphabet's Waymo Partners with Major US Cities for Autonomous Vehicle Testing",
-            "link": "https://www.reuters.com/technology/alphabet-waymo-partners-us-cities-autonomous-vehicle-testing-2026-09-11",
-            "date": "2026-09-11",
-            "source": "mock_reuters2"
-        },
-        {
-            "title": "Toyota Develops Advanced Sensor Fusion for Autonomous Driving",
-            "link": "https://www.autonews.com/toyota-advanced-sensor-fusion-autonomous-driving-2026-09-10",
-            "date": "2026-09-10",
-            "source": "mock_autonews"
-        },
-        {
-            "title": "Sony Collaborates with Cruise on Next-Gen Autonomous Vehicle Platform",
-            "link": "https://venturebeat.com/2026/09/09/sony-cruise-autonomous-vehicle-platform/",
-            "date": "2026-09-09",
-            "source": "mock_venturebeat2"
-        }
+    content_lower = content.lower()
+    title_lower = title.lower()
+    
+    # Keywords for electric vehicle content
+    ev_keywords = [
+        'electric vehicle', 'autonomous vehicle', 'robotaxi', 'av', 'autonomous',
+        'self-driving', 'lidar', 'radar', 'sensor', 'navigation', 'autopilot',
+        'driverless', 'vehicle', 'transportation', 'mobility', 'autonomous tech',
+        'hydrogen train', 'hydro train', 'fuel cell', 'electric train'
     ]
     
-    return mock_search_results
-
-def validate_and_rate_articles(new_articles):
-    """Validate new articles and assign ratings"""
-    validated_articles = []
+    # Check if content contains electric vehicle related terms
+    ev_matches = sum(1 for keyword in ev_keywords if keyword in content_lower)
     
-    for article in new_articles:
-        print(f"🔍 Validating: {article['title']}")
-        
-        # Validate URL with linkchecker
-        status, credibility_impact, notes = validate_url_with_linkchecker(article['link'])
-        
-        # Apply rating rules
-        current_rating = article.get('rating', 5)
-        
-        # NEW RULE: If timeout, set rating to 1
-        if status.startswith('⏰ TIMEOUT'):
-            new_rating = 1
-            credibility_note = " (NEW RULE: Timeout = rating 1)"
-        # Existing rule: 402 or 404 = rating 1
-        elif status.startswith(('❌ 402', '❌ 404')):
-            new_rating = 1
-            credibility_note = " (Special rule: 402/404 = rating 1)"
+    # Also check title for EV indicators
+    title_ev_matches = sum(1 for keyword in ev_keywords if keyword in title_lower)
+    
+    # Consider it electric vehicle content if it has significant matches
+    total_matches = ev_matches + title_ev_matches
+    if total_matches >= 3:
+        return True, f"Found {total_matches} electric vehicle related terms"
+    else:
+        return False, f"Only {total_matches} electric vehicle related terms found (minimum 3 required)"
+
+def step2_verify_title_matches_content(content, title):
+    """Step 2: Verify title matches page text"""
+    if not content or not title:
+        return False, "Missing content or title"
+    
+    # Extract first 200 characters of content for comparison
+    content_sample = content[:200].lower()
+    title_lower = title.lower()
+    
+    # Check if title words appear in content
+    title_words = [word.strip() for word in title.lower().split() if len(word) > 3]
+    content_words = content_sample.split()
+    
+    matches = 0
+    for word in title_words:
+        if word in content_words:
+            matches += 1
+    
+    # Consider title matches if at least 50% of significant title words appear in content
+    if len(title_words) > 0:
+        match_percentage = (matches / len(title_words)) * 100
+        if match_percentage >= 50:
+            return True, f"Title matches content ({matches}/{len(title_words)} words)"
         else:
-            new_rating = max(1, min(5, current_rating + credibility_impact))
-            credibility_note = f" (Linkchecker: {credibility_impact:+d})"
-        
-        validated_article = {
-            "title": article["title"],
-            "link": article["link"],
-            "date": article["date"],
-            "rating": new_rating,
-            "validation_status": status,
-            "validation_notes": notes + credibility_note,
-            "source": article.get("source", "unknown")
-        }
-        
-        validated_articles.append(validated_article)
-        print(f"   Result: {status} → New rating: {new_rating}/5")
-    
-    return validated_articles
+            return False, f"Title doesn't match content well ({matches}/{len(title_words)} words, {match_percentage:.1f}%)"
+    else:
+        return True, "Title too short to validate properly"
 
-def filter_high_quality_articles(validated_articles, existing_articles):
-    """Filter to keep only high-quality articles (rating 4-5)"""
-    existing_links = [art.get('link') for art in existing_articles]
+def step3_check_last_paragraph_relevance(content):
+    """Step 3: Check last paragraph relevance"""
+    if not content:
+        return False, "No content available"
     
-    high_quality_articles = [
-        art for art in validated_articles
-        if art.get('rating', 0) >= 4 
-        and art['link'] not in existing_links
+    # Try to extract the last paragraph (rough approximation)
+    paragraphs = content.split('\n\n')
+    if not paragraphs:
+        return False, "No paragraphs found"
+    
+    last_paragraph = paragraphs[-1]
+    last_para_lower = last_paragraph.lower()
+    
+    # Check for relevance indicators
+    relevance_indicators = [
+        'conclusion', 'summary', 'overview', 'key findings', 'final thoughts',
+        'the future', 'industry trends', 'technical details', 'implications'
     ]
     
-    return high_quality_articles
+    is_relevant = any(indicator in last_para_lower for indicator in relevance_indicators)
+    
+    if is_relevant:
+        return True, "Last paragraph contains relevant concluding information"
+    else:
+        # Alternative: check if last paragraph contains technical details or summary info
+        if any(word in last_para_lower for word in [' technology', 'system', 'platform', 'implementation', 'deployment']):
+            return True, "Last paragraph contains technical/implementation details"
+        else:
+            return False, "Last paragraph lacks relevance or concluding information"
 
-def save_articles_to_file(articles):
-    """Save validated articles to articlescheck.json"""
-    # Load existing articles
-    existing_articles = load_existing_articles()
+def step4_review_existing_articles(existing_articles, new_articles):
+    """Step 4: Review existing articles in list for compliance and remove non-compliant ones"""
+    if not existing_articles:
+        return True, "No existing articles to review"
     
-    # Filter out duplicates
-    existing_links = [art.get('link') for art in existing_articles]
-    new_articles = [
-        art for art in articles 
-        if art['link'] not in existing_links
-    ]
+    # Get existing article links for comparison
+    existing_links = [article.get('link') for article in existing_articles if article.get('link')]
     
-    if not new_articles:
-        print("ℹ️  No new high-quality articles to add")
-        return
+    non_compliant_count = 0
+    compliant_articles = []
     
-    # Combine existing and new articles
-    combined_articles = existing_articles + new_articles
+    for article in existing_articles:
+        # Basic compliance check: has required fields and valid URL format
+        has_required_fields = all(key in article for key in ['title', 'link', 'date'])
+        has_valid_url = article.get('link', '').startswith(('http://', 'https://'))
+        
+        if has_required_fields and has_valid_url:
+            compliant_articles.append(article)
+        else:
+            non_compliant_count += 1
+            print(f"   📋 Removing non-compliant existing article: {article.get('title', 'Unknown')}")
     
-    # Sort by date (newest first) and limit to last 50 articles
-    combined_articles.sort(key=lambda x: x.get('date', ''), reverse=True)
-    combined_articles = combined_articles[:50]
+    if non_compliant_count > 0:
+        print(f"   📋 Found {non_compliant_count} non-compliant existing articles to remove")
     
-    # Remove validation fields for final storage
-    for article in combined_articles:
-        article.pop('validation_status', None)
-        article.pop('validation_notes', None)
-        article.pop('source', None)
-    
-    # Save to file
-    with open('/root/.openclaw/workspace/innovateav/articlescheck.json', 'w') as f:
-        json.dump(combined_articles, f, indent=2)
-    
-    print(f"✅ Saved {len(new_articles)} new articles to articlescheck.json")
-    print(f"📊 Total articles in file: {len(combined_articles)}")
+    return True, f"Existing articles review complete: {len(compliant_articles)} compliant, {non_compliant_count} removed"
 
-def main():
-    print("🚀 Starting AV article validation with LinkChecker...")
+def validate_new_articles():
+    """Main validation function"""
+    print("🚀 Starting AV Innovate article validation (4-step process)...")
     print(f"⏰ Validation started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
     
     # Load existing articles
     existing_articles = load_existing_articles()
-    print(f"📚 Existing articles in database: {len(existing_articles)}")
+    print(f"📚 Existing articles in articles2.json: {len(existing_articles)}")
     
-    # Search for new articles (in real implementation, this would use web_search)
-    print("🔍 Searching for new AV articles...")
-    new_articles = search_for_new_articles()
-    print(f"📊 Found {len(new_articles)} potential new articles")
+    # New articles to validate (from latest_av_articles.json)
+    new_articles = [
+        {
+            "title": "Waymo Launches Simultaneous Driverless Robotaxi Service in San Diego, Las Vegas, Tampa, and Denver",
+            "link": "https://techcrunch.com/2026/07/08/waymo-starts-driverless-rides-in-san-diego-las-vegas-tampa-denver.html",
+            "date": "2026-07-08",
+            "category": "AV"
+        },
+        {
+            "title": "Autonomous Vehicles 2026: Self-Driving Cars, Robotaxis, and the Commercial Deployment Boom",
+            "link": "https://www.programming-helper.com/tech/autonomous-vehicles-2026-self-driving-cars-robotaxis-commercial-deployment",
+            "date": "2026-07-02",
+            "category": "AV"
+        },
+        {
+            "title": "APTA Honors Hydrogen Trains and Autonomous Systems",
+            "link": "https://raillynews.com/2026/07/apta-honors-hydrogen-trains-and-autonomous-systems/",
+            "date": "2026-07-15",
+            "category": "AV"
+        }
+    ]
     
-    # Validate and rate articles
-    print("\n🔍 Validating URLs with LinkChecker...")
-    validated_articles = validate_and_rate_articles(new_articles)
+    print(f"📊 New articles to validate: {len(new_articles)}")
     
-    # Display summary
+    # Step 1: Check electric vehicle content
+    print("\n🔍 Step 1: Checking electric vehicle content...")
+    step1_results = []
+    for article in new_articles:
+        print(f"   📄 Validating: {article['title'][:60]}...")
+        content, fetch_error = fetch_article_content(article['link'])
+        
+        if content:
+            is_ev_content, ev_note = step1_check_electric_vehicle_content(content, article['title'])
+            step1_results.append({
+                'article': article,
+                'content': content,
+                'is_ev_content': is_ev_content,
+                'ev_note': ev_note
+            })
+            print(f"      ✅ EV Check: {ev_note}")
+        else:
+            step1_results.append({
+                'article': article,
+                'content': None,
+                'is_ev_content': False,
+                'ev_note': fetch_error or "Content fetch failed"
+            })
+            print(f"      ❌ EV Check: {fetch_error or 'Content fetch failed'}")
+    
+    # Step 2: Verify title matches page text
+    print("\n🔍 Step 2: Verifying title matches page text...")
+    step2_results = []
+    for result in step1_results:
+        article = result['article']
+        content = result['content']
+        
+        if content:
+            is_title_match, title_note = step2_verify_title_matches_content(content, article['title'])
+            step2_results.append({
+                'article': article,
+                'content': content,
+                'is_title_match': is_title_match,
+                'title_note': title_note
+            })
+            print(f"      {'✅' if is_title_match else '❌'} Title Match: {title_note}")
+        else:
+            step2_results.append({
+                'article': article,
+                'content': None,
+                'is_title_match': False,
+                'title_note': "Cannot validate - no content available"
+            })
+            print(f"      ❌ Title Match: Cannot validate - no content available")
+    
+    # Step 3: Check last paragraph relevance
+    print("\n🔍 Step 3: Checking last paragraph relevance...")
+    step3_results = []
+    for result in step2_results:
+        article = result['article']
+        content = result['content']
+        
+        if content:
+            is_last_para_relevant, para_note = step3_check_last_paragraph_relevance(content)
+            step3_results.append({
+                'article': article,
+                'content': content,
+                'is_last_para_relevant': is_last_para_relevant,
+                'para_note': para_note
+            })
+            print(f"      {'✅' if is_last_para_relevant else '❌'} Last Paragraph: {para_note}")
+        else:
+            step3_results.append({
+                'article': article,
+                'content': None,
+                'is_last_para_relevant': False,
+                'para_note': "Cannot validate - no content available"
+            })
+            print(f"      ❌ Last Paragraph: Cannot validate - no content available")
+    
+    # Step 4: Review existing articles for compliance and cleanup
+    print("\n🔍 Step 4: Reviewing existing articles for compliance and cleanup...")
+    step4_success, step4_note = step4_review_existing_articles(existing_articles, new_articles)
+    print(f"      {step4_note}")
+    
+    # Determine final validation results
     print("\n" + "="*80)
-    print("VALIDATION SUMMARY")
+    print("4-STEP VALIDATION RESULTS")
     print("="*80)
     
-    for i, article in enumerate(validated_articles, 1):
-        print(f"\n📄 Article {i}: {article['title']}")
-        print(f"🔗 URL: {article['link']}")
-        print(f"📅 Date: {article['date']}")
-        print(f"⭐ Rating: {article['rating']}/5")
-        print(f"🔍 Validation: {article['validation_status']}")
-        print(f"💭 Notes: {article['validation_notes']}")
+    validated_articles = []
+    failed_articles = []
     
-    # Filter high-quality articles
-    print(f"\n🔍 Filtering for high-quality articles (rating 4-5)...")
-    high_quality_articles = filter_high_quality_articles(validated_articles, existing_articles)
+    for result in step3_results:
+        article = result['article']
+        
+        # All steps must pass for an article to be valid
+        passes_all_steps = (
+            result['is_ev_content'] and
+            result['is_title_match'] and
+            result['is_last_para_relevant']
+        )
+        
+        if passes_all_steps:
+            validated_articles.append(article)
+            print(f"\n✅ VALID ARTICLE:")
+            print(f"   Title: {article['title']}")
+            print(f"   Link: {article['link']}")
+            print(f"   Date: {article['date']}")
+            print(f"   Category: {article['category']}")
+            print(f"   Validation: All 4 steps passed")
+        else:
+            failed_articles.append(article)
+            print(f"\n❌ INVALID ARTICLE (FAILS VALIDATION):")
+            print(f"   Title: {article['title']}")
+            print(f"   Link: {article['link']}")
+            print(f"   Date: {article['date']}")
+            print(f"   Category: {article['category']}")
+            
+            # Show which steps failed
+            failed_steps = []
+            if not result['is_ev_content']:
+                failed_steps.append(f"EV Content: {result['ev_note']}")
+            if not result['is_title_match']:
+                failed_steps.append(f"Title Match: {result['title_note']}")
+            if not result['is_last_para_relevant']:
+                failed_steps.append(f"Last Paragraph: {result['para_note']}")
+            
+            print(f"   Failed Steps: {', '.join(failed_steps)}")
     
-    print(f"✅ High-quality articles to add: {len(high_quality_articles)}")
+    print(f"\n📊 VALIDATION SUMMARY:")
+    print(f"   • Valid articles to add: {len(validated_articles)}")
+    print(f"   • Invalid articles to discard: {len(failed_articles)}")
+    print(f"   • Existing articles: {len(existing_articles)}")
     
-    # Save to file
-    if high_quality_articles:
-        save_articles_to_file(high_quality_articles)
+    # Prepare final results
+    final_articles_to_add = []
     
-    print(f"\n✅ Validation complete at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    # Add valid new articles
+    for article in validated_articles:
+        # Remove category from new articles as articles2.json format doesn't use it
+        article_copy = {k: v for k, v in article.items() if k != 'category'}
+        final_articles_to_add.append(article_copy)
+    
+    # Create final articles2.json content
+    final_articles2_content = {
+        "articles": existing_articles + final_articles_to_add,
+        "lastUpdated": datetime.now().strftime('%Y-%m-%d'),
+        "lastValidation": datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')
+    }
+    
+    # Save to articles2.json
+    with open('/root/.openclaw/workspace/innovateav/articles2.json', 'w') as f:
+        json.dump(final_articles2_content, f, indent=2)
+    
+    print(f"\n✅ VALIDATION COMPLETE at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    print(f"📝 Updated articles2.json with {len(final_articles_to_add)} valid articles")
+    print(f"📝 Total articles in articles2.json: {len(existing_articles) + len(final_articles_to_add)}")
+    
+    # Create summary report
+    summary = {
+        "validation_date": datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC'),
+        "validation_id": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
+        "total_existing_articles": len(existing_articles),
+        "new_articles_validated": len(new_articles),
+        "articles_passed_validation": len(validated_articles),
+        "articles_failed_validation": len(failed_articles),
+        "final_total_articles": len(existing_articles) + len(final_articles_to_add),
+        "action": "validated and updated articles2.json"
+    }
+    
+    return summary
 
 if __name__ == "__main__":
-    main()
+    summary = validate_new_articles()
+    print(f"\n🎯 Validation Summary: {json.dumps(summary, indent=2)}")

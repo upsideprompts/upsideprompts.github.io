@@ -14,8 +14,8 @@ def load_existing_articles():
     """Load existing articles from articles2.json"""
     try:
         with open('/root/.openclaw/workspace/innovateav/articles2.json', 'r') as f:
-            articles = json.load(f)
-        return articles  # Return the list directly
+            data = json.load(f)
+        return data.get('articles', [])
     except FileNotFoundError:
         print("❌ articles2.json not found")
         return []
@@ -330,8 +330,12 @@ def validate_new_articles():
         article_copy = {k: v for k, v in article.items() if k != 'category'}
         final_articles_to_add.append(article_copy)
     
-    # Create final articles2.json content (as list, not dict)
-    final_articles2_content = existing_articles + final_articles_to_add
+    # Create final articles2.json content
+    final_articles2_content = {
+        "articles": existing_articles + final_articles_to_add,
+        "lastUpdated": datetime.now().strftime('%Y-%m-%d'),
+        "lastValidation": datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')
+    }
     
     # Save to articles2.json
     with open('/root/.openclaw/workspace/innovateav/articles2.json', 'w') as f:
@@ -339,7 +343,7 @@ def validate_new_articles():
     
     print(f"\n✅ VALIDATION COMPLETE at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
     print(f"📝 Updated articles2.json with {len(final_articles_to_add)} valid articles")
-    print(f"📝 Total articles in articles2.json: {len(final_articles2_content)}")
+    print(f"📝 Total articles in articles2.json: {len(existing_articles) + len(final_articles_to_add)}")
     
     # Create summary report
     summary = {
@@ -349,7 +353,7 @@ def validate_new_articles():
         "new_articles_validated": len(new_articles),
         "articles_passed_validation": len(validated_articles),
         "articles_failed_validation": len(failed_articles),
-        "final_total_articles": len(final_articles2_content),
+        "final_total_articles": len(existing_articles) + len(final_articles_to_add),
         "action": "validated and updated articles2.json"
     }
     
