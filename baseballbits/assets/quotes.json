@@ -1,5 +1,371 @@
 [
   {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Don't look back. Something might be gaining on you."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Age is a case of mind over matter. If you don't mind, it don't matter."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "How old would you be if you didn't know how old you are?"
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Just take the ball and throw it where you want to. Throw strikes. Home plate don't move."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Ain't no man can avoid being born average, but there ain't no man got to be common."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "I ain't ever had a job, I just always played baseball."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "My pitching philosophy is simple: keep the ball away from the bat."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Don't pray when it rains if you don't pray when the sun shines."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "You win a few, you lose a few. Some get rained out. But you got to dress for all of them."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I don't make speeches. I just let my bat speak for me in the summertime."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I never worried about striking out. I just wanted to hit the ball hard."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I didn't try to be a hero. I just tried to do what the team needed."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "You have to have confidence in yourself, or nobody else will."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I always played hard. That's the only way I knew how to play."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "Baseball is a game of adjustments. You have to be able to adapt to what the pitcher is doing."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I tried to learn something new about the game every single day."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "It isn't hard to be good from time to time in sports. What is tough, is being good every day."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "In order to excel, you must be completely dedicated to your chosen sport. You must also be prepared to work hard and be willing to accept destructive criticism."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "What you're thinking, what shape your mind is in, is what makes the biggest difference of all."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "Defense to me is the key to playing baseball."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Performance",
+    "quote": "There may be people who have more talent than you, but there's no excuse for anyone to work harder than you do – and I believe that."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Preparation",
+    "quote": "I've always been a believer in hard work and no excuses. I would never want to play a game and be unsuccessful and think, Well, I could have been successful if I had done this."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Excellence",
+    "quote": "Playing well gets you here; consistency keeps you here. That's the thing I've always tried to focus on."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Winning",
+    "quote": "I think most people want to win at anything. But the thing that separates you is if losing bothers you."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Hard Work",
+    "quote": "The last thing you want to do is finish playing or doing anything and wish you would have worked harder."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Effort",
+    "quote": "It doesn't take any talent to play hard."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Competitiveness",
+    "quote": "If you're going to play at all, you're out to win. Baseball, board games, playing Jeopardy, I hate to lose."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Motivation",
+    "quote": "I love it when people doubt me. It makes me work harder to prove them wrong."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Achievement",
+    "quote": "When you put a lot of hard work into one goal and you achieve it, that's a really good feeling."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Preparation",
+    "quote": "You don't just accidentally show up in the World Series."
+  },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "I'm the straw that stirs the drink."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "I didn't come to New York to be a star. I brought my star with me."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "I feel that the most important requirement in success is learning to overcome failure. You must learn to tolerate it, but never accept it."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "A baseball swing is a very finely tuned instrument. It is repetition, and more repetition, then a little more after that."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "Sometimes I underestimate the magnitude of me."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "Once you realize how good you really are, you never settle for playing less than your best."
+    },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "As long as I have fun playing, the stats will take care of themselves."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "When you have fun, it changes all the pressure into pleasure."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I don't consider myself a home run hitter. I just consider myself a hitter."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "You know, you play this game because you love it."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "My dad taught me how to play this game, but more importantly, he taught me how to respect it."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I just play the game. I don't worry about the rest of it."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I don't think about the Hall of Fame. I just think about going out there and playing hard every day."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "If you can't have fun playing baseball, you can't have fun doing anything."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "It's not about the name on the back of the jersey, it's about the name on the front."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I just want to be remembered as a guy who played hard every day."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "Hitting is better than sex."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "I represent the underdog and the overdog in our society."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "When you have the ability to do something, you have the responsibility to do it."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "You can't just go out there and play. You have to have a sense of purpose."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "I loved hitting home runs, but I loved winning championships more."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Legacy",
+    "quote": "A life is not important except in the impact it has on other lives."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Respect",
+    "quote": "I'm not concerned with your liking or disliking me... All I ask is that you respect me as a human being."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Action",
+    "quote": "Life is not a spectator sport. If you're going to spend your whole life in the grandstand just watching what goes on, in my opinion you're wasting your life."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Freedom",
+    "quote": "There's not an American in this country free until every one of us is free."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Civil Rights",
+    "quote": "The right of every American to first-class citizenship is the most important issue of our time."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Baseball",
+    "quote": "Baseball is like a poker game. Nobody wants to quit when he's losing; nobody wants you to quit when you're ahead."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Equality",
+    "quote": "I won't 'have it made' until the most underprivileged Negro in Mississippi can live in equal dignity with anyone else in America."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Competition",
+    "quote": "Above anything else, I hate to lose."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Sportsmanship",
+    "quote": "It kills me to lose. If I'm a troublemaker, and I don't think that my temper makes me one, then it's because I can't stand losing."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Effort",
+    "quote": "How you played in yesterday's game is all that counts."
+  },
+  {
     "firstname": "Roberto",
     "lastname": "Clemente",
     "category": "",
