@@ -148,62 +148,6 @@ class _HomeScreenState extends State<HomeScreen>
     return byteData.buffer.asUint8List();
   }
 
-  void _openMoreMenu(QuotesProvider provider) {
-    showModalBottomSheet<void>(
-      context: context,
-      backgroundColor: const Color(0xFF1A2744),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      builder: (sheetContext) {
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 12, 8, 16),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  width: 40,
-                  height: 4,
-                  decoration: BoxDecoration(
-                    color: Colors.white24,
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                ListTile(
-                  title: const Text(
-                    'Search',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  trailing: const Icon(Icons.search, color: Colors.white),
-                  onTap: () {
-                    Navigator.of(sheetContext).pop();
-                    _openSearch(provider);
-                  },
-                ),
-                ListTile(
-                  title: const Text(
-                    'Give Feedback',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  trailing: const Icon(
-                    Icons.feedback_outlined,
-                    color: Colors.white,
-                  ),
-                  onTap: () {
-                    Navigator.of(sheetContext).pop();
-                    _openFeedback(provider);
-                  },
-                ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
   void _openSearch(QuotesProvider provider) {
     showModalBottomSheet<void>(
       context: context,
@@ -316,14 +260,67 @@ class _HomeScreenState extends State<HomeScreen>
                                       trailing: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          IconButton(
+                                          PopupMenuButton<String>(
                                             tooltip: 'More',
+                                            color: const Color(0xFF1A2744),
+                                            offset: const Offset(0, 8),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
                                             icon: const Icon(
                                               Icons.more_horiz,
                                               color: Colors.white,
                                             ),
-                                            onPressed: () =>
-                                                _openMoreMenu(provider),
+                                            onSelected: (value) {
+                                              if (value == 'search') {
+                                                _openSearch(provider);
+                                              } else if (value == 'feedback') {
+                                                _openFeedback(provider);
+                                              }
+                                            },
+                                            itemBuilder: (context) => [
+                                              const PopupMenuItem(
+                                                value: 'search',
+                                                child: Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(
+                                                        'Search',
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 16,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                      Icons.search,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              const PopupMenuItem(
+                                                value: 'feedback',
+                                                child: Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(
+                                                        'Give Feedback',
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 16,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                      Icons.feedback_outlined,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                           IconButton(
                                             tooltip: 'Shuffle quotes',
@@ -1028,7 +1025,7 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
                           color: Colors.white,
                         ),
                       )
-                    : const Text('Submit to Google Sheet'),
+                    : const Text('Submit'),
               ),
             ],
           ),
