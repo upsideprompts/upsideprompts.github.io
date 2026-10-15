@@ -13,6 +13,11 @@ const List<String> baseballFieldBackgrounds = [
   'assets/backgrounds/field5.jpg',
   'assets/backgrounds/field6.jpg',
   'assets/backgrounds/field7.jpg',
+  'assets/backgrounds/field8.jpg',
+  'assets/backgrounds/field9.jpg',
+  'assets/backgrounds/field10.jpg',
+  'assets/backgrounds/field11.jpg',
+  'assets/backgrounds/field12.jpg',
 ];
 
 class Quote {

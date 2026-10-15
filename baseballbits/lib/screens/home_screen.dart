@@ -996,10 +996,11 @@ class QuoteCard extends StatelessWidget {
         ),
         Container(color: quote.backgroundColor),
         SafeArea(
+          top: false,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(28, 72, 28, 24),
+            padding: const EdgeInsets.fromLTRB(28, 30, 28, 24),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.sports_baseball, size: iconSize, color: Colors.white70),
                 const SizedBox(height: 20),

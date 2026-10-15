@@ -1,5 +1,1331 @@
 [
   {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "The umpire says 'Play ball.' He doesn't say 'Work ball.'"
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "Roberto Clemente taught me so much, not just about how to play the game, but how to carry yourself as a man."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "I didn't play for the Hall of Fame. I just played because I loved the game."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "When I hit a home run, I didn't want to show up the pitcher. I just put my head down and ran the bases."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "The greatest feeling in the world is when you connect perfectly with the ball and you just know it's gone."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "You have to enjoy the moments. The wins, the losses, the clubhouse banter—it all goes by too fast."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "I always tried to be the kind of teammate I would want to have."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "I just wanted to be remembered as a guy who gave it his all and helped his team win."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "If you're not having fun playing baseball, you're in the wrong line of work."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Stargell",
+    "category": "",
+    "quote": "I always believed that if you respect the game, the game will respect you."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "The bat waggle was just something to keep my hands loose. It became my signature, but it was really just a timing mechanism."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "I've always been a straight shooter. I speak my mind, and if people don't like it, that's their problem."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "When I stepped into the box, I always felt like if I got my pitch, nobody in the world could get me out."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "I've been misunderstood my whole career, but as long as my family and my teammates know who I am, that's all that matters to me."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "Hitting is about being incredibly aggressive, but you have to stay under complete control."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "I play the game hard every single day, and I expect everyone else on the field to do the exact same thing."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "You can't be afraid to fail in this game. If you step up to the plate with fear, you've already lost the battle."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "When you're young, you don't always know what you're doing. A lot of times, you're just surviving off raw talent."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "I just wanted to be respected as a hitter who feared no one and always gave it everything I had."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "To hit a baseball squarely, you have to be fearless. You can't worry about getting jammed or getting hit."
+  },
+  {
+    "firstname": "Gary",
+    "lastname": "Sheffield",
+    "category": "",
+    "quote": "The numbers speak for themselves. You can say whatever you want about my personality, but you can't deny the production."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "To be a leader, you have to be willing to do the things that you are asking others to do."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "My approach was always to be consistent. Consistency is the true measure of a professional."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "I didn't care about the personal accolades. I just wanted to win championships."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "I learned early on that you have to respect the game, because if you don't, it will humble you quickly."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "You have to bring energy to the ballpark every day, even when you're going through a tough stretch."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "I tried to lead by example, playing hard every single out."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "Baseball is a game of adjustments. The moment you stop making them, you're done."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "Defensively, you have to want the ball hit to you in the most pressure-packed situations."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "My dad taught me the value of hard work, and that translated directly to how I approached baseball."
+  },
+  {
+    "firstname": "Barry",
+    "lastname": "Larkin",
+    "category": "",
+    "quote": "When I walked into the Hall of Fame, I realized I was representing everyone who ever helped me along the way."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "I've always been a man of few words. I figured my play on the field would speak loud enough."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "I just wanted to be remembered as a player who gave everything he had every time he took the field."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "Winning the MVP on a last-place team showed that the writers respected the way I went about my business."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "You can't cheat the game. If you do, it will expose you in a hurry."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "Playing in Wrigley Field during the daytime was the purest form of baseball."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "I never viewed myself as a superstar. I was just a hard worker who loved the game."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "My knees hurt every single day, but the pain went away the minute I stepped into the batter's box."
+  },
+  {
+    "firstname": "Andre",
+    "lastname": "Dawson",
+    "category": "",
+    "quote": "If you don't have a deep passion for baseball, the grind of a long season will break you."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "Kids are our future and we hope baseball has given them some idea of what it is to live together and how we can get along, whether you be black or white."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "If you think about the things that happen to you, you can't play the game."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "I always said to myself, 'If I fail, it's not just me failing, it's a whole lot of people who are going to get hurt.'"
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "I just wanted to be part of the team, nothing more, nothing less."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "When I stepped on the field, all the noise just went away. It was just me and the game."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "I'm proud of what I did, but I'm more proud of what we all achieved together."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "They said I was a pioneer, but I was just a young guy trying to make a living playing a game I loved."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "Every time I put on that Cleveland uniform, I felt a sense of pride and responsibility."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "You can't let the negativity consume you; you have to turn it into fuel."
+  },
+  {
+    "firstname": "Larry",
+    "lastname": "Doby",
+    "category": "",
+    "quote": "Baseball was my escape. It was the one place where the rules were the same for everyone."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "I threw a very heavy ball. When hitters made contact, they felt it in their hands."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "A strikeout is the best way to get an out because it takes the defense completely out of the equation."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "I learned that throwing hard isn't enough; you have to learn how to actually pitch to survive in this league."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "You have to have a short memory as a pitcher. If you give up a home run, the next batter is a new battle."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "Being a left-handed pitcher gives you a natural advantage, but you still have to put the work in."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "When everything was clicking, and the rhythm was there, pitching felt like the easiest thing in the world."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "When things are going good, you just want to get the ball and pitch. You don't even think about being tired."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "I threw it as hard as I could, and they either hit it or they didn't. Most of the time, they didn't."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "Winning the MVP and Cy Young in the same year was a dream I didn't even know I had."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "I want to be known as a guy who went out and pitched hard every time he took the mound."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "If you have a good fastball, you have to establish it early. Once they respect the heat, the rest of your pitches work better."
+  },
+  {
+    "firstname": "Vida",
+    "lastname": "Blue",
+    "category": "",
+    "quote": "I loved playing in the Bay Area. Whether I was in Oakland or San Francisco, the fans always treated me with respect."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I let my bat do the talking for me."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "There isn't a ballpark big enough to hold me."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "Satchel is the greatest pitcher I ever faced, but I always felt I could hit anybody."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I've got the strength and I've got the eye. That's all you need."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "The harder they throw it, the farther I can hit it."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "Just put it over the plate and I'll take care of the rest."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "Catching is hard work, but hitting makes it all worth it."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I don't boast. I just know what I can do when I have a bat in my hands."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "If they want to see me hit, they better not walk me."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I'm not the black Babe Ruth. I'm Josh Gibson."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I don't play for records. I just play to win."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "A home run is a home run, no matter what park you hit it in."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I just step up to the plate and swing hard. The rest takes care of itself."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I never batted against a pitcher I thought I couldn't hit."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I play baseball because I love it. It's the only thing I've ever wanted to do."
+  },
+  {
+    "firstname": "Josh",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "The pitchers have to throw it over the plate sooner or later. That's when I get 'em."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I was drafted in three different sports, but baseball was the ultimate challenge, and that's why I chose it."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "To me, baseball is the best game in the world. It requires every bit of your physical and mental strength."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I played with a lot of intensity because I absolutely hated to lose. Second place was never an option."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I didn't want to just be a good player; I wanted to leave a legacy and be a Hall of Famer."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "The game is a marathon, not a sprint. You have to pace yourself to survive a 162-game season."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I always felt that I had a deep responsibility to be a positive role model for kids looking up to me."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "The foundation of my success wasn't just physical talent; it was how my parents raised me to respect hard work."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "You have to study the pitchers, study the tendencies. The physical tools are great, but the mind wins the game."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "A winner is someone who recognizes his God-given talents, works his tail off to develop them into skills, and uses these skills to accomplish his goals."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I always wanted to be considered a complete player. A guy who could run, hit, throw, and play defense."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I never wanted to be a one-dimensional player. I wanted to beat you in every way possible."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I just try to go out there and be aggressive. You can't play this game on your heels."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "The Hall of Fame is the ultimate honor. It validates all the hard work and sacrifice over the years."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "You have to respect the game. If you don't, it will humble you very quickly."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "I always took pride in being a leader, both in the clubhouse and on the field."
+  },
+  {
+    "firstname": "Dave",
+    "lastname": "Winfield",
+    "category": "",
+    "quote": "Baseball is a team game, but it's made up of individual battles. You have to win your battles."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "When you're catching, you've got to know the hitters, but more importantly, you've got to know your pitchers."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "I never felt I was anything special. I just worked hard at a game I loved."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "The Lord gives you a certain amount of time, and you've got to make the best of it."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "You have to be ready every single day. There's no time to feel sorry for yourself."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "The game teaches you patience. You learn that not every day is going to be a good one."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "You gotta be a man to play baseball for a living, but you gotta have a lot of little boy in you, too."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "When you're a catcher, you're involved in every single pitch of the game. You're the quarterback out there."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "I always tried to play the game hard, but I always tried to play it fair."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "There is no room for prejudice in baseball. The only thing that matters is how well you can play."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "I learned to play baseball in the Negro Leagues. That's where I learned how to be a professional."
+  },
+  {
+    "firstname": "Roy",
+    "lastname": "Campanella",
+    "category": "",
+    "quote": "I never thought about being a pioneer. I just wanted to go out there and play the game I loved."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I didn't play baseball to make friends. I played to win."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "Home plate belongs to the pitcher. If a hitter wants a piece of it, he's going to have to pay for it."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I never felt I was mean out there, just serious. Baseball was my business."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "Concentration is the key to pitching. You can't let anything distract you from the catcher's mitt."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I pitched inside because it worked. It wasn't personal; it was just strategy."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I didn't care about my statistics. All that mattered was the score at the end of the ninth inning."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "I don't think I was a tough guy. I just was competitive as hell."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "If you don't throw inside, the batter owns the plate. You have to let them know who's in charge."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "The only thing I ever cared about was winning. If I didn't win, the day was a total waste."
+  },
+  {
+    "firstname": "Bob",
+    "lastname": "Gibson",
+    "category": "",
+    "quote": "You can't pitch with fear. The minute you start worrying about what the batter can do, you've already lost."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "My father taught me to respect the game, to play hard every single day, and to never take a day off."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "If you don't believe in yourself, nobody else is going to believe in you."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "I always wanted pitch-count discipline. Pitchers hate throwing strikes when they know you can drive the ball."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "Consistency is what separates the good players from the truly great players."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "I never wanted to give away an at-bat. Every time I stepped in the box, it was war."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "Baseball is a game of adjustments. If you stop learning, you stop producing."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "I wanted to be the best hitter in the game. That was my goal every single day."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "You have to have a plan when you go to the plate. You can't just go up there guessing."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "I took a lot of pride in my discipline at the plate. A walk is as good as a hit."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "When I was locked in, the baseball looked like a grapefruit."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "Getting into the Hall of Fame was the culmination of a lot of hard work and sacrifice."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "I didn't care about the personal numbers as much as I cared about helping the team win."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "I worked hard on my swing, but a lot of it was just God-given ability."
+  },
+  {
+    "firstname": "Frank",
+    "lastname": "Thomas",
+    "category": "",
+    "quote": "You learn a lot more from your failures than you do from your successes."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "To me, baseball has always been a reflection of life. Like life, it adjusts. It survives."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "The riches of the game are in the thrills, not the money."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "I've got the best job in the world. I get paid to play baseball."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "Baseball is the greatest game in the world and deserves the best you can give it."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "If I had it to do all over again, I wouldn't change a single thing."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "I love the fans, and they love me. It's a mutual admiration society."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "Every day is a new opportunity to learn something about baseball and about life."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "You can't win 'em all, but you can always try your absolute best."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "Spring training means flowers, people coming outdoors, sunshine, optimism and baseball."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "Loyalty and friendship, which is to me the same, created all the wealth that I've ever thought I'd have."
+  },
+  {
+    "firstname": "Ernie",
+    "lastname": "Banks",
+    "category": "",
+    "quote": "Awards mean a lot, but they don't say it all. The people in baseball mean more to me than statistics."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "I always felt that hitting is a state of mind. You have to believe you can hit any pitcher."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "It's not how you start, but how you finish that matters, both in baseball and in life."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "Baseball gave me everything. It taught me how to live, how to struggle, and how to succeed."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "Every time I put on the uniform, I felt a deep sense of pride and responsibility to the fans."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "When you have the right attitude and respect for the game, baseball comes a lot easier to you."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "My teammates were my family away from home. We fought together, cried together, and won together."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "You learn far more from your failures and slumps in baseball than you do from your successes."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "San Francisco will always have a special place in my heart; it's the city where my major league journey started."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "The fans are what make the game so beautiful. Without their energy, we are just men playing a game in an empty park."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "I never gave up, no matter how tough things got or what challenges I faced. That's the secret to a lasting career."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "My father was my idol. He was the Babe Ruth of Puerto Rico, and I wanted to be just like him."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "You have to have discipline. Without discipline, talent is nothing."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "The trick is to be able to enjoy the game when you're playing well and not let it get you down when you're not."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "I was born to play baseball. It's in my blood, and it's what I was meant to do."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "I'm proud of my heritage and proud to represent Puerto Rico every time I stepped on the field."
+  },
+  {
+    "firstname": "Orlando",
+    "lastname": "Cepeda",
+    "category": "",
+    "quote": "The Hall of Fame is the ultimate honor. It means people remember what you did and respect your legacy."
+  },
+  {
+    "firstname": "Manny",
+    "lastname": "Ramirez",
+    "category": "",
+    "quote": "I don't worry about the past. I just look forward to the future."
+  },
+  {
+    "firstname": "Manny",
+    "lastname": "Ramirez",
+    "category": "",
+    "quote": "I just want to be happy and play baseball."
+  },
+  {
+    "firstname": "Manny",
+    "lastname": "Ramirez",
+    "category": "",
+    "quote": "When you step in the box, you can't be thinking about everything. You just have to see the ball and hit it."
+  },
+  {
+    "firstname": "Manny",
+    "lastname": "Ramirez",
+    "category": "",
+    "quote": "Sometimes you go through slumps, but you just have to keep swinging."
+  },
+  {
+    "firstname": "Manny",
+    "lastname": "Ramirez",
+    "category": "",
+    "quote": "I don't read the papers. I don't watch TV. I just come to the ballpark and play."
+  },
+  {
+    "firstname": "Manny",
+    "lastname": "Ramirez",
+    "category": "",
+    "quote": "Hitting is about rhythm and timing. If you have those, you can hit anyone."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Don't look back. Something might be gaining on you."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Age is a case of mind over matter. If you don't mind, it don't matter."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "How old would you be if you didn't know how old you are?"
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Just take the ball and throw it where you want to. Throw strikes. Home plate don't move."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Ain't no man can avoid being born average, but there ain't no man got to be common."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "My pitching philosophy is simple: keep the ball away from the bat."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "Don't pray when it rains if you don't pray when the sun shines."
+  },
+  {
+    "firstname": "Satchel",
+    "lastname": "Paige",
+    "category": "",
+    "quote": "You win a few, you lose a few. Some get rained out. But you got to dress for all of them."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I don't make speeches. I just let my bat speak for me in the summertime."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I never worried about striking out. I just wanted to hit the ball hard."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I didn't try to be a hero. I just tried to do what the team needed."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "You have to have confidence in yourself, or nobody else will."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I always played hard. That's the only way I knew how to play."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "Baseball is a game of adjustments. You have to be able to adapt to what the pitcher is doing."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "I tried to learn something new about the game every single day."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "It isn't hard to be good from time to time in sports. What is tough, is being good every day."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "In order to excel, you must be completely dedicated to your chosen sport. You must also be prepared to work hard and be willing to accept destructive criticism."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "What you're thinking, what shape your mind is in, is what makes the biggest difference of all."
+  },
+  {
+    "firstname": "Willie",
+    "lastname": "Mays",
+    "category": "",
+    "quote": "Defense to me is the key to playing baseball."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Performance",
+    "quote": "There may be people who have more talent than you, but there's no excuse for anyone to work harder than you do – and I believe that."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Preparation",
+    "quote": "I've always been a believer in hard work and no excuses. I would never want to play a game and be unsuccessful and think, Well, I could have been successful if I had done this."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Excellence",
+    "quote": "Playing well gets you here; consistency keeps you here. That's the thing I've always tried to focus on."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Winning",
+    "quote": "I think most people want to win at anything. But the thing that separates you is if losing bothers you."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Hard Work",
+    "quote": "The last thing you want to do is finish playing or doing anything and wish you would have worked harder."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Effort",
+    "quote": "It doesn't take any talent to play hard."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Competitiveness",
+    "quote": "If you're going to play at all, you're out to win. Baseball, board games, playing Jeopardy, I hate to lose."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Motivation",
+    "quote": "I love it when people doubt me. It makes me work harder to prove them wrong."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Achievement",
+    "quote": "When you put a lot of hard work into one goal and you achieve it, that's a really good feeling."
+  },
+  {
+    "firstname": "Derek",
+    "lastname": "Jeter",
+    "category": "Preparation",
+    "quote": "You don't just accidentally show up in the World Series."
+  },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "I'm the straw that stirs the drink."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "I didn't come to New York to be a star. I brought my star with me."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "I feel that the most important requirement in success is learning to overcome failure. You must learn to tolerate it, but never accept it."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "A baseball swing is a very finely tuned instrument. It is repetition, and more repetition, then a little more after that."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "Sometimes I underestimate the magnitude of me."
+    },
+    {
+      "firstname": "Reggie",
+      "lastname": "Jackson",
+      "category": "",
+      "quote": "Once you realize how good you really are, you never settle for playing less than your best."
+    },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "As long as I have fun playing, the stats will take care of themselves."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "When you have fun, it changes all the pressure into pleasure."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I don't consider myself a home run hitter. I just consider myself a hitter."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "You know, you play this game because you love it."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "My dad taught me how to play this game, but more importantly, he taught me how to respect it."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I just play the game. I don't worry about the rest of it."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I don't think about the Hall of Fame. I just think about going out there and playing hard every day."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "If you can't have fun playing baseball, you can't have fun doing anything."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "It's not about the name on the back of the jersey, it's about the name on the front."
+  },
+  {
+    "firstname": "Ken",
+    "lastname": "Griffey Jr.",
+    "category": "",
+    "quote": "I just want to be remembered as a guy who played hard every day."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "Hitting is better than sex."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "I represent the underdog and the overdog in our society."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "When you have the ability to do something, you have the responsibility to do it."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "You can't just go out there and play. You have to have a sense of purpose."
+  },
+  {
+    "firstname": "Reggie",
+    "lastname": "Jackson",
+    "category": "",
+    "quote": "I loved hitting home runs, but I loved winning championships more."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Legacy",
+    "quote": "A life is not important except in the impact it has on other lives."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Respect",
+    "quote": "I'm not concerned with your liking or disliking me... All I ask is that you respect me as a human being."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Action",
+    "quote": "Life is not a spectator sport. If you're going to spend your whole life in the grandstand just watching what goes on, in my opinion you're wasting your life."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Freedom",
+    "quote": "There's not an American in this country free until every one of us is free."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Civil Rights",
+    "quote": "The right of every American to first-class citizenship is the most important issue of our time."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Baseball",
+    "quote": "Baseball is like a poker game. Nobody wants to quit when he's losing; nobody wants you to quit when you're ahead."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Equality",
+    "quote": "I won't 'have it made' until the most underprivileged Negro in Mississippi can live in equal dignity with anyone else in America."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Competition",
+    "quote": "Above anything else, I hate to lose."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Sportsmanship",
+    "quote": "It kills me to lose. If I'm a troublemaker, and I don't think that my temper makes me one, then it's because I can't stand losing."
+  },
+  {
+    "firstname": "Jackie",
+    "lastname": "Robinson",
+    "category": "Effort",
+    "quote": "How you played in yesterday's game is all that counts."
+  },
+  {
     "firstname": "Roberto",
     "lastname": "Clemente",
     "category": "",
