@@ -148,6 +148,62 @@ class _HomeScreenState extends State<HomeScreen>
     return byteData.buffer.asUint8List();
   }
 
+  void _openMoreMenu(QuotesProvider provider) {
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: const Color(0xFF1A2744),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (sheetContext) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(8, 12, 8, 16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                ListTile(
+                  title: const Text(
+                    'Search',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                  trailing: const Icon(Icons.search, color: Colors.white),
+                  onTap: () {
+                    Navigator.of(sheetContext).pop();
+                    _openSearch(provider);
+                  },
+                ),
+                ListTile(
+                  title: const Text(
+                    'Give Feedback',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                  trailing: const Icon(
+                    Icons.feedback_outlined,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    Navigator.of(sheetContext).pop();
+                    _openFeedback(provider);
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   void _openSearch(QuotesProvider provider) {
     showModalBottomSheet<void>(
       context: context,
@@ -261,13 +317,13 @@ class _HomeScreenState extends State<HomeScreen>
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           IconButton(
-                                            tooltip: 'Search quotes',
+                                            tooltip: 'More',
                                             icon: const Icon(
                                               Icons.more_horiz,
                                               color: Colors.white,
                                             ),
                                             onPressed: () =>
-                                                _openSearch(provider),
+                                                _openMoreMenu(provider),
                                           ),
                                           IconButton(
                                             tooltip: 'Shuffle quotes',
@@ -892,7 +948,7 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
       _controller.clear();
       Navigator.of(context).pop();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Feedback sent successfully!')),
+        const SnackBar(content: Text('Appreciate your feedback!')),
       );
     } catch (e) {
       if (!mounted) return;
@@ -929,7 +985,7 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
               ),
               const SizedBox(height: 14),
               const Text(
-                'Submit Feedback',
+                'Do you have any suggestions to improve our app?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
