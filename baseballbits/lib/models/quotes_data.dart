@@ -6,13 +6,8 @@ import 'package:flutter/services.dart' show rootBundle;
 
 /// Free scenic baseball-field backgrounds bundled as assets (Unsplash License).
 const List<String> baseballFieldBackgrounds = [
-  'assets/backgrounds/field1.jpg',
   'assets/backgrounds/field2.jpg',
   'assets/backgrounds/field3.jpg',
-  'assets/backgrounds/field4.jpg',
-  'assets/backgrounds/field5.jpg',
-  'assets/backgrounds/field6.jpg',
-  'assets/backgrounds/field7.jpg',
   'assets/backgrounds/field8.jpg',
   'assets/backgrounds/field9.jpg',
   'assets/backgrounds/field10.jpg',

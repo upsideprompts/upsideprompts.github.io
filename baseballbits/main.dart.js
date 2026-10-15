@@ -8081,7 +8081,7 @@ h=J.cS(h==null?"":h)
 g=j.h(0,"category")
 g=J.cS(g==null?"":g)
 j=j.h(0,"quote")
-p.push(new A.cB(i,h,g,J.cS(j==null?"":j),B.SC[B.i.bp(k,6)],B.mo,B.k6[B.i.bp(k,12)]))}q=p
+p.push(new A.cB(i,h,g,J.cS(j==null?"":j),B.SC[B.i.bp(k,6)],B.mo,B.k6[B.i.bp(k,7)]))}q=p
 s=1
 break
 case 1:return A.H(q,r)}})
@@ -26739,7 +26739,7 @@ $S:2}
 A.apB.prototype={
 $1(a){var s=A.cE().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/deb287481e3ce9468f3434937ced4240a70539ca/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/af7e796e161ae0bb1ff0758c71a7105418bd9ded/":s)+a},
 $S:128}
 A.Kc.prototype={
 gA(a){var s=this.a
@@ -89580,6 +89580,7 @@ B.K1=s([],t.n)
 B.K_=s([],t.t)
 B.o2=s([],t.ee)
 B.K7=s([],t.XS)
+B.k6=s(["assets/backgrounds/field2.jpg","assets/backgrounds/field3.jpg","assets/backgrounds/field8.jpg","assets/backgrounds/field9.jpg","assets/backgrounds/field10.jpg","assets/backgrounds/field11.jpg","assets/backgrounds/field12.jpg"],t.s)
 B.Xa=new A.h(0,2)
 B.AA=new A.dJ(0.75,B.fh,B.mx,B.Xa,1.5)
 B.Mb=s([B.AA],t.sq)
@@ -89618,7 +89619,6 @@ B.Gt=s([0.001200833568784504,0.002389694492170889,0.0002795742885861124],t.n)
 B.Jd=s([0.0005891086651375999,0.0029785502573438758,0.0003270666104008398],t.n)
 B.GK=s([0.00010146692491640572,0.0005364214359186694,0.0032979401770712076],t.n)
 B.PS=s([B.Gt,B.Jd,B.GK],t.zg)
-B.k6=s(["assets/backgrounds/field1.jpg","assets/backgrounds/field2.jpg","assets/backgrounds/field3.jpg","assets/backgrounds/field4.jpg","assets/backgrounds/field5.jpg","assets/backgrounds/field6.jpg","assets/backgrounds/field7.jpg","assets/backgrounds/field8.jpg","assets/backgrounds/field9.jpg","assets/backgrounds/field10.jpg","assets/backgrounds/field11.jpg","assets/backgrounds/field12.jpg"],t.s)
 B.PU=s([45,95,45,20,45,90,45,45,45],t.n)
 B.PV=s([120,120,20,45,20,15,20,120,120],t.n)
 B.dh=new A.fU(0,"controlModifier")
