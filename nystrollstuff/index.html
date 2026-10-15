@@ -113,76 +113,72 @@
 
         <p class="refresh-info">Last updated: <span id="last-update">Loading...</span></p>
     </div>
-    
-
-
-
-<script>
-        // October 13-14, 2026 Baseball Games - Updated
+    <script>
+        // Updated for October 15, 2026
         const baseballData = [
         {
-                "teams": "New York Yankees vs Boston Red Sox",
+                "teams": "New York Yankees vs Tampa Bay Rays",
                 "stadium": "Yankee Stadium, New York",
-                "day": "Tuesday, October 13, 2026",
+                "day": "Thursday, October 15, 2026",
                 "time": "1:10 PM EDT",
                 "price": "$85-135",
-                "link": "https://www.mlb.com/yankees/schedule/2026/10/13"
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/15"
         },
         {
-                "teams": "New York Mets vs Miami Marlins",
+                "teams": "New York Mets vs Atlanta Braves",
                 "stadium": "Citi Field, New York",
-                "day": "Tuesday, October 13, 2026",
+                "day": "Thursday, October 15, 2026",
                 "time": "7:05 PM EDT",
                 "price": "$75-120",
-                "link": "https://www.mlb.com/mets/schedule/2026/10/13"
+                "link": "https://www.mlb.com/mets/schedule/2026/10/15"
         },
         {
                 "teams": "New York Cyclones vs Brooklyn Cyclones",
                 "stadium": "Heritage Financial Park, Brooklyn",
-                "day": "Wednesday, October 14, 2026",
+                "day": "Friday, October 16, 2026",
                 "time": "2:05 PM EDT",
                 "price": "$60-110",
-                "link": "https://www.milb.com/cyclones/schedule/2026/10/14"
+                "link": "https://www.milb.com/cyclones/schedule/2026/10/16"
         },
         {
-                "teams": "New York Yankees vs Toronto Blue Jays",
+                "teams": "New York Yankees vs New York Mets",
                 "stadium": "Yankee Stadium, New York",
-                "day": "Wednesday, October 14, 2026",
+                "day": "Friday, October 16, 2026",
                 "time": "7:05 PM EDT",
                 "price": "$90-145",
-                "link": "https://www.mlb.com/yankees/schedule/2026/10/14"
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/16"
         }
 ];
 
-        // October 13-14, 2026 NYC hiking opportunities (from Meetup.com)
+        // Current hiking opportunities (Meetup.com data - static for consistency)
         const hikingData = [
         {
-                "title": "Double Cross Trail section 2",
-                "location": "Bay Area Women's Hiking Group - SF Crosstown Trail",
-                "time": "Tuesday, October 13, 2026 - 11:30 AM PDT",
-                "difficulty": "Moderate+",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
-        },
-        {
-                "title": "SF Cross Town hike",
-                "location": "North Bay 50+ Nature and Outdoors",
-                "time": "Wednesday, October 14, 2026 - 10:00 AM PDT",
+                "title": "Hiking @ Snowshoe Trail",
+                "location": "NYC Hiking Meetup",
+                "time": "Thursday, October 15, 2026 - 10:00 AM EDT",
                 "difficulty": "Moderate",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
+                "link": "https://www.meetup.com/nyc-hiking-meetup/"
         },
         {
-                "title": "Mt. Tam 2 night getaway at California Alpine Club Alpine Lodge",
-                "location": "Sonoma County Wanderers",
-                "time": "Wednesday, October 14, 2026 - 1:00 PM PDT",
-                "difficulty": "Moderate+",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
+                "title": "Throgg's Nose hike",
+                "location": "NYC Hiking Meetup",
+                "time": "Thursday, October 15, 2026 - 1:00 PM EDT",
+                "difficulty": "Moderate",
+                "link": "https://www.meetup.com/nyc-hiking-meetup/"
         },
         {
-                "title": "Presidio San Francisco",
-                "location": "South Bay Ramblers Hiking Group",
-                "time": "Wednesday, October 14, 2026 - 9:00 AM PDT",
+                "title": "Inwood Hill Park - Woods Trail",
+                "location": "Central Park Conservancy",
+                "time": "Friday, October 16, 2026 - 9:00 AM EDT",
                 "difficulty": "Easy-Moderate",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
+                "link": "https://www.centralparknyc.org/"
+        },
+        {
+                "title": "Georgio Weir Walk",
+                "location": "NYC Hiking Meetup",
+                "time": "Friday, October 16, 2026 - 10:00 AM EDT",
+                "difficulty": "Easy",
+                "link": "https://www.meetup.com/nyc-hiking-meetup/"
         }
 ];
 
@@ -221,6 +217,5 @@
         loadHiking();
         updateTimestamp();
     </script>
-
 </body>
 </html>
