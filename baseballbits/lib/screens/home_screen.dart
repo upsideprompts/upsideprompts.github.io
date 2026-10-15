@@ -8,6 +8,7 @@ import 'package:share_plus/share_plus.dart';
 
 import '../models/quotes_data.dart';
 import '../models/quotes_provider.dart';
+import '../services/feedback_submit.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -879,14 +880,29 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
   }
 
   Future<void> _submit() async {
-    if (_saving || _controller.text.trim().isEmpty) return;
+    final text = _controller.text.trim();
+    if (_saving || text.isEmpty) return;
     setState(() => _saving = true);
-    await widget.provider.saveFeedback(_controller.text);
-    if (!mounted) return;
-    Navigator.of(context).pop();
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Thanks — your feedback was saved.')),
-    );
+    try {
+      // Same as the HTML page: POST feedback=... to the Apps Script web app.
+      await submitFeedbackToSheet(text);
+      // Keep a local copy as well.
+      await widget.provider.saveFeedback(text);
+      if (!mounted) return;
+      _controller.clear();
+      Navigator.of(context).pop();
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Feedback sent successfully!')),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _saving = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not send feedback: $e')),
+      );
+      return;
+    }
+    if (mounted) setState(() => _saving = false);
   }
 
   @override
@@ -913,7 +929,7 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
               ),
               const SizedBox(height: 14),
               const Text(
-                'Feedback',
+                'Submit Feedback',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
@@ -929,7 +945,7 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
                 style: const TextStyle(color: Colors.white),
                 cursorColor: Colors.white,
                 decoration: InputDecoration(
-                  hintText: 'Tell us what you think…',
+                  hintText: 'Enter your feedback here...',
                   hintStyle: const TextStyle(color: Colors.white54),
                   filled: true,
                   fillColor: Colors.white.withValues(alpha: 0.08),
@@ -956,7 +972,7 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
                           color: Colors.white,
                         ),
                       )
-                    : const Text('Save feedback'),
+                    : const Text('Submit to Google Sheet'),
               ),
             ],
           ),
