@@ -8081,7 +8081,7 @@ h=J.cS(h==null?"":h)
 g=j.h(0,"category")
 g=J.cS(g==null?"":g)
 j=j.h(0,"quote")
-p.push(new A.cB(i,h,g,J.cS(j==null?"":j),B.SC[B.i.bp(k,6)],B.mo,B.k7[B.i.bp(k,7)]))}q=p
+p.push(new A.cB(i,h,g,J.cS(j==null?"":j),B.SC[B.i.bp(k,6)],B.mo,B.k6[B.i.bp(k,12)]))}q=p
 s=1
 break
 case 1:return A.H(q,r)}})
@@ -8146,7 +8146,7 @@ for(s=0;s<o;s=r){r=s+1
 q=a[r%o]
 p=a[s]
 if(B.c.dc(p.a+" "+p.b)===B.c.dc(q.a+" "+q.b))return!1}return!0},
-aAg(a,b){var s,r,q,p,o=A.fp(B.k7,!0,t.N)
+aAg(a,b){var s,r,q,p,o=A.fp(B.k6,!0,t.N)
 B.b.oz(o,b)
 s=A.c([],t.Cb)
 for(r=0;r<a.length;++r){q=a[r]
@@ -42237,7 +42237,7 @@ f=i.h(0,"category")
 f=J.cS(f==null?"":f)
 e=i.h(0,"quote")
 e=J.cS(e==null?"":e)
-d=B.b.gV(B.k7)
+d=B.b.gV(B.k6)
 if(a0.E(0,h+"|"+g+"|"+e))p.push(new A.cB(h,g,f,e,B.mN,B.mo,d))}}a0=q.x
 B.b.U(a0)
 c=A.ch(b.h(0,"baseballbits_feedback"))
@@ -89618,6 +89618,7 @@ B.Gt=s([0.001200833568784504,0.002389694492170889,0.0002795742885861124],t.n)
 B.Jd=s([0.0005891086651375999,0.0029785502573438758,0.0003270666104008398],t.n)
 B.GK=s([0.00010146692491640572,0.0005364214359186694,0.0032979401770712076],t.n)
 B.PS=s([B.Gt,B.Jd,B.GK],t.zg)
+B.k6=s(["assets/backgrounds/field1.jpg","assets/backgrounds/field2.jpg","assets/backgrounds/field3.jpg","assets/backgrounds/field4.jpg","assets/backgrounds/field5.jpg","assets/backgrounds/field6.jpg","assets/backgrounds/field7.jpg","assets/backgrounds/field8.jpg","assets/backgrounds/field9.jpg","assets/backgrounds/field10.jpg","assets/backgrounds/field11.jpg","assets/backgrounds/field12.jpg"],t.s)
 B.PU=s([45,95,45,20,45,90,45,45,45],t.n)
 B.PV=s([120,120,20,45,20,15,20,120,120],t.n)
 B.dh=new A.fU(0,"controlModifier")
@@ -89630,14 +89631,13 @@ B.kp=new A.fU(6,"scrollLockModifier")
 B.kq=new A.fU(7,"functionModifier")
 B.uc=new A.fU(8,"symbolModifier")
 B.o5=s([B.dh,B.di,B.dj,B.dk,B.kn,B.ko,B.kp,B.kq,B.uc],A.al("z<fU>"))
-B.k6=s([!0,!1],t.HZ)
+B.k7=s([!0,!1],t.HZ)
 B.Cf=new A.B(0.8,0.043137254901960784,0.23921568627450981,0.10980392156862745,B.h)
 B.Cx=new A.B(0.8,0.10196078431372549,0.3215686274509804,0.4627450980392157,B.h)
 B.Cd=new A.B(0.8,0.08235294117647059,0.2627450980392157,0.3764705882352941,B.h)
 B.Cn=new A.B(0.8,0.16470588235294117,0.3215686274509804,0.596078431372549,B.h)
 B.CB=new A.B(0.8,0.10588235294117647,0.30980392156862746,0.4470588235294118,B.h)
 B.SC=s([B.mN,B.Cf,B.Cx,B.Cd,B.Cn,B.CB],t.t_)
-B.k7=s(["assets/backgrounds/field1.jpg","assets/backgrounds/field2.jpg","assets/backgrounds/field3.jpg","assets/backgrounds/field4.jpg","assets/backgrounds/field5.jpg","assets/backgrounds/field6.jpg","assets/backgrounds/field7.jpg"],t.s)
 B.ST=s(["pointerdown","pointermove","pointerleave","pointerup","pointercancel","touchstart","touchend","touchmove","touchcancel","mousedown","mousemove","mouseleave","mouseup","wheel"],t.s)
 B.jZ=new A.fi(100)
 B.Eq=new A.fi(200)
@@ -92812,7 +92812,7 @@ return q})
 r($,"aT0","aD6",()=>{var q=A.al("~(aW<aV>)")
 return A.aq([B.a6o,A.aw6(!0),B.a6a,A.aw6(!1),B.a6L,new A.LX(A.zf(q)),B.a6C,new A.Kx(A.zf(q)),B.a6G,new A.L9(A.zf(q)),B.zA,new A.xc(!1,A.zf(q)),B.lf,A.aJz(),B.a6H,new A.Le(A.zf(q)),B.a7_,new A.NR(A.zf(q))],t.u,t.od)})
 s($,"aQH","ar3",()=>{var q,p,o,n=t.B,m=A.o(t.Vz,n)
-for(q=A.al("a4"),p=0;p<2;++p){o=B.k6[p]
+for(q=A.al("a4"),p=0;p<2;++p){o=B.k7[p]
 m.S(0,A.aq([A.ea(B.aJ,!1,!1,!1,o),B.jb,A.ea(B.aJ,!1,!0,!1,o),B.je,A.ea(B.aJ,!0,!1,!1,o),B.jc,A.ea(B.aK,!1,!0,!1,o),B.ed,A.ea(B.aK,!0,!1,!1,o),B.jd],q,n))}m.m(0,B.yz,B.ec)
 m.m(0,B.hZ,B.d9)
 m.m(0,B.i_,B.da)
@@ -92868,7 +92868,7 @@ q.m(0,B.kS,B.fZ)
 q.m(0,B.kT,B.h_)
 return q})
 s($,"aQN","aus",()=>{var q,p,o,n=t.B,m=A.o(t.Vz,n)
-for(q=A.al("a4"),p=0;p<2;++p){o=B.k6[p]
+for(q=A.al("a4"),p=0;p<2;++p){o=B.k7[p]
 m.S(0,A.aq([A.ea(B.aJ,!1,!1,!1,o),B.jb,A.ea(B.aJ,!0,!1,!1,o),B.je,A.ea(B.aJ,!1,!1,!0,o),B.jc,A.ea(B.aK,!1,!1,!1,o),B.ec,A.ea(B.aK,!0,!1,!1,o),B.ed,A.ea(B.aK,!1,!1,!0,o),B.jd],q,n))}m.m(0,B.hZ,B.d9)
 m.m(0,B.i_,B.da)
 m.m(0,B.i0,B.dd)
@@ -92932,7 +92932,7 @@ q.m(0,B.kS,B.fZ)
 q.m(0,B.kT,B.h_)
 return q})
 s($,"aQO","aut",()=>{var q,p,o,n=t.B,m=A.o(t.Vz,n)
-for(q=A.al("a4"),p=0;p<2;++p){o=B.k6[p]
+for(q=A.al("a4"),p=0;p<2;++p){o=B.k7[p]
 m.S(0,A.aq([A.ea(B.aJ,!1,!1,!1,o),B.o,A.ea(B.aK,!1,!1,!1,o),B.o,A.ea(B.aJ,!0,!1,!1,o),B.o,A.ea(B.aK,!0,!1,!1,o),B.o,A.ea(B.aJ,!1,!0,!1,o),B.o,A.ea(B.aK,!1,!0,!1,o),B.o,A.ea(B.aJ,!1,!1,!0,o),B.o,A.ea(B.aK,!1,!1,!0,o),B.o],q,n))}m.S(0,B.u1)
 for(n=$.Xh().gbZ().ga0(0);n.t();)m.m(0,n.gK(),B.o)
 m.m(0,B.yv,B.o)
