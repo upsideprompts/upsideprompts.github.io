@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 const _feedbackWebAppUrl =
@@ -6,7 +8,7 @@ const _feedbackWebAppUrl =
 Future<void> submitFeedbackToSheet(String text) async {
   await http.post(
     Uri.parse(_feedbackWebAppUrl),
-    headers: const {'Content-Type': 'application/x-www-form-urlencoded'},
-    body: 'feedback=${Uri.encodeComponent(text)}',
+    headers: const {'Content-Type': 'text/plain;charset=utf-8'},
+    body: jsonEncode({'feedback': text}),
   );
 }
