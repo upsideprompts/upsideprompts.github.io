@@ -224,6 +224,55 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 
+  void _openAbout() {
+    showDialog<void>(
+      context: context,
+      barrierColor: Colors.black54,
+      builder: (dialogContext) {
+        final top = MediaQuery.paddingOf(dialogContext).top;
+        return Align(
+          alignment: Alignment.topRight,
+          child: Padding(
+            padding: EdgeInsets.only(top: top + kToolbarHeight + 8, right: 12),
+            child: Material(
+              color: const Color(0xFF1A2744),
+              borderRadius: BorderRadius.circular(16),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 320),
+                child: const Padding(
+                  padding: EdgeInsets.fromLTRB(20, 16, 20, 20),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'About',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(height: 12),
+                      Text(
+                        'Baseball QuoteFloat has inspirational quotes from baseball legends, bringing them at the championship level.  You’ll discover a range of quotes on improvement, success, and focus. Customize your categories and backgrounds.',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          height: 1.4,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<QuotesProvider>();
@@ -341,6 +390,8 @@ class _HomeScreenState extends State<HomeScreen>
                                                 _openSearch(provider);
                                               } else if (value == 'feedback') {
                                                 _openFeedback(provider);
+                                              } else if (value == 'about') {
+                                                _openAbout();
                                               }
                                             },
                                             itemBuilder: (context) => [
@@ -400,7 +451,28 @@ class _HomeScreenState extends State<HomeScreen>
                                                       ),
                                                     ),
                                                     Icon(
-                                                      Icons.feedback_outlined,
+                                                      Icons.mark_chat_read_outlined,
+                                                      color: Colors.white,
+                                                      size: 19.2,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              const PopupMenuItem(
+                                                value: 'about',
+                                                child: Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(
+                                                        'About',
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 16,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                      Icons.info_outline,
                                                       color: Colors.white,
                                                       size: 19.2,
                                                     ),
@@ -523,7 +595,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Icon(
-                                                Icons.feedback_outlined,
+                                                Icons.mark_chat_read_outlined,
                                                 color: Colors.white,
                                                 size: 20,
                                               ),
