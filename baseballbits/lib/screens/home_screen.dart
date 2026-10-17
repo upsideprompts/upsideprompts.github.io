@@ -551,6 +551,7 @@ class _SecondaryBar extends StatelessWidget {
     'Focus',
     'Appreciation',
     'Improvement',
+    'Perspectives',
   ];
 
   static const _backgroundStyles = [
@@ -1021,7 +1022,6 @@ class QuoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const quoteSize = 28.0;
-    const categorySize = 18.0;
     const iconSize = 78.0;
 
     return Stack(
@@ -1040,7 +1040,7 @@ class QuoteCard extends StatelessWidget {
         SafeArea(
           top: false,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(28, 30, 28, 24),
+            padding: const EdgeInsets.fromLTRB(28, 45, 28, 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -1067,24 +1067,6 @@ class QuoteCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (quote.category.trim().isNotEmpty) ...[
-                  const SizedBox(height: 18),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: quote.textColor.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      quote.category,
-                      style: TextStyle(
-                        fontSize: categorySize,
-                        fontWeight: FontWeight.w600,
-                        color: quote.textColor,
-                      ),
-                    ),
-                  ),
-                ],
               ],
             ),
           ),
