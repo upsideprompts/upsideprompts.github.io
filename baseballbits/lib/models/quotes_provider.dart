@@ -18,6 +18,12 @@ class QuotesProvider with ChangeNotifier {
   int _currentIndex = 0;
   int get currentIndex => _currentIndex;
 
+  int _deckGeneration = 0;
+  int get deckGeneration => _deckGeneration;
+
+  String? _deckMessage;
+  String? get deckMessage => _deckMessage;
+
   bool _isAnimating = false;
   bool get isAnimating => _isAnimating;
 
@@ -53,6 +59,8 @@ class QuotesProvider with ChangeNotifier {
       _source = await loadQuotesFromAsset();
       _quotes = shuffleQuotesAlternatingPeople(_source);
       _currentIndex = 0;
+      _deckMessage = null;
+      _deckGeneration++;
       _isLoading = false;
       notifyListeners();
     } catch (e) {
@@ -157,12 +165,50 @@ class QuotesProvider with ChangeNotifier {
         .toList();
   }
 
-  bool jumpToQuoteById(String id) {
+  /// Moves to [id] in the current deck.
+  ///
+  /// Returns true when the deck stayed the same and the page should jump.
+  /// Returns false when the full list was restored so the deck can rebuild
+  /// already positioned on that quote.
+  bool revealQuote(String id) {
     final index = _quotes.indexWhere((q) => q.id == id);
-    if (index < 0) return false;
-    _currentIndex = index;
+    if (index >= 0) {
+      _currentIndex = index;
+      notifyListeners();
+      return true;
+    }
+    _quotes = List<Quote>.from(_source);
+    _deckMessage = _quotes.isEmpty ? 'No quotes found' : null;
+    final restored = _quotes.indexWhere((q) => q.id == id);
+    if (restored < 0) {
+      _currentIndex = 0;
+      _deckGeneration++;
+      notifyListeners();
+      return false;
+    }
+    _currentIndex = restored;
+    _deckGeneration++;
     notifyListeners();
-    return true;
+    return false;
+  }
+
+  void showCategory(String name) {
+    final List<Quote> matched;
+    if (name == 'Favorite') {
+      matched = _source.where((q) => _favoriteIds.contains(q.id)).toList();
+      _deckMessage = matched.isEmpty
+          ? "You haven't favorited any quotes yet."
+          : null;
+    } else {
+      matched =
+          _source.where((q) => q.category == name).toList();
+      _deckMessage = matched.isEmpty ? 'No $name quotes yet.' : null;
+    }
+    matched.shuffle();
+    _quotes = matched;
+    _currentIndex = 0;
+    _deckGeneration++;
+    notifyListeners();
   }
 
   void nextQuote() {
@@ -197,6 +243,8 @@ class QuotesProvider with ChangeNotifier {
     }
     _quotes = shuffleQuotesAlternatingPeople(_source);
     _currentIndex = 0;
+    _deckMessage = null;
+    _deckGeneration++;
     notifyListeners();
   }
 }

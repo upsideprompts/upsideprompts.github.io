@@ -19,7 +19,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  final PageController _pageController = PageController();
+  PageController _pageController = PageController();
+  int _controllerGeneration = -1;
   final GlobalKey _captureKey = GlobalKey();
   final GlobalKey _shareButtonKey = GlobalKey();
   bool _sharing = false;
@@ -55,6 +56,36 @@ class _HomeScreenState extends State<HomeScreen>
     _chromeController.dispose();
     _pageController.dispose();
     super.dispose();
+  }
+
+  /// Starts near the middle of a repeated deck so the first quote can swipe
+  /// either direction and the pages wrap.
+  PageController _pageControllerFor(QuotesProvider provider) {
+    if (_controllerGeneration == provider.deckGeneration) {
+      return _pageController;
+    }
+    final length = provider.quotes.length;
+    final anchor = length * 500 + provider.currentIndex;
+    final previous = _pageController;
+    _pageController = PageController(initialPage: anchor, keepPage: false);
+    _controllerGeneration = provider.deckGeneration;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      previous.dispose();
+    });
+    return _pageController;
+  }
+
+  void _jumpToLogicalPage(int logicalIndex) {
+    final length = context.read<QuotesProvider>().quotes.length;
+    if (length == 0 || !_pageController.hasClients) return;
+    final current =
+        _pageController.page?.round() ?? _pageController.initialPage;
+    var delta = logicalIndex - (current % length);
+    if (delta > length ~/ 2) delta -= length;
+    if (delta < -(length ~/ 2)) delta += length;
+    final target = current + delta;
+    if (target < 0 || target >= length * 1000) return;
+    _pageController.jumpToPage(target);
   }
 
   void _toggleChrome() {
@@ -173,10 +204,8 @@ class _HomeScreenState extends State<HomeScreen>
           provider: provider,
           onShare: (quote) => _shareQuote(quote),
           onOpenQuote: (quote) {
-            final jumped = provider.jumpToQuoteById(quote.id);
-            if (jumped && _pageController.hasClients) {
-              _pageController.jumpToPage(provider.currentIndex);
-            }
+            final sameDeck = provider.revealQuote(quote.id);
+            if (sameDeck) _jumpToLogicalPage(provider.currentIndex);
           },
         );
       },
@@ -212,39 +241,57 @@ class _HomeScreenState extends State<HomeScreen>
                     style: const TextStyle(color: Colors.white, fontSize: 22),
                   ),
                 )
-              : provider.quotes.isEmpty
-                  ? const Center(
-                      child: Text(
-                        'No quotes found',
-                        style: TextStyle(color: Colors.white, fontSize: 22),
-                      ),
-                    )
-                  : Stack(
+              : Stack(
                       fit: StackFit.expand,
                       children: [
-                        GestureDetector(
-                          behavior: HitTestBehavior.opaque,
-                          onTap: _toggleChrome,
-                          child: PageView.builder(
-                            controller: _pageController,
-                            itemCount: provider.quotes.length,
-                            onPageChanged: provider.goToQuote,
-                            itemBuilder: (context, index) {
-                              final quote = provider.quotes[index];
-                              final card = QuoteCard(
-                                quote: quote,
-                                isActive: index == provider.currentIndex,
-                              );
-                              if (index == provider.currentIndex) {
-                                return RepaintBoundary(
-                                  key: _captureKey,
-                                  child: card,
+                        if (provider.quotes.isEmpty)
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(32),
+                              child: Text(
+                                provider.deckMessage ?? 'No quotes found',
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 22,
+                                ),
+                              ),
+                            ),
+                          )
+                        else
+                          GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: _toggleChrome,
+                            child: PageView.builder(
+                              key: ValueKey(provider.deckGeneration),
+                              controller: _pageControllerFor(provider),
+                              itemCount: provider.quotes.length * 1000,
+                              onPageChanged: (index) {
+                                provider.goToQuote(
+                                  index % provider.quotes.length,
                                 );
-                              }
-                              return card;
-                            },
+                              },
+                              itemBuilder: (context, index) {
+                                final length = provider.quotes.length;
+                                final quote = provider.quotes[index % length];
+                                final currentPage = _pageController.hasClients
+                                    ? (_pageController.page?.round() ??
+                                        _pageController.initialPage)
+                                    : _pageController.initialPage;
+                                final card = QuoteCard(
+                                  quote: quote,
+                                  isActive: index == currentPage,
+                                );
+                                if (index == currentPage) {
+                                  return RepaintBoundary(
+                                    key: _captureKey,
+                                    child: card,
+                                  );
+                                }
+                                return card;
+                              },
+                            ),
                           ),
-                        ),
                         Positioned(
                           top: 0,
                           left: 0,
@@ -442,18 +489,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     ],
                                   ),
                                   const SizedBox(height: 12),
-                                  _SecondaryBar(
-                                    provider: provider,
-                                    onJumpToQuote: (quote) {
-                                      final jumped =
-                                          provider.jumpToQuoteById(quote.id);
-                                      if (jumped &&
-                                          _pageController.hasClients) {
-                                        _pageController.jumpToPage(
-                                            provider.currentIndex);
-                                      }
-                                    },
-                                  ),
+                                  _SecondaryBar(provider: provider),
                                   const SizedBox(height: 10),
                                   Align(
                                     alignment: Alignment.centerRight,
@@ -505,11 +541,9 @@ class _HomeScreenState extends State<HomeScreen>
 class _SecondaryBar extends StatelessWidget {
   const _SecondaryBar({
     required this.provider,
-    required this.onJumpToQuote,
   });
 
   final QuotesProvider provider;
-  final ValueChanged<Quote> onJumpToQuote;
 
   static const _categories = [
     'Favorite',
@@ -527,7 +561,6 @@ class _SecondaryBar extends StatelessWidget {
   ];
 
   Future<void> _showCategories(BuildContext context) {
-    final barContext = context;
     return showModalBottomSheet<void>(
       context: context,
       backgroundColor: const Color(0xFF1A2744),
@@ -564,96 +597,12 @@ class _SecondaryBar extends StatelessWidget {
                     ),
                     onTap: () {
                       Navigator.of(sheetContext).pop();
-                      if (option == 'Favorite' && barContext.mounted) {
-                        _showFavorites(barContext);
-                      }
+                      provider.showCategory(option);
                     },
                   ),
               ],
             ),
           ),
-        );
-      },
-    );
-  }
-
-  Future<void> _showFavorites(BuildContext context) {
-    return showModalBottomSheet<void>(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: const Color(0xFF1A2744),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      builder: (context) {
-        return Consumer<QuotesProvider>(
-          builder: (context, provider, _) {
-            final favorites = provider.favorites;
-            return SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(8, 12, 8, 16),
-                child: SizedBox(
-                  height: MediaQuery.sizeOf(context).height * 0.55,
-                  child: Column(
-                    children: [
-                      _sheetHandle(),
-                      const SizedBox(height: 14),
-                      const Text(
-                        'Favorites',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      Expanded(
-                        child: favorites.isEmpty
-                            ? const Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(24),
-                                  child: Text(
-                                    "You haven't favorited any quotes yet.",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.white70,
-                                      fontSize: 18,
-                                    ),
-                                  ),
-                                ),
-                              )
-                            : ListView.builder(
-                                itemCount: favorites.length,
-                                itemBuilder: (context, index) {
-                                  final quote = favorites[index];
-                                  return ListTile(
-                                    leading: const Icon(
-                                      Icons.sports_baseball,
-                                      color: Color(0xFFFFC107),
-                                    ),
-                                    title: Text(
-                                      '"${quote.quote}" — ${quote.author}',
-                                      maxLines: 3,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15,
-                                      ),
-                                    ),
-                                    onTap: () {
-                                      Navigator.of(context).pop();
-                                      onJumpToQuote(quote);
-                                    },
-                                  );
-                                },
-                              ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
         );
       },
     );
