@@ -547,7 +547,7 @@ class _SecondaryBar extends StatelessWidget {
 
   static const _categories = [
     'Favorite',
-    'Innovation',
+    'Success',
     'Focus',
     'Appreciation',
     'Improvement',

@@ -44,7 +44,7 @@
   {
     "firstname": "Willie",
     "lastname": "Stargell",
-    "category": "",
+    "category": "Success",
     "quote": "I just wanted to be remembered as a guy who gave it his all and helped his team win."
   },
   {
@@ -74,7 +74,7 @@
   {
     "firstname": "Gary",
     "lastname": "Sheffield",
-    "category": "",
+    "category": "Success",
     "quote": "When I stepped into the box, I always felt like if I got my pitch, nobody in the world could get me out."
   },
   {
@@ -104,13 +104,13 @@
   {
     "firstname": "Gary",
     "lastname": "Sheffield",
-    "category": "",
+    "category": "Success",
     "quote": "When you're young, you don't always know what you're doing. A lot of times, you're just surviving off raw talent."
   },
   {
     "firstname": "Gary",
     "lastname": "Sheffield",
-    "category": "",
+    "category": "Success",
     "quote": "I just wanted to be respected as a hitter who feared no one and always gave it everything I had."
   },
   {
@@ -122,7 +122,7 @@
   {
     "firstname": "Gary",
     "lastname": "Sheffield",
-    "category": "",
+    "category": "Success",
     "quote": "The numbers speak for themselves. You can say whatever you want about my personality, but you can't deny the production."
   },
   {
@@ -140,7 +140,7 @@
   {
     "firstname": "Barry",
     "lastname": "Larkin",
-    "category": "",
+    "category": "Success",
     "quote": "I didn't care about the personal accolades. I just wanted to win championships."
   },
   {
@@ -170,7 +170,7 @@
   {
     "firstname": "Barry",
     "lastname": "Larkin",
-    "category": "",
+    "category": "Success",
     "quote": "Defensively, you have to want the ball hit to you in the most pressure-packed situations."
   },
   {
@@ -182,7 +182,7 @@
   {
     "firstname": "Barry",
     "lastname": "Larkin",
-    "category": "",
+    "category": "Success",
     "quote": "When I walked into the Hall of Fame, I realized I was representing everyone who ever helped me along the way."
   },
   {
@@ -194,13 +194,13 @@
   {
     "firstname": "Andre",
     "lastname": "Dawson",
-    "category": "",
+    "category": "Success",
     "quote": "I just wanted to be remembered as a player who gave everything he had every time he took the field."
   },
   {
     "firstname": "Andre",
     "lastname": "Dawson",
-    "category": "",
+    "category": "Success",
     "quote": "Winning the MVP on a last-place team showed that the writers respected the way I went about my business."
   },
   {
@@ -224,7 +224,7 @@
   {
     "firstname": "Andre",
     "lastname": "Dawson",
-    "category": "",
+    "category": "Success",
     "quote": "My knees hurt every single day, but the pain went away the minute I stepped into the batter's box."
   },
   {
@@ -248,7 +248,7 @@
   {
     "firstname": "Larry",
     "lastname": "Doby",
-    "category": "",
+    "category": "Success",
     "quote": "I always said to myself, 'If I fail, it's not just me failing, it's a whole lot of people who are going to get hurt.'"
   },
   {
@@ -266,7 +266,7 @@
   {
     "firstname": "Larry",
     "lastname": "Doby",
-    "category": "",
+    "category": "Success",
     "quote": "I'm proud of what I did, but I'm more proud of what we all achieved together."
   },
   {
@@ -344,7 +344,7 @@
   {
     "firstname": "Vida",
     "lastname": "Blue",
-    "category": "",
+    "category": "Success",
     "quote": "Winning the MVP and Cy Young in the same year was a dream I didn't even know I had."
   },
   {
@@ -374,7 +374,7 @@
   {
     "firstname": "Josh",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "There isn't a ballpark big enough to hold me."
   },
   {
@@ -392,7 +392,7 @@
   {
     "firstname": "Josh",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "The harder they throw it, the farther I can hit it."
   },
   {
@@ -422,13 +422,13 @@
   {
     "firstname": "Josh",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "I'm not the black Babe Ruth. I'm Josh Gibson."
   },
   {
     "firstname": "Josh",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "I don't play for records. I just play to win."
   },
   {
@@ -446,7 +446,7 @@
   {
     "firstname": "Josh",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "I never batted against a pitcher I thought I couldn't hit."
   },
   {
@@ -476,7 +476,7 @@
   {
     "firstname": "Dave",
     "lastname": "Winfield",
-    "category": "",
+    "category": "Success",
     "quote": "I played with a lot of intensity because I absolutely hated to lose. Second place was never an option."
   },
   {
@@ -554,7 +554,7 @@
   {
     "firstname": "Dave",
     "lastname": "Winfield",
-    "category": "",
+    "category": "Success",
     "quote": "Baseball is a team game, but it's made up of individual battles. You have to win your battles."
   },
   {
@@ -626,7 +626,7 @@
   {
     "firstname": "Bob",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "I didn't play baseball to make friends. I played to win."
   },
   {
@@ -656,7 +656,7 @@
   {
     "firstname": "Bob",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "I didn't care about my statistics. All that mattered was the score at the end of the ninth inning."
   },
   {
@@ -674,7 +674,7 @@
   {
     "firstname": "Bob",
     "lastname": "Gibson",
-    "category": "",
+    "category": "Success",
     "quote": "The only thing I ever cared about was winning. If I didn't win, the day was a total waste."
   },
   {
@@ -692,7 +692,7 @@
   {
     "firstname": "Frank",
     "lastname": "Thomas",
-    "category": "",
+    "category": "Success",
     "quote": "If you don't believe in yourself, nobody else is going to believe in you."
   },
   {
@@ -752,7 +752,7 @@
   {
     "firstname": "Frank",
     "lastname": "Thomas",
-    "category": "",
+    "category": "Success",
     "quote": "I didn't care about the personal numbers as much as I cared about helping the team win."
   },
   {
@@ -866,7 +866,7 @@
   {
     "firstname": "Orlando",
     "lastname": "Cepeda",
-    "category": "",
+    "category": "Success",
     "quote": "My teammates were my family away from home. We fought together, cried together, and won together."
   },
   {
@@ -926,7 +926,7 @@
   {
     "firstname": "Orlando",
     "lastname": "Cepeda",
-    "category": "",
+    "category": "Success",
     "quote": "The Hall of Fame is the ultimate honor. It means people remember what you did and respect your legacy."
   },
   {
@@ -968,13 +968,13 @@
   {
     "firstname": "Satchel",
     "lastname": "Paige",
-    "category": "",
+    "category": "Success",
     "quote": "Don't look back. Something might be gaining on you."
   },
   {
     "firstname": "Satchel",
     "lastname": "Paige",
-    "category": "",
+    "category": "Success",
     "quote": "Age is a case of mind over matter. If you don't mind, it don't matter."
   },
   {
@@ -1148,7 +1148,7 @@
   {
     "firstname": "Reggie",
     "lastname": "Jackson",
-    "category": "",
+    "category": "Success",
     "quote": "I didn't come to New York to be a star. I brought my star with me."
   },
   {
@@ -1244,7 +1244,7 @@
   {
     "firstname": "Reggie",
     "lastname": "Jackson",
-    "category": "",
+    "category": "Success",
     "quote": "I represent the underdog and the overdog in our society."
   },
   {
@@ -1340,7 +1340,7 @@
   {
     "firstname": "Roberto",
     "lastname": "Clemente",
-    "category": "",
+    "category": "Success",
     "quote": "I want to be remembered as a ballplayer who gave all he had to give."
   },
   {
@@ -1436,7 +1436,7 @@
   {
     "firstname": "Hank",
     "lastname": "Aaron",
-    "category": "",
+    "category": "Success",
     "quote": "I never doubted my ability, but when you hear all your life you're inferior, it makes you wonder if the other guys have something you've never seen before. If they do, I'm still looking for it."
   },
   {
@@ -1460,7 +1460,7 @@
   {
     "firstname": "Hank",
     "lastname": "Aaron",
-    "category": "",
+    "category": "Success",
     "quote": "On the field, Blacks have been able to be supergiants. But, once our playing days are over, this is the end of it and we go back to the back of the bus again."
   },
   {
@@ -1496,19 +1496,19 @@
   {
     "firstname": "Hank",
     "lastname": "Aaron",
-    "category": "",
+    "category": "Success",
     "quote": "Some people resented the fact I was trying to break a white man's record."
   },
   {
     "firstname": "Hank",
     "lastname": "Aaron",
-    "category": "",
+    "category": "Success",
     "quote": "People were not ready to accept me as a baseball player. The easiest part of that whole thing, chasing the Babe's record, was playing the game itself. The hardest thing was after the game was over, dealing with the press. They could never understand."
   },
   {
     "firstname": "Hank",
     "lastname": "Aaron",
-    "category": "",
+    "category": "Success",
     "quote": "I don't want people to forget Babe Ruth. I just want them to remember Henry Aaron."
   },
   {
@@ -1532,13 +1532,13 @@
   {
     "firstname": "Hank",
     "lastname": "Aaron",
-    "category": "",
+    "category": "Success",
     "quote": "The way I see it, it's a great thing to be the man who hit the most home runs, but it's a greater thing to be the man who did the most with the home runs he hit."
   },
   {
     "firstname": "Hank",
     "lastname": "Aaron",
-    "category": "",
+    "category": "Success",
     "quote": "I would like people not to think in terms of the 755 home runs I hit but think in terms of what I've accomplished off the field and some of the things I stood for."
   },
   {
