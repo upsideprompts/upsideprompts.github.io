@@ -27050,7 +27050,7 @@ $S:2}
 A.aql.prototype={
 $1(a){var s=A.cF().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/deb287481e3ce9468f3434937ced4240a70539ca/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/af7e796e161ae0bb1ff0758c71a7105418bd9ded/":s)+a},
 $S:156}
 A.Kw.prototype={
 gA(a){var s=this.a
@@ -42480,7 +42480,7 @@ return s},
 $S:425}
 A.Hy.prototype={
 M(a){var s=null
-return new A.z0(B.EL,"Baseball Bits",A.ui(s,A.awx(B.ad,s,s,B.CU),!0,A.aA1(A.aF())),!1,s)}}
+return new A.z0(B.EL,"Baseball QuoteSmash",A.ui(s,A.awx(B.ad,s,s,B.CU),!0,A.aA1(A.aF())),!1,s)}}
 A.cE.prototype={}
 A.arH.prototype={
 $0(){return A.c([],t.Cb)},
@@ -42822,7 +42822,7 @@ r=i.w
 q=i.z
 q===$&&A.a()
 p=t.p
-r=A.Lq(h,A.i9(A.kU(A.ii(B.M,!0,h,A.kN(!1,A.h4(new A.KR(B.a6h,A.pt(A.c([new A.tu(new A.ajQ(),new A.ajR(i,g),"More",B.F_,B.uo,new A.cL(A.fL(12),B.q),B.d6,h,t.iX),A.rP(h,h,h,B.EY,h,h,new A.ajS(i,g),h,h,h,"Shuffle quotes")],p),B.ae,B.bu,0),h),56,h),B.am,!0),B.y,B.Cx,0,h,h,h,h,h,B.bH),q,h,!0),!r,h),h,h,0,0,0,h)
+r=A.Lq(h,A.i9(A.kU(A.ii(B.M,!0,h,A.kN(!1,A.h4(new A.KR(B.a6e,A.pt(A.c([new A.tu(new A.ajQ(),new A.ajR(i,g),"More",B.F_,B.uo,new A.cL(A.fL(12),B.q),B.d6,h,t.iX),A.rP(h,h,h,B.EY,h,h,new A.ajS(i,g),h,h,h,"Shuffle quotes")],p),B.ae,B.bu,0),h),56,h),B.am,!0),B.y,B.Cx,0,h,h,h,h,h,B.bH),q,h,!0),!r,h),h,h,0,0,0,h)
 q=i.w
 o=i.y
 o===$&&A.a()
@@ -42973,7 +42973,7 @@ p=k.a.c
 o=k.e
 m=A.e1(p.r.q(0,o.a+"|"+o.b+"|"+o.d)?"Favorited":"Favorite",j,j,j,j,j,j)
 l=A.axc(B.my,B.k,j,j)
-B.b.T(s,A.c([A.xN(A.atH(A.k3(A.c([i,B.a0O,A.pt(A.c([q,B.z1,A.xN(new A.xR(!0,new A.ao3(k),j,j,j,l,B.y,j,!1,j,!0,j,new A.Qz(m,n,l,j,j),j))],r),B.ae,B.bk,0),A.aev(B.a6e,new A.ao4(k),j),A.aev(B.a6l,new A.ao5(k,a),j)],r),B.d7,B.ae,B.bk),j))],r))}return new A.bX(new A.at(0,0,0,f.f.d),A.kN(!0,A.h4(new A.bX(B.nb,A.k3(s,B.aL,B.ae,B.bk),j),g.a.b*0.72,j),B.am,!0),j)}}
+B.b.T(s,A.c([A.xN(A.atH(A.k3(A.c([i,B.a0O,A.pt(A.c([q,B.z1,A.xN(new A.xR(!0,new A.ao3(k),j,j,j,l,B.y,j,!1,j,!0,j,new A.Qz(m,n,l,j,j),j))],r),B.ae,B.bk,0),A.aev(B.a6f,new A.ao4(k),j),A.aev(B.a6l,new A.ao5(k,a),j)],r),B.d7,B.ae,B.bk),j))],r))}return new A.bX(new A.at(0,0,0,f.f.d),A.kN(!0,A.h4(new A.bX(B.nb,A.k3(s,B.aL,B.ae,B.bk),j),g.a.b*0.72,j),B.am,!0),j)}}
 A.ao0.prototype={
 $1(a){return this.a.ah(new A.ao_())},
 $S:51}
@@ -89803,8 +89803,8 @@ B.C_=new A.wD(null,null,null,null,null,null,null)
 B.C0=new A.wE(null,null,null,null,null,null)
 B.k=new A.B(1,1,1,1,B.h)
 B.zy=new A.l(!0,B.k,null,null,null,null,22,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.a6f=new A.dq("No quotes found",null,B.zy,null,null,null,null,null,null)
-B.C1=new A.i_(B.a5,null,null,B.a6f,null)
+B.a6g=new A.dq("No quotes found",null,B.zy,null,null,null,null,null,null)
+B.C1=new A.i_(B.a5,null,null,B.a6g,null)
 B.I=new A.B(0.7019607843137254,1,1,1,B.h)
 B.a1X=new A.l(!0,B.I,null,null,null,null,16,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.a6j=new A.dq("No matching quotes",null,B.a1X,null,null,null,null,null,null)
@@ -89815,8 +89815,8 @@ B.C3=new A.i_(B.a5,null,null,B.C9,null)
 B.El=new A.at(24,24,24,24)
 B.a2I=new A.l(!0,B.I,null,null,null,null,18,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.cR=new A.kY(2,"center")
-B.a6g=new A.dq("You haven't favorited any quotes yet.",null,B.a2I,B.cR,null,null,null,null,null)
-B.Yc=new A.bX(B.El,B.a6g,null)
+B.a6h=new A.dq("You haven't favorited any quotes yet.",null,B.a2I,B.cR,null,null,null,null,null)
+B.Yc=new A.bX(B.El,B.a6h,null)
 B.C4=new A.i_(B.a5,null,null,B.Yc,null)
 B.C5=new A.wH(null,null,null,null,null,null,null,null,null)
 B.d4=new A.r3(0,0,"none")
@@ -93066,10 +93066,10 @@ B.a67=new A.dq("Backgrounds",null,B.f4,null,null,null,null,null,null)
 B.a68=new A.dq("Share",null,null,null,null,null,null,null,null)
 B.a69=new A.dq("Submit",null,null,null,null,null,null,null,null)
 B.a6b=new A.dq("Do you have any suggestions to improve our app?",null,B.f4,B.cR,null,null,null,null,null)
-B.zr=new A.l(!0,B.I,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.a6e=new A.dq("Back to search",null,B.zr,null,null,null,null,null,null)
 B.a29=new A.l(!0,B.k,null,null,null,null,20,B.a_,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.a6h=new A.dq("Baseball Bits",null,B.a29,null,null,null,null,null,null)
+B.a6e=new A.dq("Baseball QuoteSmash",null,B.a29,null,null,null,null,null,null)
+B.zr=new A.l(!0,B.I,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.a6f=new A.dq("Back to search",null,B.zr,null,null,null,null,null,null)
 B.a6i=new A.dq("Categories",null,B.f4,null,null,null,null,null,null)
 B.a6l=new A.dq("Show on screen",null,B.zr,null,null,null,null,null,null)
 B.a6m=new A.dq("Favorites",null,B.f4,null,null,null,null,null,null)

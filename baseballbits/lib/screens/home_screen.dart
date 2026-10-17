@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     height: kToolbarHeight,
                                     child: NavigationToolbar(
                                       middle: const Text(
-                                        'Baseball Bits',
+                                        'Baseball QuoteSmash',
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 20,
