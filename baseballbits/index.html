@@ -12,8 +12,21 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
   <title>Baseball QuoteSmash</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #7EBFDF;
+    }
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #7EBFDF url("splash/baseball_splash.jpg") center / contain no-repeat;
+    }
+  </style>
 </head>
 <body>
+  <div id="splash"></div>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

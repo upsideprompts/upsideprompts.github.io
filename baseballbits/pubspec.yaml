@@ -25,3 +25,4 @@ flutter:
   assets:
     - quotes.json
     - assets/backgrounds/
+    - assets/splash/baseball_splash.jpg
