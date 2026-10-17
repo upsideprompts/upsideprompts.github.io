@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen>
               name: fileName,
             ),
           ],
-          text: '"${quote.quote}"\n— ${quote.author}',
+          text: '"${quote.quote}"\n– ${quote.author}',
           subject: 'Baseball Bits',
           title: 'Baseball Bits',
           downloadFallbackEnabled: true,
@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen>
       try {
         await SharePlus.instance.share(
           ShareParams(
-            text: '"${quote.quote}"\n— ${quote.author}',
+            text: '"${quote.quote}"\n– ${quote.author}',
             subject: 'Baseball Bits',
             title: 'Baseball Bits',
           ),
@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen>
     final quote = provider.currentQuote;
     if (quote == null) return;
     await Clipboard.setData(
-      ClipboardData(text: '"${quote.quote}"\n— ${quote.author}'),
+      ClipboardData(text: '"${quote.quote}"\n– ${quote.author}'),
     );
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
@@ -360,13 +360,33 @@ class _HomeScreenState extends State<HomeScreen>
                                   child: SizedBox(
                                     height: kToolbarHeight,
                                     child: NavigationToolbar(
-                                      middle: const Text(
-                                        'Baseball QuoteFloat',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                      middle: const Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            'Baseball',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          SizedBox(width: 6),
+                                          Icon(
+                                            Icons.sports_baseball,
+                                            color: Colors.white,
+                                            size: 22,
+                                          ),
+                                          SizedBox(width: 6),
+                                          Text(
+                                            'QuoteFloat',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                       trailing: Row(
                                         mainAxisSize: MainAxisSize.min,
@@ -1053,7 +1073,7 @@ class _SearchSheetState extends State<_SearchSheet> {
                               final quote = results[index];
                               return ListTile(
                                 title: Text(
-                                  '"${quote.quote}" — ${quote.author}',
+                                  '"${quote.quote}" – ${quote.author}',
                                   maxLines: 3,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
@@ -1073,7 +1093,7 @@ class _SearchSheetState extends State<_SearchSheet> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            '"${_selected!.quote}"\n— ${_selected!.author}',
+                            '"${_selected!.quote}"\n– ${_selected!.author}',
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -1324,7 +1344,7 @@ class QuoteCard extends StatelessWidget {
                 Flexible(
                   child: SingleChildScrollView(
                     child: Text(
-                      '"${quote.quote}"\n— ${quote.author}',
+                      '"${quote.quote}"\n– ${quote.author}',
                       style: TextStyle(
                         fontSize: quoteSize,
                         fontWeight: FontWeight.w600,
