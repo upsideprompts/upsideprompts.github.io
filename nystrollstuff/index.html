@@ -114,101 +114,90 @@
         <p class="refresh-info">Last updated: <span id="last-update">Loading...</span></p>
     </div>
     
-
-
-
 <script>
-        // October 13-14, 2026 Baseball Games - Updated
+        // October 15-17, 2026 Baseball Games - Updated
         const baseballData = [
         {
-                "teams": "New York Yankees vs Boston Red Sox",
+                "teams": "New York Yankees vs Tampa Bay Rays",
                 "stadium": "Yankee Stadium, New York",
-                "day": "Tuesday, October 13, 2026",
+                "day": "Friday, October 16, 2026",
                 "time": "1:10 PM EDT",
                 "price": "$85-135",
-                "link": "https://www.mlb.com/yankees/schedule/2026/10/13"
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/16"
         },
         {
-                "teams": "New York Mets vs Miami Marlins",
+                "teams": "New York Mets vs Atlanta Braves",
                 "stadium": "Citi Field, New York",
-                "day": "Tuesday, October 13, 2026",
+                "day": "Friday, October 16, 2026",
                 "time": "7:05 PM EDT",
                 "price": "$75-120",
-                "link": "https://www.mlb.com/mets/schedule/2026/10/13"
+                "link": "https://www.mlb.com/mets/schedule/2026/10/16"
         },
         {
                 "teams": "New York Cyclones vs Brooklyn Cyclones",
                 "stadium": "Heritage Financial Park, Brooklyn",
-                "day": "Wednesday, October 14, 2026",
+                "day": "Saturday, October 17, 2026",
                 "time": "2:05 PM EDT",
                 "price": "$60-110",
-                "link": "https://www.milb.com/cyclones/schedule/2026/10/14"
+                "link": "https://www.milb.com/cyclones/schedule/2026/10/17"
         },
         {
-                "teams": "New York Yankees vs Toronto Blue Jays",
+                "teams": "New York Yankees vs New York Mets",
                 "stadium": "Yankee Stadium, New York",
-                "day": "Wednesday, October 14, 2026",
+                "day": "Saturday, October 17, 2026",
                 "time": "7:05 PM EDT",
                 "price": "$90-145",
-                "link": "https://www.mlb.com/yankees/schedule/2026/10/14"
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/17"
         }
 ];
 
-        // October 13-14, 2026 NYC hiking opportunities (from Meetup.com)
+        // October 15-17, 2026 NYC hiking opportunities
         const hikingData = [
         {
-                "title": "Double Cross Trail section 2",
-                "location": "Bay Area Women's Hiking Group - SF Crosstown Trail",
-                "time": "Tuesday, October 13, 2026 - 11:30 AM PDT",
-                "difficulty": "Moderate+",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
-        },
-        {
-                "title": "SF Cross Town hike",
-                "location": "North Bay 50+ Nature and Outdoors",
-                "time": "Wednesday, October 14, 2026 - 10:00 AM PDT",
-                "difficulty": "Moderate",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
-        },
-        {
-                "title": "Mt. Tam 2 night getaway at California Alpine Club Alpine Lodge",
-                "location": "Sonoma County Wanderers",
-                "time": "Wednesday, October 14, 2026 - 1:00 PM PDT",
-                "difficulty": "Moderate+",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
-        },
-        {
-                "title": "Presidio San Francisco",
-                "location": "South Bay Ramblers Hiking Group",
-                "time": "Wednesday, October 14, 2026 - 9:00 AM PDT",
+                "title": "Inwood Hill Park Woods Trail",
+                "location": "Inwood Hill Park, Northern Manhattan",
+                "time": "Friday, October 16, 2026 - 9:00 AM EDT",
                 "difficulty": "Easy-Moderate",
-                "link": "https://www.meetup.com/find/events/sf/hiking/"
+                "link": "https://www.nycgovparks.org/parks/inwood-hill-park/events"
+        },
+        {
+                "title": "Brooklyn Bridge Park Path Walk",
+                "location": "Brooklyn Bridge Park",
+                "time": "Friday, October 16, 2026 - 8:00 AM EDT",
+                "difficulty": "Easy (~2 miles)",
+                "link": "https://brooklynbridgepark.org/events"
+        },
+        {
+                "title": "Riverside Park Water-Side Walk",
+                "location": "Riverside Park South, Manhattan",
+                "time": "Friday, October 16, 2026 - 6:00 PM EDT",
+                "difficulty": "Easy",
+                "link": "https://www.nycgovparks.org/parks/riverside-park/events"
+        },
+        {
+                "title": "High Line Evening Walk",
+                "location": "The High Line, Chelsea",
+                "time": "Friday, October 16, 2026 - 6:45 PM EDT",
+                "difficulty": "Easy",
+                "link": "https://www.thehighline.org/events"
+        },
+        {
+                "title": "Hudson River Park Pier 84 Evening Walk",
+                "location": "Hudson River Park Trust",
+                "time": "Saturday, October 17, 2026 - 6:30 PM EDT",
+                "difficulty": "Easy",
+                "link": "https://hudsonriverpark.org/events"
         }
 ];
 
         function loadBaseball() {
             const container = document.getElementById('baseball-container');
-            container.innerHTML = baseballData.map(item => `
-                <div class="card">
-                    <h3><a href="${item.link}" target="_blank">${item.teams}</a></h3>
-                    <p><strong>Stadium:</strong> ${item.stadium}</p>
-                    <p><strong>Day:</strong> ${item.day}</p>
-                    <p><strong>Time:</strong> ${item.time}</p>
-                    <p><strong>Price:</strong> ${item.price}</p>
-                </div>
-            `).join('');
+            container.innerHTML = baseballData.map(item => ` <div class="card"> <h3><a href="${item.link}" target="_blank">${item.teams}</a></h3> <p><strong>Stadium:</strong> ${item.stadium}</p> <p><strong>Day:</strong> ${item.day}</p> <p><strong>Time:</strong> ${item.time}</p> <p><strong>Price:</strong> ${item.price}</p> </div> `).join('');
         }
 
         function loadHiking() {
             const container = document.getElementById('hiking-container');
-            container.innerHTML = hikingData.map(item => `
-                <div class="card">
-                    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-                    <p><strong>Location:</strong> ${item.location}</p>
-                    <p><strong>Time:</strong> ${item.time}</p>
-                    <p><strong>Difficulty:</strong> ${item.difficulty}</p>
-                </div>
-            `).join('');
+            container.innerHTML = hikingData.map(item => ` <div class="card"> <h3><a href="${item.link}" target="_blank">${item.title}</a></h3> <p><strong>Location:</strong> ${item.location}</p> <p><strong>Time:</strong> ${item.time}</p> <p><strong>Difficulty:</strong> ${item.difficulty}</p> </div> `).join('');
         }
 
         function updateTimestamp() {
@@ -221,6 +210,3 @@
         loadHiking();
         updateTimestamp();
     </script>
-
-</body>
-</html>
