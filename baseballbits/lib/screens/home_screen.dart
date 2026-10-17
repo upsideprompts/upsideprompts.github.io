@@ -1,8 +1,8 @@
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -148,6 +148,18 @@ class _HomeScreenState extends State<HomeScreen>
     return byteData.buffer.asUint8List();
   }
 
+  Future<void> _copyQuoteText(QuotesProvider provider) async {
+    final quote = provider.currentQuote;
+    if (quote == null) return;
+    await Clipboard.setData(
+      ClipboardData(text: '"${quote.quote}"\n— ${quote.author}'),
+    );
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Quote copied')),
+    );
+  }
+
   void _openSearch(QuotesProvider provider) {
     showModalBottomSheet<void>(
       context: context,
@@ -273,13 +285,35 @@ class _HomeScreenState extends State<HomeScreen>
                                               color: Colors.white,
                                             ),
                                             onSelected: (value) {
-                                              if (value == 'search') {
+                                              if (value == 'copy') {
+                                                _copyQuoteText(provider);
+                                              } else if (value == 'search') {
                                                 _openSearch(provider);
                                               } else if (value == 'feedback') {
                                                 _openFeedback(provider);
                                               }
                                             },
                                             itemBuilder: (context) => [
+                                              const PopupMenuItem(
+                                                value: 'copy',
+                                                child: Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(
+                                                        'Copy Quote Text',
+                                                        style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontSize: 16,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                      Icons.content_copy,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
                                               const PopupMenuItem(
                                                 value: 'search',
                                                 child: Row(
