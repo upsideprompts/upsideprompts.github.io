@@ -310,6 +310,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                     Icon(
                                                       Icons.content_copy,
                                                       color: Colors.white,
+                                                      size: 19.2,
                                                     ),
                                                   ],
                                                 ),
@@ -330,6 +331,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                     Icon(
                                                       Icons.search,
                                                       color: Colors.white,
+                                                      size: 19.2,
                                                     ),
                                                   ],
                                                 ),
@@ -350,6 +352,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                     Icon(
                                                       Icons.feedback_outlined,
                                                       color: Colors.white,
+                                                      size: 19.2,
                                                     ),
                                                   ],
                                                 ),
