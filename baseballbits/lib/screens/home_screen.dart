@@ -553,13 +553,6 @@ class _HomeScreenState extends State<HomeScreen>
   }
 }
 
-class _SolidBackground {
-  final String label;
-  final Gradient gradient;
-
-  const _SolidBackground(this.label, this.gradient);
-}
-
 class _SecondaryBar extends StatelessWidget {
   const _SecondaryBar({
     required this.provider,
@@ -579,29 +572,20 @@ class _SecondaryBar extends StatelessWidget {
   static const _plateCaption = 'Step up to the plate.';
 
   static const _solidBackgrounds = [
-    _SolidBackground(
-      'Light blue',
-      LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [Color(0xFFD6F0FF), Color(0xFF7EC8EA), Color(0xFF4AA3D8)],
-      ),
+    LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [Color(0xFFD6F0FF), Color(0xFF7EC8EA), Color(0xFF4AA3D8)],
     ),
-    _SolidBackground(
-      'Light green',
-      LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [Color(0xFFE7F8E7), Color(0xFF9ED49E), Color(0xFF5EAE6A)],
-      ),
+    LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [Color(0xFFE7F8E7), Color(0xFF9ED49E), Color(0xFF5EAE6A)],
     ),
-    _SolidBackground(
-      'Light brown',
-      LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [Color(0xFFF8EBD9), Color(0xFFD2B48C), Color(0xFFA67C52)],
-      ),
+    LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [Color(0xFFF8EBD9), Color(0xFFD2B48C), Color(0xFFA67C52)],
     ),
   ];
 
@@ -724,10 +708,10 @@ class _SecondaryBar extends StatelessWidget {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  for (final option in _solidBackgrounds)
+                                  for (final gradient in _solidBackgrounds)
                                     _colorThumb(
                                       sheetContext: sheetContext,
-                                      option: option,
+                                      gradient: gradient,
                                     ),
                                 ],
                               ),
@@ -749,7 +733,7 @@ class _SecondaryBar extends StatelessWidget {
 
   Widget _colorThumb({
     required BuildContext sheetContext,
-    required _SolidBackground option,
+    required Gradient gradient,
   }) {
     return Expanded(
       child: AspectRatio(
@@ -763,37 +747,22 @@ class _SecondaryBar extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 Navigator.of(sheetContext).pop();
-                provider.setGradientBackground(option.gradient);
+                provider.setGradientBackground(gradient);
               },
               child: Ink(
-                decoration: BoxDecoration(gradient: option.gradient),
-                child: Center(
+                decoration: BoxDecoration(gradient: gradient),
+                child: const Center(
                   child: Padding(
-                    padding: const EdgeInsets.all(6),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          option.label,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        const Text(
-                          _plateCaption,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700,
-                            height: 1.15,
-                          ),
-                        ),
-                      ],
+                    padding: EdgeInsets.all(6),
+                    child: Text(
+                      _plateCaption,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        height: 1.15,
+                      ),
                     ),
                   ),
                 ),
@@ -851,23 +820,7 @@ class _SecondaryBar extends StatelessWidget {
                                 size: 18,
                               ),
                             ),
-                            const SizedBox(height: 6),
-                            const Text(
-                              'Random',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w800,
-                                shadows: [
-                                  Shadow(
-                                    blurRadius: 6,
-                                    color: Colors.black87,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(height: 4),
+                            const SizedBox(height: 8),
                           ],
                           const Text(
                             _plateCaption,
