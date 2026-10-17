@@ -356,19 +356,6 @@ class _HomeScreenState extends State<HomeScreen>
                                               ),
                                             ],
                                           ),
-                                          IconButton(
-                                            tooltip: 'Shuffle quotes',
-                                            icon: const Icon(
-                                              Icons.refresh,
-                                              color: Colors.white,
-                                            ),
-                                            onPressed: () {
-                                              provider.refreshQuotes();
-                                              if (_pageController.hasClients) {
-                                                _pageController.jumpToPage(0);
-                                              }
-                                            },
-                                          ),
                                         ],
                                       ),
                                     ),
