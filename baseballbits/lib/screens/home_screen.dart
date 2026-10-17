@@ -1220,7 +1220,6 @@ class QuoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const quoteSize = 28.0;
-    const iconSize = 78.0;
     final onLight = backgroundGradient != null;
     final textColor = onLight ? const Color(0xFF1A2744) : quote.textColor;
 
@@ -1249,12 +1248,7 @@ class QuoteCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.sports_baseball,
-                  size: iconSize,
-                  color: onLight ? const Color(0xFF1A2744) : Colors.white70,
-                ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 98),
                 Flexible(
                   child: SingleChildScrollView(
                     child: Text(
