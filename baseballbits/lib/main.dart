@@ -19,7 +19,7 @@ class BaseballBitsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Baseball QuoteSmash',
+      title: 'Baseball QuoteFloat',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(

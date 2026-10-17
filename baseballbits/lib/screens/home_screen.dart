@@ -312,7 +312,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     height: kToolbarHeight,
                                     child: NavigationToolbar(
                                       middle: const Text(
-                                        'Baseball QuoteSmash',
+                                        'Baseball QuoteFloat',
                                         style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 20,
@@ -657,7 +657,7 @@ class _SecondaryBar extends StatelessWidget {
     final imageTiles = <Widget>[
       _fieldThumb(
         context: context,
-        imagePath: baseballFieldBackgrounds.first,
+        imagePath: 'assets/backgrounds/VariousImages1.jpeg',
         showShuffle: true,
         onTap: () {
           Navigator.of(context).pop();
@@ -770,14 +770,30 @@ class _SecondaryBar extends StatelessWidget {
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(6),
-                    child: Text(
-                      option.label,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: Color(0xFF1A2744),
-                        fontSize: 13,
-                        fontWeight: FontWeight.w700,
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          option.label,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        const Text(
+                          _plateCaption,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            height: 1.15,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -816,8 +832,6 @@ class _SecondaryBar extends StatelessWidget {
                       return const ColoredBox(color: Color(0xFF0E1A30));
                     },
                   ),
-                  if (showShuffle)
-                    const ColoredBox(color: Color(0x99000000)),
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4),

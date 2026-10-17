@@ -267,7 +267,11 @@ class QuotesProvider with ChangeNotifier {
   }
 
   void setRandomFieldBackground() {
-    final images = List<String>.from(baseballFieldBackgrounds)..shuffle();
-    setFieldBackground(images.first);
+    _backgroundGradient = null;
+    _backgroundImageOverride = null;
+    if (_quotes.isNotEmpty) {
+      _quotes = withShuffledFieldBackgrounds(_quotes);
+    }
+    notifyListeners();
   }
 }

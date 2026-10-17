@@ -179,6 +179,10 @@ bool _neighborsAllDifferent(List<Quote> quotes) {
   return true;
 }
 
+List<Quote> withShuffledFieldBackgrounds(List<Quote> quotes, [Random? rng]) {
+  return _assignScenicBackgrounds(quotes, rng ?? Random());
+}
+
 List<Quote> _assignScenicBackgrounds(List<Quote> quotes, Random rng) {
   final images = List<String>.from(baseballFieldBackgrounds)..shuffle(rng);
   const overlays = <Color>[
