@@ -24,6 +24,12 @@ class QuotesProvider with ChangeNotifier {
   String? _deckMessage;
   String? get deckMessage => _deckMessage;
 
+  Gradient? _backgroundGradient;
+  Gradient? get backgroundGradient => _backgroundGradient;
+
+  String? _backgroundImageOverride;
+  String? get backgroundImageOverride => _backgroundImageOverride;
+
   bool _isAnimating = false;
   bool get isAnimating => _isAnimating;
 
@@ -246,5 +252,22 @@ class QuotesProvider with ChangeNotifier {
     _deckMessage = null;
     _deckGeneration++;
     notifyListeners();
+  }
+
+  void setGradientBackground(Gradient gradient) {
+    _backgroundGradient = gradient;
+    _backgroundImageOverride = null;
+    notifyListeners();
+  }
+
+  void setFieldBackground(String path) {
+    _backgroundImageOverride = path;
+    _backgroundGradient = null;
+    notifyListeners();
+  }
+
+  void setRandomFieldBackground() {
+    final images = List<String>.from(baseballFieldBackgrounds)..shuffle();
+    setFieldBackground(images.first);
   }
 }

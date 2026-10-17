@@ -281,6 +281,9 @@ class _HomeScreenState extends State<HomeScreen>
                                 final card = QuoteCard(
                                   quote: quote,
                                   isActive: index == currentPage,
+                                  backgroundGradient: provider.backgroundGradient,
+                                  backgroundImageOverride:
+                                      provider.backgroundImageOverride,
                                 );
                                 if (index == currentPage) {
                                   return RepaintBoundary(
@@ -421,9 +424,20 @@ class _HomeScreenState extends State<HomeScreen>
                           bottom: 24 + bottomInset,
                           child: IgnorePointer(
                             ignoring: !_chromeVisible,
-                            child: SlideTransition(
-                              position: _bottomChromeSlide,
-                              child: Column(
+                            child: AnimatedBuilder(
+                              animation: _bottomChromeSlide,
+                              builder: (context, child) {
+                                final hidden =
+                                    (_bottomChromeSlide.value.dy / 1.2)
+                                        .clamp(0.0, 1.0);
+                                return Transform.translate(
+                                  offset: Offset(0, 50 * hidden),
+                                  child: child,
+                                );
+                              },
+                              child: SlideTransition(
+                                position: _bottomChromeSlide,
+                                child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Row(
@@ -529,6 +543,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   ),
                                 ],
                               ),
+                              ),
                             ),
                           ),
                         ),
@@ -536,6 +551,13 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
     );
   }
+}
+
+class _SolidBackground {
+  final String label;
+  final Gradient gradient;
+
+  const _SolidBackground(this.label, this.gradient);
 }
 
 class _SecondaryBar extends StatelessWidget {
@@ -554,11 +576,33 @@ class _SecondaryBar extends StatelessWidget {
     'Perspectives',
   ];
 
-  static const _backgroundStyles = [
-    'Stadiums',
-    'Fields',
-    'Baseball Diamonds',
-    'Solid Colors',
+  static const _plateCaption = 'Step up to the plate.';
+
+  static const _solidBackgrounds = [
+    _SolidBackground(
+      'Light blue',
+      LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [Color(0xFFD6F0FF), Color(0xFF7EC8EA), Color(0xFF4AA3D8)],
+      ),
+    ),
+    _SolidBackground(
+      'Light green',
+      LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [Color(0xFFE7F8E7), Color(0xFF9ED49E), Color(0xFF5EAE6A)],
+      ),
+    ),
+    _SolidBackground(
+      'Light brown',
+      LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [Color(0xFFF8EBD9), Color(0xFFD2B48C), Color(0xFFA67C52)],
+      ),
+    ),
   ];
 
   Future<void> _showCategories(BuildContext context) {
@@ -610,50 +654,233 @@ class _SecondaryBar extends StatelessWidget {
   }
 
   Future<void> _showBackgrounds(BuildContext context) {
+    final imageTiles = <Widget>[
+      _fieldThumb(
+        context: context,
+        imagePath: baseballFieldBackgrounds.first,
+        showShuffle: true,
+        onTap: () {
+          Navigator.of(context).pop();
+          provider.setRandomFieldBackground();
+        },
+      ),
+      for (final path in baseballFieldBackgrounds)
+        _fieldThumb(
+          context: context,
+          imagePath: path,
+          onTap: () {
+            Navigator.of(context).pop();
+            provider.setFieldBackground(path);
+          },
+        ),
+    ];
+    while (imageTiles.length % 3 != 0) {
+      imageTiles.add(const Expanded(child: SizedBox.shrink()));
+    }
+    final imageRows = <Widget>[];
+    for (var i = 0; i < imageTiles.length; i += 3) {
+      imageRows.add(
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: imageTiles.sublist(i, i + 3),
+        ),
+      );
+    }
+
     return showModalBottomSheet<void>(
       context: context,
+      isScrollControlled: true,
       backgroundColor: const Color(0xFF1A2744),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
-      builder: (context) {
+      builder: (sheetContext) {
+        final height = MediaQuery.sizeOf(sheetContext).height * 0.88;
         return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 12, 8, 16),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _sheetHandle(),
-                const SizedBox(height: 14),
-                const Text(
-                  'Backgrounds',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                for (final option in _backgroundStyles)
-                  ListTile(
-                    title: Text(
-                      option,
-                      style: const TextStyle(color: Colors.white, fontSize: 18),
+          child: SizedBox(
+            height: height,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8, 12, 8, 8),
+              child: Column(
+                children: [
+                  _sheetHandle(),
+                  const SizedBox(height: 14),
+                  const Text(
+                    'Backgrounds',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
                     ),
-                    trailing: const Icon(
-                      Icons.chevron_right,
-                      color: Colors.white38,
-                    ),
-                    onTap: () {
-                      // Selection wiring comes later.
-                      Navigator.of(context).pop();
-                    },
                   ),
-              ],
+                  const SizedBox(height: 10),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 390),
+                          child: Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  for (final option in _solidBackgrounds)
+                                    _colorThumb(
+                                      sheetContext: sheetContext,
+                                      option: option,
+                                    ),
+                                ],
+                              ),
+                              ...imageRows,
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
       },
+    );
+  }
+
+  Widget _colorThumb({
+    required BuildContext sheetContext,
+    required _SolidBackground option,
+  }) {
+    return Expanded(
+      child: AspectRatio(
+        aspectRatio: 9 / 16,
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: Material(
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(12),
+            clipBehavior: Clip.antiAlias,
+            child: InkWell(
+              onTap: () {
+                Navigator.of(sheetContext).pop();
+                provider.setGradientBackground(option.gradient);
+              },
+              child: Ink(
+                decoration: BoxDecoration(gradient: option.gradient),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(6),
+                    child: Text(
+                      option.label,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Color(0xFF1A2744),
+                        fontSize: 13,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _fieldThumb({
+    required BuildContext context,
+    required String imagePath,
+    required VoidCallback onTap,
+    bool showShuffle = false,
+  }) {
+    return Expanded(
+      child: AspectRatio(
+        aspectRatio: 9 / 16,
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: Material(
+            color: const Color(0xFF0E1A30),
+            borderRadius: BorderRadius.circular(12),
+            clipBehavior: Clip.antiAlias,
+            child: InkWell(
+              onTap: onTap,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const ColoredBox(color: Color(0xFF0E1A30));
+                    },
+                  ),
+                  if (showShuffle)
+                    const ColoredBox(color: Color(0x99000000)),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (showShuffle) ...[
+                            Container(
+                              padding: const EdgeInsets.all(6),
+                              decoration: const BoxDecoration(
+                                color: Color(0xE61A2744),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.shuffle,
+                                color: Colors.white,
+                                size: 18,
+                              ),
+                            ),
+                            const SizedBox(height: 6),
+                            const Text(
+                              'Random',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w800,
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 6,
+                                    color: Colors.black87,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                          ],
+                          const Text(
+                            _plateCaption,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              height: 1.15,
+                              shadows: [
+                                Shadow(
+                                  blurRadius: 6,
+                                  color: Colors.black87,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -1012,31 +1239,42 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
 class QuoteCard extends StatelessWidget {
   final Quote quote;
   final bool isActive;
+  final Gradient? backgroundGradient;
+  final String? backgroundImageOverride;
 
   const QuoteCard({
     super.key,
     required this.quote,
     required this.isActive,
+    this.backgroundGradient,
+    this.backgroundImageOverride,
   });
 
   @override
   Widget build(BuildContext context) {
     const quoteSize = 28.0;
     const iconSize = 78.0;
+    final onLight = backgroundGradient != null;
+    final textColor = onLight ? const Color(0xFF1A2744) : quote.textColor;
 
     return Stack(
       fit: StackFit.expand,
       children: [
-        Image.asset(
-          quote.backgroundImage,
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
-          errorBuilder: (context, error, stackTrace) {
-            return Container(color: quote.backgroundColor);
-          },
-        ),
-        Container(color: quote.backgroundColor),
+        if (backgroundGradient != null)
+          DecoratedBox(
+            decoration: BoxDecoration(gradient: backgroundGradient),
+          )
+        else
+          Image.asset(
+            backgroundImageOverride ?? quote.backgroundImage,
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
+            errorBuilder: (context, error, stackTrace) {
+              return Container(color: quote.backgroundColor);
+            },
+          ),
+        if (!onLight) Container(color: quote.backgroundColor),
         SafeArea(
           top: false,
           child: Padding(
@@ -1044,7 +1282,11 @@ class QuoteCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(Icons.sports_baseball, size: iconSize, color: Colors.white70),
+                Icon(
+                  Icons.sports_baseball,
+                  size: iconSize,
+                  color: onLight ? const Color(0xFF1A2744) : Colors.white70,
+                ),
                 const SizedBox(height: 20),
                 Flexible(
                   child: SingleChildScrollView(
@@ -1053,15 +1295,17 @@ class QuoteCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: quoteSize,
                         fontWeight: FontWeight.w600,
-                        color: quote.textColor,
+                        color: textColor,
                         height: 1.35,
-                        shadows: const [
-                          Shadow(
-                            blurRadius: 10,
-                            color: Colors.black54,
-                            offset: Offset(0, 1),
-                          ),
-                        ],
+                        shadows: onLight
+                            ? null
+                            : const [
+                                Shadow(
+                                  blurRadius: 10,
+                                  color: Colors.black54,
+                                  offset: Offset(0, 1),
+                                ),
+                              ],
                       ),
                       textAlign: TextAlign.center,
                     ),
