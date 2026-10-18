@@ -255,7 +255,7 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
                       SizedBox(height: 12),
                       Text(
-                        'Baseball QuoteFloat has inspirational quotes from baseball legends, bringing them at the championship level.  You’ll discover a range of quotes on improvement, success, and focus. Customize your categories and backgrounds.',
+                        'Baseball QuoteSpark has inspirational quotes from baseball legends, bringing them at the championship level.  You’ll discover a range of quotes on improvement, success, and focus. Customize your categories and backgrounds.',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
