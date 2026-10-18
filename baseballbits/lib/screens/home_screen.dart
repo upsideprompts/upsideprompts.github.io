@@ -379,7 +379,7 @@ class _HomeScreenState extends State<HomeScreen>
                                           ),
                                           SizedBox(width: 6),
                                           Text(
-                                            'QuoteFloat',
+                                            'QuoteSpark',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -1205,7 +1205,16 @@ class _FeedbackSheetState extends State<_FeedbackSheet> {
       _controller.clear();
       Navigator.of(context).pop();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Appreciate your feedback!')),
+        const SnackBar(
+          behavior: SnackBarBehavior.fixed,
+          content: SizedBox(
+            width: double.infinity,
+            child: Text(
+              'Appreciate your feedback!',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
       );
     } catch (e) {
       if (!mounted) return;
