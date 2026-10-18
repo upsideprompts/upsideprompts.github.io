@@ -1,4 +1,4 @@
-# Baseball Bits
+# Baseball QuoteSpark
 
 Dart-first Flutter web app. UI and logic live in `lib/` (`main.dart`).  
 `index.html` only boots Flutter — no app JavaScript.
