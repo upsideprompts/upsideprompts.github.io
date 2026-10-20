@@ -1,31 +1,32 @@
-[
-  {
-    "title": "Tesla Robotaxi vs Waymo: One Has the Hype, the Other Has the Miles",
-    "link": "https://ev-global.org/blogs/articles/article38-tesla-robotaxi-vs-waymo",
-    "date": "2026-06-23",
-    "category": "AV"
-  },
-  {
-    "title": "Robotaxi Expansion Tracker 2026",
-    "link": "https://presenc.ai/research/robotaxi-expansion-tracker-2026",
-    "date": "2026-05-01",
-    "category": "AV"
-  },
-  {
-    "title": "Autonomous Vehicles 2026: Where Self-Driving Tech Stands Today",
-    "link": "https://techlorex.com/autonomous-vehicles-2026-where-self-driving-tech-stands-today",
-    "date": "2026-08-15",
-    "category": "AV"
-  },
-  {
-    "title": "APTA Honors Hydrogen Trains and Autonomous Systems",
-    "link": "https://raillynews.com/2026/07/apta-honors-hydrogen-trains-and-autonomous-systems/",
-    "date": "2026-07-15"
-  },
-  {
-    "title": "What Is Happening in Autonomous Vehicle News Today and Throughout 2026?",
-    "link": "https://posts.terabox.com/hub/what-is-happening-in-autonomous-vehicle-news-today-and-throughout-2026",
-    "date": "2026-08-24",
-    "category": "AV"
-  }
-]
+{
+  "articles": [
+    {
+      "category": "AV",
+      "date": "2026-06-23",
+      "link": "https://ev-global.org/blogs/articles/article38-tesla-robotaxi-vs-waymo",
+      "title": "Tesla Robotaxi vs Waymo: One Has the Hype, the Other Has the Miles"
+    },
+    {
+      "category": "AV",
+      "date": "2026-05-01",
+      "link": "https://presenc.ai/research/robotaxi-expansion-tracker-2026",
+      "title": "Robotaxi Expansion Tracker 2026"
+    },
+    {
+      "category": "AV",
+      "date": "2026-08-15",
+      "link": "https://techlorex.com/autonomous-vehicles-2026-where-self-driving-tech-stands-today",
+      "title": "Autonomous Vehicles 2026: Where Self-Driving Tech Stands Today"
+    },
+    {
+      "category": "AV",
+      "date": "2026-08-24",
+      "link": "https://posts.terabox.com/hub/what-is-happening-in-autonomous-vehicle-news-today-and-throughout-2026",
+      "title": "What Is Happening in Autonomous Vehicle News Today and Throughout 2026?"
+    }
+  ],
+  "lastUpdated": "2026-10-19",
+  "lastCleanup": "2026-10-19",
+  "validationStatus": "completed",
+  "validationId": "61441a368016"
+}
