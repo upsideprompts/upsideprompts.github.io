@@ -114,91 +114,109 @@
         <p class="refresh-info">Last updated: <span id="last-update">Loading...</span></p>
     </div>
     
+
 <script>
-        // October 15-17, 2026 Baseball Games - Updated
+        // October 22-23, 2026 Baseball Games - Updated
         const baseballData = [
         {
-                "teams": "Tampa Bay Rays vs Cleveland Guardians",
-                "stadium": "Progressive Field, Cleveland",
-                "day": "Sunday, October 18, 2026",
-                "time": "5:08 PM EDT",
-                "price": "$65-115",
-                "link": "https://www.mlb.com/schedule/2026/10/18/tampa-bay-rays-vs-cleveland-guardians"
+                "teams": "New York Yankees vs Tampa Bay Rays",
+                "stadium": "Yankee Stadium, New York",
+                "day": "Friday, October 22, 2026",
+                "time": "1:10 PM EDT",
+                "price": "$85-135",
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/22"
         },
         {
-                "teams": "Los Angeles Dodgers vs Milwaukee Brewers",
-                "stadium": "American Family Field, Milwaukee",
-                "day": "Sunday, October 18, 2026",
-                "time": "8:00 PM EDT",
-                "price": "$70-120",
-                "link": "https://www.mlb.com/schedule/2026/10/18/los-angeles-dodgers-vs-milwaukee-brewers"
+                "teams": "New York Mets vs Atlanta Braves",
+                "stadium": "Citi Field, New York",
+                "day": "Friday, October 22, 2026",
+                "time": "7:05 PM EDT",
+                "price": "$75-120",
+                "link": "https://www.mlb.com/mets/schedule/2026/10/22"
         },
         {
-                "teams": "Los Angeles Dodgers vs Milwaukee Brewers",
-                "stadium": "American Family Field, Milwaukee",
-                "day": "Monday, October 19, 2026",
-                "time": "8:00 PM EDT",
-                "price": "$75-130",
-                "link": "https://www.mlb.com/schedule/2026/10/19/los-angeles-dodgers-vs-milwaukee-brewers"
+                "teams": "Boston Red Sox vs New York Yankees",
+                "stadium": "Yankee Stadium, New York",
+                "day": "Saturday, October 23, 2026",
+                "time": "1:10 PM EDT",
+                "price": "$90-140",
+                "link": "https://www.mlb.com/yankees/schedule/2026/10/23"
         },
         {
-                "teams": "Cleveland Guardians vs Tampa Bay Rays",
-                "stadium": "Tropicana Field, Tampa Bay",
-                "day": "Monday, October 19, 2026",
-                "time": "8:08 PM EDT",
-                "price": "$60-110",
-                "link": "https://www.mlb.com/schedule/2026/10/19/cleveland-guardians-vs-tampa-bay-rays"
+                "teams": "Los Angeles Dodgers vs San Francisco Giants",
+                "stadium": "Oracle Park, San Francisco",
+                "day": "Saturday, October 23, 2026",
+                "time": "4:05 PM EDT",
+                "price": "$80-130",
+                "link": "https://www.mlb.com/giants/schedule/2026/10/23"
         }
 ];
 
-        // October 15-17, 2026 NYC hiking opportunities
+        // October 22-24, 2026 NYC hiking opportunities (including additional events from Meetup.com)
         const hikingData = [
         {
-                "title": "Inwood Hill Park Woods Trail",
-                "location": "Inwood Hill Park, Northern Manhattan",
-                "time": "Friday, October 16, 2026 - 9:00 AM EDT",
-                "difficulty": "Easy-Moderate",
-                "link": "https://www.nycgovparks.org/parks/inwood-hill-park/events"
+                "title": "Crimson & Gold: A Fall Walk in Central Park",
+                "location": "Central Park, Manhattan",
+                "time": "Saturday, October 24, 2026 - 2:00 PM EDT",
+                "difficulty": "Easy-Moderate (~3 miles)",
+                "link": "https://www.meetup.com/nycfoodiesclub/events/316738846/"
         },
         {
-                "title": "Brooklyn Bridge Park Path Walk",
-                "location": "Brooklyn Bridge Park",
-                "time": "Friday, October 16, 2026 - 8:00 AM EDT",
-                "difficulty": "Easy (~2 miles)",
-                "link": "https://brooklynbridgepark.org/events"
+                "title": "The Wilds of Manhattan: Fort Tryon & Inwood Hill Parks + Local Neighborhoods",
+                "location": "Fort Tryon & Inwood Hill Parks",
+                "time": "Saturday, October 24, 2026 - 10:30 AM EDT",
+                "difficulty": "Moderate (~4 miles)",
+                "link": "https://www.meetup.com/exploring-nyc-history-and-neighborhoods/events/316283309/"
         },
         {
-                "title": "Riverside Park Water-Side Walk",
-                "location": "Riverside Park South, Manhattan",
-                "time": "Friday, October 16, 2026 - 6:00 PM EDT",
-                "difficulty": "Easy",
-                "link": "https://www.nycgovparks.org/parks/riverside-park/events"
+                "title": "Northwest Bronx: Van Cortlandt Park Hike and the Fieldston Historic District",
+                "location": "Van Cortlandt Park, Bronx",
+                "time": "Saturday, October 31, 2026 - 11:30 AM EDT",
+                "difficulty": "Moderate (~5 miles)",
+                "link": "https://www.meetup.com/exploring-nyc-history-and-neighborhoods/events/316283316/"
         },
         {
                 "title": "High Line Evening Walk",
                 "location": "The High Line, Chelsea",
-                "time": "Friday, October 16, 2026 - 6:45 PM EDT",
-                "difficulty": "Easy",
+                "time": "Friday, October 22, 2026 - 6:45 PM EDT",
+                "difficulty": "Easy (~1.5 miles)",
                 "link": "https://www.thehighline.org/events"
         },
         {
                 "title": "Hudson River Park Pier 84 Evening Walk",
                 "location": "Hudson River Park Trust",
-                "time": "Saturday, October 17, 2026 - 6:30 PM EDT",
-                "difficulty": "Easy",
+                "time": "Friday, October 22, 2026 - 6:30 PM EDT",
+                "difficulty": "Easy (~2 miles)",
                 "link": "https://hudsonriverpark.org/events"
         }
 ];
 
+        
         function loadBaseball() {
             const container = document.getElementById('baseball-container');
-            container.innerHTML = baseballData.map(item => ` <div class="card"> <h3><a href="${item.link}" target="_blank">${item.teams}</a></h3> <p><strong>Stadium:</strong> ${item.stadium}</p> <p><strong>Day:</strong> ${item.day}</p> <p><strong>Time:</strong> ${item.time}</p> <p><strong>Price:</strong> ${item.price}</p> </div> `).join('');
+            container.innerHTML = baseballData.map(item => `
+                <div class="card">
+                    <h3><a href="${item.link}" target="_blank">${item.teams}</a></h3>
+                    <p><strong>Stadium:</strong> ${item.stadium}</p>
+                    <p><strong>Day:</strong> ${item.day}</p>
+                    <p><strong>Time:</strong> ${item.time}</p>
+                    <p><strong>Price:</strong> ${item.price}</p>
+                </div>
+            `).join('');
         }
 
         function loadHiking() {
             const container = document.getElementById('hiking-container');
-            container.innerHTML = hikingData.map(item => ` <div class="card"> <h3><a href="${item.link}" target="_blank">${item.title}</a></h3> <p><strong>Location:</strong> ${item.location}</p> <p><strong>Time:</strong> ${item.time}</p> <p><strong>Difficulty:</strong> ${item.difficulty}</p> </div> `).join('');
+            container.innerHTML = hikingData.map(item => `
+                <div class="card">
+                    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                    <p><strong>Location:</strong> ${item.location}</p>
+                    <p><strong>Time:</strong> ${item.time}</p>
+                    <p><strong>Difficulty:</strong> ${item.difficulty}</p>
+                </div>
+            `).join('');
         }
+
 
         function updateTimestamp() {
             const now = new Date();
@@ -210,3 +228,4 @@
         loadHiking();
         updateTimestamp();
     </script>
+
