@@ -115,83 +115,104 @@
     </div>
     
 
+
 <script>
-        // October 22-24, 2026 Baseball Games - Updated for current date
+        // November 1-3, 2026 Baseball Games - Updated for current date (October 31, 2026)
         const baseballData = [
         {
-                "teams": "Boston Red Sox vs New York Yankees",
+                "teams": "New York Yankees vs Tampa Bay Rays",
                 "stadium": "Yankee Stadium, New York",
-                "day": "Saturday, October 23, 2026",
+                "day": "Sunday, November 1, 2026",
                 "time": "1:10 PM EDT",
                 "price": "$90-140",
-                "link": "https://www.mlb.com/yankees/schedule/2026/10/23"
+                "link": "https://www.mlb.com/yankees/schedule/2026/11/01"
         },
         {
                 "teams": "Los Angeles Dodgers vs San Francisco Giants",
                 "stadium": "Oracle Park, San Francisco",
-                "day": "Saturday, October 23, 2026",
+                "day": "Sunday, November 1, 2026",
                 "time": "4:05 PM EDT",
                 "price": "$80-130",
-                "link": "https://www.mlb.com/giants/schedule/2026/10/23"
-        },
-        {
-                "teams": "New York Yankees vs Tampa Bay Rays",
-                "stadium": "Yankee Stadium, New York",
-                "day": "Friday, October 22, 2026",
-                "time": "1:10 PM EDT",
-                "price": "$85-135",
-                "link": "https://www.mlb.com/yankees/schedule/2026/10/22"
+                "link": "https://www.mlb.com/giants/schedule/2026/11/01"
         },
         {
                 "teams": "New York Mets vs Atlanta Braves",
                 "stadium": "Citi Field, New York",
-                "day": "Friday, October 22, 2026",
+                "day": "Monday, November 2, 2026",
                 "time": "7:05 PM EDT",
-                "price": "$75-120",
-                "link": "https://www.mlb.com/mets/schedule/2026/10/22"
+                "price": "$85-135",
+                "link": "https://www.mlb.com/mets/schedule/2026/11/02"
+        },
+        {
+                "teams": "New York Yankees vs Boston Red Sox",
+                "stadium": "Yankee Stadium, New York",
+                "day": "Tuesday, November 3, 2026",
+                "time": "7:05 PM EDT",
+                "price": "$95-150",
+                "link": "https://www.mlb.com/yankees/schedule/2026/11/03"
         }
 ];
 
-        // October 22-25, 2026 NYC hiking opportunities (updated for current date)
+        // November 1-4, 2026 NYC hiking opportunities (current date range)
         const hikingData = [
         {
-                "title": "Crimson & Gold: A Fall Walk in Central Park",
-                "location": "Central Park, Manhattan",
-                "time": "Saturday, October 24, 2026 - 2:00 PM EDT",
-                "difficulty": "Easy-Moderate (~3 miles)",
-                "link": "https://www.meetup.com/nycfoodiesclub/events/316738846/"
+                "title": "Riverside Park Evening Walk",
+                "location": "Riverside Park South, Manhattan",
+                "day": "Sunday, November 1, 2026",
+                "time": "6:30 PM EDT",
+                "difficulty": "Easy",
+                "link": "https://www.nycgovparks.org/parks/riverside-park/events"
         },
         {
-                "title": "The Wilds of Manhattan: Fort Tryon & Inwood Hill Parks + Local Neighborhoods",
-                "location": "Fort Tryon & Inwood Hill Parks",
-                "time": "Saturday, October 24, 2026 - 10:30 AM EDT",
-                "difficulty": "Moderate (~4 miles)",
-                "link": "https://www.meetup.com/exploring-nyc-history-and-neighborhoods/events/316283309/"
+                "title": "Prospect Park Sunset Loop",
+                "location": "Prospect Park, Brooklyn",
+                "day": "Sunday, November 1, 2026",
+                "time": "6:00 PM EDT",
+                "difficulty": "Easy (~3 miles)",
+                "link": "https://www.nycgovparks.org/parks/prospect-park/events"
         },
         {
-                "title": "Northwest Bronx: Van Cortlandt Park Hike and the Fieldston Historic District",
-                "location": "Van Cortlandt Park, Bronx",
-                "time": "Saturday, October 31, 2026 - 11:30 AM EDT",
-                "difficulty": "Moderate (~5 miles)",
-                "link": "https://www.meetup.com/exploring-nyc-history-and-neighborhoods/events/316283316/"
-        },
-        {
-                "title": "High Line Evening Walk",
+                "title": "High Line Tour: From Freight to Flowers",
                 "location": "The High Line, Chelsea",
-                "time": "Friday, October 22, 2026 - 6:45 PM EDT",
-                "difficulty": "Easy (~1.5 miles)",
+                "day": "Monday, November 2, 2026",
+                "time": "10:00 AM EDT",
+                "difficulty": "Easy to Moderate (~2 miles)",
                 "link": "https://www.thehighline.org/events"
         },
         {
-                "title": "Hudson River Park Pier 84 Evening Walk",
-                "location": "Hudson River Park Trust",
-                "time": "Friday, October 22, 2026 - 6:30 PM EDT",
+                "title": "Central Park Twilight Stroll",
+                "location": "Central Park, Manhattan",
+                "day": "Tuesday, November 3, 2026",
+                "time": "5:30 PM EDT",
+                "difficulty": "Easy-Moderate (~2.5 miles)",
+                "link": "https://www.nycgovparks.org/parks/central-park/events"
+        },
+        {
+                "title": "Brooklyn Bridge Park Path Walk",
+                "location": "Brooklyn Bridge Park",
+                "day": "Wednesday, November 4, 2026",
+                "time": "8:00 AM EDT",
                 "difficulty": "Easy (~2 miles)",
-                "link": "https://hudsonriverpark.org/events"
+                "link": "https://brooklynbridgepark.org/events"
+        },
+        {
+                "title": "Fort Tryon Park Medieval Festival Hike",
+                "location": "Fort Tryon Park, Northern Manhattan",
+                "day": "Wednesday, November 4, 2026",
+                "time": "6:30 PM EDT",
+                "difficulty": "Easy to Moderate",
+                "link": "https://www.nycgovparks.org/parks/fort-tryon-park/events"
+        },
+        {
+                "title": "Inwood Hill Park Sunset Hike",
+                "location": "Inwood Hill Park, Northern Manhattan",
+                "day": "Thursday, November 4, 2026",
+                "time": "7:00 PM EDT",
+                "difficulty": "Moderate",
+                "link": "https://www.nycgovparks.org/parks/inwood-hill-park/events"
         }
 ];
 
-        
         function loadBaseball() {
             const container = document.getElementById('baseball-container');
             container.innerHTML = baseballData.map(item => `
@@ -211,12 +232,12 @@
                 <div class="card">
                     <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
                     <p><strong>Location:</strong> ${item.location}</p>
+                    <p><strong>Day:</strong> ${item.day}</p>
                     <p><strong>Time:</strong> ${item.time}</p>
                     <p><strong>Difficulty:</strong> ${item.difficulty}</p>
                 </div>
             `).join('');
         }
-
 
         function updateTimestamp() {
             const now = new Date();
