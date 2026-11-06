@@ -2,6 +2,12 @@
   "articles": [
     {
       "category": "AV",
+      "date": "2026-10-29",
+      "link": "https://www.ou.edu/news/articles/2026/September/driving-down-cost-self-driving-cars",
+      "title": "Driving Down the Cost of Self-Driving Cars"
+    },
+    {
+      "category": "AV",
       "date": "2026-06-23",
       "link": "https://ev-global.org/blogs/articles/article38-tesla-robotaxi-vs-waymo",
       "title": "Tesla Robotaxi vs Waymo: One Has the Hype, the Other Has the Miles"
@@ -25,8 +31,10 @@
       "title": "What Is Happening in Autonomous Vehicle News Today and Throughout 2026?"
     }
   ],
-  "lastUpdated": "2026-10-19",
-  "lastCleanup": "2026-10-19",
+  "lastUpdated": "2026-11-06T16:01:00Z",
+  "lastCleanup": "2026-10-29",
   "validationStatus": "completed",
-  "validationId": "61441a368016"
+  "validationId": "4b8aa269-7f47-4c2e-bdee-ded21fca878b",
+  "validationStarted": "2026-11-02T16:01:06Z",
+  "note": "Validation cycle completed - 4-step validation finished, 0 new articles added due to external access restrictions"
 }

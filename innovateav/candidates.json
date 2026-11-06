@@ -1,6 +1,47 @@
 {
-  "articles": [],
-  "lastUpdated": null,
-  "validationStatus": "empty",
-  "note": "Stage new articles here. Run: python3 validate_and_merge_articles.py — only HTTP 200 + content-pass URLs are merged into articles2.json."
+  "articles": [
+    {
+      "category": "AV",
+      "date": "2026-10-29",
+      "link": "https://news.un.org/en/story/2026/06/1167797",
+      "title": "New global rules clear the road for driverless vehicles"
+    },
+    {
+      "category": "AV",
+      "date": "2026-10-29",
+      "link": "https://www.nature.com/articles/s44287-026-00319-1",
+      "title": "Autonomous driving chips - Nature Reviews Electrical Engineering"
+    },
+    {
+      "category": "AV",
+      "date": "2026-10-29",
+      "link": "https://www.ou.edu/news/articles/2026/September/driving-down-cost-self-driving-cars",
+      "title": "Driving Down the Cost of Self-Driving Cars"
+    }
+  ],
+  "lastUpdated": "2026-11-01",
+  "validationId": "b4dd766e42d8",
+  "validationStatus": "failed",
+  "passedCount": 0,
+  "failedCount": 3,
+  "skippedDuplicates": 1,
+  "passed": [],
+  "failed": [
+    {
+      "link": "https://news.un.org/en/story/2026/06/1167797",
+      "title": "New global rules clear the road for driverless vehicles",
+      "reason": "HTTP 406 (need final 200)"
+    },
+    {
+      "link": "https://www.nature.com/articles/s44287-026-00319-1",
+      "title": "Autonomous driving chips - Nature Reviews Electrical Engineering",
+      "reason": "insufficient article text (110 chars)"
+    },
+    {
+      "link": "https://www.ou.edu/news/articles/2026/September/driving-down-cost-self-driving-cars",
+      "title": "Driving Down the Cost of Self-Driving Cars",
+      "reason": "duplicate of live list"
+    }
+  ],
+  "validationFailure": "No candidates passed HTTP 200 + content checks — articles not added"
 }
