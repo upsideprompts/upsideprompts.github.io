@@ -633,6 +633,13 @@ class _HomeScreenState extends State<HomeScreen>
                                       ),
                                     ),
                                   ),
+                                  const SizedBox(height: 10),
+                                  const Align(
+                                    alignment: Alignment.centerRight,
+                                    child: IgnorePointer(
+                                      child: _DottedArrowIcon(),
+                                    ),
+                                  ),
                                 ],
                               ),
                               ),
@@ -642,6 +649,59 @@ class _HomeScreenState extends State<HomeScreen>
                       ],
                     ),
     );
+  }
+}
+
+/// Decorative right-pointing arrow made of navy dots (non-interactive).
+class _DottedArrowIcon extends StatelessWidget {
+  const _DottedArrowIcon();
+
+  static const double _width = 36;
+  static const Color _navy = Color(0xFF1A2744);
+
+  @override
+  Widget build(BuildContext context) {
+    final height = _width * 92 / 104;
+    return CustomPaint(
+      size: Size(_width, height),
+      painter: const _DottedArrowPainter(color: _navy),
+    );
+  }
+}
+
+class _DottedArrowPainter extends CustomPainter {
+  const _DottedArrowPainter({required this.color});
+
+  final Color color;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+
+    // Five columns of dots (5→1), hex-offset so each column sits in the
+    // gaps of the previous — matching the dotted play/arrow glyph.
+    const columnCounts = [5, 4, 3, 2, 1];
+    const maxDots = 5;
+    final vSpacing = size.height / maxDots;
+    final hSpacing = size.width / columnCounts.length;
+    final radius = vSpacing * 0.32;
+
+    for (var col = 0; col < columnCounts.length; col++) {
+      final count = columnCounts[col];
+      final x = hSpacing * (col + 0.5);
+      final startY = (maxDots - count) * vSpacing / 2;
+      for (var row = 0; row < count; row++) {
+        final y = startY + vSpacing * (row + 0.5);
+        canvas.drawCircle(Offset(x, y), radius, paint);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _DottedArrowPainter oldDelegate) {
+    return oldDelegate.color != color;
   }
 }
 
