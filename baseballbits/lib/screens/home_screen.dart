@@ -88,6 +88,27 @@ class _HomeScreenState extends State<HomeScreen>
     _pageController.jumpToPage(target);
   }
 
+  bool _paging = false;
+
+  /// Slow page turn: [direction] +1 = next (right arrow), -1 = previous (left).
+  Future<void> _animateQuotePage(int direction) async {
+    if (_paging || !_pageController.hasClients) return;
+    final length = context.read<QuotesProvider>().quotes.length;
+    if (length == 0) return;
+    setState(() => _paging = true);
+    try {
+      const duration = Duration(milliseconds: 750);
+      const curve = Curves.easeInOutCubic;
+      if (direction > 0) {
+        await _pageController.nextPage(duration: duration, curve: curve);
+      } else {
+        await _pageController.previousPage(duration: duration, curve: curve);
+      }
+    } finally {
+      if (mounted) setState(() => _paging = false);
+    }
+  }
+
   void _toggleChrome() {
     setState(() => _chromeVisible = !_chromeVisible);
     if (_chromeVisible) {
@@ -634,11 +655,23 @@ class _HomeScreenState extends State<HomeScreen>
                                     ),
                                   ),
                                   const SizedBox(height: 10),
-                                  const Align(
-                                    alignment: Alignment.centerRight,
-                                    child: IgnorePointer(
-                                      child: _DottedArrowIcon(),
-                                    ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      _DottedArrowIcon(
+                                        pointingRight: false,
+                                        onTap: _paging
+                                            ? null
+                                            : () => _animateQuotePage(-1),
+                                      ),
+                                      _DottedArrowIcon(
+                                        pointingRight: true,
+                                        onTap: _paging
+                                            ? null
+                                            : () => _animateQuotePage(1),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
@@ -652,9 +685,15 @@ class _HomeScreenState extends State<HomeScreen>
   }
 }
 
-/// Decorative right-pointing arrow made of navy dots (non-interactive).
+/// Dotted navy arrow on a translucent clay-orange circle.
 class _DottedArrowIcon extends StatelessWidget {
-  const _DottedArrowIcon();
+  const _DottedArrowIcon({
+    this.pointingRight = true,
+    this.onTap,
+  });
+
+  final bool pointingRight;
+  final VoidCallback? onTap;
 
   // 40% smaller than the original 36px glyph.
   static const double _width = 21.6;
@@ -666,17 +705,24 @@ class _DottedArrowIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = _width * 92 / 104;
     final diameter = (height > _width ? height : _width) * 1.7;
-    return Container(
-      width: diameter,
-      height: diameter,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: _orange.withValues(alpha: 0.45),
-      ),
+    final arrow = Transform.scale(
+      scaleX: pointingRight ? 1 : -1,
       child: CustomPaint(
         size: Size(_width, height),
         painter: const _DottedArrowPainter(color: _navy),
+      ),
+    );
+    return Material(
+      color: _orange.withValues(alpha: 0.45),
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onTap,
+        child: SizedBox(
+          width: diameter,
+          height: diameter,
+          child: Center(child: arrow),
+        ),
       ),
     );
   }
