@@ -656,15 +656,28 @@ class _HomeScreenState extends State<HomeScreen>
 class _DottedArrowIcon extends StatelessWidget {
   const _DottedArrowIcon();
 
-  static const double _width = 36;
+  // 40% smaller than the original 36px glyph.
+  static const double _width = 21.6;
   static const Color _navy = Color(0xFF1A2744);
+  // Clay orange sampled from field backgrounds (e.g. field2).
+  static const Color _orange = Color(0xFFC5793C);
 
   @override
   Widget build(BuildContext context) {
     final height = _width * 92 / 104;
-    return CustomPaint(
-      size: Size(_width, height),
-      painter: const _DottedArrowPainter(color: _navy),
+    final diameter = (height > _width ? height : _width) * 1.7;
+    return Container(
+      width: diameter,
+      height: diameter,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: _orange.withValues(alpha: 0.45),
+      ),
+      child: CustomPaint(
+        size: Size(_width, height),
+        painter: const _DottedArrowPainter(color: _navy),
+      ),
     );
   }
 }
