@@ -19,8 +19,8 @@
       "title": "Driving Down the Cost of Self-Driving Cars"
     }
   ],
-  "lastUpdated": "2026-11-08",
-  "validationId": "37c3dd3fe459",
+  "lastUpdated": "2026-11-10",
+  "validationId": "b722ce0e38b0",
   "validationStatus": "failed",
   "passedCount": 0,
   "failedCount": 3,
@@ -35,7 +35,7 @@
     {
       "link": "https://www.nature.com/articles/s44287-026-00319-1",
       "title": "Autonomous driving chips - Nature Reviews Electrical Engineering",
-      "reason": "insufficient article text (110 chars)"
+      "reason": "insufficient article text (72 chars)"
     },
     {
       "link": "https://www.ou.edu/news/articles/2026/September/driving-down-cost-self-driving-cars",
