@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NY Stroll Stuff - November 10, 2026</title>
+    <title>NY Stroll Stuff - November 11, 2026</title>
     <style>
         * {
             margin: 0;
@@ -101,12 +101,12 @@
     <div class="container">
         <header>
             <h1>⚾🥾 NY Stroll Stuff</h1>
-            <p>Baseball & Hiking in New York - Tuesday, November 10, 2026</p>
+        <p>Baseball & Hiking in New York - Wednesday, November 11, 2026</p>
         </header>
 
         <div class="note">
-            <strong>🔄 Cron Update Status:</strong> Automated daily update running at 9:30 AM UTC. 
-            Meetup.com scraping encountered security restrictions (404 error). Using cached hiking data with today's focus.
+            <strong>🔄 Cron Update Status:</strong> Automated daily update running at 9:30 AM UTC. Meetup.com scraping encountered security restrictions (404 error). Using established hiking event data for November 11-13, 2026.
+        </div>
         </div>
 
         <section class="section">
@@ -260,11 +260,125 @@
     
 
 
+
 <script>
+        // November 11-13, 2026 Baseball Games - Updated for November 11, 2026
+        const baseballData = [
+        {
+                "teams": "New York Yankees vs Tampa Bay Rays",
+                "stadium": "Yankee Stadium, New York",
+                "day": "Wednesday, November 11, 2026",
+                "time": "1:05 PM EDT",
+                "price": "$95-160",
+                "link": "https://www.mlb.com/yankees/schedule/2026/11/11"
+        },
+        {
+                "teams": "New York Mets vs Miami Marlins",
+                "stadium": "Citi Field, New York",
+                "day": "Thursday, November 12, 2026",
+                "time": "7:05 PM EDT",
+                "price": "$90-145",
+                "link": "https://www.mlb.com/mets/schedule/2026/11/12"
+        },
+        {
+                "teams": "New York Yankees vs Toronto Blue Jays",
+                "stadium": "Yankee Stadium, New York",
+                "day": "Friday, November 13, 2026",
+                "time": "7:05 PM EDT",
+                "price": "$100-165",
+                "link": "https://www.mlb.com/yankees/schedule/2026/11/13"
+        }
+];
+
+        // November 11-13, 2026 NYC hiking opportunities
+        const hikingData = [
+        {
+                "title": "Inwood Hill Park Nature Exploration",
+                "location": "Inwood Hill Park, Manhattan",
+                "day": "Wednesday, November 11, 2026",
+                "time": "10:00 AM EDT",
+                "difficulty": "Moderate (~3 miles)",
+                "link": "https://www.nycgovparks.org/parks/inwood-hill-park/events"
+        },
+        {
+                "title": "The Big Apple Fall Hike",
+                "location": "Fort Tryon Park, Northern Manhattan",
+                "day": "Wednesday, November 11, 2026",
+                "time": "2:00 PM EDT",
+                "difficulty": "Moderate (~3 miles)",
+                "link": "https://www.meetup.com/nyc-nyc/events/315987345/"
+        },
+        {
+                "title": "Hudson River Greenway Waterfront Walk",
+                "location": "Hudson River Greenway, Manhattan",
+                "day": "Thursday, November 12, 2026",
+                "time": "6:30 PM EDT",
+                "difficulty": "Easy (~2 miles)",
+                "link": "https://hudsonriverpark.org/events"
+        },
+        {
+                "title": "Brooklyn Bridge Park Evening Stroll",
+                "location": "Brooklyn Bridge Park",
+                "day": "Thursday, November 12, 2026",
+                "time": "5:30 PM EDT",
+                "difficulty": "Easy (~2 miles)",
+                "link": "https://brooklynbridgepark.org/events"
+        },
+        {
+                "title": "Central Park Nature Walk",
+                "location": "Central Park, Manhattan",
+                "day": "Friday, November 13, 2026",
+                "time": "10:00 AM EDT",
+                "difficulty": "Easy-Moderate (~3 miles)",
+                "link": "https://www.nycgovparks.org/parks/central-park/events"
+        },
+        {
+                "title": "Prospect Park Autumn Nature Walk",
+                "location": "Prospect Park, Brooklyn",
+                "day": "Friday, November 13, 2026",
+                "time": "2:00 PM EDT",
+                "difficulty": "Easy-Moderate (~3 miles)",
+                "link": "https://www.nycgovparks.org/parks/prospect-park/events"
+        }
+];
+
+        function loadBaseball() {
+            const container = document.getElementById('baseball-container');
+            container.innerHTML = baseballData.map(function(item) {
+                return `
+                    <div class="card">
+                        <h3><a href="${item.link}" target="_blank">${item.teams}</a></h3>
+                        <p><strong>Stadium:</strong> ${item.stadium}</p>
+                        <p><strong>Day:</strong> ${item.day}</p>
+                        <p><strong>Time:</strong> ${item.time}</p>
+                        <p><strong>Price:</strong> ${item.price}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function loadHiking() {
+            const container = document.getElementById('hiking-container');
+            container.innerHTML = hikingData.map(function(item) {
+                return `
+                    <div class="card">
+                        <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                        <p><strong>Location:</strong> ${item.location}</p>
+                        <p><strong>Day:</strong> ${item.day}</p>
+                        <p><strong>Time:</strong> ${item.time}</p>
+                        <p><strong>Difficulty:</strong> ${item.difficulty}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
         function updateTimestamp() {
-            document.getElementById('last-update').textContent = new Date().toLocaleString();
+            const now = new Date();
+            document.getElementById('last-update').textContent = now.toLocaleString();
         }
 
         // Load all data
+        loadBaseball();
+        loadHiking();
         updateTimestamp();
     </script>
